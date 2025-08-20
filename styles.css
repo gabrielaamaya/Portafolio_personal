@@ -1,0 +1,316 @@
+/* ======================= Estilos base ======================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+/* ======================= Encabezado ======================= */
+header {
+  background-color: #6200ea;
+  color: white;
+  padding: 40px 20px;
+}
+
+.contenedor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.texto-header {
+  max-width: 70%;
+}
+
+.foto-perfil {
+  width: 180px;
+  height: 180px;
+  border: 4px solid white;
+  object-fit: cover;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================= Navegación ======================= */
+nav {
+  background-color: #3700b3;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+nav a i {
+  margin-right: 5px;
+}
+
+nav a:nth-child(1):hover {
+  background-color: #ff6b6b;
+  box-shadow: 0 0 15px #ff6b6b;
+  transform: scale(1.1);
+}
+
+nav a:nth-child(2):hover {
+  background-color: #feca57;
+  box-shadow: 0 0 15px #feca57;
+  transform: scale(1.1);
+}
+
+nav a:nth-child(3):hover {
+  background-color: #1dd1a1;
+  box-shadow: 0 0 15px #1dd1a1;
+  transform: scale(1.1);
+}
+
+nav a:nth-child(4):hover {
+  background-color: #54a0ff;
+  box-shadow: 0 0 15px #54a0ff;
+  transform: scale(1.1);
+}
+
+/* ======================= Contenido principal ======================= */
+main {
+  padding: 30px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #6200ea;
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ======================= Sobre mí ======================= */
+.sobre-mi {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mi-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.sobre-mi-imagen {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #6200ea;
+  box-shadow: 0 0 10px rgba(98, 0, 234, 0.3);
+}
+
+.sobre-mi-texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sobre-mi-texto p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* ======================= Carrusel de habilidades ======================= */
+.carrusel-habilidades {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carrusel-inner {
+  display: flex;
+  width: max-content;
+  animation: scrollCarrusel 60s linear infinite;
+}
+
+@keyframes scrollCarrusel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tarjeta-habilidad {
+  flex: 0 0 auto;
+  background-color: #e8dcff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-habilidad i {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #6200ea;
+}
+
+.tarjeta-habilidad:hover {
+  transform: scale(1.05);
+}
+
+/* ======================= Proyectos ======================= */
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.imgBx {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  padding: 15px;
+  text-align: center;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #6200ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.content p {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #333;
+}
+
+/* ======================= Redes Sociales Mejoradas ======================= */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#redes-sociales {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #c1cff4, #8734bf, #732efb);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  text-align: center;
+  color: white;
+}
+
+.contenedor-redes {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.contenedor-redes h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.contenedor-redes p {
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.iconos-redes {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.iconos-redes .icon {
+  width: 60px;
+  height: 60px;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  background: white;
+  color: #6200ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.iconos-redes .icon:hover {
+  background: #ffffff;
+  color: #000;
+  transform: scale(1.2);
+}
+
+/* ======================= Footer ======================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #6200ea;
+  color: white;
+}

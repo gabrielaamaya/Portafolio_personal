@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio de Gabriela Amaya</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- ✅ Font Awesome actualizado -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13tzj7+9sDJ7+6zPg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      /* ======================= Redes Sociales estilo minimalista ======================= */
+      #redes-sociales {
+        background-color: #1877f2;
+        padding: 25px 0;
+        text-align: center;
+      }
+
+      #redes-sociales h2 {
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .iconos-redes {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .iconos-redes .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+
+      .iconos-redes .icon:hover {
+        background-color: white;
+        color: black;
+        transform: scale(1.1);
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #6200ea;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="contenedor-header">
+        <div class="texto-header">
+          <h1>Gabriela Amaya</h1>
+          <p>Programadora principiante • Apasionada por la tecnología</p>
+        </div>
+        <img src="Perfil.jpeg" alt="Foto de Gabriela" class="foto-perfil" />
+      </div>
+    </header>
+
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#redes-sociales">Redes Sociales</a>
+    </nav>
+
+    <main>
+      <section id="sobre-mi" class="sobre-mi">
+        <h2>Sobre mí</h2>
+        <div class="sobre-mi-contenido">
+          <img src="Perfil.jpeg" alt="Gabriela Amaya" class="sobre-mi-imagen" />
+          <div class="sobre-mi-texto">
+            <p>
+              ¡Hola! Soy <strong>Gabriela Amaya</strong>, estudiante apasionada
+              por el mundo de la tecnología. Me encanta aprender nuevas
+              herramientas y lenguajes, y disfruto desarrollando proyectos que
+              mezclan creatividad y lógica.
+            </p>
+            <p>
+              Actualmente me estoy enfocando en <strong>desarrollo web</strong>,
+              <strong>aplicaciones móviles</strong> y
+              <strong>bases de datos</strong>. Siempre busco mejorar mis
+              habilidades para construir soluciones útiles y funcionales.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="carrusel-habilidades">
+          <div class="carrusel-inner">
+            <div class="tarjeta-habilidad">HTML</div>
+            <div class="tarjeta-habilidad">Java</div>
+            <div class="tarjeta-habilidad">Android Studio</div>
+            <div class="tarjeta-habilidad">GitHub</div>
+            <div class="tarjeta-habilidad">Git</div>
+            <div class="tarjeta-habilidad">Python básico</div>
+
+            <!-- 🔁 Duplicamos tarjetas para efecto infinito -->
+            <div class="tarjeta-habilidad">HTML</div>
+            <div class="tarjeta-habilidad">Java</div>
+            <div class="tarjeta-habilidad">Android Studio</div>
+            <div class="tarjeta-habilidad">GitHub</div>
+            <div class="tarjeta-habilidad">Git</div>
+            <div class="tarjeta-habilidad">Python básico</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="contenedor-proyectos">
+          <!-- Tarjeta: Adopta a un amigo -->
+          <div class="card">
+            <div class="imgBx">
+              <img src="Adoptaaunamigo.jpeg" alt="Adopta a un amigo" />
+            </div>
+            <div class="content">
+              <h3>Adopta a un amigo</h3>
+              <p>
+                Un sitio web donde encontramos y rescatamos mascotas de la
+                calle, ayudando a encontrarles un hogar. Incluye información
+                detallada de cada animal.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta: Task Planner -->
+          <div class="card">
+            <div class="imgBx">
+              <img src="taskplanner.jpeg" alt="Task Planner" />
+            </div>
+            <div class="content">
+              <h3>Task Planner</h3>
+              <p>
+                Una aplicación web para planificar tareas diarias, configurar
+                horarios y recibir recordatorios con notificaciones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Redes Sociales Mejoradas -->
+      <section id="redes-sociales">
+        <div class="contenedor-redes">
+          <h2>Sígueme en Redes Sociales</h2>
+          <div class="iconos-redes">
+            <a href="https://www.instagram.com/kirito24miau/" class="icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/scarlett.amaya.378" class="icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://wa.me/50373949505" class="icon" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/gabrielaamaya" class="icon"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Gabriela Lissette Amaya</p>
+    </footer>
+  </body>
+</html>
