@@ -1174,3 +1174,283 @@ text-align: center;
 font-size: 2rem;
 }
 }
+
+/* ================================
+   MODO CLARO (azul + blanco, texto negro)
+   ================================ */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000; /* ✅ Texto negro */
+}
+
+/* Topbar */
+body.light-mode .topbar {
+  background: #e6f0ff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .topbar .brand {
+  color: #0055cc;
+  text-shadow: 0 0 10px rgba(0, 85, 204, 0.3);
+}
+
+body.light-mode .topbar .menu a {
+  color: #000000; /* ✅ Texto negro */
+}
+
+body.light-mode .topbar .menu a:hover,
+body.light-mode .topbar .menu a.active {
+  color: #0055cc;
+  background-color: rgba(0, 85, 204, 0.1);
+}
+
+body.light-mode #mode-toggle {
+  color: #000000; /* ✅ Icono negro */
+}
+
+/* Secciones */
+body.light-mode .section.alt,
+body.light-mode #sobre-mi,
+body.light-mode #habilidades,
+body.light-mode #proyectos,
+body.light-mode #testimonios,
+body.light-mode #intereses,
+body.light-mode #contacto {
+  background: #f9f9f9;
+  color: #000000; /* ✅ Texto negro */
+  border-color: #0055cc;
+}
+
+/* Títulos */
+body.light-mode h2,
+body.light-mode .section-title {
+  color: #000000; /* ✅ Texto negro */
+}
+
+/* Tarjetas */
+body.light-mode .skill-card,
+body.light-mode .tcard,
+body.light-mode #intereses .card,
+body.light-mode .card,
+body.light-mode .contact-form {
+  background: #ffffff;
+  border: 1px solid #0055cc;
+  box-shadow: 0 4px 12px rgba(0, 85, 204, 0.15);
+  color: #000000; /* ✅ Texto negro */
+}
+
+body.light-mode .skill-card h3,
+body.light-mode .tcard p,
+body.light-mode .card .content p,
+body.light-mode .contact-form label {
+  color: #000000; /* ✅ Texto negro */
+}
+
+/* Botones */
+body.light-mode .btn,
+body.light-mode .download-btn,
+body.light-mode .skill-btn,
+body.light-mode .submit-btn,
+body.light-mode .footer .backtop {
+  background: #0055cc;
+  border-color: #0055cc;
+  color: #ffffff;
+}
+
+body.light-mode .btn:hover,
+body.light-mode .download-btn:hover,
+body.light-mode .skill-btn:hover,
+body.light-mode .submit-btn:hover,
+body.light-mode .footer .backtop:hover {
+  background: #003399;
+  border-color: #003399;
+  box-shadow: 0 4px 15px rgba(0, 85, 204, 0.4);
+}
+
+/* Footer */
+body.light-mode .footer {
+  background: #e6f0ff;
+  color: #000000; /* ✅ Texto negro */
+  border-top: 2px solid #0055cc;
+}
+
+/* ================================
+   AJUSTES EXTRA MODO CLARO
+   ================================ */
+
+/* Párrafos en "Sobre mí" */
+body.light-mode #sobre-mi p {
+  color: #000000 !important;
+}
+
+/* Párrafos en "Intereses" */
+body.light-mode #intereses .card p {
+  color: #000000 !important;
+}
+
+/* Párrafos en "Testimonios" */
+body.light-mode .tcard p {
+  color: #000000 !important;
+}
+
+/* ================================
+   FIX: quitar verde en modo claro
+   ================================ */
+
+/* Nombre (verde → azul) */
+body.light-mode h1 span,
+body.light-mode h2 span,
+body.light-mode .highlight {
+  color: #0055cc !important;
+}
+
+/* Borde y glow de la foto */
+body.light-mode .profile-pic,
+body.light-mode #sobre-mi img {
+  border: 4px solid #0055cc !important;
+  box-shadow: 0 0 20px #0055cc !important;
+}
+/* ================================
+   FIX SOBRE MÍ (verde → azul)
+   ================================ */
+
+/* Título "Sobre mí" */
+body.light-mode #sobre-mi h2 {
+  color: #0055cc !important;
+}
+
+/* Línea decorativa debajo del título */
+body.light-mode #sobre-mi h2::after {
+  background: #0055cc !important;
+}
+
+/* Botón Descargar CV */
+body.light-mode #sobre-mi .download-btn {
+  background: #0055cc !important;
+  border: 2px solid #0055cc !important;
+  color: #ffffff !important;
+}
+
+body.light-mode #sobre-mi .download-btn:hover {
+  background: #003399 !important;
+  border-color: #003399 !important;
+  box-shadow: 0 4px 15px rgba(0, 85, 204, 0.4) !important;
+}
+
+/* ================================
+   FIX HABILIDADES + PROYECTOS (verde → azul en modo claro)
+   ================================ */
+
+/* Títulos principales */
+body.light-mode #habilidades h2,
+body.light-mode #proyectos h2,
+body.light-mode #lenguajes h2 {
+  color: #0055cc !important;
+}
+
+/* Subtítulos dentro de habilidades */
+body.light-mode #habilidades h3,
+body.light-mode #habilidades h4,
+body.light-mode #lenguajes h3 {
+  color: #0055cc !important;
+}
+
+/* Línea decorativa debajo de títulos */
+body.light-mode #habilidades h2::after,
+body.light-mode #proyectos h2::after,
+body.light-mode #lenguajes h2::after {
+  background: #0055cc !important;
+}
+.boton-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: white;
+
+  /* 🔵 AQUÍ estaba el borde verde, lo cambiamos a azul */
+  border: 2px solid #007BFF;  
+
+  border-radius: 8px;
+  font-weight: bold;
+
+  /* 🔵 AQUÍ estaba el texto verde, lo cambiamos a azul */
+  color: #007BFF;           
+
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  /* 🔵 AQUÍ estaba el resplandor verde, lo cambiamos a azul */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);  
+}
+
+.boton-github:hover {
+  /* 🔵 AQUÍ se pone fondo azul al pasar el mouse */
+  background: #007BFF;      
+
+  /* 🔵 Texto pasa a blanco cuando el fondo es azul */
+  color: white;             
+
+  /* 🔵 Resplandor más intenso en azul */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.9);  
+}
+
+
+/* ================================
+   FIX INTERESES + TESTIMONIOS + CONTACTO (verde → azul en modo claro)
+   ================================ */
+
+/* Títulos principales */
+body.light-mode #intereses h2,
+body.light-mode #testimonios h2,
+body.light-mode #contacto h2 {
+  color: #0055cc !important;
+}
+
+/* Subtítulos si los hubiera */
+body.light-mode #intereses h3,
+body.light-mode #testimonios h3,
+body.light-mode #contacto h3 {
+  color: #0055cc !important;
+}
+
+/* Línea decorativa debajo de títulos */
+body.light-mode #intereses h2::after,
+body.light-mode #testimonios h2::after,
+body.light-mode #contacto h2::after {
+  background: #0055cc !important;
+}
+
+/* ================================
+   FIX PROYECTOS (verde → azul en modo claro)
+   ================================ */
+
+/* Título principal */
+body.light-mode #proyectos h2,
+body.light-mode #proyectos h2 span,
+body.light-mode #proyectos .highlight {
+  color: #0055cc !important;
+}
+
+/* Línea decorativa */
+body.light-mode #proyectos h2::after {
+  background: #0055cc !important;
+}
+
+/* ================================
+   FIX LENGUAJES DE PROGRAMACIÓN (verde → azul en modo claro)
+   ================================ */
+
+/* Título principal */
+body.light-mode #lenguajes h2,
+body.light-mode #lenguajes h2 span,
+body.light-mode #lenguajes .highlight {
+  color: #0055cc !important;
+}
+
+/* Línea decorativa */
+body.light-mode #lenguajes h2::after {
+  background: #0055cc !important;
+}
+
