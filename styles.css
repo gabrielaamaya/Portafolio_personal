@@ -1110,22 +1110,41 @@ CONTACTO - ESTILO ACTUALIZADO
 FOOTER - Barra a lo ancho con botón
 ================================ */
 .footer {
-  width: 100%; /* Ancho completo */
-  background: #1e1e1e; /* Fondo oscuro */
-  padding: 1.5rem 2rem;
-  border-top: 2px solid #00cc66; /* Verde */
-  color: #f5f5f5;
-  font-size: 0.95rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
+    background-color: #1a1a1a !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 30px 0 !important;
+    border-top: 2px solid #00ff88 !important;
+    text-align: center !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
 }
 
-/* Texto dentro del footer */
 .footer p {
-  margin: 0;
+    color: #cccccc !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+}
+
+/* Para compensar el footer fijo */
+body {
+    padding-bottom: 80px !important;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #00ff00;
+    font-size: 0.9rem;
+    width: 100%;      /* ocupa todo el ancho */
+    background: #111; /* asegúrate de que tenga color sólido */
+    position: relative;
+    left: 0;
 }
 
 /* Botón "Volver arriba" dentro del footer */
