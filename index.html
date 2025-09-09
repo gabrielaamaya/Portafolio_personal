@@ -327,13 +327,19 @@
 
 
   <!-- Footer -->
-  <footer>
-        <div class="container">
-            <p>&copy; 2025 Gabriela Amaya. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-  <!-- Script -->
-  <script src="script.js"></script>
+<footer class="footer">
+  <div class="footer-grid">
+    <p>&copy; 2025 Gabriela Amaya. Todos los derechos reservados.</p>
+  </div>
+  <div class="backtop" onclick="scrollToTop()">&#8679;</div>
+</footer>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
 
   <script>
   const toggleBtn = document.getElementById("mode-toggle");
