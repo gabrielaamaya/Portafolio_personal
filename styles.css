@@ -434,7 +434,7 @@ SOBRE MÍ (About Section)
 
 
 /* ========================
-HABILIDADES - Estilo
+   HABILIDADES - Estilo
 ======================== */
 #habilidades {
   padding: 4rem 0;
@@ -507,12 +507,23 @@ HABILIDADES - Estilo
   box-shadow: 0 12px 30px rgba(0, 204, 102, 0.5);
 }
 
+/* ====== Texto dentro de las tarjetas ====== */
+/* Título de habilidad */
 .skill-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-  color: #f5f5f5;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #00cc66; /* Verde */
 }
 
+/* Descripción de habilidad */
+.skill-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #f5f5f5; /* Blanco */
+}
+
+/* Niveles (básico, intermedio, avanzado) */
 .skill-card .level {
   display: inline-block;
   padding: 0.4rem 0.8rem;
@@ -521,7 +532,6 @@ HABILIDADES - Estilo
   font-weight: bold;
 }
 
-/* Colores por nivel */
 .level.basico {
   background: rgba(255, 165, 0, 0.2);
   color: #ffa500;
@@ -599,20 +609,12 @@ HABILIDADES - Estilo
   color: #3776ab;
 }
 
-/* Texto */
-.skill-card h3 {
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: 600;
-  color: #ffffff; /* Blanco para contraste */
-}
-
+/* Línea en proyectos */
 #proyectos {
   border-top: 1px solid #00cc66; /* misma línea verde */
   padding-top: 3rem;  /* espacio después de la línea */
   margin-top: 3rem;   /* espacio antes de la línea */
 }
-
 
 /* ==============================
 PROYECTOS - Grid de Cards
