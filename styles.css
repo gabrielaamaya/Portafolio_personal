@@ -52,6 +52,7 @@ BARRA DE NAVEGACIÓN (NAVBAR)
   padding: 1rem 0;
 }
 
+/* Marca o logo */
 .topbar .brand {
   font-size: 1.5rem;
   font-weight: 700;
@@ -59,6 +60,7 @@ BARRA DE NAVEGACIÓN (NAVBAR)
   text-shadow: 0 0 10px rgba(0, 204, 102, 0.5); /* Verde */
 }
 
+/* Menú principal de enlaces */
 .topbar .menu {
   display: flex;
   gap: 1.5rem;
@@ -88,6 +90,7 @@ BARRA DE NAVEGACIÓN (NAVBAR)
   background-color: rgba(0, 204, 102, 0.1); /* Verde */
 }
 
+/* Línea decorativa debajo de enlaces */
 .topbar .menu a::after {
   content: '';
   position: absolute;
@@ -104,6 +107,7 @@ BARRA DE NAVEGACIÓN (NAVBAR)
   width: 70%;
 }
 
+/* Botón de modo claro/oscuro */
 #mode-toggle {
   background: transparent;
   border: none;
@@ -116,6 +120,18 @@ BARRA DE NAVEGACIÓN (NAVBAR)
 #mode-toggle:hover {
   transform: rotate(30deg);
   color: #00cc66; /* Verde */
+}
+
+/* Contenedor de idioma (🌐 + texto) */
+.lang-container {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* espacio entre icono y texto */
+}
+
+#lang-label {
+  font-weight: bold;
+  color: white; /* texto de idioma actual */
 }
 
 /* ================================
@@ -153,6 +169,7 @@ EFECTO MAGNÉTICO
   z-index: 1;
 }
 
+/* Brillo giratorio en las tarjetas */
 .magnetic-card::before {
   content: '';
   position: absolute;
