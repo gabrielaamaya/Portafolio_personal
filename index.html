@@ -15,43 +15,45 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+ 
   <!-- Header / Nav -->
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#inicio" data-lang="brand">MI PORTAFOLIO</a>
-      <nav class="menu">
-        <a href="#sobre-mi" data-lang="menu-sobre">Sobre mí</a>
-        <a href="#habilidades" data-lang="menu-habilidades">Habilidades</a>
-        <a href="#proyectos" data-lang="menu-proyectos">Proyectos</a>
-        <a href="#testimonios" data-lang="menu-testimonios">Testimonios</a>
-        <a href="#intereses" data-lang="menu-intereses">Intereses</a>
-        <a href="#contacto" data-lang="menu-contacto">Contacto</a>
-      </nav>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#inicio" data-lang="brand">MI PORTAFOLIO</a>
+    <nav class="menu">
+      <a href="#sobre-mi" data-lang="menu-sobre">Sobre mí</a>
+      <a href="#habilidades" data-lang="menu-habilidades">Habilidades</a>
+      <a href="#proyectos" data-lang="menu-proyectos">Proyectos</a>
+      <a href="#testimonios" data-lang="menu-testimonios">Testimonios</a>
+      <a href="#intereses" data-lang="menu-intereses">Intereses</a>
+      <a href="#contacto" data-lang="menu-contacto">Contacto</a>
+    </nav>
+    <!-- Contenedor de controles -->
+    <div class="nav-controls">
       <!-- Botón para cambiar de modo -->
       <button id="mode-toggle">🌙</button>
       <!-- Botón traducción -->
       <button id="lang-toggle">🌐</button>
       <span id="lang-label">Español</span>
-    
-
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section id="inicio" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1 data-lang="hero-hola">¡Hola! Soy <span>Gabriela Lissette Amaya Garay</span></h1>
-        <p class="lead">
-          <h2 data-lang="hero-interes-titulo">Áreas de interés:</h2>
-          <span data-lang="hero-interes">"Desarrollo Backend y Desarrollo de Apps Móviles"</span>
-        </p>
-      </div>
-      <div class="hero-photo">
-        <img src="perfil.jpeg" alt="Foto de Gabriela">
+<!-- Hero -->
+<section id="inicio" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1 data-lang="hero-hola">¡Hola! Soy <span>Gabriela Lissette Amaya Garay</span></h1>
+      <div class="lead">
+        <h2 data-lang="hero-interes-titulo">Áreas de interés:</h2>
+        <span data-lang="hero-interes">"Desarrollo Backend y Desarrollo de Apps Móviles"</span>
       </div>
     </div>
-  </section>
+    <div class="hero-photo">
+      <img src="perfil.jpeg" alt="Foto de Gabriela">
+    </div>
+  </div>
+</section>
 
   <!-- Sobre mí -->
   <section id="sobre-mi" class="section">
@@ -160,94 +162,112 @@
     </div>
   </section>
 
- <!-- Proyectos -->
-<!-- Proyectos -->
-<section id="proyectos" class="section">
+  <!-- Proyectos -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <h2 data-lang="proyectos-titulo">PROYECTOS</h2>
+      <div class="grid cards">
+
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="imgBx">
+            <img src="Adoptaaunamigo.jpeg" alt="Proyecto Adopta a un amigo">
+          </div>
+          <div class="content">
+            <h3 data-lang="proyecto1-titulo">Adopta a un amigo</h3>
+            <p data-lang="proyecto1-desc">Plataforma web para un refugio de animales, enfocada en promover
+              la adopción responsable de mascotas.</p>
+            <a href="https://github.com/gabrielaamaya/progral-2024-semi.git" class="btn-github" target="_blank">
+              <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
+            </a>
+            <div class="lenguajes">
+              <div class="lenguaje-item">
+                <i class="fas fa-code" style="color: #a179dc; font-size: 2rem;"></i>
+                <span>C#</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="imgBx">
+            <img src="taskplanner.jpeg" alt="Proyecto Task Planner">
+          </div>
+          <div class="content">
+            <h3 data-lang="proyecto2-titulo">Task Planner</h3>
+            <p data-lang="proyecto2-desc">Aplicación móvil para organizar tareas, con almacenamiento local y
+              filtros para una mejor gestión del tiempo.</p>
+            <a href="https://github.com/gabrielaamaya/Prograll-Semi-2025.git" class="btn-github" target="_blank">
+              <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
+            </a>
+            <div class="lenguajes">
+              <div class="lenguaje-item">
+                <i class="fab fa-python" style="color: #3776ab; font-size: 2rem;"></i>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="imgBx">
+            <img src="Prototipo de Artesanias Conchita.jpeg" alt="Proyecto Artesanías Conchita">
+          </div>
+          <div class="content">
+            <h3 data-lang="proyecto3-titulo">Artesanías Conchita</h3>
+            <p data-lang="proyecto3-desc">Prototipo de software empresarial que permite llevar el control completo de
+              facturación e inventario de la empresa.</p>
+            <a href="https://github.com/gabrielaamaya/Artesanias-Conchitas.git" class="btn-github" target="_blank">
+              <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
+            </a>
+            <div class="lenguajes">
+              <div class="lenguaje-item">
+                <i class="fas fa-code" style="color: #a179dc; font-size: 2rem;"></i>
+                <span>C#</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="imgBx">
+            <img src="Prototipo de Artesanias Conchita.jpeg" alt="Sitio web Artesanías Conchita">
+          </div>
+          <div class="content">
+            <h3 data-lang="proyecto4-titulo">Sitio web de Artesanías Conchita</h3>
+            <p data-lang="proyecto4-desc">Sitio web informativo que muestra los productos de la empresa</p>
+            <a href="https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git" class="btn-github" target="_blank">
+              <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
+            </a>
+            <div class="lenguajes">
+              <div class="lenguaje-item">
+                <i class="fab fa-python" style="color: #3776ab; font-size: 2rem;"></i>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- Marca Personal -->
+<section id="marca-personal" class="section alt">
   <div class="container">
-    <h2 data-lang="proyectos-titulo">PROYECTOS</h2>
-    <div class="grid cards">
-
-      <!-- Card 1 -->
-      <div class="card">
-        <div class="imgBx">
-          <img src="Adoptaaunamigo.jpeg" alt="Proyecto Adopta a un amigo">
-        </div>
-        <div class="content">
-          <h3 data-lang="proyecto1-titulo">Adopta a un amigo</h3>
-          <p data-lang="proyecto1-desc">Plataforma web para un refugio de animales, enfocada en promover
-            la adopción responsable de mascotas.</p>
-          <a href="https://github.com/gabrielaamaya/progral-2024-semi.git" class="btn-github" target="_blank">
-            <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
-          </a>
-          <div class="lenguajes">
-            <div class="lenguaje-item">
-              <i class="fas fa-code" style="color: #a179dc; font-size: 2rem;"></i>
-              <span>C#</span>
-            </div>
-          </div>
-        </div>
+    <h2 data-lang="marca-titulo">Marca Personal</h2>
+    <div class="marca-container">
+      <div class="logo-container">
+        <img src="logo-personal.jpg" alt="Logo personal de Gabriela Amaya" class="logo-img">
       </div>
-
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="imgBx">
-          <img src="taskplanner.jpeg" alt="Proyecto Task Planner">
-        </div>
-        <div class="content">
-          <h3 data-lang="proyecto2-titulo">Task Planner</h3>
-          <p data-lang="proyecto2-desc">Aplicación móvil para organizar tareas, con almacenamiento local y
-            filtros para una mejor gestión del tiempo.</p>
-          <a href="https://github.com/gabrielaamaya/Prograll-Semi-2025.git" class="btn-github" target="_blank">
-            <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
-          </a>
-          <div class="lenguajes">
-            <div class="lenguaje-item">
-              <i class="fab fa-python" style="color: #3776ab; font-size: 2rem;"></i>
-              <span>Python</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="imgBx">
-          <img src="Prototipo de Artesanias Conchita.jpeg" alt="Proyecto Artesanías Conchita">
-        </div>
-        <div class="content">
-          <h3 data-lang="proyecto3-titulo">Artesanías Conchita</h3>
-          <p data-lang="proyecto3-desc">Prototipo de software empresarial que permite llevar el control completo de
-            facturación e inventario de la empresa.</p>
-          <a href="https://github.com/gabrielaamaya/Artesanias-Conchitas.git" class="btn-github" target="_blank">
-            <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
-          </a>
-          <div class="lenguajes">
-            <div class="lenguaje-item">
-              <i class="fas fa-code" style="color: #a179dc; font-size: 2rem;"></i>
-              <span>C#</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card">
-        <div class="imgBx">
-          <img src="Prototipo de Artesanias Conchita.jpeg" alt="Sitio web Artesanías Conchita">
-        </div>
-        <div class="content">
-          <h3 data-lang="proyecto4-titulo">Sitio web de Artesanías Conchita</h3>
-          <p data-lang="proyecto4-desc">Sitio web informativo que muestra los productos de la empresa</p>
-          <a href="https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git" class="btn-github" target="_blank">
-            <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
-          </a>
-          <div class="lenguajes">
-            <div class="lenguaje-item">
-              <i class="fab fa-python" style="color: #3776ab; font-size: 2rem;"></i>
-              <span>Python</span>
-            </div>
-          </div>
-        </div>
+      <div class="frase-container">
+        <blockquote class="frase-marca">
+          <p data-lang="frase-marca">"Creando soluciones con pasión y precisión"</p>
+        </blockquote>
+        <cite data-lang="marca-autor">- Gabriela Amaya</cite>
       </div>
     </div>
   </div>
@@ -349,35 +369,5 @@
   </footer>
 
   <script src="script.js"></script>
-</body>
-</html>
-
-
-<script>
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
-
-
-  <script>
-  const toggleBtn = document.getElementById("mode-toggle");
-  const body = document.body;
-
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-
-    // Si está en modo claro → mostrar sol
-    if (body.classList.contains("light-mode")) {
-      toggleBtn.textContent = "☀️"; 
-    } else {
-      // Si está en modo oscuro → mostrar luna
-      toggleBtn.textContent = "🌙"; 
-    }
-  });
-  
-</script>
-
-  
 </body>
 </html>
