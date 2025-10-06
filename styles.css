@@ -538,6 +538,86 @@ SOBRE MÍ (About Section)
   color: #3776ab;
 }
 
+/* ================================
+   LENGUAJES DE PROGRAMACIÓN - Estilo Simple
+================================ */
+#lenguajes {
+  padding: 4rem 0;
+  /* 🎨 MODO OSCURO: Fondo sección */
+  background: #272727;
+  text-align: center;
+  /* 🟢 VERDE: Bordes superior e inferior */
+  border-top: 1px solid #00cc66;
+  border-bottom: 1px solid #00cc66;
+}
+
+#lenguajes h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  /* 🟢 VERDE: Título sección */
+  color: #00cc66;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+#lenguajes h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  /* 🟢 VERDE: Línea decorativa título */
+  background: #00cc66;
+  border-radius: 2px;
+}
+
+.lenguajes-simple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.lenguaje-linea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+}
+
+.lenguaje-nombre {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  /* 🟢 VERDE: Texto lenguajes */
+  color: #00cc66;
+  /* 🟢 VERDE: Borde lenguajes */
+  border: 2px solid #00cc66;
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lenguaje-nombre:hover {
+  /* 🟢 VERDE: Fondo hover lenguajes */
+  background: #00cc66;
+  /* ⚪ BLANCO: Texto hover lenguajes */
+  color: #ffffff;
+  transform: translateY(-3px);
+  /* 🟢 VERDE: Sombra hover lenguajes */
+  box-shadow: 0 5px 15px rgba(0, 204, 102, 0.4);
+}
+
+
 /* ============================== 
    PROYECTOS - Grid de Cards 
 ============================== */
@@ -557,7 +637,8 @@ SOBRE MÍ (About Section)
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  display: inline-block;
+  width: 100%;
+  display: block;
 }
 
 #proyectos h2::after {
@@ -573,11 +654,15 @@ SOBRE MÍ (About Section)
   border-radius: 2px;
 }
 
+/* El resto del CSS permanece igual */
 .grid.cards {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 @media (max-width: 992px) {
@@ -596,6 +681,7 @@ SOBRE MÍ (About Section)
   position: relative;
   width: 100%;
   max-width: 300px;
+  margin: 0 auto;
   /* 🎨 GRIS: Fondo tarjeta proyecto */
   background: #333333;
   /* 🟢 VERDE: Borde tarjeta proyecto */
@@ -626,20 +712,42 @@ SOBRE MÍ (About Section)
 }
 
 .card .imgBx img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.card:hover .imgBx img {
-  transform: scale(1.05);
+.card .imgBx img.default-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card .imgBx img.hover-img {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.card:hover .imgBx img.default-img {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.card:hover .imgBx img.hover-img {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .card .content {
   padding: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
 }
 
 .card .content h3 {
@@ -647,6 +755,9 @@ SOBRE MÍ (About Section)
   font-size: 1.2rem;
   /* 🟢 VERDE: Título tarjeta proyecto */
   color: #00cc66;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 
 .card .content p {
@@ -655,6 +766,7 @@ SOBRE MÍ (About Section)
   color: #f5f5f5;
   margin-bottom: 1rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .btn-github {
@@ -678,6 +790,7 @@ SOBRE MÍ (About Section)
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  align-self: center;
 }
 
 .btn-github:hover {
@@ -708,7 +821,7 @@ SOBRE MÍ (About Section)
 }
 
 /* ============================== 
-   LENGUAJES DE PROGRAMACIÓN 
+   LENGUAJES DE PROGRAMACIÓN EN PROYECTOS
 ============================== */
 .lenguajes {
   display: flex;
@@ -1425,6 +1538,43 @@ body.light-mode .footer p {
 }
 
 /* ================================
+MODO CLARO - LENGUAJES DE PROGRAMACIÓN
+================================ */
+body.light-mode #lenguajes {
+  /* ⚪ GRIS MUY CLARO: Fondo sección modo claro */
+  background: #f9f9f9;
+  /* 🔵 AZUL: Bordes sección modo claro */
+  border-top: 1px solid #0055cc;
+  border-bottom: 1px solid #0055cc;
+}
+
+body.light-mode #lenguajes h2 {
+  /* 🔵 AZUL: Título sección modo claro */
+  color: #0055cc !important;
+}
+
+body.light-mode #lenguajes h2::after {
+  /* 🔵 AZUL: Línea decorativa título modo claro */
+  background: #0055cc !important;
+}
+
+body.light-mode .lenguaje-nombre {
+  /* 🔵 AZUL: Texto lenguajes modo claro */
+  color: #0055cc !important;
+  /* 🔵 AZUL: Borde lenguajes modo claro */
+  border: 2px solid #0055cc !important;
+}
+
+body.light-mode .lenguaje-nombre:hover {
+  /* 🔵 AZUL: Fondo hover lenguajes modo claro */
+  background: #0055cc !important;
+  /* ⚪ BLANCO: Texto hover lenguajes modo claro */
+  color: #ffffff !important;
+  /* 🔵 AZUL: Sombra hover lenguajes modo claro */
+  box-shadow: 0 5px 15px rgba(0, 85, 204, 0.4) !important;
+}
+
+/* ================================
 MODO CLARO - MARCA PERSONAL
 ================================ */
 body.light-mode #marca-personal {
@@ -1560,6 +1710,15 @@ RESPONSIVE PARA NAVBAR COMPACTO
   .grid.cards {
     grid-template-columns: 1fr;
   }
+  
+  .lenguaje-linea {
+    gap: 1rem;
+  }
+  
+  .lenguaje-nombre {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1578,5 +1737,18 @@ RESPONSIVE PARA NAVBAR COMPACTO
   
   #lang-label {
     display: none;
+  }
+  
+  .lenguaje-linea {
+    gap: 0.8rem;
+  }
+  
+  .lenguaje-nombre {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  #lenguajes h2 {
+    font-size: 2rem;
   }
 }
