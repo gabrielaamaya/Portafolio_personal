@@ -144,17 +144,17 @@ let currentLang = 'es';
 function changeLanguage(lang) {
   currentLang = lang;
   const elements = document.querySelectorAll('[data-lang]');
-  
+
   elements.forEach(element => {
     const key = element.getAttribute('data-lang');
     if (translations[lang] && translations[lang][key]) {
       element.textContent = translations[lang][key];
     }
   });
-  
+
   // Actualizar etiqueta de idioma
   document.getElementById('lang-label').textContent = lang === 'es' ? 'Español' : 'English';
-  
+
   // Guardar preferencia en localStorage
   localStorage.setItem('preferredLang', lang);
 }
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const newLang = currentLang === 'es' ? 'en' : 'es';
     changeLanguage(newLang);
   });
-  
+
   // Verificar idioma guardado
   const savedLang = localStorage.getItem('preferredLang');
   if (savedLang && savedLang !== currentLang) {

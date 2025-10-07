@@ -622,202 +622,657 @@ SOBRE MÍ (About Section)
    PROYECTOS - Grid de Cards 
 ============================== */
 #proyectos {
-  /* 🎨 MODO OSCURO: Fondo sección */
-  background: #272727;
-  padding: 4rem 0;
+    /* 🎨 MODO OSCURO: Fondo sección */
+    background: #272727;
+    padding: 4rem 0;
 }
 
 #proyectos h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  /* 🟢 VERDE: Título sección */
-  color: #00cc66;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  width: 100%;
-  display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    /* 🟢 VERDE: Título sección */
+    color: #00cc66;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    width: 100%;
+    display: block;
 }
 
 #proyectos h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  /* 🟢 VERDE: Línea decorativa título */
-  background: #00cc66;
-  border-radius: 2px;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    /* 🟢 VERDE: Línea decorativa título */
+    background: #00cc66;
+    border-radius: 2px;
 }
 
-/* El resto del CSS permanece igual */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Grid de tarjetas */
 .grid.cards {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 @media (max-width: 992px) {
-  .grid.cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .grid.cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
-  .grid.cards {
-    grid-template-columns: 1fr;
-  }
+    .grid.cards {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Tarjetas individuales */
 .card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  /* 🎨 GRIS: Fondo tarjeta proyecto */
-  background: #333333;
-  /* 🟢 VERDE: Borde tarjeta proyecto */
-  border: 1px solid #00cc66;
-  border-radius: 15px;
-  overflow: hidden;
-  /* 🟢 VERDE: Sombra tarjeta proyecto */
-  box-shadow: 0 8px 20px rgba(0, 204, 102, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    /* 🎨 GRIS: Fondo tarjeta proyecto */
+    background: #333333;
+    /* 🟢 VERDE: Borde tarjeta proyecto */
+    border: 1px solid #00cc66;
+    border-radius: 15px;
+    overflow: hidden;
+    /* 🟢 VERDE: Sombra tarjeta proyecto */
+    box-shadow: 0 8px 20px rgba(0, 204, 102, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  /* 🟢 VERDE: Sombra hover tarjeta proyecto */
-  box-shadow: 0 12px 25px rgba(0, 204, 102, 0.4);
+    transform: translateY(-8px);
+    /* 🟢 VERDE: Sombra hover tarjeta proyecto */
+    box-shadow: 0 12px 25px rgba(0, 204, 102, 0.4);
 }
 
+/* Contenedor de imagen - CAMBIOS PARA MOSTRAR IMAGEN COMPLETA */
 .card .imgBx {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  /* 🎨 GRIS: Fondo imagen proyecto */
-  background: #3a3a3a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 220px;
+    /* 🎨 GRIS: Fondo imagen proyecto */
+    background: #3a3a3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px; /* Espacio alrededor de la imagen */
+    cursor: pointer;
 }
 
 .card .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+    width: auto; /* Cambié a auto para mantener proporciones */
+    height: auto; /* Cambié a auto para mantener proporciones */
+    max-width: 90%; /* Limita el ancho máximo */
+    max-height: 90%; /* Limita la altura máxima */
+    object-fit: contain; /* Muestra la imagen completa sin recortar */
+    transition: transform 0.5s ease;
 }
 
-.card .imgBx img.default-img {
-  opacity: 1;
-  transform: scale(1);
+.card:hover .imgBx img {
+    transform: scale(1.05);
 }
 
-.card .imgBx img.hover-img {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-.card:hover .imgBx img.default-img {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-.card:hover .imgBx img.hover-img {
-  opacity: 1;
-  transform: scale(1);
-}
-
+/* Contenido de la tarjeta */
 .card .content {
-  padding: 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 200px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
 }
 
 .card .content h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  /* 🟢 VERDE: Título tarjeta proyecto */
-  color: #00cc66;
-  text-align: center;
-  width: 100%;
-  display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    /* 🟢 VERDE: Título tarjeta proyecto */
+    color: #00cc66;
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 
 .card .content p {
-  font-size: 0.95rem;
-  /* ⚪ BLANCO: Texto tarjeta proyecto */
-  color: #f5f5f5;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  text-align: center;
+    font-size: 0.95rem;
+    /* ⚪ BLANCO: Texto tarjeta proyecto */
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: center;
 }
 
+/* Botón GitHub */
 .btn-github {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  /* 🟢 VERDE: Texto botón GitHub */
-  color: #00cc66;
-  text-transform: uppercase;
-  text-decoration: none;
-  background-color: transparent;
-  /* 🟢 VERDE: Borde botón GitHub */
-  border: 2px solid #00cc66;
-  border-radius: 5px;
-  /* 🟢 VERDE: Efecto glow botón GitHub */
-  box-shadow: 0 0 10px rgba(0, 204, 102, 0.5),
-              0 0 20px rgba(0, 204, 102, 0.3),
-              0 0 30px rgba(0, 204, 102, 0.2);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  align-self: center;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    /* 🟢 VERDE: Texto botón GitHub */
+    color: #00cc66;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    /* 🟢 VERDE: Borde botón GitHub */
+    border: 2px solid #00cc66;
+    border-radius: 5px;
+    /* 🟢 VERDE: Efecto glow botón GitHub */
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.5),
+                0 0 20px rgba(0, 204, 102, 0.3),
+                0 0 30px rgba(0, 204, 102, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    align-self: center;
 }
 
 .btn-github:hover {
-  /* ⚪ BLANCO: Texto hover botón GitHub */
-  color: #ffffff;
-  /* 🟢 VERDE: Fondo hover botón GitHub */
-  background-color: #00cc66;
-  /* 🟢 VERDE: Glow hover botón GitHub */
-  box-shadow: 0 0 15px rgba(0, 204, 102, 0.7),
-              0 0 30px rgba(0, 204, 102, 0.5),
-              0 0 45px rgba(0, 204, 102, 0.3);
-  transform: translateY(-3px);
+    /* ⚪ BLANCO: Texto hover botón GitHub */
+    color: #ffffff;
+    /* 🟢 VERDE: Fondo hover botón GitHub */
+    background-color: #00cc66;
+    /* 🟢 VERDE: Glow hover botón GitHub */
+    box-shadow: 0 0 15px rgba(0, 204, 102, 0.7),
+                0 0 30px rgba(0, 204, 102, 0.5),
+                0 0 45px rgba(0, 204, 102, 0.3);
+    transform: translateY(-3px);
 }
 
 .btn-github:active {
-  transform: translateY(1px);
-  /* 🟢 VERDE OSCURO: Fondo active botón GitHub */
-  background-color: #00a352;
-  /* 🟢 VERDE: Glow active botón GitHub */
-  box-shadow: 0 0 5px rgba(0, 204, 102, 0.7),
-              0 0 15px rgba(0, 204, 102, 0.5),
-              0 0 25px rgba(0, 204, 102, 0.3);
+    transform: translateY(1px);
+    /* 🟢 VERDE OSCURO: Fondo active botón GitHub */
+    background-color: #00a352;
+    /* 🟢 VERDE: Glow active botón GitHub */
+    box-shadow: 0 0 5px rgba(0, 204, 102, 0.7),
+                0 0 15px rgba(0, 204, 102, 0.5),
+                0 0 25px rgba(0, 204, 102, 0.3);
 }
 
 .btn-github i {
-  margin-right: 8px;
-  font-size: 16px;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Lenguajes de programación */
+.lenguajes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.lenguaje-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.lenguaje-item span {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #f5f5f5;
+}
+
+/* ============================== 
+   MODAL AMPLIADO PARA PROYECTOS
+============================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: #333;
+    margin: 2% auto;
+    padding: 20px;
+    border: 1px solid #00cc66;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 204, 102, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: #00cc66;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-details {
+    padding: 0 15px;
+}
+
+.modal-details h3 {
+    color: #00cc66;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-details p {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.modal-technologies {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.modal-technologies .lenguaje-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.modal-details .btn-github {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+}
+
+/* Animaciones para el modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive para el modal */
+@media only screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .modal-details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-details p {
+        font-size: 1rem;
+    }
+    
+    .modal-technologies .lenguaje-item {
+        margin: 0 10px;
+    }
+}
+
+/* ============================== 
+   MODAL AMPLIADO PARA PROYECTOS
+============================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: #2a2a2a;
+    margin: 2% auto;
+    padding: 0;
+    border: 2px solid #00cc66;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 1200px;
+    max-height: 95vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 204, 102, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close:hover {
+    color: #00cc66;
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    padding: 30px;
+    border-bottom: 2px solid #00cc66;
+}
+
+.modal-header h2 {
+    color: #00cc66;
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.modal-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.modal-date {
+    background: #00cc66;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.modal-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #00cc66;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover, .thumbnail.active {
+    border-color: #00cc66;
+    transform: scale(1.05);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-section h3 {
+    color: #00cc66;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+}
+
+.detail-section p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.detail-section ul {
+    color: #e0e0e0;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.detail-section li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.detail-section li:before {
+    content: "▸";
+    color: #00cc66;
+    position: absolute;
+    left: -15px;
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.tech-item {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    border-color: #00cc66;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 204, 102, 0.2);
+}
+
+.tech-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.tech-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.feature-item {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #00cc66;
+}
+
+.feature-item h4 {
+    color: #00cc66;
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+}
+
+.feature-item p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.modal-footer {
+    background: #1a1a1a;
+    padding: 20px 30px;
+    border-top: 2px solid #00cc66;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-github.large {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+}
+
+.btn-close {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    background: #555;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content {
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 98%;
+        margin: 1% auto;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .technologies-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ============================== 
