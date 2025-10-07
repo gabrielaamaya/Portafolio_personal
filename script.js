@@ -281,3 +281,193 @@ document.addEventListener('keydown', function(e) {
     });
   }
 });
+
+// Datos de los proyectos
+const projectsData = {
+    'adopta-amigo': {
+        title: 'Adopta a un amigo',
+        description: 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas. Permite a los usuarios ver los animales disponibles, filtrar por características y solicitar adopciones de manera sencilla.',
+        features: [
+            'Sistema de registro de usuarios',
+            'Catálogo de animales disponibles para adopción',
+            'Filtros por tipo, tamaño y edad del animal',
+            'Formulario de solicitud de adopción',
+            'Panel de administración para el refugio'
+        ],
+        technologies: [
+            { name: 'C#', icon: 'fas fa-code', color: '#a179dc' },
+            { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4' },
+            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927' },
+            { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880' }
+        ],
+        role: 'Desarrollador Full Stack',
+        githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
+        images: [
+            'Adoptaaunamigo.jpeg',
+            'adopta-amigo-1.jpg',
+            'adopta-amigo-2.jpg'
+        ]
+    },
+    'task-planner': {
+        title: 'Task Planner',
+        description: 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo. Permite crear, editar y eliminar tareas, establecer prioridades y fechas de vencimiento.',
+        features: [
+            'Creación y gestión de tareas',
+            'Categorización por prioridad',
+            'Recordatorios y notificaciones',
+            'Sincronización local sin necesidad de conexión a internet',
+            'Interfaz intuitiva y fácil de usar'
+        ],
+        technologies: [
+            { name: 'Java', icon: 'fab fa-java', color: '#ed8b00' },
+            { name: 'Android Studio', icon: 'fab fa-android', color: '#3ddc84' },
+            { name: 'SQLite', icon: 'fas fa-database', color: '#003b57' }
+        ],
+        role: 'Desarrollador Móvil',
+        githubLink: 'https://github.com/gabrielaamaya/Prograll-Semi-2025.git',
+        images: [
+            'taskplanner.jpeg',
+            'task-planner-1.jpg',
+            'task-planner-2.jpg'
+        ]
+    },
+    'artesanias-conchita': {
+        title: 'Artesanías Conchita',
+        description: 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa. Facilita la gestión de productos, clientes, proveedores y ventas.',
+        features: [
+            'Gestión de inventario y productos',
+            'Control de ventas y facturación',
+            'Registro de clientes y proveedores',
+            'Reportes y estadísticas de ventas',
+            'Sistema de usuarios y permisos'
+        ],
+        technologies: [
+            { name: 'C#', icon: 'fas fa-code', color: '#a179dc' },
+            { name: 'Windows Forms', icon: 'fab fa-windows', color: '#0078d7' },
+            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927' }
+        ],
+        role: 'Analista y Desarrollador',
+        githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
+        images: [
+            'Prototipo de Artesanias Conchita.jpeg',
+            'artesanias-1.jpg',
+            'artesanias-2.jpg'
+        ]
+    },
+    'artesanias-web': {
+        title: 'Sitio web de Artesanías Conchita',
+        description: 'Sitio web informativo que muestra los productos de la empresa. Permite a los clientes conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
+        features: [
+            'Diseño responsive adaptado a dispositivos móviles',
+            'Galería de productos con categorías',
+            'Formulario de contacto',
+            'Información sobre la empresa y su historia',
+            'Integración con redes sociales'
+        ],
+        technologies: [
+            { name: 'Python', icon: 'fab fa-python', color: '#3776ab' },
+            { name: 'Django', icon: 'fas fa-code', color: '#092e20' },
+            { name: 'HTML/CSS/JavaScript', icon: 'fab fa-html5', color: '#e34f26' },
+            { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3' }
+        ],
+        role: 'Desarrollador Frontend y Backend',
+        githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
+        images: [
+            'Prototipo de Artesanias Conchita.jpeg',
+            'artesanias-web-1.jpg',
+            'artesanias-web-2.jpg'
+        ]
+    }
+};
+
+// Elementos del DOM
+const modal = document.getElementById('projectModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalDescription = document.getElementById('modalDescription');
+const modalFeatures = document.getElementById('modalFeatures');
+const modalTechStack = document.getElementById('modalTechStack');
+const modalRole = document.getElementById('modalRole');
+const modalGitHubLink = document.getElementById('modalGitHubLink');
+const modalGallery = document.getElementById('modalGallery');
+const closeModalBtn = document.querySelector('.close-modal');
+
+// Abrir modal al hacer clic en "Ver más"
+document.querySelectorAll('.btn-more').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const projectId = this.getAttribute('data-project');
+        openModal(projectId);
+    });
+});
+
+// Cerrar modal
+closeModalBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Cerrar modal con tecla Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Función para abrir el modal
+function openModal(projectId) {
+    const project = projectsData[projectId];
+    
+    if (!project) return;
+    
+    // Actualizar contenido del modal
+    modalTitle.textContent = project.title;
+    modalDescription.textContent = project.description;
+    modalRole.textContent = project.role;
+    modalGitHubLink.href = project.githubLink;
+    
+    // Actualizar características
+    modalFeatures.innerHTML = '';
+    project.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        modalFeatures.appendChild(li);
+    });
+    
+    // Actualizar tecnologías
+    modalTechStack.innerHTML = '';
+    project.technologies.forEach(tech => {
+        const techItem = document.createElement('div');
+        techItem.className = 'tech-item';
+        techItem.innerHTML = `
+            <i class="${tech.icon}" style="color: ${tech.color};"></i>
+            <span>${tech.name}</span>
+        `;
+        modalTechStack.appendChild(techItem);
+    });
+    
+    // Actualizar galería de imágenes
+    modalGallery.innerHTML = '';
+    project.images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image;
+        img.alt = `${project.title} - Imagen del proyecto`;
+        // Agregar funcionalidad para ampliar imagen al hacer clic
+        img.addEventListener('click', function() {
+            // Aquí puedes agregar funcionalidad para ver imagen en tamaño completo
+            console.log('Ampliar imagen:', image);
+        });
+        modalGallery.appendChild(img);
+    });
+    
+    // Mostrar modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el modal
+function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}

@@ -169,7 +169,7 @@
     </div>
   </section>
 
-<<!-- Proyectos -->
+<!-- Proyectos -->
 <section id="proyectos" class="section">
     <div class="container">
         <h2 data-lang="proyectos-titulo">PROYECTOS</h2>
@@ -280,6 +280,52 @@
         </div>
     </div>
 </section>
+
+<!-- Ventana modal para detalles del proyecto -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Título del Proyecto</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-gallery" id="modalGallery">
+                <!-- Las imágenes se cargarán dinámicamente aquí -->
+            </div>
+            <div class="modal-details">
+                <div>
+                    <div class="modal-section">
+                        <h4>Descripción</h4>
+                        <p id="modalDescription">Descripción del proyecto.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Características</h4>
+                        <ul id="modalFeatures">
+                            <!-- Las características se cargarán dinámicamente aquí -->
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="modal-section">
+                        <h4>Tecnologías Utilizadas</h4>
+                        <div class="tech-stack" id="modalTechStack">
+                            <!-- Las tecnologías se cargarán dinámicamente aquí -->
+                        </div>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Rol Desempeñado</h4>
+                        <p id="modalRole">Rol desempeñado en el proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" id="modalGitHubLink" class="modal-btn" target="_blank">
+                <i class="fab fa-github"></i> Ver en GitHub
+            </a>
+        </div>
+    </div>
+</div>
 
 
 <!-- Marca Personal -->
