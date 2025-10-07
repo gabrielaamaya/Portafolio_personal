@@ -1,5 +1,3 @@
-
-
 // ================================
 // TRADUCTOR (ESPAÑOL/INGLÉS)
 // ================================
@@ -51,6 +49,7 @@ const translations = {
     'proyecto4-titulo': 'Sitio web de Artesanías Conchita',
     'proyecto4-desc': 'Sitio web informativo que muestra los productos de la empresa',
     'ver-github': 'Ver en GitHub',
+    'ver-mas': 'Ver más',
     'testimonios-titulo': 'Testimonios',
     'testimonio1': '"Trabaja con responsabilidad y mantiene una actitud positiva."',
     'testimonio2': '"Muy responsable y cumplida, siempre entrega sus tareas a tiempo."',
@@ -118,6 +117,7 @@ const translations = {
     'proyecto4-titulo': 'Conchita Crafts Website',
     'proyecto4-desc': 'Informative website that displays the company products',
     'ver-github': 'View on GitHub',
+    'ver-mas': 'View more',
     'testimonios-titulo': 'Testimonials',
     'testimonio1': '"Works with responsibility and maintains a positive attitude."',
     'testimonio2': '"Very responsible and diligent, always delivers her tasks on time."',
@@ -192,6 +192,39 @@ toggleBtn.addEventListener("click", () => {
 });
 
 // ================================
+// FUNCIONES PARA MODALES DE PROYECTOS
+// ================================
+
+function openModal(projectId) {
+  const modal = document.getElementById(`modal-${projectId}`);
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeModal(projectId) {
+  const modal = document.getElementById(`modal-${projectId}`);
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Cerrar modal al hacer click fuera del contenido
+document.addEventListener('DOMContentLoaded', function() {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        const projectId = this.id.replace('modal-', '');
+        closeModal(projectId);
+      }
+    });
+  });
+});
+
+// ================================
 // EVENT LISTENERS
 // ================================
 
@@ -207,65 +240,44 @@ document.addEventListener('DOMContentLoaded', function() {
   if (savedLang && savedLang !== currentLang) {
     changeLanguage(savedLang);
   }
+
+  // Inicializar botones "Ver más" de proyectos
+  initializeProjectButtons();
 });
+
+// Función para inicializar botones "Ver más" de proyectos
+function initializeProjectButtons() {
+  const verMasButtons = document.querySelectorAll('.btn-more');
+  
+  verMasButtons.forEach(button => {
+    // Remover event listeners previos para evitar duplicados
+    button.replaceWith(button.cloneNode(true));
+  });
+
+  // Re-asignar event listeners a los nuevos botones
+  document.querySelectorAll('.btn-more').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const projectId = this.closest('.card').getAttribute('data-project');
+      if (projectId) {
+        openModal(projectId);
+      }
+    });
+  });
+}
 
 // Función para scroll suave
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-
-// Funcionalidad para el botón "Ver más" en proyectos
-document.addEventListener('DOMContentLoaded', function() {
-    const verMasBtn = document.getElementById('ver-mas-btn');
-    const hiddenProjects = document.querySelectorAll('.hidden-project');
-    const gridCards = document.querySelector('.grid.cards');
-    const verMasText = verMasBtn.querySelector('span[data-lang="ver-mas"]');
-    
-    // Estado inicial
-    let showingAll = false;
-    
-    // Función para cambiar el texto del botón según el idioma
-    function updateButtonText() {
-        if (showingAll) {
-            verMasText.textContent = 'Ver menos';
-        } else {
-            verMasText.textContent = 'Ver más';
-        }
-    }
-    
-    // Evento click del botón
-    verMasBtn.addEventListener('click', function() {
-        if (showingAll) {
-            // Ocultar proyectos adicionales
-            hiddenProjects.forEach(project => {
-                project.style.display = 'none';
-            });
-            gridCards.classList.remove('show-all');
-            showingAll = false;
-        } else {
-            // Mostrar proyectos adicionales
-            hiddenProjects.forEach(project => {
-                project.style.display = 'block';
-            });
-            gridCards.classList.add('show-all');
-            showingAll = true;
-        }
-        
-        // Actualizar texto del botón
-        updateButtonText();
-        
-        // Cambiar ícono
-        const icon = this.querySelector('i');
-        if (showingAll) {
-            icon.className = 'fas fa-chevron-up';
-        } else {
-            icon.className = 'fas fa-chevron-down';
-        }
+// Cerrar modales con la tecla Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      const projectId = modal.id.replace('modal-', '');
+      closeModal(projectId);
     });
-    
-    // Inicializar texto del botón
-    updateButtonText();
+  }
 });
-
-

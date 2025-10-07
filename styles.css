@@ -763,11 +763,21 @@ SOBRE MÍ (About Section)
     text-align: center;
 }
 
+/* Contenedor de botones */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 /* Botón GitHub */
 .btn-github {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 10px 20px;
-    margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
     /* 🟢 VERDE: Texto botón GitHub */
@@ -785,7 +795,6 @@ SOBRE MÍ (About Section)
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    align-self: center;
 }
 
 .btn-github:hover {
@@ -811,9 +820,89 @@ SOBRE MÍ (About Section)
 }
 
 .btn-github i {
-    margin-right: 8px;
     font-size: 16px;
 }
+
+/* Botón Ver Más */
+.btn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    /* 🟢 VERDE: Texto botón Ver Más */
+    color: #00cc66;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    /* 🟢 VERDE: Borde botón Ver Más */
+    border: 2px solid #00cc66;
+    border-radius: 5px;
+    /* 🟢 VERDE: Efecto glow botón Ver Más */
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.5),
+                0 0 20px rgba(0, 204, 102, 0.3),
+                0 0 30px rgba(0, 204, 102, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-more:hover {
+    /* ⚪ BLANCO: Texto hover botón Ver Más */
+    color: #ffffff;
+    /* 🟢 VERDE: Fondo hover botón Ver Más */
+    background-color: #00cc66;
+    /* 🟢 VERDE: Glow hover botón Ver Más */
+    box-shadow: 0 0 15px rgba(0, 204, 102, 0.7),
+                0 0 30px rgba(0, 204, 102, 0.5),
+                0 0 45px rgba(0, 204, 102, 0.3);
+    transform: translateY(-3px);
+}
+
+.btn-more:active {
+    transform: translateY(1px);
+    /* 🟢 VERDE OSCURO: Fondo active botón Ver Más */
+    background-color: #00a352;
+    /* 🟢 VERDE: Glow active botón Ver Más */
+    box-shadow: 0 0 5px rgba(0, 204, 102, 0.7),
+                0 0 15px rgba(0, 204, 102, 0.5),
+                0 0 25px rgba(0, 204, 102, 0.3);
+}
+
+.btn-more i {
+    font-size: 16px;
+}
+
+/* Modo oscuro - Verde sólido (igual que GitHub) */
+.btn-more {
+    background-color: transparent;
+    color: #00cc66;
+    border-color: #00cc66;
+}
+
+.btn-more:hover {
+    background-color: #00cc66;
+    border-color: #00cc66;
+    transform: translateY(-3px);
+}
+
+/* Modo claro - Con efecto verde al hover */
+.light-mode .btn-more {
+    background-color: transparent;
+    color: #00cc66;
+    border-color: #00cc66;
+}
+
+.light-mode .btn-more:hover {
+    background-color: #e8faf0; /* Verde muy claro */
+    color: #008040; /* Verde más oscuro */
+    border-color: #00cc66; /* Verde */
+    transform: translateY(-3px);
+}
+
+
 
 /* Lenguajes de programación */
 .lenguajes {
@@ -847,135 +936,6 @@ SOBRE MÍ (About Section)
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-    animation: fadeIn 0.3s;
-}
-
-.modal-content {
-    background: #333;
-    margin: 2% auto;
-    padding: 20px;
-    border: 1px solid #00cc66;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 900px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 8px 20px rgba(0, 204, 102, 0.2);
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    color: #f1f1f1;
-    font-size: 35px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.close:hover,
-.close:focus {
-    color: #00cc66;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-image-container {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.modal-image {
-    max-width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.modal-details {
-    padding: 0 15px;
-}
-
-.modal-details h3 {
-    color: #00cc66;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.modal-details p {
-    color: #f5f5f5;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.modal-technologies {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.modal-technologies .lenguaje-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 15px;
-}
-
-.modal-details .btn-github {
-    display: block;
-    width: fit-content;
-    margin: 20px auto 0;
-}
-
-/* Animaciones para el modal */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Responsive para el modal */
-@media only screen and (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        padding: 15px;
-    }
-    
-    .modal-details h3 {
-        font-size: 1.5rem;
-    }
-    
-    .modal-details p {
-        font-size: 1rem;
-    }
-    
-    .modal-technologies .lenguaje-item {
-        margin: 0 10px;
-    }
-}
-
-/* ============================== 
-   MODAL AMPLIADO PARA PROYECTOS
-============================== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.95);
     animation: fadeIn 0.3s;
 }
@@ -992,6 +952,7 @@ SOBRE MÍ (About Section)
     overflow-y: auto;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 204, 102, 0.3);
+    animation: slideUp 0.4s ease-out;
 }
 
 .close {
@@ -1237,10 +1198,6 @@ SOBRE MÍ (About Section)
 @keyframes slideUp {
     from { transform: translateY(50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-}
-
-.modal-content {
-    animation: slideUp 0.4s ease-out;
 }
 
 /* Responsive */
@@ -1717,73 +1674,89 @@ FOOTER
   margin: 0;
   padding: 0 20px;
 }
-
 /* ================================
    MODO CLARO (azul + blanco, texto negro)
    ================================ */
+
+/* SELECTOR PRINCIPAL DEL MODO CLARO */
+/* Aplica estos estilos cuando el body tiene la clase 'light-mode' */
 body.light-mode {
-  /* ⚪ MODO CLARO: Fondo blanco */
+  /* ⚪ MODO CLARO: Fondo blanco para toda la página */
   background-color: #ffffff;
-  /* ⚫ MODO CLARO: Texto negro */
+  /* ⚫ MODO CLARO: Color de texto negro por defecto */
   color: #000000;
 }
 
-/* Topbar */
+/* ============ BARRA SUPERIOR (TOPBAR) ============ */
+
+/* Contenedor principal de la barra de navegación */
 body.light-mode .topbar {
-  /* 🔵 AZUL CLARO: Fondo navbar modo claro */
+  /* 🔵 AZUL CLARO: Fondo con tono azul muy suave */
   background: #e6f0ff;
+  /* Línea divisoria inferior sutil */
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* Sombra suave para efecto de elevación */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo o marca del sitio */
 body.light-mode .topbar .brand {
-  /* 🔵 AZUL: Logo modo claro */
+  /* 🔵 AZUL: Color azul intenso para el logo */
   color: #0055cc;
-  /* 🔵 AZUL: Sombra logo modo claro */
+  /* 🔵 AZUL: Efecto de resplandor sutil alrededor del texto */
   text-shadow: 0 0 10px rgba(0, 85, 204, 0.3);
 }
 
+/* Enlaces del menú de navegación */
 body.light-mode .topbar .menu a {
-  /* ⚫ NEGRO: Texto enlaces modo claro */
+  /* ⚫ NEGRO: Color de texto negro para enlaces */
   color: #000000;
 }
 
+/* Estados de hover y activo para enlaces del menú */
 body.light-mode .topbar .menu a:hover,
 body.light-mode .topbar .menu a.active {
-  /* 🔵 AZUL: Hover enlaces modo claro */
+  /* 🔵 AZUL: Cambia a azul al pasar el mouse o estar activo */
   color: #0055cc;
-  /* 🔵 AZUL: Fondo hover enlaces modo claro */
+  /* 🔵 AZUL: Fondo semitransparente azul al interactuar */
   background-color: rgba(0, 85, 204, 0.1);
 }
 
+/* Línea decorativa bajo los enlaces (probablemente pseudo-elemento) */
 body.light-mode .topbar .menu a::after {
-  /* 🔵 AZUL: Línea decorativa modo claro */
+  /* 🔵 AZUL: Línea azul como indicador visual */
   background: #0055cc;
 }
 
+/* Botones de toggle (modo oscuro/claro e idioma) */
 body.light-mode #mode-toggle,
 body.light-mode #lang-toggle {
-  /* ⚫ NEGRO: Iconos modo claro */
+  /* ⚫ NEGRO: Color negro para iconos de toggle */
   color: #000000;
 }
 
+/* Estados hover para botones de toggle */
 body.light-mode #mode-toggle:hover,
 body.light-mode #lang-toggle:hover {
-  /* 🔵 AZUL: Hover iconos modo claro */
+  /* 🔵 AZUL: Cambian a azul al pasar el mouse */
   color: #0055cc;
-  /* 🔵 AZUL: Fondo hover iconos modo claro */
+  /* 🔵 AZUL: Fondo semitransparente azul */
   background-color: rgba(0, 85, 204, 0.1);
 }
 
+/* Etiqueta de idioma */
 body.light-mode #lang-label {
-  /* ⚫ NEGRO: Texto etiqueta idioma modo claro */
+  /* ⚫ NEGRO: Texto negro para la etiqueta */
   color: #000000;
-  /* 🔵 AZUL: Fondo etiqueta idioma modo claro */
+  /* 🔵 AZUL: Fondo semitransparente azul claro */
   background: rgba(0, 85, 204, 0.1);
+  /* Borde sutil azul semitransparente */
   border: 1px solid rgba(0, 85, 204, 0.2);
 }
 
-/* Secciones */
+/* ============ SECCIONES PRINCIPALES ============ */
+
+/* Secciones alternas y específicas */
 body.light-mode .section.alt,
 body.light-mode #sobre-mi,
 body.light-mode #habilidades,
@@ -1791,419 +1764,610 @@ body.light-mode #proyectos,
 body.light-mode #testimonios,
 body.light-mode #intereses,
 body.light-mode #contacto {
-  /* ⚪ GRIS MUY CLARO: Fondo secciones modo claro */
+  /* ⚪ GRIS MUY CLARO: Fondo ligeramente gris para contraste */
   background: #f9f9f9;
-  /* ⚫ NEGRO: Texto secciones modo claro */
+  /* ⚫ NEGRO: Texto negro para legibilidad */
   color: #000000;
 }
 
+/* Secciones con bordes decorativos */
 body.light-mode #habilidades,
 body.light-mode #testimonios {
-  /* 🔵 AZUL: Bordes secciones modo claro */
+  /* 🔵 AZUL: Líneas azules arriba y abajo como separadores */
   border-top: 1px solid #0055cc;
   border-bottom: 1px solid #0055cc;
 }
 
+/* Sección de contacto con borde destacado */
 body.light-mode #contacto {
-  /* 🔵 AZUL: Borde superior contacto modo claro */
+  /* 🔵 AZUL: Borde superior más grueso para destacar */
   border-top: 2px solid #0055cc;
 }
 
-/* Títulos principales */
+/* ============ TIPOGRAFÍA Y TÍTULOS ============ */
+
+/* Todos los títulos principales */
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3,
 body.light-mode .section-title {
-  /* ⚫ NEGRO: Títulos modo claro */
+  /* ⚫ NEGRO: Color negro consistente para títulos */
   color: #000000;
 }
 
-/* Nombre (verde → azul) */
+/* Elementos destacados (nombres, palabras resaltadas) */
 body.light-mode h1 span,
 body.light-mode h2 span,
 body.light-mode .highlight {
-  /* 🔵 AZUL: Texto destacado modo claro */
-  color: #0055cc !important;
+  /* 🔵 AZUL: Color azul para elementos que quieren resaltarse */
+  color: #0055cc !important; /* !important para sobrescribir otros estilos */
 }
 
-/* Borde y glow de la foto */
+/* ============ IMÁGENES Y FOTOS ============ */
+
+/* Foto del héroe (principal) y foto "sobre mí" */
 body.light-mode .hero-photo img,
 body.light-mode .about-img img {
-  /* 🔵 AZUL: Borde foto modo claro */
+  /* 🔵 AZUL: Marco azul alrededor de las fotos */
   border: 3px solid #0055cc !important;
-  /* 🔵 AZUL: Glow foto modo claro */
+  /* 🔵 AZUL: Efecto de resplandor azul con múltiples capas */
   box-shadow: 0 0 20px rgba(0, 85, 204, 0.7), 
               0 0 40px rgba(0, 85, 204, 0.5) !important;
 }
 
-/* Títulos de sección verdes → azules */
+/* ============ TÍTULOS DE SECCIÓN ============ */
+
+/* Títulos principales de cada sección */
 body.light-mode #sobre-mi h2,
 body.light-mode #habilidades h2,
 body.light-mode #proyectos h2,
 body.light-mode #testimonios h2,
 body.light-mode #intereses h2,
 body.light-mode #contacto h2 {
-  /* 🔵 AZUL: Títulos secciones modo claro */
+  /* 🔵 AZUL: Color azul para identificar cada sección */
   color: #0055cc !important;
 }
 
+/* Líneas decorativas bajo los títulos de sección */
 body.light-mode #sobre-mi h2::after,
 body.light-mode #habilidades h2::after,
 body.light-mode #proyectos h2::after,
 body.light-mode #testimonios h2::after,
 body.light-mode #intereses h2::after,
 body.light-mode #contacto h2::after {
-  /* 🔵 AZUL: Líneas decorativas modo claro */
+  /* 🔵 AZUL: Línea azul como subrayado decorativo */
   background: #0055cc !important;
 }
 
-/* Subtítulos de habilidades */
+/* ============ TARJETAS Y COMPONENTES ============ */
+
+/* Títulos de habilidades específicas */
 body.light-mode .habilidad-titulo {
-  /* 🔵 AZUL: Subtítulos habilidades modo claro */
+  /* 🔵 AZUL: Color azul para subtítulos de habilidades */
   color: #0055cc !important;
 }
 
-/* Tarjetas */
+/* Tarjetas de habilidades, testimonios, intereses y tarjetas genéricas */
 body.light-mode .skill-card,
 body.light-mode .tcard,
 body.light-mode #intereses .card,
 body.light-mode .card {
-  /* ⚪ BLANCO: Fondo tarjetas modo claro */
+  /* ⚪ BLANCO: Fondo blanco para contraste con sección */
   background: #ffffff;
-  /* 🔵 AZUL: Borde tarjetas modo claro */
+  /* 🔵 AZUL: Borde azul definiendo la tarjeta */
   border: 1px solid #0055cc;
-  /* 🔵 AZUL: Sombra tarjetas modo claro */
+  /* 🔵 AZUL: Sombra azul sutil para efecto 3D */
   box-shadow: 0 4px 12px rgba(0, 85, 204, 0.15);
-  /* ⚫ NEGRO: Texto tarjetas modo claro */
+  /* ⚫ NEGRO: Texto negro para máxima legibilidad */
   color: #000000;
 }
 
+/* Efecto hover en tarjetas */
 body.light-mode .skill-card:hover,
 body.light-mode .tcard:hover,
 body.light-mode #intereses .card:hover,
 body.light-mode .card:hover {
-  /* 🔵 AZUL: Sombra hover tarjetas modo claro */
+  /* 🔵 AZUL: Sombra más intensa al interactuar */
   box-shadow: 0 8px 20px rgba(0, 85, 204, 0.25);
 }
 
-/* Texto en tarjetas */
+/* Títulos dentro de tarjetas */
 body.light-mode .skill-card h3,
 body.light-mode .card .content h3,
 body.light-mode #intereses .card .content h3 {
-  /* 🔵 AZUL: Títulos tarjetas modo claro */
+  /* 🔵 AZUL: Títulos azules dentro de tarjetas */
   color: #0055cc !important;
 }
 
+/* Texto de párrafos en tarjetas y sección "sobre mí" */
 body.light-mode .skill-card p,
 body.light-mode .card .content p,
 body.light-mode #intereses .card .content p,
 body.light-mode .tcard p,
 body.light-mode .about-text p {
-  /* ⚫ NEGRO: Texto tarjetas modo claro */
+  /* ⚫ NEGRO: Texto negro estándar para contenido */
   color: #000000 !important;
 }
 
+/* Subtítulos en sección "sobre mí" */
 body.light-mode .about-text h3 {
-  /* ⚫ NEGRO: Subtítulos about modo claro */
+  /* ⚫ NEGRO: Subtítulos en negro para jerarquía */
   color: #000000 !important;
 }
 
-/* Botones principales */
+/* ============ BOTONES EN MODO CLARO ============ */
+
+/* Botones principales (rellenos) en modo claro */
 body.light-mode .btn {
-  /* 🔵 AZUL: Fondo botones modo claro */
+  /* 🔵 AZUL: Fondo azul sólido */
   background: #0055cc;
-  /* ⚪ BLANCO: Texto botones modo claro */
+  /* ⚪ BLANCO: Texto blanco para contraste */
   color: #ffffff;
 }
 
+/* Estados hover de botones principales */
 body.light-mode .btn:hover {
-  /* 🔵 AZUL OSCURO: Hover botones modo claro */
+  /* 🔵 AZUL OSCURO: Azul más oscuro al interactuar */
   background: #003399;
 }
 
-/* Botones ghost */
+/* Botones ghost (con borde, sin fondo) en modo claro */
 body.light-mode .btn.ghost {
-  /* 🔵 AZUL: Borde botones ghost modo claro */
-  border: 2px solid #0055cc !important;
-  /* 🔵 AZUL: Texto botones ghost modo claro */
-  color: #0055cc !important;
-  background: transparent !important;
+  /* 🔵 AZUL: Borde azul definiendo el botón */
+  border: 2px solid #0055cc;
+  /* 🔵 AZUL: Texto azul coherente con el borde */
+  color: #0055cc;
+  /* Transparente: Sin fondo por defecto */
+  background: transparent;
 }
 
+/* Estados hover de botones ghost en modo claro */
 body.light-mode .btn.ghost:hover {
-  /* 🔵 AZUL: Fondo hover botones ghost modo claro */
-  background: #0055cc !important;
-  /* ⚪ BLANCO: Texto hover botones ghost modo claro */
-  color: #fff !important;
+  /* 🔵 AZUL: Fondo azul al interactuar */
+  background: #0055cc;
+  /* ⚪ BLANCO: Texto blanco para contraste con fondo azul */
+  color: #fff;
 }
 
-/* Botones GitHub */
+/* Botones específicos de GitHub en modo claro */
 body.light-mode .btn-github {
-  /* 🔵 AZUL: Texto botón GitHub modo claro */
-  color: #0055cc !important;
-  /* 🔵 AZUL: Borde botón GitHub modo claro */
-  border: 2px solid #0055cc !important;
-  /* 🔵 AZUL: Glow botón GitHub modo claro */
+  /* 🔵 AZUL: Texto azul */
+  color: #0055cc;
+  /* 🔵 AZUL: Borde azul */
+  border: 2px solid #0055cc;
+  /* 🔵 AZUL: Efecto de resplandor azul */
   box-shadow: 0 0 10px rgba(0, 85, 204, 0.5),
               0 0 20px rgba(0, 85, 204, 0.3),
-              0 0 30px rgba(0, 85, 204, 0.2) !important;
+              0 0 30px rgba(0, 85, 204, 0.2);
+  background: transparent;
 }
 
+/* Estados hover de botones GitHub en modo claro */
 body.light-mode .btn-github:hover {
-  /* ⚪ BLANCO: Texto hover botón GitHub modo claro */
-  color: #ffffff !important;
-  /* 🔵 AZUL: Fondo hover botón GitHub modo claro */
-  background-color: #0055cc !important;
-  /* 🔵 AZUL: Glow hover botón GitHub modo claro */
+  /* ⚪ BLANCO: Texto blanco al interactuar */
+  color: #ffffff;
+  /* 🔵 AZUL: Fondo azul sólido */
+  background-color: #0055cc;
+  /* 🔵 AZUL: Resplandor más intenso al interactuar */
   box-shadow: 0 0 15px rgba(0, 85, 204, 0.7),
               0 0 30px rgba(0, 85, 204, 0.5),
-              0 0 45px rgba(0, 85, 204, 0.3) !important;
+              0 0 45px rgba(0, 85, 204, 0.3);
 }
 
-/* Lenguajes de programación */
+/* Botones Ver Más en modo claro */
+body.light-mode .btn-more {
+  /* 🔵 AZUL: Texto azul */
+  color: #0055cc;
+  /* 🔵 AZUL: Borde azul */
+  border: 2px solid #0055cc;
+  /* 🔵 AZUL: Efecto de resplandor azul */
+  box-shadow: 0 0 10px rgba(0, 85, 204, 0.5),
+              0 0 20px rgba(0, 85, 204, 0.3),
+              0 0 30px rgba(0, 85, 204, 0.2);
+  background: transparent;
+}
+
+/* Estados hover de botones Ver Más en modo claro */
+body.light-mode .btn-more:hover {
+  /* ⚪ BLANCO: Texto blanco al interactuar */
+  color: #ffffff;
+  /* 🔵 AZUL: Fondo azul sólido */
+  background-color: #0055cc;
+  /* 🔵 AZUL: Resplandor más intenso al interactuar */
+  box-shadow: 0 0 15px rgba(0, 85, 204, 0.7),
+              0 0 30px rgba(0, 85, 204, 0.5),
+              0 0 45px rgba(0, 85, 204, 0.3);
+}
+
+/* Estados active para todos los botones en modo claro */
+body.light-mode .btn:active,
+body.light-mode .btn-github:active,
+body.light-mode .btn-more:active {
+  transform: translateY(1px);
+  /* 🔵 AZUL OSCURO: Fondo active */
+  background-color: #003399;
+  /* 🔵 AZUL: Glow active */
+  box-shadow: 0 0 5px rgba(0, 85, 204, 0.7),
+              0 0 15px rgba(0, 85, 204, 0.5),
+              0 0 25px rgba(0, 85, 204, 0.3);
+}
+
+/* Para botones ghost en estado active */
+body.light-mode .btn.ghost:active {
+  /* 🔵 AZUL OSCURO: Fondo active para ghost */
+  background-color: #003399;
+  border-color: #003399;
+}
+
+/* Botones grandes en modales (modo claro) */
+body.light-mode .btn-github.large {
+  /* 🔵 AZUL: Texto azul */
+  color: #0055cc;
+  /* 🔵 AZUL: Borde azul */
+  border: 2px solid #0055cc;
+  /* 🔵 AZUL: Efecto de resplandor azul */
+  box-shadow: 0 0 10px rgba(0, 85, 204, 0.5),
+              0 0 20px rgba(0, 85, 204, 0.3),
+              0 0 30px rgba(0, 85, 204, 0.2);
+  background: transparent;
+}
+
+body.light-mode .btn-github.large:hover {
+  /* ⚪ BLANCO: Texto blanco al interactuar */
+  color: #ffffff;
+  /* 🔵 AZUL: Fondo azul sólido */
+  background-color: #0055cc;
+  /* 🔵 AZUL: Resplandor más intenso al interactuar */
+  box-shadow: 0 0 15px rgba(0, 85, 204, 0.7),
+              0 0 30px rgba(0, 85, 204, 0.5),
+              0 0 45px rgba(0, 85, 204, 0.3);
+}
+
+/* Botón de cerrar en modales (modo claro) */
+body.light-mode .btn-close {
+  /* 🎨 GRIS: Fondo gris para botón cerrar */
+  background: #666;
+  /* ⚪ BLANCO: Texto blanco */
+  color: #fff;
+  border: none;
+}
+
+body.light-mode .btn-close:hover {
+  /* 🎨 GRIS OSCURO: Hover botón cerrar */
+  background: #555;
+}
+
+/* ============ LENGUAJES DE PROGRAMACIÓN ============ */
+
+/* Texto de items de lenguajes */
 body.light-mode .lenguaje-item span {
-  /* 🔵 AZUL: Texto lenguajes modo claro */
+  /* 🔵 AZUL: Color azul para nombres de lenguajes */
   color: #0055cc !important;
 }
 
-/* Testimonios */
+/* ============ TESTIMONIOS ============ */
+
+/* Autor/firma de testimonios */
 body.light-mode .tcard footer {
-  /* 🔵 AZUL: Autor testimonio modo claro */
+  /* 🔵 AZUL: Color azul para destacar el autor */
   color: #0055cc !important;
 }
 
+/* Imágenes en testimonios */
 body.light-mode .tcard img {
-  /* 🔵 AZUL: Borde imagen testimonio modo claro */
+  /* 🔵 AZUL: Marco azul alrededor de fotos de testimonios */
   border: 3px solid #0055cc !important;
 }
 
-/* Footer */
+/* ============ PIE DE PÁGINA ============ */
+
+/* Contenedor principal del footer */
 body.light-mode .footer {
-  /* 🔵 AZUL CLARO: Fondo footer modo claro */
+  /* 🔵 AZUL CLARO: Fondo azul muy claro coherente con topbar */
   background: #e6f0ff;
-  /* ⚫ NEGRO: Texto footer modo claro */
+  /* ⚫ NEGRO: Texto negro para legibilidad */
   color: #000000;
-  /* 🔵 AZUL: Borde footer modo claro */
+  /* 🔵 AZUL: Línea divisoria superior azul */
   border-top: 2px solid #0055cc;
 }
 
+/* Párrafos dentro del footer */
 body.light-mode .footer p {
-  /* ⚫ NEGRO: Texto footer modo claro */
+  /* ⚫ NEGRO: Texto negro consistente */
   color: #000000;
 }
 
 /* ================================
-MODO CLARO - LENGUAJES DE PROGRAMACIÓN
-================================ */
+   SECCIÓN ESPECÍFICA: LENGUAJES DE PROGRAMACIÓN
+   ================================ */
+
+/* Sección completa de lenguajes */
 body.light-mode #lenguajes {
-  /* ⚪ GRIS MUY CLARO: Fondo sección modo claro */
+  /* ⚪ GRIS MUY CLARO: Fondo consistente con otras secciones */
   background: #f9f9f9;
-  /* 🔵 AZUL: Bordes sección modo claro */
+  /* 🔵 AZUL: Bordes azules como separadores */
   border-top: 1px solid #0055cc;
   border-bottom: 1px solid #0055cc;
 }
 
+/* Título de la sección lenguajes */
 body.light-mode #lenguajes h2 {
-  /* 🔵 AZUL: Título sección modo claro */
+  /* 🔵 AZUL: Color azul para el título */
   color: #0055cc !important;
 }
 
+/* Línea decorativa bajo el título */
 body.light-mode #lenguajes h2::after {
-  /* 🔵 AZUL: Línea decorativa título modo claro */
+  /* 🔵 AZUL: Línea azul decorativa */
   background: #0055cc !important;
 }
 
+/* Elementos individuales de lenguajes */
 body.light-mode .lenguaje-nombre {
-  /* 🔵 AZUL: Texto lenguajes modo claro */
+  /* 🔵 AZUL: Texto azul para nombres de lenguajes */
   color: #0055cc !important;
-  /* 🔵 AZUL: Borde lenguajes modo claro */
+  /* 🔵 AZUL: Borde azul definiendo cada elemento */
   border: 2px solid #0055cc !important;
 }
 
+/* Estados hover de elementos de lenguajes */
 body.light-mode .lenguaje-nombre:hover {
-  /* 🔵 AZUL: Fondo hover lenguajes modo claro */
+  /* 🔵 AZUL: Fondo azul al interactuar */
   background: #0055cc !important;
-  /* ⚪ BLANCO: Texto hover lenguajes modo claro */
+  /* ⚪ BLANCO: Texto blanco para contraste */
   color: #ffffff !important;
-  /* 🔵 AZUL: Sombra hover lenguajes modo claro */
+  /* 🔵 AZUL: Sombra azul para efecto de elevación */
   box-shadow: 0 5px 15px rgba(0, 85, 204, 0.4) !important;
 }
 
 /* ================================
-MODO CLARO - MARCA PERSONAL
-================================ */
+   SECCIÓN ESPECÍFICA: MARCA PERSONAL
+   ================================ */
+
+/* Sección completa de marca personal */
 body.light-mode #marca-personal {
-  /* ⚪ GRIS MUY CLARO: Fondo sección modo claro */
+  /* ⚪ GRIS MUY CLARO: Fondo consistente */
   background: #f9f9f9;
-  /* 🔵 AZUL: Bordes sección modo claro */
+  /* 🔵 AZUL: Bordes azules como separadores */
   border-top: 1px solid #0055cc;
   border-bottom: 1px solid #0055cc;
 }
 
+/* Título de la sección marca personal */
 body.light-mode #marca-personal h2 {
-  /* 🔵 AZUL: Título sección modo claro */
+  /* 🔵 AZUL: Color azul para el título */
   color: #0055cc !important;
 }
 
+/* Línea decorativa bajo el título */
 body.light-mode #marca-personal h2::after {
-  /* 🔵 AZUL: Línea decorativa título modo claro */
+  /* 🔵 AZUL: Línea azul decorativa */
   background: #0055cc !important;
 }
 
+/* Contenedor de logos */
 body.light-mode .logo-container {
-  /* 🔵 AZUL: Borde logo modo claro */
+  /* 🔵 AZUL: Marco azul alrededor del logo */
   border: 3px solid #0055cc !important;
-  /* 🔵 AZUL: Sombra logo modo claro */
+  /* 🔵 AZUL: Sombra azul sutil */
   box-shadow: 0 4px 15px rgba(0, 85, 204, 0.3) !important;
 }
 
+/* Estados hover del contenedor de logos */
 body.light-mode .logo-container:hover {
-  /* 🔵 AZUL: Sombra hover logo modo claro */
+  /* 🔵 AZUL: Sombra más intensa al interactuar */
   box-shadow: 0 8px 25px rgba(0, 85, 204, 0.5) !important;
 }
 
+/* Frase de marca personal */
 body.light-mode .frase-marca {
-  /* ⚫ NEGRO: Texto frase marca modo claro */
+  /* ⚫ NEGRO: Texto negro para la frase */
   color: #000000 !important;
 }
 
+/* Autor de la frase de marca */
 body.light-mode .frase-container cite {
-  /* 🔵 AZUL: Autor frase marca modo claro */
+  /* 🔵 AZUL: Color azul para destacar al autor */
   color: #0055cc !important;
 }
 
 /* ================================
-MODO CLARO - CORRECCIÓN HERO
-================================ */
+   CORRECCIONES ESPECÍFICAS PARA HERO
+   ================================ */
+
+/* Subtítulo en sección hero */
 body.light-mode .lead h2 {
-  /* 🔵 AZUL: Color del subtítulo en modo claro */
+  /* 🔵 AZUL: Color azul para subtítulo */
   color: #0055cc !important;
 }
 
+/* Textos de interés en hero */
 body.light-mode .lead span {
-  /* 🔵 AZUL: Color del texto de interés en modo claro */
+  /* 🔵 AZUL: Color azul para elementos destacados */
   color: #0055cc !important;
 }
 
+/* Nombre en hero */
 body.light-mode .hero-text h1 span {
-  /* 🔵 AZUL: Color del nombre en modo claro */
+  /* 🔵 AZUL: Color azul para resaltar el nombre */
   color: #0055cc !important;
 }
 
 /* ================================
-RESPONSIVE PARA NAVBAR COMPACTO
-================================ */
+   CORRECCIÓN DE ESPECIFICIDAD PARA BOTONES
+   ================================ */
+
+/* Asegurar que los estilos del modo claro tengan mayor especificidad */
+body.light-mode .btn.ghost,
+body.light-mode .btn-github,
+body.light-mode .btn-more {
+  /* Forzar los colores azules en modo claro */
+  border-color: #0055cc !important;
+  color: #0055cc !important;
+  background: transparent !important;
+}
+
+body.light-mode .btn.ghost:hover,
+body.light-mode .btn-github:hover,
+body.light-mode .btn-more:hover {
+  /* Forzar los colores de hover en modo claro */
+  background: #0055cc !important;
+  color: #ffffff !important;
+}
+
+/* Botones principales sólidos */
+body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more) {
+  background: #0055cc !important;
+  color: #ffffff !important;
+  border: 2px solid #0055cc !important;
+}
+
+body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
+  background: #003399 !important;
+  border-color: #003399 !important;
+}
+
+/* ================================
+   MEDIA QUERIES - DISEÑO RESPONSIVE
+   ================================ */
+
+/* Tablets y pantallas medianas (1024px o menos) */
 @media (max-width: 1024px) {
+  /* Menú de navegación más compacto */
   .topbar .menu {
-    gap: 0.5rem;
+    gap: 0.5rem; /* Menos espacio entre elementos */
   }
   
+  /* Enlaces del menú más pequeños */
   .topbar .menu a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem; /* Padding reducido */
+    font-size: 0.85rem; /* Texto más pequeño */
   }
   
+  /* Logo más compacto */
   .topbar .brand {
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Tamaño de fuente reducido */
   }
   
+  /* Controles de navegación más juntos */
   .topbar .nav-controls {
-    gap: 0.6rem;
+    gap: 0.6rem; /* Menos espacio entre controles */
   }
 }
 
+/* Tablets pequeñas y móviles grandes (768px o menos) */
 @media (max-width: 768px) {
+  /* Barra superior más delgada */
   .topbar {
-    padding: 0.6rem 0;
+    padding: 0.6rem 0; /* Padding vertical reducido */
   }
   
+  /* Navegación con wrap para reorganizar elementos */
   .topbar .nav {
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    flex-wrap: wrap; /* Permite que los elementos se reorganicen */
+    gap: 0.8rem; /* Espacio entre filas */
   }
   
+  /* Logo en primera posición */
   .topbar .brand {
-    order: 1;
-    font-size: 1.3rem;
+    order: 1; /* Primero en el orden visual */
+    font-size: 1.3rem; /* Tamaño aún más reducido */
   }
   
+  /* Controles en segunda posición */
   .topbar .nav-controls {
-    order: 2;
-    gap: 0.5rem;
+    order: 2; /* Segundo en el orden visual */
+    gap: 0.5rem; /* Espacio reducido entre controles */
   }
   
+  /* Menú en tercera posición (ocupa toda la anchura) */
   .topbar .menu {
-    order: 3;
-    flex-basis: 100%;
-    justify-content: center;
-    margin: 0.3rem 0 0 0;
-    gap: 0.3rem;
+    order: 3; /* Tercero en el orden visual */
+    flex-basis: 100%; /* Ocupa el 100% del ancho disponible */
+    justify-content: center; /* Centra los enlaces */
+    margin: 0.3rem 0 0 0; /* Margen superior pequeño */
+    gap: 0.3rem; /* Espacio muy reducido entre enlaces */
   }
   
+  /* Enlaces del menú muy compactos */
   .topbar .menu a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem; /* Padding mínimo */
+    font-size: 0.8rem; /* Texto muy pequeño */
   }
   
+  /* Botones de toggle más pequeños */
   #mode-toggle,
   #lang-toggle {
-    width: 32px;
-    height: 32px;
-    font-size: 1.1rem;
+    width: 32px; /* Ancho reducido */
+    height: 32px; /* Alto reducido */
+    font-size: 1.1rem; /* Iconos ligeramente más pequeños */
   }
   
+  /* Etiqueta de idioma más compacta */
   #lang-label {
-    font-size: 0.8rem;
-    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem; /* Texto más pequeño */
+    padding: 0.15rem 0.5rem; /* Padding reducido */
   }
   
+  /* Layout de una columna para secciones hero y about */
   .hero-grid,
   .about {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna */
   }
   
+  /* Tarjetas en una sola columna */
   .grid.cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna */
   }
   
+  /* Lenguajes con menos espacio entre ellos */
   .lenguaje-linea {
-    gap: 1rem;
+    gap: 1rem; /* Espacio reducido */
   }
   
+  /* Elementos de lenguaje más compactos */
   .lenguaje-nombre {
-    font-size: 1.1rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem; /* Texto más pequeño */
+    padding: 0.6rem 1.2rem; /* Padding reducido */
   }
 }
 
+/* Móviles pequeños (480px o menos) */
 @media (max-width: 480px) {
+  /* Menú ultra compacto */
   .topbar .menu {
-    gap: 0.2rem;
+    gap: 0.2rem; /* Espacio mínimo entre enlaces */
   }
   
+  /* Enlaces del menú muy pequeños */
   .topbar .menu a {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem; /* Padding mínimo */
+    font-size: 0.75rem; /* Texto muy pequeño */
   }
   
+  /* Logo de tamaño mínimo */
   .topbar .brand {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Tamaño mínimo */
   }
   
+  /* Ocultar etiqueta de idioma en móviles muy pequeños */
   #lang-label {
-    display: none;
+    display: none; /* Completamente oculta */
   }
   
+  /* Lenguajes con espacio mínimo */
   .lenguaje-linea {
-    gap: 0.8rem;
+    gap: 0.8rem; /* Espacio muy reducido */
   }
   
+  /* Elementos de lenguaje ultra compactos */
   .lenguaje-nombre {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    font-size: 1rem; /* Texto mínimo legible */
+    padding: 0.5rem 1rem; /* Padding mínimo */
   }
   
+  /* Título de sección lenguajes más pequeño */
   #lenguajes h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Tamaño reducido pero aún destacado */
   }
 }
