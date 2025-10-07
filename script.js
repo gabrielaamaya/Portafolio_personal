@@ -1,3 +1,5 @@
+
+
 // ================================
 // TRADUCTOR (ESPAÑOL/INGLÉS)
 // ================================
@@ -211,3 +213,59 @@ document.addEventListener('DOMContentLoaded', function() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+
+// Funcionalidad para el botón "Ver más" en proyectos
+document.addEventListener('DOMContentLoaded', function() {
+    const verMasBtn = document.getElementById('ver-mas-btn');
+    const hiddenProjects = document.querySelectorAll('.hidden-project');
+    const gridCards = document.querySelector('.grid.cards');
+    const verMasText = verMasBtn.querySelector('span[data-lang="ver-mas"]');
+    
+    // Estado inicial
+    let showingAll = false;
+    
+    // Función para cambiar el texto del botón según el idioma
+    function updateButtonText() {
+        if (showingAll) {
+            verMasText.textContent = 'Ver menos';
+        } else {
+            verMasText.textContent = 'Ver más';
+        }
+    }
+    
+    // Evento click del botón
+    verMasBtn.addEventListener('click', function() {
+        if (showingAll) {
+            // Ocultar proyectos adicionales
+            hiddenProjects.forEach(project => {
+                project.style.display = 'none';
+            });
+            gridCards.classList.remove('show-all');
+            showingAll = false;
+        } else {
+            // Mostrar proyectos adicionales
+            hiddenProjects.forEach(project => {
+                project.style.display = 'block';
+            });
+            gridCards.classList.add('show-all');
+            showingAll = true;
+        }
+        
+        // Actualizar texto del botón
+        updateButtonText();
+        
+        // Cambiar ícono
+        const icon = this.querySelector('i');
+        if (showingAll) {
+            icon.className = 'fas fa-chevron-up';
+        } else {
+            icon.className = 'fas fa-chevron-down';
+        }
+    });
+    
+    // Inicializar texto del botón
+    updateButtonText();
+});
+
+
