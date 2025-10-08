@@ -48,7 +48,7 @@ const translations = {
     'proyecto3-desc': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa.',
     'proyecto4-titulo': 'Sitio web de Artesanías Conchita',
     'proyecto4-desc': 'Sitio web informativo que muestra los productos de la empresa',
-    'ver-github': 'Ver en GitHub',
+    'ver-github': 'VER EN GITHUB',
     'ver-mas': 'Ver más',
     'testimonios-titulo': 'Testimonios',
     'testimonio1': '"Trabaja con responsabilidad y mantiene una actitud positiva."',
@@ -64,9 +64,6 @@ const translations = {
     'interes4-desc': 'El deporte que más disfruto practicar y seguir, fomenta el trabajo en equipo y la disciplina.',
     'contacto-titulo': 'Contacto',
     'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
-    // ================================
-    // TRADUCCIONES MARCA PERSONAL
-    // ================================
     'marca-titulo': 'Marca Personal',
     'frase-marca': '"Creando soluciones con pasión y precisión"',
     'marca-autor': '- Gabriela Amaya'
@@ -116,7 +113,7 @@ const translations = {
     'proyecto3-desc': 'Business software prototype that allows complete control of company billing and inventory.',
     'proyecto4-titulo': 'Conchita Crafts Website',
     'proyecto4-desc': 'Informative website that displays the company products',
-    'ver-github': 'View on GitHub',
+    'ver-github': 'VIEW ON GITHUB',
     'ver-mas': 'View more',
     'testimonios-titulo': 'Testimonials',
     'testimonio1': '"Works with responsibility and maintains a positive attitude."',
@@ -132,9 +129,6 @@ const translations = {
     'interes4-desc': 'The sport I most enjoy practicing and following, promotes teamwork and discipline.',
     'contacto-titulo': 'Contact',
     'footer': '© 2025 Gabriela Amaya - All rights reserved',
-    // ================================
-    // TRADUCCIONES MARCA PERSONAL
-    // ================================
     'marca-titulo': 'Personal Brand',
     'frase-marca': '"Creating solutions with passion and precision"',
     'marca-autor': '- Gabriela Amaya'
@@ -155,10 +149,10 @@ function changeLanguage(lang) {
   });
 
   // Actualizar etiqueta de idioma
-  document.getElementById('lang-label').textContent = lang === 'es' ? 'Español' : 'English';
-
-  // Guardar preferencia en localStorage
-  localStorage.setItem('preferredLang', lang);
+  const langLabel = document.getElementById('lang-label');
+  if (langLabel) {
+    langLabel.textContent = lang === 'es' ? 'Español' : 'English';
+  }
 }
 
 // ================================
@@ -168,121 +162,33 @@ function changeLanguage(lang) {
 const toggleBtn = document.getElementById("mode-toggle");
 const body = document.body;
 
-// Verificar preferencia guardada
-const savedMode = localStorage.getItem('darkMode');
-if (savedMode === 'false') {
-  body.classList.add("light-mode");
-  toggleBtn.textContent = "☀️";
-} else {
-  body.classList.remove("light-mode");
-  toggleBtn.textContent = "🌙";
-}
+if (toggleBtn) {
+  // Verificar preferencia guardada (sin localStorage)
+  const isDarkMode = true; // Por defecto modo oscuro
 
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("light-mode");
-
-  // Guardar preferencia
-  if (body.classList.contains("light-mode")) {
+  if (!isDarkMode) {
+    body.classList.add("light-mode");
     toggleBtn.textContent = "☀️";
-    localStorage.setItem('darkMode', 'false');
   } else {
+    body.classList.remove("light-mode");
     toggleBtn.textContent = "🌙";
-    localStorage.setItem('darkMode', 'true');
-  }
-});
-
-// ================================
-// FUNCIONES PARA MODALES DE PROYECTOS
-// ================================
-
-function openModal(projectId) {
-  const modal = document.getElementById(`modal-${projectId}`);
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeModal(projectId) {
-  const modal = document.getElementById(`modal-${projectId}`);
-  if (modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
-
-// Cerrar modal al hacer click fuera del contenido
-document.addEventListener('DOMContentLoaded', function() {
-  const modals = document.querySelectorAll('.modal');
-  modals.forEach(modal => {
-    modal.addEventListener('click', function(e) {
-      if (e.target === this) {
-        const projectId = this.id.replace('modal-', '');
-        closeModal(projectId);
-      }
-    });
-  });
-});
-
-// ================================
-// EVENT LISTENERS
-// ================================
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Botón de cambio de idioma
-  document.getElementById('lang-toggle').addEventListener('click', function() {
-    const newLang = currentLang === 'es' ? 'en' : 'es';
-    changeLanguage(newLang);
-  });
-
-  // Verificar idioma guardado
-  const savedLang = localStorage.getItem('preferredLang');
-  if (savedLang && savedLang !== currentLang) {
-    changeLanguage(savedLang);
   }
 
-  // Inicializar botones "Ver más" de proyectos
-  initializeProjectButtons();
-});
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
 
-// Función para inicializar botones "Ver más" de proyectos
-function initializeProjectButtons() {
-  const verMasButtons = document.querySelectorAll('.btn-more');
-  
-  verMasButtons.forEach(button => {
-    // Remover event listeners previos para evitar duplicados
-    button.replaceWith(button.cloneNode(true));
-  });
-
-  // Re-asignar event listeners a los nuevos botones
-  document.querySelectorAll('.btn-more').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      const projectId = this.closest('.card').getAttribute('data-project');
-      if (projectId) {
-        openModal(projectId);
-      }
-    });
+    if (body.classList.contains("light-mode")) {
+      toggleBtn.textContent = "☀️";
+    } else {
+      toggleBtn.textContent = "🌙";
+    }
   });
 }
 
-// Función para scroll suave
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+// ================================
+// DATOS DE LOS PROYECTOS
+// ================================
 
-// Cerrar modales con la tecla Escape
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      const projectId = modal.id.replace('modal-', '');
-      closeModal(projectId);
-    });
-  }
-});
-
-// Datos de los proyectos
 const projectsData = {
     'adopta-amigo': {
         title: 'Adopta a un amigo',
@@ -304,7 +210,7 @@ const projectsData = {
         githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
         images: [
             'Adoptaaunamigo.jpeg',
-            'adopta-amigo-1.jpg',
+            'visual studio.png',
             'adopta-amigo-2.jpg'
         ]
     },
@@ -380,46 +286,73 @@ const projectsData = {
     }
 };
 
-// Elementos del DOM
-const modal = document.getElementById('projectModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
-const modalFeatures = document.getElementById('modalFeatures');
-const modalTechStack = document.getElementById('modalTechStack');
-const modalRole = document.getElementById('modalRole');
-const modalGitHubLink = document.getElementById('modalGitHubLink');
-const modalGallery = document.getElementById('modalGallery');
-const closeModalBtn = document.querySelector('.close-modal');
+// ================================
+// GALERÍA 3D - VARIABLES GLOBALES
+// ================================
 
-// Abrir modal al hacer clic en "Ver más"
-document.querySelectorAll('.btn-more').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const projectId = this.getAttribute('data-project');
-        openModal(projectId);
-    });
-});
+let currentIndex = 0;
+let totalImages = 0;
+let galleryImages = [];
+let galleryIndicators = [];
 
-// Cerrar modal
-closeModalBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-        closeModal();
+// ================================
+// FUNCIONES DE GALERÍA 3D
+// ================================
+
+function updateGallery() {
+  galleryImages.forEach((img, index) => {
+    img.classList.remove('active', 'prev', 'next', 'hidden');
+    
+    if (index === currentIndex) {
+      img.classList.add('active');
+    } else if (index === (currentIndex - 1 + totalImages) % totalImages) {
+      img.classList.add('prev');
+    } else if (index === (currentIndex + 1) % totalImages) {
+      img.classList.add('next');
+    } else {
+      img.classList.add('hidden');
     }
-});
+  });
+  
+  galleryIndicators.forEach((ind, index) => {
+    ind.classList.toggle('active', index === currentIndex);
+  });
+}
 
-// Cerrar modal con tecla Escape
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeModal();
-    }
-});
+function nextImage() {
+  currentIndex = (currentIndex + 1) % totalImages;
+  updateGallery();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+  updateGallery();
+}
+
+function goToImage(index) {
+  currentIndex = index;
+  updateGallery();
+}
+
+// ================================
+// FUNCIONALIDAD DEL MODAL
+// ================================
+
+let modal = null;
+let modalTitle = null;
+let modalDescription = null;
+let modalFeatures = null;
+let modalTechStack = null;
+let modalRole = null;
+let modalGitHubLink = null;
+let modalGallery = null;
+let closeModalBtn = null;
 
 // Función para abrir el modal
-function openModal(projectId) {
+function openProjectModal(projectId) {
     const project = projectsData[projectId];
     
-    if (!project) return;
+    if (!project || !modal) return;
     
     // Actualizar contenido del modal
     modalTitle.textContent = project.title;
@@ -447,19 +380,46 @@ function openModal(projectId) {
         modalTechStack.appendChild(techItem);
     });
     
-    // Actualizar galería de imágenes
-    modalGallery.innerHTML = '';
-    project.images.forEach(image => {
-        const img = document.createElement('img');
-        img.src = image;
-        img.alt = `${project.title} - Imagen del proyecto`;
-        // Agregar funcionalidad para ampliar imagen al hacer clic
-        img.addEventListener('click', function() {
-            // Aquí puedes agregar funcionalidad para ver imagen en tamaño completo
-            console.log('Ampliar imagen:', image);
+    // Actualizar galería de imágenes con estructura 3D
+    const galleryContainer = modalGallery.querySelector('.gallery-container');
+    const indicatorsContainer = document.getElementById('galleryIndicators');
+    
+    if (galleryContainer && indicatorsContainer) {
+        // Limpiar contenido anterior
+        galleryContainer.innerHTML = '';
+        indicatorsContainer.innerHTML = '';
+        
+        // Crear imágenes
+        project.images.forEach((image, index) => {
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = `${project.title} - Imagen ${index + 1}`;
+            
+            // Asignar clases según posición
+            if (index === 0) {
+                img.classList.add('active');
+            } else if (index === 1) {
+                img.classList.add('next');
+            } else {
+                img.classList.add('hidden');
+            }
+            
+            galleryContainer.appendChild(img);
+            
+            // Crear indicador
+            const indicator = document.createElement('span');
+            indicator.classList.add('indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.onclick = () => goToImage(index);
+            indicatorsContainer.appendChild(indicator);
         });
-        modalGallery.appendChild(img);
-    });
+        
+        // Actualizar variables globales
+        galleryImages = galleryContainer.querySelectorAll('img');
+        galleryIndicators = indicatorsContainer.querySelectorAll('.indicator');
+        totalImages = project.images.length;
+        currentIndex = 0;
+    }
     
     // Mostrar modal
     modal.style.display = 'block';
@@ -467,7 +427,75 @@ function openModal(projectId) {
 }
 
 // Función para cerrar el modal
-function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+function closeProjectModal() {
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// ================================
+// INICIALIZACIÓN
+// ================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar elementos del DOM
+    modal = document.getElementById('projectModal');
+    modalTitle = document.getElementById('modalTitle');
+    modalDescription = document.getElementById('modalDescription');
+    modalFeatures = document.getElementById('modalFeatures');
+    modalTechStack = document.getElementById('modalTechStack');
+    modalRole = document.getElementById('modalRole');
+    modalGitHubLink = document.getElementById('modalGitHubLink');
+    modalGallery = document.getElementById('modalGallery');
+    closeModalBtn = document.querySelector('.close-modal');
+
+    // Event listener para cerrar modal
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeProjectModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+    }
+
+    // Event listeners para botones "Ver más"
+    const verMasButtons = document.querySelectorAll('.btn-more');
+    verMasButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.card');
+            if (card) {
+                const projectId = card.getAttribute('data-project');
+                if (projectId) {
+                    openProjectModal(projectId);
+                }
+            }
+        });
+    });
+
+    // Botón de cambio de idioma
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', function() {
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            changeLanguage(newLang);
+        });
+    }
+
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeProjectModal();
+        }
+    });
+});
+
+// Función para scroll suave
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -925,7 +925,7 @@ SOBRE MÍ (About Section)
 }
 
 /* ================================
-   MODAL MEJORADO - DISEÑO PROFESIONAL (Negro y Verde)
+   MODAL ULTRA COMPACTO
    ================================ */
 
 .modal {
@@ -949,14 +949,14 @@ SOBRE MÍ (About Section)
 .modal-content {
   position: relative;
   background: #2a2a2a;
-  margin: 2% auto;
+  margin: 0.5% auto; /* Mínimo margen */
   padding: 0;
-  width: 90%;
+  width: 98%;
   max-width: 1200px;
-  max-height: 90vh;
-  border-radius: 24px;
+  max-height: 99vh; /* Casi toda la pantalla */
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 136, 0.1);
   border: 2px solid #00ff88;
   animation: slideUp 0.4s ease;
 }
@@ -972,32 +972,33 @@ SOBRE MÍ (About Section)
   }
 }
 
-/* Header del Modal */
+/* Header ultra compacto */
 .modal-header {
   background: #1a1a1a;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem; /* Mínimo padding */
   position: relative;
   border-bottom: 2px solid #00ff88;
 }
 
-.modal-header h2 {
+.modal-header h2,
+.modal-header h3 {
   color: #00ff88;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Texto más pequeño */
   font-weight: 700;
   margin: 0;
-  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
 }
 
 .close-modal {
   position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+  top: 0.8rem;
+  right: 1.2rem;
   background: transparent;
   border: 2px solid #00ff88;
   color: #00ff88;
-  font-size: 2rem;
-  width: 45px;
-  height: 45px;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -1006,129 +1007,217 @@ SOBRE MÍ (About Section)
   transition: all 0.3s ease;
 }
 
-.close-modal:hover {
-  background: #00ff88;
-  color: #1a1a1a;
-  transform: rotate(90deg) scale(1.1);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-}
-
-/* Body del Modal */
+/* Body ultra compacto */
 .modal-body {
-  padding: 3rem;
+  padding: 1.5rem 2rem; /* Mínimo padding */
   overflow-y: auto;
-  max-height: calc(90vh - 150px);
+  max-height: calc(99vh - 80px); /* Aprovecha máximo espacio */
   background: #2a2a2a;
 }
 
 .modal-body::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 .modal-body::-webkit-scrollbar-track {
   background: #1a1a1a;
-  border-radius: 10px;
 }
 
 .modal-body::-webkit-scrollbar-thumb {
   background: #00ff88;
-  border-radius: 10px;
 }
 
-.modal-body::-webkit-scrollbar-thumb:hover {
-  background: #00cc6a;
-}
-
-/* Layout de dos columnas */
+/* Layout compacto */
 .modal-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 1.5rem; /* Gap mínimo */
 }
 
-/* Columna Izquierda - Galería */
+/* ================================
+   GALERÍA ULTRA COMPACTA
+   ================================ */
+
 .modal-left {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}
-
-.modal-gallery {
-  display: grid;
   gap: 1rem;
 }
 
-.modal-gallery img {
+.modal-gallery {
+  position: relative;
   width: 100%;
+  height: 480px; /* Altura reducida */
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px; /* Menos margen */
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-gallery img {
+  position: absolute;
+  width: auto;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+  max-width: 350px;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  transition: all 0.6s ease;
   cursor: pointer;
   border: 2px solid transparent;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.modal-gallery img:hover {
-  transform: scale(1.02);
+.modal-gallery img.active {
+  transform: translate(-50%, -50%) translateZ(0px) rotateY(0deg) scale(1.05);
   border-color: #00ff88;
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4), 0 0 20px rgba(0, 255, 136, 0.3);
+  z-index: 10;
+  max-width: 370px;
+  max-height: 440px;
 }
 
-.modal-gallery img:first-child {
-  grid-column: 1 / -1;
-  height: 350px;
-  object-fit: cover;
+.modal-gallery img.prev {
+  transform: translate(-50%, -50%) translateZ(-150px) translateX(-180px) rotateY(35deg) scale(0.8);
+  opacity: 0.7;
+  z-index: 5;
+  max-width: 300px;
+  max-height: 370px;
 }
 
-/* Columna Derecha - Información */
-.modal-right {
+.modal-gallery img.next {
+  transform: translate(-50%, -50%) translateZ(-150px) translateX(180px) rotateY(-35deg) scale(0.8);
+  opacity: 0.7;
+  z-index: 5;
+  max-width: 300px;
+  max-height: 370px;
+}
+
+.modal-gallery img.hidden {
+  transform: translate(-50%, -50%) translateZ(-300px) scale(0.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Controles ultra compactos */
+.gallery-controls {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 20;
+}
+
+.gallery-btn {
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid #00ff88;
+  color: #00ff88;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Indicadores ultra compactos */
+.gallery-indicators {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  z-index: 20;
+}
+
+.indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 255, 136, 0.3);
+  border: 1px solid #00ff88;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ================================
+   COLUMNA DERECHA ULTRA COMPACTA
+   ================================ */
+
+.modal-right,
+.modal-details {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem; /* Gap mínimo */
 }
 
 .modal-section {
   background: #1a1a1a;
-  padding: 1.5rem;
-  border-radius: 16px;
-  border: 2px solid #333;
+  padding: 1rem; /* Padding mínimo */
+  border-radius: 10px;
+  border: 1px solid #333;
   transition: all 0.3s ease;
 }
 
 .modal-section:hover {
   background: #222;
   border-color: #00ff88;
-  transform: translateX(5px);
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+  transform: translateX(2px);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.2);
 }
 
-.modal-section h3 {
+.modal-section h3,
+.modal-section h4 {
   color: #00ff88;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  font-size: 1rem; /* Texto compacto */
+  margin-bottom: 0.6rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
 }
 
-.modal-section h3::before {
+.modal-section h3::before,
+.modal-section h4::before {
   content: '';
-  width: 4px;
-  height: 24px;
+  width: 2px;
+  height: 14px;
   background: #00ff88;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(0, 255, 136, 0.5);
 }
 
 .modal-description {
   color: #d0d0d0;
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.5; /* Interlineado mínimo */
+  font-size: 0.9rem;
 }
 
-/* Lista de Características */
+/* Lista ultra compacta */
 .modal-features {
   list-style: none;
   padding: 0;
@@ -1137,12 +1226,13 @@ SOBRE MÍ (About Section)
 
 .modal-features li {
   color: #d0d0d0;
-  padding: 0.75rem 0;
+  padding: 0.4rem 0; /* Padding mínimo */
   border-bottom: 1px solid #333;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
   transition: all 0.3s ease;
+  font-size: 0.85rem;
 }
 
 .modal-features li:last-child {
@@ -1151,7 +1241,7 @@ SOBRE MÍ (About Section)
 
 .modal-features li:hover {
   color: #fff;
-  padding-left: 0.5rem;
+  padding-left: 0.2rem;
   background: rgba(0, 255, 136, 0.05);
 }
 
@@ -1159,38 +1249,31 @@ SOBRE MÍ (About Section)
   content: '✓';
   color: #00ff88;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex-shrink: 0;
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 
-/* Stack Tecnológico */
+/* Stack ultra compacto */
 .tech-stack {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.6rem; /* Gap mínimo */
 }
 
 .tech-item {
   background: #1a1a1a;
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 0.6rem; /* Padding mínimo */
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
   transition: all 0.3s ease;
-  border: 2px solid #333;
-}
-
-.tech-item:hover {
-  background: #222;
-  transform: translateY(-3px);
-  border-color: #00ff88;
-  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+  border: 1px solid #333;
+  font-size: 0.85rem;
 }
 
 .tech-item i {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 .tech-item span {
@@ -1198,109 +1281,83 @@ SOBRE MÍ (About Section)
   font-weight: 500;
 }
 
-/* Rol */
+/* Rol ultra compacto */
 .modal-role {
   background: #1a1a1a;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
   color: #00ff88;
   font-weight: 600;
   text-align: center;
-  border: 2px solid #00ff88;
+  border: 1px solid #00ff88;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+  letter-spacing: 0.3px;
+  font-size: 0.85rem;
 }
 
-/* Botón de GitHub */
-.modal-github-link {
+/* Botón ultra compacto */
+.modal-github-link,
+.modal-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  background: transparent;
+  gap: 0.5rem;
+  background: rgba(0, 255, 136, 0.1);
   color: #00ff88;
-  padding: 1rem 2rem;
-  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
   border: 2px solid #00ff88;
-  margin-top: 1rem;
+  margin-top: 0.3rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+  font-size: 0.85rem;
 }
 
-.modal-github-link:hover {
+.modal-github-link:hover,
+.modal-btn:hover {
   background: #00ff88;
   color: #1a1a1a;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+  transform: translateY(-1px);
 }
 
-.modal-github-link i {
-  font-size: 1.5rem;
+.modal-github-link i,
+.modal-btn i {
+  font-size: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 968px) {
-  .modal-layout {
-    grid-template-columns: 1fr;
-  }
-  
-  .modal-content {
-    width: 95%;
-    margin: 5% auto;
-  }
-  
-  .modal-header {
-    padding: 1.5rem 2rem;
-  }
-  
-  .modal-body {
-    padding: 2rem 1.5rem;
-  }
-  
-  .tech-stack {
-    grid-template-columns: 1fr;
-  }
+/* Footer ultra compacto */
+.modal-footer {
+  padding: 1rem 2rem;
+  background: #1a1a1a;
+  border-top: 2px solid #00ff88;
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 576px) {
-  .modal-header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .close-modal {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-    top: 1rem;
-    right: 1rem;
-  }
-  
-  .modal-gallery img:first-child {
-    height: 200px;
-  }
-}
-
-/* Light Mode */
-body.light-mode .modal {
-  background: rgba(255, 255, 255, 0.95);
-}
-
+/* ================================
+   LIGHT MODE ULTRA COMPACTO
+   ================================ */
 body.light-mode .modal-content {
   background: #f5f5f5;
-  border-color: #00cc6a;
+  border-color: #007bff;
 }
 
 body.light-mode .modal-header {
   background: #fff;
-  border-bottom-color: #00cc6a;
+  border-bottom-color: #007bff;
 }
 
-body.light-mode .modal-header h2 {
-  color: #00cc6a;
+body.light-mode .modal-header h2,
+body.light-mode .modal-header h3 {
+  color: #007bff;
+}
+
+body.light-mode .close-modal {
+  border-color: #007bff;
+  color: #007bff;
 }
 
 body.light-mode .modal-body {
@@ -1312,8 +1369,9 @@ body.light-mode .modal-section {
   border-color: #e0e0e0;
 }
 
-body.light-mode .modal-section:hover {
-  border-color: #00cc6a;
+body.light-mode .modal-section h3,
+body.light-mode .modal-section h4 {
+  color: #007bff;
 }
 
 body.light-mode .modal-description,
@@ -1322,21 +1380,117 @@ body.light-mode .tech-item span {
   color: #333;
 }
 
-body.light-mode .modal-features li {
-  border-bottom-color: #e0e0e0;
-}
-
-body.light-mode .tech-item {
+body.light-mode .modal-role {
   background: #fff;
-  border-color: #e0e0e0;
+  color: #007bff;
+  border-color: #007bff;
 }
 
-body.light-mode .modal-body::-webkit-scrollbar-track {
-  background: #e0e0e0;
+body.light-mode .modal-github-link,
+body.light-mode .modal-btn {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border-color: #007bff;
 }
 
-body.light-mode .modal-body::-webkit-scrollbar-thumb {
-  background: #00cc6a;
+/* ================================
+   RESPONSIVE ULTRA COMPACTO
+   ================================ */
+
+@media (max-width: 968px) {
+  .modal-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .modal-content {
+    width: 99%;
+    margin: 0.5% auto;
+  }
+  
+  .modal-body {
+    padding: 1rem 1.5rem;
+  }
+  
+  .modal-gallery {
+    height: 420px;
+    margin-bottom: 50px;
+  }
+
+  .modal-gallery img {
+    max-width: 280px;
+    max-height: 350px;
+  }
+
+  .modal-gallery img.active {
+    max-width: 300px;
+    max-height: 370px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-header {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .modal-body {
+    padding: 0.8rem 1rem;
+  }
+
+  .modal-gallery {
+    height: 380px;
+    margin-bottom: 45px;
+  }
+
+  .modal-gallery img {
+    max-width: 240px;
+    max-height: 300px;
+  }
+
+  .modal-gallery img.active {
+    max-width: 260px;
+    max-height: 320px;
+  }
+
+  .tech-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-header h2,
+  .modal-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .close-modal {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .modal-gallery {
+    height: 320px;
+    margin-bottom: 40px;
+  }
+
+  .modal-gallery img {
+    max-width: 200px;
+    max-height: 250px;
+  }
+
+  .modal-gallery img.active {
+    max-width: 220px;
+    max-height: 270px;
+  }
+
+  .gallery-controls {
+    bottom: -40px;
+  }
+
+  .gallery-indicators {
+    bottom: -55px;
+  }
 }
 
 /* ============================== 

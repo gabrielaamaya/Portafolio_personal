@@ -289,9 +289,22 @@
             <button class="close-modal">&times;</button>
         </div>
         <div class="modal-body">
+            <!-- Galería 3D -->
             <div class="modal-gallery" id="modalGallery">
-                <!-- Las imágenes se cargarán dinámicamente aquí -->
+                <div class="gallery-container">
+                    <!-- Las imágenes se cargarán dinámicamente aquí -->
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn" onclick="prevImage()">‹</button>
+                    <button class="gallery-btn next-btn" onclick="nextImage()">›</button>
+                </div>
+                
+                <div class="gallery-indicators" id="galleryIndicators">
+                    <!-- Los indicadores se generarán dinámicamente según el número de imágenes -->
+                </div>
             </div>
+
             <div class="modal-details">
                 <div>
                     <div class="modal-section">
@@ -326,7 +339,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Marca Personal -->
 <section id="marca-personal" class="section alt">
