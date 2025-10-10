@@ -11,7 +11,7 @@ const translations = {
     'menu-testimonios': 'Testimonios',
     'menu-intereses': 'Intereses',
     'menu-contacto': 'Contacto',
-    'hero-hola': '¡Hola! Soy',
+    'hero-hola': '¡Hola! Soy Gabriela Lissette Amaya Garay',
     'hero-interes-titulo': 'Áreas de interés:',
     'hero-interes': '"Desarrollo Backend y Desarrollo de Apps Móviles"',
     'sobre-titulo': 'Sobre mí',
@@ -66,7 +66,12 @@ const translations = {
     'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
     'marca-titulo': 'Marca Personal',
     'frase-marca': '"Creando soluciones con pasión y precisión"',
-    'marca-autor': '- Gabriela Amaya'
+    'marca-autor': '- Gabriela Amaya',
+    // Traducciones para los proyectos en el modal
+    'role-fullstack': 'Desarrollador Full Stack',
+    'role-mobile': 'Desarrollador Móvil',
+    'role-analyst': 'Analista y Desarrollador',
+    'role-frontend-backend': 'Desarrollador Frontend y Backend'
   },
   'en': {
     'brand': 'MY PORTFOLIO',
@@ -76,7 +81,7 @@ const translations = {
     'menu-testimonios': 'Testimonials',
     'menu-intereses': 'Interests',
     'menu-contacto': 'Contact',
-    'hero-hola': 'Hello! I am',
+    'hero-hola': 'Hello! I am Gabriela Lissette Amaya Garay',
     'hero-interes-titulo': 'Areas of interest:',
     'hero-interes': '"Backend Development and Mobile App Development"',
     'sobre-titulo': 'About me',
@@ -131,7 +136,12 @@ const translations = {
     'footer': '© 2025 Gabriela Amaya - All rights reserved',
     'marca-titulo': 'Personal Brand',
     'frase-marca': '"Creating solutions with passion and precision"',
-    'marca-autor': '- Gabriela Amaya'
+    'marca-autor': '- Gabriela Amaya',
+    // Traducciones para los proyectos en el modal
+    'role-fullstack': 'Full Stack Developer',
+    'role-mobile': 'Mobile Developer',
+    'role-analyst': 'Analyst and Developer',
+    'role-frontend-backend': 'Frontend and Backend Developer'
   }
 };
 
@@ -186,27 +196,39 @@ if (toggleBtn) {
 }
 
 // ================================
-// DATOS DE LOS PROYECTOS
+// DATOS DE LOS PROYECTOS (TRADUCIDOS)
 // ================================
 
 const projectsData = {
     'adopta-amigo': {
-        title: 'Adopta a un amigo',
-        description: 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas. Permite a los usuarios ver los animales disponibles, filtrar por características y solicitar adopciones de manera sencilla.',
-        features: [
-            'Sistema de registro de usuarios',
-            'Catálogo de animales disponibles para adopción',
-            'Filtros por tipo, tamaño y edad del animal',
-            'Formulario de solicitud de adopción',
-            'Panel de administración para el refugio'
-        ],
+        title: { 'es': 'Adopta a un amigo', 'en': 'Adopt a friend' },
+        description: {
+            'es': 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas. Permite a los usuarios ver los animales disponibles, filtrar por características y solicitar adopciones de manera sencilla.',
+            'en': 'Web platform for an animal shelter, focused on promoting responsible pet adoption. Allows users to view available animals, filter by characteristics, and request adoptions easily.'
+        },
+        features: {
+            'es': [
+                'Sistema de registro de usuarios',
+                'Catálogo de animales disponibles para adopción',
+                'Filtros por tipo, tamaño y edad del animal',
+                'Formulario de solicitud de adopción',
+                'Panel de administración para el refugio'
+            ],
+            'en': [
+                'User registration system',
+                'Catalog of animals available for adoption',
+                'Filters by animal type, size and age',
+                'Adoption request form',
+                'Administration panel for the shelter'
+            ]
+        },
         technologies: [
             { name: 'C#', icon: 'fas fa-code', color: '#a179dc' },
             { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4' },
             { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927' },
             { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880' }
         ],
-        role: 'Desarrollador Full Stack',
+        role: { 'es': 'Desarrollador Full Stack', 'en': 'Full Stack Developer' },
         githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
         images: [
             'Adoptaaunamigo.jpeg',
@@ -215,21 +237,33 @@ const projectsData = {
         ]
     },
     'task-planner': {
-        title: 'Task Planner',
-        description: 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo. Permite crear, editar y eliminar tareas, establecer prioridades y fechas de vencimiento.',
-        features: [
-            'Creación y gestión de tareas',
-            'Categorización por prioridad',
-            'Recordatorios y notificaciones',
-            'Sincronización local sin necesidad de conexión a internet',
-            'Interfaz intuitiva y fácil de usar'
-        ],
+        title: { 'es': 'Task Planner', 'en': 'Task Planner' },
+        description: {
+            'es': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo. Permite crear, editar y eliminar tareas, establecer prioridades y fechas de vencimiento.',
+            'en': 'Mobile application to organize tasks, with local storage and filters for better time management. Allows creating, editing and deleting tasks, setting priorities and due dates.'
+        },
+        features: {
+            'es': [
+                'Creación y gestión de tareas',
+                'Categorización por prioridad',
+                'Recordatorios y notificaciones',
+                'Sincronización local sin necesidad de conexión a internet',
+                'Interfaz intuitiva y fácil de usar'
+            ],
+            'en': [
+                'Task creation and management',
+                'Priority categorization',
+                'Reminders and notifications',
+                'Local synchronization without internet connection',
+                'Intuitive and easy-to-use interface'
+            ]
+        },
         technologies: [
             { name: 'Java', icon: 'fab fa-java', color: '#ed8b00' },
             { name: 'Android Studio', icon: 'fab fa-android', color: '#3ddc84' },
             { name: 'SQLite', icon: 'fas fa-database', color: '#003b57' }
         ],
-        role: 'Desarrollador Móvil',
+        role: { 'es': 'Desarrollador Móvil', 'en': 'Mobile Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Prograll-Semi-2025.git',
         images: [
             'taskplanner.jpeg',
@@ -238,21 +272,33 @@ const projectsData = {
         ]
     },
     'artesanias-conchita': {
-        title: 'Artesanías Conchita',
-        description: 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa. Facilita la gestión de productos, clientes, proveedores y ventas.',
-        features: [
-            'Gestión de inventario y productos',
-            'Control de ventas y facturación',
-            'Registro de clientes y proveedores',
-            'Reportes y estadísticas de ventas',
-            'Sistema de usuarios y permisos'
-        ],
+        title: { 'es': 'Artesanías Conchita', 'en': 'Conchita Crafts' },
+        description: {
+            'es': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa. Facilita la gestión de productos, clientes, proveedores y ventas.',
+            'en': 'Business software prototype that allows complete control of company billing and inventory. Facilitates product, customer, supplier and sales management.'
+        },
+        features: {
+            'es': [
+                'Gestión de inventario y productos',
+                'Control de ventas y facturación',
+                'Registro de clientes y proveedores',
+                'Reportes y estadísticas de ventas',
+                'Sistema de usuarios y permisos'
+            ],
+            'en': [
+                'Inventory and product management',
+                'Sales and billing control',
+                'Customer and supplier registration',
+                'Sales reports and statistics',
+                'User and permissions system'
+            ]
+        },
         technologies: [
             { name: 'C#', icon: 'fas fa-code', color: '#a179dc' },
             { name: 'Windows Forms', icon: 'fab fa-windows', color: '#0078d7' },
             { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927' }
         ],
-        role: 'Analista y Desarrollador',
+        role: { 'es': 'Analista y Desarrollador', 'en': 'Analyst and Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
@@ -261,22 +307,34 @@ const projectsData = {
         ]
     },
     'artesanias-web': {
-        title: 'Sitio web de Artesanías Conchita',
-        description: 'Sitio web informativo que muestra los productos de la empresa. Permite a los clientes conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
-        features: [
-            'Diseño responsive adaptado a dispositivos móviles',
-            'Galería de productos con categorías',
-            'Formulario de contacto',
-            'Información sobre la empresa y su historia',
-            'Integración con redes sociales'
-        ],
+        title: { 'es': 'Sitio web de Artesanías Conchita', 'en': 'Conchita Crafts Website' },
+        description: {
+            'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clientes conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
+            'en': 'Informative website that displays the company products. Allows customers to learn about the company history, view the product catalog and contact the company.'
+        },
+        features: {
+            'es': [
+                'Diseño responsive adaptado a dispositivos móviles',
+                'Galería de productos con categorías',
+                'Formulario de contacto',
+                'Información sobre la empresa y su historia',
+                'Integración con redes sociales'
+            ],
+            'en': [
+                'Responsive design adapted to mobile devices',
+                'Product gallery with categories',
+                'Contact form',
+                'Information about the company and its history',
+                'Social media integration'
+            ]
+        },
         technologies: [
             { name: 'Python', icon: 'fab fa-python', color: '#3776ab' },
             { name: 'Django', icon: 'fas fa-code', color: '#092e20' },
             { name: 'HTML/CSS/JavaScript', icon: 'fab fa-html5', color: '#e34f26' },
             { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3' }
         ],
-        role: 'Desarrollador Frontend y Backend',
+        role: { 'es': 'Desarrollador Frontend y Backend', 'en': 'Frontend and Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
@@ -285,6 +343,78 @@ const projectsData = {
         ]
     }
 };
+
+// ================================
+// FUNCIÓN PARA ACTUALIZAR PROYECTOS EN EL MODAL
+// ================================
+
+function updateProjectModal(projectId) {
+    const project = projectsData[projectId];
+    
+    if (!project || !modal) return;
+    
+    // Actualizar contenido del modal según el idioma actual
+    modalTitle.textContent = project.title[currentLang];
+    modalDescription.textContent = project.description[currentLang];
+    modalRole.textContent = project.role[currentLang];
+    modalGitHubLink.href = project.githubLink;
+    
+    // Actualizar características según el idioma
+    modalFeatures.innerHTML = '';
+    project.features[currentLang].forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        modalFeatures.appendChild(li);
+    });
+    
+    // Actualizar tecnologías (no cambian con el idioma)
+    modalTechStack.innerHTML = '';
+    project.technologies.forEach(tech => {
+        const techItem = document.createElement('div');
+        techItem.className = 'tech-item';
+        techItem.innerHTML = `
+            <i class="${tech.icon}" style="color: ${tech.color};"></i>
+            <span>${tech.name}</span>
+        `;
+        modalTechStack.appendChild(techItem);
+    });
+    
+    // Actualizar galería de imágenes
+    const galleryContainer = modalGallery.querySelector('.gallery-container');
+    const indicatorsContainer = document.getElementById('galleryIndicators');
+    
+    if (galleryContainer && indicatorsContainer) {
+        galleryContainer.innerHTML = '';
+        indicatorsContainer.innerHTML = '';
+        
+        project.images.forEach((image, index) => {
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = `${project.title[currentLang]} - Image ${index + 1}`;
+            
+            if (index === 0) {
+                img.classList.add('active');
+            } else if (index === 1) {
+                img.classList.add('next');
+            } else {
+                img.classList.add('hidden');
+            }
+            
+            galleryContainer.appendChild(img);
+            
+            const indicator = document.createElement('span');
+            indicator.classList.add('indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.onclick = () => goToImage(index);
+            indicatorsContainer.appendChild(indicator);
+        });
+        
+        galleryImages = galleryContainer.querySelectorAll('img');
+        galleryIndicators = indicatorsContainer.querySelectorAll('.indicator');
+        totalImages = project.images.length;
+        currentIndex = 0;
+    }
+}
 
 // ================================
 // GALERÍA 3D - VARIABLES GLOBALES
@@ -350,76 +480,7 @@ let closeModalBtn = null;
 
 // Función para abrir el modal
 function openProjectModal(projectId) {
-    const project = projectsData[projectId];
-    
-    if (!project || !modal) return;
-    
-    // Actualizar contenido del modal
-    modalTitle.textContent = project.title;
-    modalDescription.textContent = project.description;
-    modalRole.textContent = project.role;
-    modalGitHubLink.href = project.githubLink;
-    
-    // Actualizar características
-    modalFeatures.innerHTML = '';
-    project.features.forEach(feature => {
-        const li = document.createElement('li');
-        li.textContent = feature;
-        modalFeatures.appendChild(li);
-    });
-    
-    // Actualizar tecnologías
-    modalTechStack.innerHTML = '';
-    project.technologies.forEach(tech => {
-        const techItem = document.createElement('div');
-        techItem.className = 'tech-item';
-        techItem.innerHTML = `
-            <i class="${tech.icon}" style="color: ${tech.color};"></i>
-            <span>${tech.name}</span>
-        `;
-        modalTechStack.appendChild(techItem);
-    });
-    
-    // Actualizar galería de imágenes con estructura 3D
-    const galleryContainer = modalGallery.querySelector('.gallery-container');
-    const indicatorsContainer = document.getElementById('galleryIndicators');
-    
-    if (galleryContainer && indicatorsContainer) {
-        // Limpiar contenido anterior
-        galleryContainer.innerHTML = '';
-        indicatorsContainer.innerHTML = '';
-        
-        // Crear imágenes
-        project.images.forEach((image, index) => {
-            const img = document.createElement('img');
-            img.src = image;
-            img.alt = `${project.title} - Imagen ${index + 1}`;
-            
-            // Asignar clases según posición
-            if (index === 0) {
-                img.classList.add('active');
-            } else if (index === 1) {
-                img.classList.add('next');
-            } else {
-                img.classList.add('hidden');
-            }
-            
-            galleryContainer.appendChild(img);
-            
-            // Crear indicador
-            const indicator = document.createElement('span');
-            indicator.classList.add('indicator');
-            if (index === 0) indicator.classList.add('active');
-            indicator.onclick = () => goToImage(index);
-            indicatorsContainer.appendChild(indicator);
-        });
-        
-        // Actualizar variables globales
-        galleryImages = galleryContainer.querySelectorAll('img');
-        galleryIndicators = indicatorsContainer.querySelectorAll('.indicator');
-        totalImages = project.images.length;
-        currentIndex = 0;
-    }
+    updateProjectModal(projectId);
     
     // Mostrar modal
     modal.style.display = 'block';
@@ -484,6 +545,14 @@ document.addEventListener('DOMContentLoaded', function() {
         langToggle.addEventListener('click', function() {
             const newLang = currentLang === 'es' ? 'en' : 'es';
             changeLanguage(newLang);
+            
+            // Si hay un modal abierto, actualizar su contenido
+            if (modal && modal.style.display === 'block') {
+                const activeProject = document.querySelector('.card[data-project] .btn-more')?.closest('.card')?.getAttribute('data-project');
+                if (activeProject) {
+                    updateProjectModal(activeProject);
+                }
+            }
         });
     }
 

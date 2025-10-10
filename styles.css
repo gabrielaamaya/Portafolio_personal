@@ -923,6 +923,7 @@ SOBRE MÍ (About Section)
     font-size: 0.8rem;
     color: #f5f5f5;
 }
+
 /* ================================
    MODAL ULTRA COMPACTO
    ================================ */
@@ -1004,6 +1005,11 @@ SOBRE MÍ (About Section)
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+  background: #00ff88;
+  color: #1a1a1a;
 }
 
 /* Body ultra compacto */
@@ -1141,6 +1147,11 @@ SOBRE MÍ (About Section)
   transition: all 0.3s ease;
 }
 
+.gallery-btn:hover {
+  background: #00ff88;
+  color: #1a1a1a;
+}
+
 /* Indicadores ultra compactos */
 .gallery-indicators {
   position: absolute;
@@ -1160,6 +1171,10 @@ SOBRE MÍ (About Section)
   border: 1px solid #00ff88;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #00ff88;
 }
 
 /* ================================
@@ -1337,11 +1352,12 @@ SOBRE MÍ (About Section)
 }
 
 /* ================================
-   LIGHT MODE ULTRA COMPACTO
+   LIGHT MODE ULTRA COMPACTO - AZUL
    ================================ */
 body.light-mode .modal-content {
   background: #f5f5f5;
   border-color: #007bff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 123, 255, 0.1);
 }
 
 body.light-mode .modal-header {
@@ -1352,6 +1368,7 @@ body.light-mode .modal-header {
 body.light-mode .modal-header h2,
 body.light-mode .modal-header h3 {
   color: #007bff;
+  text-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
 }
 
 body.light-mode .close-modal {
@@ -1359,8 +1376,21 @@ body.light-mode .close-modal {
   color: #007bff;
 }
 
+body.light-mode .close-modal:hover {
+  background: #007bff;
+  color: white;
+}
+
 body.light-mode .modal-body {
   background: #f5f5f5;
+}
+
+body.light-mode .modal-body::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+body.light-mode .modal-body::-webkit-scrollbar-thumb {
+  background: #007bff;
 }
 
 body.light-mode .modal-section {
@@ -1368,13 +1398,47 @@ body.light-mode .modal-section {
   border-color: #e0e0e0;
 }
 
+body.light-mode .modal-section:hover {
+  background: #f8f9fa;
+  border-color: #007bff;
+  transform: translateX(2px);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
 body.light-mode .modal-section h3,
 body.light-mode .modal-section h4 {
   color: #007bff;
 }
 
-body.light-mode .modal-description,
-body.light-mode .modal-features li,
+body.light-mode .modal-section h3::before,
+body.light-mode .modal-section h4::before {
+  background: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+body.light-mode .modal-description {
+  color: #333;
+}
+
+body.light-mode .modal-features li {
+  color: #333;
+  border-bottom-color: #e0e0e0;
+}
+
+body.light-mode .modal-features li:hover {
+  color: #000;
+  background: rgba(0, 123, 255, 0.05);
+}
+
+body.light-mode .modal-features li::before {
+  color: #007bff;
+}
+
+body.light-mode .tech-item {
+  background: #fff;
+  border-color: #e0e0e0;
+}
+
 body.light-mode .tech-item span {
   color: #333;
 }
@@ -1390,6 +1454,48 @@ body.light-mode .modal-btn {
   background: rgba(0, 123, 255, 0.1);
   color: #007bff;
   border-color: #007bff;
+}
+
+body.light-mode .modal-github-link:hover,
+body.light-mode .modal-btn:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+body.light-mode .modal-footer {
+  background: #fff;
+  border-top-color: #007bff;
+}
+
+/* GALERÍA EN MODO CLARO - AZUL */
+body.light-mode .modal-gallery img {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-mode .modal-gallery img.active {
+  border-color: #007bff;
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.4), 0 0 20px rgba(0, 123, 255, 0.3);
+}
+
+body.light-mode .gallery-btn {
+  background: rgba(0, 123, 255, 0.1);
+  border-color: #007bff;
+  color: #007bff;
+}
+
+body.light-mode .gallery-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+body.light-mode .indicator {
+  background: rgba(0, 123, 255, 0.3);
+  border-color: #007bff;
+}
+
+body.light-mode .indicator.active {
+  background: #007bff;
 }
 
 /* ================================
