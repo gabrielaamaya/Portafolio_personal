@@ -65,13 +65,15 @@ const translations = {
     'contacto-titulo': 'Contacto',
     'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
     'marca-titulo': 'Marca Personal',
-    'frase-marca': '"Creando soluciones con pasión y precisión"',
+    'frase-marca': 'Aprender juntos es mejor que aprender solos',
     'marca-autor': '- Gabriela Amaya',
     // Traducciones para los proyectos en el modal
     'role-fullstack': 'Desarrollador Full Stack',
     'role-mobile': 'Desarrollador Móvil',
     'role-analyst': 'Analista y Desarrollador',
-    'role-frontend-backend': 'Desarrollador Frontend y Backend'
+    'role-frontend-backend': 'Desarrollador Frontend y Backend',
+    'tech-languages': 'Lenguajes de Programación',
+    'tech-apps': 'Aplicaciones'
   },
   'en': {
     'brand': 'MY PORTFOLIO',
@@ -135,13 +137,15 @@ const translations = {
     'contacto-titulo': 'Contact',
     'footer': '© 2025 Gabriela Amaya - All rights reserved',
     'marca-titulo': 'Personal Brand',
-    'frase-marca': '"Creating solutions with passion and precision"',
+    'frase-marca': '"Learning together is better than learning alone."',
     'marca-autor': '- Gabriela Amaya',
     // Traducciones para los proyectos en el modal
     'role-fullstack': 'Full Stack Developer',
     'role-mobile': 'Mobile Developer',
     'role-analyst': 'Analyst and Developer',
-    'role-frontend-backend': 'Frontend and Backend Developer'
+    'role-frontend-backend': 'Frontend and Backend Developer',
+    'tech-languages': 'Programming Languages',
+    'tech-apps': 'Applications'
   }
 };
 
@@ -223,10 +227,10 @@ const projectsData = {
             ]
         },
         technologies: [
-            { name: 'C#', icon: 'fas fa-code', color: '#a179dc' },
-            { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4' },
-            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927' },
-            { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880' }
+            { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
+            { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
+            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
+            { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
         ],
         role: { 'es': 'Desarrollador Full Stack', 'en': 'Full Stack Developer' },
         githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
@@ -259,9 +263,9 @@ const projectsData = {
             ]
         },
         technologies: [
-            { name: 'Java', icon: 'fab fa-java', color: '#ed8b00' },
-            { name: 'Android Studio', icon: 'fab fa-android', color: '#3ddc84' },
-            { name: 'SQLite', icon: 'fas fa-database', color: '#003b57' }
+            { name: 'Java', icon: 'fab fa-java', color: '#ed8b00', type: 'language' },
+            { name: 'Android Studio', icon: 'fab fa-android', color: '#3ddc84', type: 'app' },
+            { name: 'SQLite', icon: 'fas fa-database', color: '#003b57', type: 'app' }
         ],
         role: { 'es': 'Desarrollador Móvil', 'en': 'Mobile Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Prograll-Semi-2025.git',
@@ -294,9 +298,9 @@ const projectsData = {
             ]
         },
         technologies: [
-            { name: 'C#', icon: 'fas fa-code', color: '#a179dc' },
-            { name: 'Windows Forms', icon: 'fab fa-windows', color: '#0078d7' },
-            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927' }
+            { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
+            { name: 'Windows Forms', icon: 'fab fa-windows', color: '#0078d7', type: 'app' },
+            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' }
         ],
         role: { 'es': 'Analista y Desarrollador', 'en': 'Analyst and Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
@@ -329,10 +333,10 @@ const projectsData = {
             ]
         },
         technologies: [
-            { name: 'Python', icon: 'fab fa-python', color: '#3776ab' },
-            { name: 'Django', icon: 'fas fa-code', color: '#092e20' },
-            { name: 'HTML/CSS/JavaScript', icon: 'fab fa-html5', color: '#e34f26' },
-            { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3' }
+            { name: 'Python', icon: 'fab fa-python', color: '#3776ab', type: 'language' },
+            { name: 'HTML/CSS/JS', icon: 'fab fa-html5', color: '#e34f26', type: 'language' },
+            { name: 'Django', icon: 'fas fa-code', color: '#092e20', type: 'app' },
+            { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3', type: 'app' }
         ],
         role: { 'es': 'Desarrollador Frontend y Backend', 'en': 'Frontend and Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
@@ -367,17 +371,41 @@ function updateProjectModal(projectId) {
         modalFeatures.appendChild(li);
     });
     
-    // Actualizar tecnologías (no cambian con el idioma)
-    modalTechStack.innerHTML = '';
-    project.technologies.forEach(tech => {
-        const techItem = document.createElement('div');
-        techItem.className = 'tech-item';
-        techItem.innerHTML = `
-            <i class="${tech.icon}" style="color: ${tech.color};"></i>
-            <span>${tech.name}</span>
-        `;
-        modalTechStack.appendChild(techItem);
-    });
+    // Actualizar tecnologías - Separar lenguajes y aplicaciones
+    const modalTechLanguages = document.getElementById('modalTechLanguages');
+    const modalTechApps = document.getElementById('modalTechApps');
+    
+    if (modalTechLanguages && modalTechApps) {
+        modalTechLanguages.innerHTML = '';
+        modalTechApps.innerHTML = '';
+        
+        // Actualizar subtítulos según el idioma
+        const languagesSubtitle = document.querySelector('.tech-subtitle[data-lang="tech-languages"]');
+        const appsSubtitle = document.querySelector('.tech-subtitle[data-lang="tech-apps"]');
+        
+        if (languagesSubtitle) {
+            languagesSubtitle.textContent = translations[currentLang]['tech-languages'];
+        }
+        if (appsSubtitle) {
+            appsSubtitle.textContent = translations[currentLang]['tech-apps'];
+        }
+        
+        project.technologies.forEach(tech => {
+            const techItem = document.createElement('div');
+            techItem.className = 'tech-item';
+            techItem.innerHTML = `
+                <i class="${tech.icon}" style="color: ${tech.color};"></i>
+                <span>${tech.name}</span>
+            `;
+            
+            // Clasificar en lenguajes o aplicaciones
+            if (tech.type === 'language') {
+                modalTechLanguages.appendChild(techItem);
+            } else {
+                modalTechApps.appendChild(techItem);
+            }
+        });
+    }
     
     // Actualizar galería de imágenes
     const galleryContainer = modalGallery.querySelector('.gallery-container');

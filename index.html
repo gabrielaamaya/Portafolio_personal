@@ -289,53 +289,69 @@
             <button class="close-modal">&times;</button>
         </div>
         <div class="modal-body">
-            <!-- Galería 3D -->
-            <div class="modal-gallery" id="modalGallery">
-                <div class="gallery-container">
-                    <!-- Las imágenes se cargarán dinámicamente aquí -->
+            <div class="modal-layout">
+                <!-- Columna izquierda: Galería -->
+                <div class="modal-left">
+                    <div class="modal-gallery" id="modalGallery">
+                        <div class="gallery-container">
+                            <!-- Las imágenes se cargarán dinámicamente aquí -->
+                        </div>
+                        
+                        <div class="gallery-controls">
+                            <button class="gallery-btn prev-btn" onclick="prevImage()">‹</button>
+                            <button class="gallery-btn next-btn" onclick="nextImage()">›</button>
+                        </div>
+                        
+                        <div class="gallery-indicators" id="galleryIndicators">
+                            <!-- Los indicadores se generarán dinámicamente según el número de imágenes -->
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="gallery-controls">
-                    <button class="gallery-btn prev-btn" onclick="prevImage()">‹</button>
-                    <button class="gallery-btn next-btn" onclick="nextImage()">›</button>
-                </div>
-                
-                <div class="gallery-indicators" id="galleryIndicators">
-                    <!-- Los indicadores se generarán dinámicamente según el número de imágenes -->
-                </div>
-            </div>
 
-            <div class="modal-details">
-                <div>
+                <!-- Columna derecha: Detalles -->
+                <div class="modal-right">
                     <div class="modal-section">
                         <h4>Descripción</h4>
-                        <p id="modalDescription">Descripción del proyecto.</p>
+                        <p id="modalDescription" class="modal-description">Descripción del proyecto.</p>
                     </div>
+                    
                     <div class="modal-section">
                         <h4>Características</h4>
-                        <ul id="modalFeatures">
+                        <ul id="modalFeatures" class="modal-features">
                             <!-- Las características se cargarán dinámicamente aquí -->
                         </ul>
                     </div>
-                </div>
-                <div>
+                    
                     <div class="modal-section">
                         <h4>Tecnologías Utilizadas</h4>
-                        <div class="tech-stack" id="modalTechStack">
-                            <!-- Las tecnologías se cargarán dinámicamente aquí -->
+                        
+                        <!-- Lenguajes de Programación -->
+                        <div class="tech-category">
+                            <h5 class="tech-subtitle" data-lang="tech-languages">Lenguajes de Programación</h5>
+                            <div class="tech-stack" id="modalTechLanguages">
+                                <!-- Los lenguajes se cargarán dinámicamente aquí -->
+                            </div>
+                        </div>
+                        
+                        <!-- Aplicaciones/Frameworks -->
+                        <div class="tech-category">
+                            <h5 class="tech-subtitle" data-lang="tech-apps">Aplicaciones</h5>
+                            <div class="tech-stack" id="modalTechApps">
+                                <!-- Las aplicaciones se cargarán dinámicamente aquí -->
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="modal-section">
                         <h4>Rol Desempeñado</h4>
-                        <p id="modalRole">Rol desempeñado en el proyecto.</p>
+                        <p id="modalRole" class="modal-role">Rol desempeñado en el proyecto.</p>
                     </div>
+                    
+                    <a href="#" id="modalGitHubLink" class="modal-github-link" target="_blank">
+                        <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#" id="modalGitHubLink" class="modal-btn" target="_blank">
-                <i class="fab fa-github"></i> Ver en GitHub
-            </a>
         </div>
     </div>
 </div>
@@ -350,7 +366,7 @@
       </div>
       <div class="frase-container">
         <blockquote class="frase-marca">
-          <p data-lang="frase-marca">"Creando soluciones con pasión y precisión"</p>
+          <p data-lang="frase-marca">“Aprender juntos es mejor que aprender solos.”</p>
         </blockquote>
         <cite data-lang="marca-autor">- Gabriela Amaya</cite>
       </div>
