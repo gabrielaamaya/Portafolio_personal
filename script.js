@@ -1,5 +1,5 @@
 // ================================
-// TRADUCTOR (ESPAÑOL/INGLÉS)
+// TRADUCTOR (ESPAÑOL/INGLÉS) - COMPLETO Y CORREGIDO
 // ================================
 
 const translations = {
@@ -15,7 +15,7 @@ const translations = {
     'hero-interes-titulo': 'Áreas de interés:',
     'hero-interes': '"Desarrollo Backend y Desarrollo de Apps Móviles"',
     'sobre-titulo': 'Sobre mí',
-    'sobre-texto': 'Soy una persona responsable, puntual, con muchas ganas de progresar, aprendo rápido, capaz de trabajar en equipo. Mi objetivo en la empresa es demostrar mis conocimientos ayudando al funcionamiento de la misma. Y a su vez adquirir nuevas experiencias para seguir formándome tanto personal como laboral.',
+    'sobre-texto': 'Soy una persona responsable, puntual, con muchas ganas de progresar, aprendo rápido, capaz de trabajar en equipo. Mi objetivo en la empresa es demostrar mis conocimientos ayudando al funcionamiento de la misma y a su vez adquirir nuevas experiencias para seguir formándome tanto personal como laboral.',
     'btn-descargar': 'Descargar CV',
     'habilidades-titulo': 'Habilidades',
     'habilidades-blandas': 'Habilidades Blandas',
@@ -67,7 +67,15 @@ const translations = {
     'marca-titulo': 'Marca Personal',
     'frase-marca': 'Aprender juntos es mejor que aprender solos',
     'marca-autor': '- Gabriela Amaya',
-    // Traducciones para los proyectos en el modal
+    
+    // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
+    'description': 'Descripción',
+    'features': 'Características',
+    'technologies-used': 'Tecnologías Utilizadas',
+    'programming-languages': 'Lenguajes de Programación',
+    'applications': 'Aplicaciones',
+    'role-performed': 'Rol Desempeñado',
+    'close': 'Cerrar',
     'role-fullstack': 'Desarrollador Full Stack',
     'role-mobile': 'Desarrollador Móvil',
     'role-analyst': 'Analista y Desarrollador',
@@ -139,7 +147,15 @@ const translations = {
     'marca-titulo': 'Personal Brand',
     'frase-marca': '"Learning together is better than learning alone."',
     'marca-autor': '- Gabriela Amaya',
-    // Traducciones para los proyectos en el modal
+    
+    // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
+    'description': 'Description',
+    'features': 'Features',
+    'technologies-used': 'Technologies Used',
+    'programming-languages': 'Programming Languages',
+    'applications': 'Applications',
+    'role-performed': 'Role Performed',
+    'close': 'Close',
     'role-fullstack': 'Full Stack Developer',
     'role-mobile': 'Mobile Developer',
     'role-analyst': 'Analyst and Developer',
@@ -166,6 +182,14 @@ function changeLanguage(lang) {
   const langLabel = document.getElementById('lang-label');
   if (langLabel) {
     langLabel.textContent = lang === 'es' ? 'Español' : 'English';
+  }
+
+  // Si hay un modal abierto, actualizar su contenido
+  if (modal && modal.style.display === 'block') {
+    const activeProject = getActiveProject();
+    if (activeProject) {
+      updateProjectModal(activeProject);
+    }
   }
 }
 
@@ -237,7 +261,7 @@ const projectsData = {
         images: [
             'Adoptaaunamigo.jpeg',
             'visual studio.png',
-            'adopta-amigo-2.jpg'
+            'adopta un amigo-inicio.jpeg',
         ]
     },
     'task-planner': {
@@ -270,9 +294,11 @@ const projectsData = {
         role: { 'es': 'Desarrollador Móvil', 'en': 'Mobile Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Prograll-Semi-2025.git',
         images: [
-            'taskplanner.jpeg',
-            'task-planner-1.jpg',
-            'task-planner-2.jpg'
+            'task planner.png',
+            'task planner login.jpeg',
+            'task planner pantalla principal.jpeg',
+            'task planner grafica.jpeg',
+            'notificaciones.jpeg'
         ]
     },
     'artesanias-conchita': {
@@ -306,8 +332,8 @@ const projectsData = {
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
-            'artesanias-1.jpg',
-            'artesanias-2.jpg'
+            'login-artesania.jpeg',
+            'ayuda-artesania.jpeg'
         ]
     },
     'artesanias-web': {
@@ -349,7 +375,7 @@ const projectsData = {
 };
 
 // ================================
-// FUNCIÓN PARA ACTUALIZAR PROYECTOS EN EL MODAL
+// FUNCIÓN PARA ACTUALIZAR PROYECTOS EN EL MODAL - CORREGIDA
 // ================================
 
 function updateProjectModal(projectId) {
@@ -380,14 +406,14 @@ function updateProjectModal(projectId) {
         modalTechApps.innerHTML = '';
         
         // Actualizar subtítulos según el idioma
-        const languagesSubtitle = document.querySelector('.tech-subtitle[data-lang="tech-languages"]');
-        const appsSubtitle = document.querySelector('.tech-subtitle[data-lang="tech-apps"]');
+        const languagesSubtitle = document.querySelector('.tech-subtitle[data-lang="programming-languages"]');
+        const appsSubtitle = document.querySelector('.tech-subtitle[data-lang="applications"]');
         
         if (languagesSubtitle) {
-            languagesSubtitle.textContent = translations[currentLang]['tech-languages'];
+            languagesSubtitle.textContent = translations[currentLang]['programming-languages'];
         }
         if (appsSubtitle) {
-            appsSubtitle.textContent = translations[currentLang]['tech-apps'];
+            appsSubtitle.textContent = translations[currentLang]['applications'];
         }
         
         project.technologies.forEach(tech => {
@@ -500,14 +526,28 @@ let modal = null;
 let modalTitle = null;
 let modalDescription = null;
 let modalFeatures = null;
-let modalTechStack = null;
 let modalRole = null;
 let modalGitHubLink = null;
 let modalGallery = null;
 let closeModalBtn = null;
 
+// Función para obtener el proyecto activo
+function getActiveProject() {
+    const activeCard = document.querySelector('.card.active');
+    return activeCard ? activeCard.getAttribute('data-project') : null;
+}
+
 // Función para abrir el modal
 function openProjectModal(projectId) {
+    // Marcar el proyecto como activo
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.classList.remove('active');
+        if (card.getAttribute('data-project') === projectId) {
+            card.classList.add('active');
+        }
+    });
+    
     updateProjectModal(projectId);
     
     // Mostrar modal
@@ -520,6 +560,12 @@ function closeProjectModal() {
     if (modal) {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        
+        // Remover clase activa
+        const activeCard = document.querySelector('.card.active');
+        if (activeCard) {
+            activeCard.classList.remove('active');
+        }
     }
 }
 
@@ -533,7 +579,6 @@ document.addEventListener('DOMContentLoaded', function() {
     modalTitle = document.getElementById('modalTitle');
     modalDescription = document.getElementById('modalDescription');
     modalFeatures = document.getElementById('modalFeatures');
-    modalTechStack = document.getElementById('modalTechStack');
     modalRole = document.getElementById('modalRole');
     modalGitHubLink = document.getElementById('modalGitHubLink');
     modalGallery = document.getElementById('modalGallery');
@@ -573,15 +618,19 @@ document.addEventListener('DOMContentLoaded', function() {
         langToggle.addEventListener('click', function() {
             const newLang = currentLang === 'es' ? 'en' : 'es';
             changeLanguage(newLang);
-            
-            // Si hay un modal abierto, actualizar su contenido
-            if (modal && modal.style.display === 'block') {
-                const activeProject = document.querySelector('.card[data-project] .btn-more')?.closest('.card')?.getAttribute('data-project');
-                if (activeProject) {
-                    updateProjectModal(activeProject);
-                }
-            }
         });
+    }
+
+    // Event listeners para controles de galería
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevImage);
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextImage);
     }
 
     // Cerrar modal con tecla Escape
@@ -590,6 +639,9 @@ document.addEventListener('DOMContentLoaded', function() {
             closeProjectModal();
         }
     });
+
+    // Inicializar traducciones
+    changeLanguage('es');
 });
 
 // Función para scroll suave

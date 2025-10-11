@@ -923,6 +923,7 @@ SOBRE MÍ (About Section)
     font-size: 0.8rem;
     color: #f5f5f5;
 }
+
 /* ================================
    MODAL ULTRA COMPACTO
    ================================ */
@@ -1052,12 +1053,12 @@ SOBRE MÍ (About Section)
 .modal-gallery {
   position: relative;
   width: 100%;
-  height: 480px; /* Altura reducida */
-  perspective: 1200px;
+  height: 600px; /* Altura aumentada */
+  perspective: 1500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60px; /* Menos margen */
+  margin-bottom: 20px; /* Margen mínimo */
 }
 
 .gallery-container {
@@ -1075,8 +1076,8 @@ SOBRE MÍ (About Section)
   position: absolute;
   width: auto;
   height: auto;
-  max-width: 350px;
-  max-height: 420px;
+  max-width: 500px; /* Aumentado de 350px */
+  max-height: 550px; /* Aumentado de 420px */
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
@@ -1094,24 +1095,24 @@ SOBRE MÍ (About Section)
   border-color: #00ff88;
   box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4), 0 0 20px rgba(0, 255, 136, 0.3);
   z-index: 10;
-  max-width: 370px;
-  max-height: 440px;
+  max-width: 550px; /* Aumentado de 370px */
+  max-height: 600px; /* Aumentado de 440px */
 }
 
 .modal-gallery img.prev {
-  transform: translate(-50%, -50%) translateZ(-150px) translateX(-180px) rotateY(35deg) scale(0.8);
+  transform: translate(-50%, -50%) translateZ(-150px) translateX(-220px) rotateY(35deg) scale(0.8);
   opacity: 0.7;
   z-index: 5;
-  max-width: 300px;
-  max-height: 370px;
+  max-width: 400px; /* Aumentado de 300px */
+  max-height: 480px; /* Aumentado de 370px */
 }
 
 .modal-gallery img.next {
-  transform: translate(-50%, -50%) translateZ(-150px) translateX(180px) rotateY(-35deg) scale(0.8);
+  transform: translate(-50%, -50%) translateZ(-150px) translateX(220px) rotateY(-35deg) scale(0.8);
   opacity: 0.7;
   z-index: 5;
-  max-width: 300px;
-  max-height: 370px;
+  max-width: 400px; /* Aumentado de 300px */
+  max-height: 480px; /* Aumentado de 370px */
 }
 
 .modal-gallery img.hidden {
@@ -1124,7 +1125,7 @@ SOBRE MÍ (About Section)
 /* Controles ultra compactos */
 .gallery-controls {
   position: absolute;
-  bottom: -50px;
+  bottom: 40px; /* Bajados un poco más */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1155,7 +1156,7 @@ SOBRE MÍ (About Section)
 /* Indicadores ultra compactos */
 .gallery-indicators {
   position: absolute;
-  bottom: -70px;
+  bottom: -10px; /* Más cerca, justo debajo de los botones */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1554,18 +1555,32 @@ body.light-mode .indicator.active {
   }
   
   .modal-gallery {
-    height: 420px;
-    margin-bottom: 50px;
+    height: 500px;
+    margin-bottom: 20px;
   }
 
   .modal-gallery img {
-    max-width: 280px;
-    max-height: 350px;
+    max-width: 380px;
+    max-height: 450px;
   }
 
   .modal-gallery img.active {
-    max-width: 300px;
-    max-height: 370px;
+    max-width: 420px;
+    max-height: 500px;
+  }
+
+  .modal-gallery img.prev,
+  .modal-gallery img.next {
+    max-width: 320px;
+    max-height: 400px;
+  }
+
+  .gallery-controls {
+    bottom: 35px;
+  }
+
+  .gallery-indicators {
+    bottom: -5px;
   }
 }
 
@@ -1579,18 +1594,24 @@ body.light-mode .indicator.active {
   }
 
   .modal-gallery {
-    height: 380px;
-    margin-bottom: 45px;
+    height: 450px;
+    margin-bottom: 60px;
   }
 
   .modal-gallery img {
-    max-width: 240px;
-    max-height: 300px;
+    max-width: 320px;
+    max-height: 400px;
   }
 
   .modal-gallery img.active {
-    max-width: 260px;
-    max-height: 320px;
+    max-width: 360px;
+    max-height: 440px;
+  }
+
+  .modal-gallery img.prev,
+  .modal-gallery img.next {
+    max-width: 280px;
+    max-height: 350px;
   }
 
   .tech-stack {
@@ -1611,18 +1632,24 @@ body.light-mode .indicator.active {
   }
   
   .modal-gallery {
-    height: 320px;
-    margin-bottom: 40px;
+    height: 380px;
+    margin-bottom: 50px;
   }
 
   .modal-gallery img {
-    max-width: 200px;
-    max-height: 250px;
+    max-width: 260px;
+    max-height: 320px;
   }
 
   .modal-gallery img.active {
+    max-width: 290px;
+    max-height: 360px;
+  }
+
+  .modal-gallery img.prev,
+  .modal-gallery img.next {
     max-width: 220px;
-    max-height: 270px;
+    max-height: 280px;
   }
 
   .gallery-controls {
