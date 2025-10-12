@@ -925,7 +925,7 @@ SOBRE MÍ (About Section)
 }
 
 /* ================================
-   MODAL ULTRA COMPACTO
+   MODAL ULTRA COMPACTO (PROYECTOS)
    ================================ */
 
 .modal {
@@ -949,11 +949,11 @@ SOBRE MÍ (About Section)
 .modal-content {
   position: relative;
   background: #2a2a2a;
-  margin: 0.5% auto; /* Mínimo margen */
+  margin: 0.5% auto;
   padding: 0;
   width: 98%;
   max-width: 1200px;
-  max-height: 99vh; /* Casi toda la pantalla */
+  max-height: 99vh;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 136, 0.1);
@@ -975,7 +975,7 @@ SOBRE MÍ (About Section)
 /* Header ultra compacto */
 .modal-header {
   background: #1a1a1a;
-  padding: 1rem 2rem; /* Mínimo padding */
+  padding: 1rem 2rem;
   position: relative;
   border-bottom: 2px solid #00ff88;
 }
@@ -983,7 +983,7 @@ SOBRE MÍ (About Section)
 .modal-header h2,
 .modal-header h3 {
   color: #00ff88;
-  font-size: 1.5rem; /* Texto más pequeño */
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
   text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
@@ -1014,9 +1014,9 @@ SOBRE MÍ (About Section)
 
 /* Body ultra compacto */
 .modal-body {
-  padding: 1.5rem 2rem; /* Mínimo padding */
+  padding: 1.5rem 2rem;
   overflow-y: auto;
-  max-height: calc(99vh - 80px); /* Aprovecha máximo espacio */
+  max-height: calc(99vh - 80px);
   background: #2a2a2a;
 }
 
@@ -1036,11 +1036,11 @@ SOBRE MÍ (About Section)
 .modal-layout {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Gap mínimo */
+  gap: 1.5rem;
 }
 
 /* ================================
-   GALERÍA ULTRA COMPACTA
+   GALERÍA ULTRA COMPACTA (BOTONES VERDES)
    ================================ */
 
 .modal-gallery-container {
@@ -1053,12 +1053,12 @@ SOBRE MÍ (About Section)
 .modal-gallery {
   position: relative;
   width: 100%;
-  height: 600px; /* Altura aumentada */
+  height: 450px;
   perspective: 1500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; /* Margen mínimo */
+  margin-bottom: 15px;
 }
 
 .gallery-container {
@@ -1076,12 +1076,12 @@ SOBRE MÍ (About Section)
   position: absolute;
   width: auto;
   height: auto;
-  max-width: 500px; /* Aumentado de 350px */
-  max-height: 550px; /* Aumentado de 420px */
+  max-width: 400px;
+  max-height: 420px;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
-  transition: all 0.6s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
   left: 50%;
@@ -1095,24 +1095,24 @@ SOBRE MÍ (About Section)
   border-color: #00ff88;
   box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4), 0 0 20px rgba(0, 255, 136, 0.3);
   z-index: 10;
-  max-width: 550px; /* Aumentado de 370px */
-  max-height: 600px; /* Aumentado de 440px */
+  max-width: 420px;
+  max-height: 450px;
 }
 
 .modal-gallery img.prev {
   transform: translate(-50%, -50%) translateZ(-150px) translateX(-220px) rotateY(35deg) scale(0.8);
   opacity: 0.7;
   z-index: 5;
-  max-width: 400px; /* Aumentado de 300px */
-  max-height: 480px; /* Aumentado de 370px */
+  max-width: 320px;
+  max-height: 380px;
 }
 
 .modal-gallery img.next {
   transform: translate(-50%, -50%) translateZ(-150px) translateX(220px) rotateY(-35deg) scale(0.8);
   opacity: 0.7;
   z-index: 5;
-  max-width: 400px; /* Aumentado de 300px */
-  max-height: 480px; /* Aumentado de 370px */
+  max-width: 320px;
+  max-height: 380px;
 }
 
 .modal-gallery img.hidden {
@@ -1122,10 +1122,25 @@ SOBRE MÍ (About Section)
   z-index: 1;
 }
 
-/* Controles ultra compactos */
+/* Sin movimiento en hover pero manteniendo clickeable */
+.gallery-container img {
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-container img:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal-gallery img:hover {
+  border-color: rgba(0, 255, 136, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* BOTONES DE NAVEGACIÓN EN VERDE - MEJOR VISIBILIDAD */
 .gallery-controls {
   position: absolute;
-  bottom: 40px; /* Bajados un poco más */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1134,29 +1149,33 @@ SOBRE MÍ (About Section)
 }
 
 .gallery-btn {
-  background: rgba(0, 255, 136, 0.1);
+  background: rgba(0, 255, 136, 0.9); /* Verde más sólido */
   border: 2px solid #00ff88;
-  color: #00ff88;
-  width: 40px;
-  height: 40px;
+  color: #1a1a1a; /* Texto oscuro para mejor contraste */
+  width: 45px; /* Un poco más grandes */
+  height: 45px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem; /* Iconos más grandes */
+  font-weight: bold;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4); /* Sombra verde */
 }
 
 .gallery-btn:hover {
   background: #00ff88;
   color: #1a1a1a;
+  transform: scale(1.1); /* Efecto de agrandamiento al hover */
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
 }
 
-/* Indicadores ultra compactos */
+/* Indicadores en verde */
 .gallery-indicators {
   position: absolute;
-  bottom: -10px; /* Más cerca, justo debajo de los botones */
+  bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1165,32 +1184,40 @@ SOBRE MÍ (About Section)
 }
 
 .indicator {
-  width: 6px;
-  height: 6px;
+  width: 8px; /* Un poco más grandes */
+  height: 8px;
   border-radius: 50%;
-  background: rgba(0, 255, 136, 0.3);
+  background: rgba(0, 255, 136, 0.5); /* Más visibles */
   border: 1px solid #00ff88;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
 }
 
 .indicator.active {
   background: #00ff88;
+  transform: scale(1.2); /* Efecto de agrandamiento cuando está activo */
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.8);
+}
+
+.indicator:hover {
+  background: rgba(0, 255, 136, 0.8);
+  transform: scale(1.1);
 }
 
 /* ================================
-   CONTENIDO DE TEXTO ABAJO
+   CONTENIDO DE TEXTO ABAJO (SIN MOVIMIENTO)
    ================================ */
 
 .modal-content-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Gap mínimo */
+  gap: 1rem;
 }
 
 .modal-section {
   background: #1a1a1a;
-  padding: 1rem; /* Padding mínimo */
+  padding: 1rem;
   border-radius: 10px;
   border: 1px solid #333;
   transition: all 0.3s ease;
@@ -1199,14 +1226,13 @@ SOBRE MÍ (About Section)
 .modal-section:hover {
   background: #222;
   border-color: #00ff88;
-  transform: translateX(2px);
   box-shadow: 0 0 8px rgba(0, 255, 136, 0.2);
 }
 
 .modal-section h3,
 .modal-section h4 {
   color: #00ff88;
-  font-size: 1rem; /* Texto compacto */
+  font-size: 1rem;
   margin-bottom: 0.6rem;
   display: flex;
   align-items: center;
@@ -1227,7 +1253,7 @@ SOBRE MÍ (About Section)
 
 .modal-description {
   color: #d0d0d0;
-  line-height: 1.5; /* Interlineado mínimo */
+  line-height: 1.5;
   font-size: 0.9rem;
 }
 
@@ -1240,7 +1266,7 @@ SOBRE MÍ (About Section)
 
 .modal-features li {
   color: #d0d0d0;
-  padding: 0.4rem 0; /* Padding mínimo */
+  padding: 0.4rem 0;
   border-bottom: 1px solid #333;
   display: flex;
   align-items: center;
@@ -1255,7 +1281,6 @@ SOBRE MÍ (About Section)
 
 .modal-features li:hover {
   color: #fff;
-  padding-left: 0.2rem;
   background: rgba(0, 255, 136, 0.05);
 }
 
@@ -1268,10 +1293,9 @@ SOBRE MÍ (About Section)
 }
 
 /* ================================
-   CATEGORÍAS DE TECNOLOGÍA
+   CATEGORÍAS DE TECNOLOGÍA (SIN MOVIMIENTO)
    ================================ */
 
-/* Categoría de tecnología */
 .tech-category {
   margin-bottom: 1rem;
 }
@@ -1280,7 +1304,6 @@ SOBRE MÍ (About Section)
   margin-bottom: 0;
 }
 
-/* Subtítulo de tecnología */
 .tech-subtitle {
   color: #00ff88;
   font-size: 1rem;
@@ -1292,16 +1315,15 @@ SOBRE MÍ (About Section)
   border-left: 3px solid #00ff88;
 }
 
-/* Stack ultra compacto */
 .tech-stack {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem; /* Gap mínimo */
+  gap: 0.6rem;
 }
 
 .tech-item {
   background: #1a1a1a;
-  padding: 0.6rem; /* Padding mínimo */
+  padding: 0.6rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -1313,7 +1335,6 @@ SOBRE MÍ (About Section)
 
 .tech-item:hover {
   border-color: #00ff88;
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 255, 136, 0.2);
 }
 
@@ -1326,7 +1347,6 @@ SOBRE MÍ (About Section)
   font-weight: 500;
 }
 
-/* Rol ultra compacto */
 .modal-role {
   background: #1a1a1a;
   padding: 0.6rem 1rem;
@@ -1340,7 +1360,6 @@ SOBRE MÍ (About Section)
   font-size: 0.85rem;
 }
 
-/* Botón ultra compacto */
 .modal-github-link,
 .modal-btn {
   display: inline-flex;
@@ -1365,7 +1384,6 @@ SOBRE MÍ (About Section)
 .modal-btn:hover {
   background: #00ff88;
   color: #1a1a1a;
-  transform: translateY(-1px);
 }
 
 .modal-github-link i,
@@ -1373,7 +1391,6 @@ SOBRE MÍ (About Section)
   font-size: 1rem;
 }
 
-/* Footer ultra compacto */
 .modal-footer {
   padding: 1rem 2rem;
   background: #1a1a1a;
@@ -1383,8 +1400,145 @@ SOBRE MÍ (About Section)
 }
 
 /* ================================
-   LIGHT MODE ULTRA COMPACTO - AZUL
+   MODAL PARA VISUALIZACIÓN DE IMÁGENES EN GRANDE
    ================================ */
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+.image-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2001;
+  transition: color 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-close:hover {
+  color: #ccc;
+  transform: scale(1.1);
+}
+
+.image-modal-body {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.image-caption {
+  text-align: center;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+  width: fit-content;
+  min-width: 300px;
+  font-family: 'Arial', sans-serif;
+}
+
+.image-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.image-prev {
+  left: 20px;
+}
+
+.image-next {
+  right: 20px;
+}
+
+#imageCounter {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-left: 15px;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.image-modal-content {
+  animation: zoomIn 0.3s ease;
+}
+
+/* ================================
+   LIGHT MODE ULTRA COMPACTO - AZUL (SIN MOVIMIENTO)
+   ================================ */
+
 body.light-mode .modal-content {
   background: #f5f5f5;
   border-color: #007bff;
@@ -1432,7 +1586,6 @@ body.light-mode .modal-section {
 body.light-mode .modal-section:hover {
   background: #f8f9fa;
   border-color: #007bff;
-  transform: translateX(2px);
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
@@ -1465,7 +1618,6 @@ body.light-mode .modal-features li::before {
   color: #007bff;
 }
 
-/* Light mode para subtítulo de tecnología */
 body.light-mode .tech-subtitle {
   color: #007bff;
   border-left-color: #007bff;
@@ -1502,7 +1654,6 @@ body.light-mode .modal-github-link:hover,
 body.light-mode .modal-btn:hover {
   background: #007bff;
   color: #fff;
-  transform: translateY(-1px);
 }
 
 body.light-mode .modal-footer {
@@ -1510,7 +1661,6 @@ body.light-mode .modal-footer {
   border-top-color: #007bff;
 }
 
-/* GALERÍA EN MODO CLARO - AZUL */
 body.light-mode .modal-gallery img {
   background: rgba(0, 0, 0, 0.02);
 }
@@ -1520,24 +1670,64 @@ body.light-mode .modal-gallery img.active {
   box-shadow: 0 15px 40px rgba(0, 123, 255, 0.4), 0 0 20px rgba(0, 123, 255, 0.3);
 }
 
+/* BOTONES VERDES EN LIGHT MODE */
 body.light-mode .gallery-btn {
-  background: rgba(0, 123, 255, 0.1);
+  background: rgba(0, 123, 255, 0.9);
   border-color: #007bff;
-  color: #007bff;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
 }
 
 body.light-mode .gallery-btn:hover {
   background: #007bff;
   color: white;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
 }
 
 body.light-mode .indicator {
-  background: rgba(0, 123, 255, 0.3);
+  background: rgba(0, 123, 255, 0.5);
   border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 
 body.light-mode .indicator.active {
   background: #007bff;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.8);
+}
+
+body.light-mode .indicator:hover {
+  background: rgba(0, 123, 255, 0.8);
+}
+
+body.light-mode .image-modal {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode .image-close {
+  color: #007bff;
+}
+
+body.light-mode .image-close:hover {
+  color: #0056b3;
+}
+
+body.light-mode #modalImage {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .image-caption {
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .image-nav {
+  background: rgba(0, 123, 255, 0.2);
+  color: #007bff;
+}
+
+body.light-mode .image-nav:hover {
+  background: rgba(0, 123, 255, 0.3);
+  color: #0056b3;
 }
 
 /* ================================
@@ -1555,32 +1745,69 @@ body.light-mode .indicator.active {
   }
   
   .modal-gallery {
-    height: 500px;
-    margin-bottom: 20px;
+    height: 400px;
   }
 
   .modal-gallery img {
-    max-width: 380px;
-    max-height: 450px;
+    max-width: 300px;
+    max-height: 350px;
   }
 
   .modal-gallery img.active {
-    max-width: 420px;
-    max-height: 500px;
+    max-width: 330px;
+    max-height: 380px;
   }
 
   .modal-gallery img.prev,
   .modal-gallery img.next {
-    max-width: 320px;
-    max-height: 400px;
+    max-width: 250px;
+    max-height: 300px;
   }
 
   .gallery-controls {
-    bottom: 35px;
+    bottom: 15px;
   }
 
   .gallery-indicators {
     bottom: -5px;
+  }
+
+  .image-modal-content {
+    width: 95%;
+    height: 95vh;
+  }
+
+  .image-nav {
+    padding: 10px 15px;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .image-prev {
+    left: 10px;
+  }
+
+  .image-next {
+    right: 10px;
+  }
+
+  .image-caption {
+    flex-direction: column;
+    gap: 5px;
+    min-width: 250px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .image-close {
+    top: -35px;
+    right: -10px;
+    font-size: 30px;
+  }
+
+  #imageCounter {
+    font-size: 12px;
   }
 }
 
@@ -1594,28 +1821,36 @@ body.light-mode .indicator.active {
   }
 
   .modal-gallery {
-    height: 450px;
-    margin-bottom: 60px;
+    height: 350px;
+    margin-bottom: 50px;
   }
 
   .modal-gallery img {
-    max-width: 320px;
-    max-height: 400px;
+    max-width: 260px;
+    max-height: 300px;
   }
 
   .modal-gallery img.active {
-    max-width: 360px;
-    max-height: 440px;
+    max-width: 280px;
+    max-height: 320px;
   }
 
   .modal-gallery img.prev,
   .modal-gallery img.next {
-    max-width: 280px;
-    max-height: 350px;
+    max-width: 220px;
+    max-height: 260px;
   }
 
   .tech-stack {
     grid-template-columns: 1fr;
+  }
+
+  .image-modal-content {
+    width: 97%;
+  }
+
+  #modalImage {
+    max-height: 75vh;
   }
 }
 
@@ -1632,34 +1867,79 @@ body.light-mode .indicator.active {
   }
   
   .modal-gallery {
-    height: 380px;
-    margin-bottom: 50px;
+    height: 300px;
+    margin-bottom: 40px;
   }
 
   .modal-gallery img {
-    max-width: 260px;
-    max-height: 320px;
+    max-width: 220px;
+    max-height: 250px;
   }
 
   .modal-gallery img.active {
-    max-width: 290px;
-    max-height: 360px;
+    max-width: 240px;
+    max-height: 270px;
   }
 
   .modal-gallery img.prev,
   .modal-gallery img.next {
-    max-width: 220px;
-    max-height: 280px;
+    max-width: 180px;
+    max-height: 210px;
   }
 
   .gallery-controls {
-    bottom: -40px;
+    bottom: -30px;
   }
 
   .gallery-indicators {
-    bottom: -55px;
+    bottom: -45px;
+  }
+
+  .image-modal-content {
+    width: 98%;
+    height: 98vh;
+  }
+
+  .image-nav {
+    padding: 8px 12px;
+    font-size: 18px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .image-caption {
+    min-width: 200px;
+    font-size: 12px;
+  }
+
+  #modalImage {
+    max-height: 70vh;
   }
 }
+
+/* Soporte para teclado y accesibilidad */
+.image-nav:focus,
+.image-close:focus,
+.gallery-btn:focus,
+.close-modal:focus {
+  outline: 2px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* Mejora de rendimiento para imágenes */
+#modalImage,
+.modal-gallery img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Efecto de carga */
+#modalImage.loading {
+  opacity: 0.7;
+  filter: blur(2px);
+}
+
+
 
 /* ============================== 
    LENGUAJES DE PROGRAMACIÓN EN PROYECTOS

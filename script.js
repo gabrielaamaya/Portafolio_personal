@@ -65,8 +65,7 @@ const translations = {
     'contacto-titulo': 'Contacto',
     'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
     'marca-titulo': 'Marca Personal',
-    'frase-marca': 'Aprender juntos es mejor que aprender solos',
-    'marca-autor': '- Gabriela Amaya',
+    'frase-marca': '“Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos.”',
     
     // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
     'description': 'Descripción',
@@ -81,7 +80,8 @@ const translations = {
     'role-analyst': 'Analista y Desarrollador',
     'role-frontend-backend': 'Desarrollador Frontend y Backend',
     'tech-languages': 'Lenguajes de Programación',
-    'tech-apps': 'Aplicaciones'
+    'tech-apps': 'Aplicaciones',
+    'image': 'Imagen'
   },
   'en': {
     'brand': 'MY PORTFOLIO',
@@ -145,8 +145,7 @@ const translations = {
     'contacto-titulo': 'Contact',
     'footer': '© 2025 Gabriela Amaya - All rights reserved',
     'marca-titulo': 'Personal Brand',
-    'frase-marca': '"Learning together is better than learning alone."',
-    'marca-autor': '- Gabriela Amaya',
+    'frase-marca': '“With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further.”',
     
     // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
     'description': 'Description',
@@ -161,7 +160,8 @@ const translations = {
     'role-analyst': 'Analyst and Developer',
     'role-frontend-backend': 'Frontend and Backend Developer',
     'tech-languages': 'Programming Languages',
-    'tech-apps': 'Applications'
+    'tech-apps': 'Applications',
+    'image': 'Image'
   }
 };
 
@@ -339,7 +339,7 @@ const projectsData = {
     'artesanias-web': {
         title: { 'es': 'Sitio web de Artesanías Conchita', 'en': 'Conchita Crafts Website' },
         description: {
-            'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clientes conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
+            'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clients conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
             'en': 'Informative website that displays the company products. Allows customers to learn about the company history, view the product catalog and contact the company.'
         },
         features: {
@@ -444,7 +444,7 @@ function updateProjectModal(projectId) {
         project.images.forEach((image, index) => {
             const img = document.createElement('img');
             img.src = image;
-            img.alt = `${project.title[currentLang]} - Image ${index + 1}`;
+            img.alt = `${project.title[currentLang]} - ${translations[currentLang]['image']} ${index + 1}`;
             
             if (index === 0) {
                 img.classList.add('active');
@@ -519,7 +519,7 @@ function goToImage(index) {
 }
 
 // ================================
-// FUNCIONALIDAD DEL MODAL
+// FUNCIONALIDAD DEL MODAL DE PROYECTOS
 // ================================
 
 let modal = null;
@@ -567,6 +567,137 @@ function closeProjectModal() {
             activeCard.classList.remove('active');
         }
     }
+}
+
+// ================================
+// MODAL PARA VISUALIZACIÓN DE IMÁGENES EN GRANDE
+// ================================
+
+let imageModal = null;
+let modalImage = null;
+let modalCaption = null;
+let currentImageIndex = 0;
+let currentProjectImages = [];
+
+// Inicializar modal de imágenes
+function initImageModal() {
+    // Crear elementos del modal si no existen
+    if (!document.getElementById('imageModal')) {
+        const modalHTML = `
+            <div id="imageModal" class="image-modal">
+                <div class="image-modal-content">
+                    <span class="image-close">&times;</span>
+                    <div class="image-modal-body">
+                        <img id="modalImage" src="" alt="">
+                        <div class="image-caption">
+                            <span id="modalCaption"></span>
+                            <span id="imageCounter"></span>
+                        </div>
+                    </div>
+                    <button class="image-nav image-prev">&#10094;</button>
+                    <button class="image-nav image-next">&#10095;</button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    imageModal = document.getElementById('imageModal');
+    modalImage = document.getElementById('modalImage');
+    modalCaption = document.getElementById('modalCaption');
+    
+    // Event listeners para el modal de imágenes
+    document.querySelector('.image-close').addEventListener('click', closeImageModal);
+    document.querySelector('.image-prev').addEventListener('click', showPrevImage);
+    document.querySelector('.image-next').addEventListener('click', showNextImage);
+    
+    imageModal.addEventListener('click', function(e) {
+        if (e.target === imageModal) {
+            closeImageModal();
+        }
+    });
+}
+
+// Abrir modal de imagen
+function openImageModal(imageSrc, caption, projectImages, startIndex = 0) {
+    if (!imageModal) initImageModal();
+    
+    modalImage.src = imageSrc;
+    modalCaption.textContent = caption;
+    currentProjectImages = projectImages;
+    currentImageIndex = startIndex;
+    
+    updateImageCounter();
+    imageModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Cerrar modal de imagen
+function closeImageModal() {
+    if (imageModal) {
+        imageModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        currentProjectImages = [];
+        currentImageIndex = 0;
+    }
+}
+
+// Mostrar imagen anterior
+function showPrevImage() {
+    if (currentProjectImages.length === 0) return;
+    
+    currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+    const project = getActiveProject();
+    const projectData = projectsData[project];
+    
+    modalImage.src = currentProjectImages[currentImageIndex];
+    modalCaption.textContent = `${projectData.title[currentLang]} - ${translations[currentLang]['image']} ${currentImageIndex + 1}`;
+    updateImageCounter();
+}
+
+// Mostrar siguiente imagen
+function showNextImage() {
+    if (currentProjectImages.length === 0) return;
+    
+    currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+    const project = getActiveProject();
+    const projectData = projectsData[project];
+    
+    modalImage.src = currentProjectImages[currentImageIndex];
+    modalCaption.textContent = `${projectData.title[currentLang]} - ${translations[currentLang]['image']} ${currentImageIndex + 1}`;
+    updateImageCounter();
+}
+
+// Actualizar contador de imágenes
+function updateImageCounter() {
+    const imageCounter = document.getElementById('imageCounter');
+    if (imageCounter && currentProjectImages.length > 0) {
+        imageCounter.textContent = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
+    }
+}
+
+// Agregar event listeners a las imágenes de la galería
+function initGalleryImageClicks() {
+    document.addEventListener('click', function(e) {
+        // Verificar si se hizo clic en una imagen de la galería
+        const galleryImg = e.target.closest('.gallery-container img');
+        if (galleryImg && modal && modal.style.display === 'block') {
+            const galleryContainer = galleryImg.closest('.gallery-container');
+            const images = Array.from(galleryContainer.querySelectorAll('img'));
+            const imageIndex = images.indexOf(galleryImg);
+            const project = getActiveProject();
+            const projectData = projectsData[project];
+            
+            if (projectData && projectData.images) {
+                openImageModal(
+                    galleryImg.src,
+                    `${projectData.title[currentLang]} - ${translations[currentLang]['image']} ${imageIndex + 1}`,
+                    projectData.images,
+                    imageIndex
+                );
+            }
+        }
+    });
 }
 
 // ================================
@@ -633,10 +764,20 @@ document.addEventListener('DOMContentLoaded', function() {
         nextBtn.addEventListener('click', nextImage);
     }
 
+    // Inicializar modal de imágenes
+    initImageModal();
+    
+    // Inicializar clics en imágenes de galería
+    initGalleryImageClicks();
+
     // Cerrar modal con tecla Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            closeProjectModal();
+            if (imageModal && imageModal.style.display === 'block') {
+                closeImageModal();
+            } else if (modal && modal.style.display === 'block') {
+                closeProjectModal();
+            }
         }
     });
 
