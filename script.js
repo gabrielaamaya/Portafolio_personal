@@ -147,6 +147,7 @@ const translations = {
     'marca-titulo': 'Personal Brand',
     'frase-marca': '“With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further.”',
     
+    
     // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
     'description': 'Description',
     'features': 'Features',
@@ -230,6 +231,7 @@ if (toggleBtn) {
 const projectsData = {
     'adopta-amigo': {
         title: { 'es': 'Adopta a un amigo', 'en': 'Adopt a friend' },
+        modalTitle: { 'es': 'Adopta a un amigo | 2024', 'en': 'Adopt a friend | 2024' },
         description: {
             'es': 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas. Permite a los usuarios ver los animales disponibles, filtrar por características y solicitar adopciones de manera sencilla.',
             'en': 'Web platform for an animal shelter, focused on promoting responsible pet adoption. Allows users to view available animals, filter by characteristics, and request adoptions easily.'
@@ -251,10 +253,11 @@ const projectsData = {
             ]
         },
         technologies: [
-            { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
-            { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
-            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
-            { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
+                { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
+                { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
+                { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
+                { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
+
         ],
         role: { 'es': 'Desarrollador Full Stack', 'en': 'Full Stack Developer' },
         githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
@@ -266,30 +269,31 @@ const projectsData = {
     },
     'task-planner': {
         title: { 'es': 'Task Planner', 'en': 'Task Planner' },
+        modalTitle: { 'es': 'Task Planner | 2025', 'en': 'Task Planner | 2025' },
         description: {
             'es': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo. Permite crear, editar y eliminar tareas, establecer prioridades y fechas de vencimiento.',
             'en': 'Mobile application to organize tasks, with local storage and filters for better time management. Allows creating, editing and deleting tasks, setting priorities and due dates.'
         },
         features: {
             'es': [
-                'Creación y gestión de tareas',
-                'Categorización por prioridad',
-                'Recordatorios y notificaciones',
-                'Sincronización local sin necesidad de conexión a internet',
-                'Interfaz intuitiva y fácil de usar'
+                'Creación y gestión de tareas con fecha y hora límite',
+                'Sistema de repetición diaria de tareas',
+                'Marcado de tareas como realizadas',
+                'Visualización de gráficos de progreso',
+                'Organización por grupos de tareas'
             ],
             'en': [
-                'Task creation and management',
-                'Priority categorization',
-                'Reminders and notifications',
-                'Local synchronization without internet connection',
-                'Intuitive and easy-to-use interface'
+                'Task creation and management with due date and time',
+                'Daily task repetition system',
+                'Mark tasks as completed',
+                'Progress charts visualization',
+                'Organization by task groups'
             ]
         },
         technologies: [
             { name: 'Java', icon: 'fab fa-java', color: '#ed8b00', type: 'language' },
             { name: 'Android Studio', icon: 'fab fa-android', color: '#3ddc84', type: 'app' },
-            { name: 'SQLite', icon: 'fas fa-database', color: '#003b57', type: 'app' }
+            { name: 'Couchbase', icon: 'fas fa-database', color: '#aa2c26', type: 'database' }
         ],
         role: { 'es': 'Desarrollador Móvil', 'en': 'Mobile Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Prograll-Semi-2025.git',
@@ -303,6 +307,7 @@ const projectsData = {
     },
     'artesanias-conchita': {
         title: { 'es': 'Artesanías Conchita', 'en': 'Conchita Crafts' },
+        modalTitle: { 'es': 'Artesanías Conchita | 2024', 'en': 'Conchita Crafts | 2024' },
         description: {
             'es': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa. Facilita la gestión de productos, clientes, proveedores y ventas.',
             'en': 'Business software prototype that allows complete control of company billing and inventory. Facilitates product, customer, supplier and sales management.'
@@ -312,21 +317,20 @@ const projectsData = {
                 'Gestión de inventario y productos',
                 'Control de ventas y facturación',
                 'Registro de clientes y proveedores',
-                'Reportes y estadísticas de ventas',
-                'Sistema de usuarios y permisos'
+                
             ],
             'en': [
                 'Inventory and product management',
                 'Sales and billing control',
                 'Customer and supplier registration',
-                'Sales reports and statistics',
-                'User and permissions system'
+                
             ]
         },
         technologies: [
-            { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
-            { name: 'Windows Forms', icon: 'fab fa-windows', color: '#0078d7', type: 'app' },
-            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' }
+                { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
+                { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
+                { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
+                { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
         ],
         role: { 'es': 'Analista y Desarrollador', 'en': 'Analyst and Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
@@ -338,38 +342,37 @@ const projectsData = {
     },
     'artesanias-web': {
         title: { 'es': 'Sitio web de Artesanías Conchita', 'en': 'Conchita Crafts Website' },
+        modalTitle: { 'es': 'Sitio web de Artesanías Conchita | 2024', 'en': 'Conchita Crafts Website | 2024' },
         description: {
             'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clients conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
             'en': 'Informative website that displays the company products. Allows customers to learn about the company history, view the product catalog and contact the company.'
         },
         features: {
             'es': [
-                'Diseño responsive adaptado a dispositivos móviles',
-                'Galería de productos con categorías',
-                'Formulario de contacto',
-                'Información sobre la empresa y su historia',
-                'Integración con redes sociales'
+                'Página informativa de productos artesanales',
+                'Diseño atractivo y profesional',
+                'Información de contacto y correo',
+                'Presentación de catálogo de productos'
             ],
             'en': [
-                'Responsive design adapted to mobile devices',
-                'Product gallery with categories',
-                'Contact form',
-                'Information about the company and its history',
-                'Social media integration'
+                'Informative page for handicraft products',
+                'Attractive and professional design',
+                'Contact information and email',
+                'Product catalog presentation'
             ]
         },
         technologies: [
             { name: 'Python', icon: 'fab fa-python', color: '#3776ab', type: 'language' },
-            { name: 'HTML/CSS/JS', icon: 'fab fa-html5', color: '#e34f26', type: 'language' },
-            { name: 'Django', icon: 'fas fa-code', color: '#092e20', type: 'app' },
-            { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3', type: 'app' }
+            { name: 'HTML', icon: 'fab fa-html5', color: '#e34f26', type: 'frontend' },
+            { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572b6', type: 'frontend' },
+            { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e', type: 'frontend' }
         ],
         role: { 'es': 'Desarrollador Frontend y Backend', 'en': 'Frontend and Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
-            'artesanias-web-1.jpg',
-            'artesanias-web-2.jpg'
+            'sitio web conchita modo claro.jpeg',
+            'sitio web conchita modo oscuro.jpeg'
         ]
     }
 };
@@ -384,7 +387,8 @@ function updateProjectModal(projectId) {
     if (!project || !modal) return;
     
     // Actualizar contenido del modal según el idioma actual
-    modalTitle.textContent = project.title[currentLang];
+    // Usar modalTitle (con año) en lugar de title (sin año)
+    modalTitle.textContent = project.modalTitle ? project.modalTitle[currentLang] : project.title[currentLang];
     modalDescription.textContent = project.description[currentLang];
     modalRole.textContent = project.role[currentLang];
     modalGitHubLink.href = project.githubLink;
