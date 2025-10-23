@@ -704,6 +704,52 @@ function initGalleryImageClicks() {
     });
 }
 
+// Función para ampliar imagen al hacer clic del logotipo 
+function initImagenAmpliada() {
+    const logoImg = document.querySelector('.logo-img');
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    document.body.appendChild(overlay);
+
+    if (logoImg) {
+        logoImg.addEventListener('click', function() {
+            // Crear copia de la imagen para vista ampliada
+            const imagenGrande = this.cloneNode();
+            imagenGrande.className = 'imagen-grande';
+            
+            // Mostrar overlay
+            overlay.style.display = 'block';
+            
+            // Agregar imagen ampliada al body
+            document.body.appendChild(imagenGrande);
+            
+            // Funciones para cerrar
+            function cerrarImagen() {
+                if (document.body.contains(imagenGrande)) {
+                    document.body.removeChild(imagenGrande);
+                }
+                overlay.style.display = 'none';
+            }
+            
+            // Event listeners para cerrar
+            imagenGrande.addEventListener('click', cerrarImagen);
+            overlay.addEventListener('click', cerrarImagen);
+            
+            // Cerrar con tecla ESC
+            document.addEventListener('keydown', function cerrarConTecla(e) {
+                if (e.key === 'Escape') {
+                    cerrarImagen();
+                    document.removeEventListener('keydown', cerrarConTecla);
+                }
+            });
+        });
+    }
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initImagenAmpliada);
+
+
 // ================================
 // INICIALIZACIÓN
 // ================================
