@@ -972,7 +972,10 @@ SOBRE MÍ (About Section)
   }
 }
 
-/* Header ultra compacto */
+/* ================================
+   HEADER ULTRA COMPACTO
+   ================================ */
+
 .modal-header {
   background: #1a1a1a;
   padding: 1rem 2rem;
@@ -1012,7 +1015,10 @@ SOBRE MÍ (About Section)
   color: #1a1a1a;
 }
 
-/* Body ultra compacto */
+/* ================================
+   BODY ULTRA COMPACTO
+   ================================ */
+
 .modal-body {
   padding: 1.5rem 2rem;
   overflow-y: auto;
@@ -1032,7 +1038,10 @@ SOBRE MÍ (About Section)
   background: #00ff88;
 }
 
-/* Layout vertical - Imagen arriba, texto abajo */
+/* ================================
+   LAYOUT VERTICAL - IMAGEN ARRIBA, TEXTO ABAJO
+   ================================ */
+
 .modal-layout {
   display: flex;
   flex-direction: column;
@@ -1137,7 +1146,10 @@ SOBRE MÍ (About Section)
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* BOTONES DE NAVEGACIÓN EN VERDE - MEJOR VISIBILIDAD */
+/* ================================
+   BOTONES DE NAVEGACIÓN EN VERDE - GALERÍA PRINCIPAL
+   ================================ */
+
 .gallery-controls {
   position: absolute;
   bottom: 20px;
@@ -1172,7 +1184,10 @@ SOBRE MÍ (About Section)
   box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
 }
 
-/* Indicadores en verde */
+/* ================================
+   INDICADORES EN VERDE
+   ================================ */
+
 .gallery-indicators {
   position: absolute;
   bottom: -5px;
@@ -1257,7 +1272,10 @@ SOBRE MÍ (About Section)
   font-size: 0.9rem;
 }
 
-/* Lista ultra compacta */
+/* ================================
+   LISTA ULTRA COMPACTA
+   ================================ */
+
 .modal-features {
   list-style: none;
   padding: 0;
@@ -1487,13 +1505,17 @@ SOBRE MÍ (About Section)
   font-family: 'Arial', sans-serif;
 }
 
+/* ================================
+   BOTONES DE NAVEGACIÓN EN VERDE - MODAL DE IMAGEN GRANDE
+   ================================ */
+
 .image-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: none;
+  background: rgba(0, 255, 136, 0.9); /* Fondo verde sólido */
+  color: #1a1a1a; /* Texto oscuro para contraste */
+  border: 2px solid #00ff88; /* Borde verde */
   font-size: 24px;
   padding: 15px 20px;
   cursor: pointer;
@@ -1505,11 +1527,14 @@ SOBRE MÍ (About Section)
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4); /* Sombra verde */
 }
 
 .image-nav:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #00ff88; /* Verde más sólido al hover */
+  color: #1a1a1a;
   transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
 }
 
 .image-prev {
