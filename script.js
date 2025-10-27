@@ -75,10 +75,7 @@ const translations = {
     'applications': 'Aplicaciones',
     'role-performed': 'Rol Desempeñado',
     'close': 'Cerrar',
-    'role-fullstack': 'Desarrollador Full Stack',
-    'role-mobile': 'Desarrollador Móvil',
-    'role-analyst': 'Analista y Desarrollador',
-    'role-frontend-backend': 'Desarrollador Frontend y Backend',
+    'role-backend': 'Desarrollador Backend',
     'tech-languages': 'Lenguajes de Programación',
     'tech-apps': 'Aplicaciones',
     'image': 'Imagen'
@@ -156,10 +153,7 @@ const translations = {
     'applications': 'Applications',
     'role-performed': 'Role Performed',
     'close': 'Close',
-    'role-fullstack': 'Full Stack Developer',
-    'role-mobile': 'Mobile Developer',
-    'role-analyst': 'Analyst and Developer',
-    'role-frontend-backend': 'Frontend and Backend Developer',
+    'role-backend': 'Backend Developer',
     'tech-languages': 'Programming Languages',
     'tech-apps': 'Applications',
     'image': 'Image'
@@ -259,7 +253,7 @@ const projectsData = {
                 { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
 
         ],
-        role: { 'es': 'Desarrollador Full Stack', 'en': 'Full Stack Developer' },
+        role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
         images: [
             'Adoptaaunamigo.jpeg',
@@ -295,7 +289,7 @@ const projectsData = {
             { name: 'Android Studio', icon: 'fab fa-android', color: '#3ddc84', type: 'app' },
             { name: 'Couchbase', icon: 'fas fa-database', color: '#aa2c26', type: 'database' }
         ],
-        role: { 'es': 'Desarrollador Móvil', 'en': 'Mobile Developer' },
+        role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Prograll-Semi-2025.git',
         images: [
             'task planner.png',
@@ -332,7 +326,7 @@ const projectsData = {
                 { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
                 { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
         ],
-        role: { 'es': 'Analista y Desarrollador', 'en': 'Analyst and Developer' },
+        role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
@@ -367,7 +361,7 @@ const projectsData = {
             { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572b6', type: 'frontend' },
             { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e', type: 'frontend' }
         ],
-        role: { 'es': 'Desarrollador Frontend y Backend', 'en': 'Frontend and Backend Developer' },
+        role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
