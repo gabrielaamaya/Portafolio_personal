@@ -65,7 +65,7 @@ const translations = {
     'contacto-titulo': 'Contacto',
     'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
     'marca-titulo': 'Marca Personal',
-    'frase-marca': '“Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos.”',
+    'frase-marca': '"Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos."',
     
     // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
     'description': 'Descripción',
@@ -76,6 +76,7 @@ const translations = {
     'role-performed': 'Rol Desempeñado',
     'close': 'Cerrar',
     'role-backend': 'Desarrollador Backend',
+    'role-quality': 'Gestor de Calidad',
     'tech-languages': 'Lenguajes de Programación',
     'tech-apps': 'Aplicaciones',
     'image': 'Imagen'
@@ -142,8 +143,7 @@ const translations = {
     'contacto-titulo': 'Contact',
     'footer': '© 2025 Gabriela Amaya - All rights reserved',
     'marca-titulo': 'Personal Brand',
-    'frase-marca': '“With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further.”',
-    
+    'frase-marca': '"With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further."',
     
     // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
     'description': 'Description',
@@ -154,6 +154,7 @@ const translations = {
     'role-performed': 'Role Performed',
     'close': 'Close',
     'role-backend': 'Backend Developer',
+    'role-quality': 'Quality Manager',
     'tech-languages': 'Programming Languages',
     'tech-apps': 'Applications',
     'image': 'Image'
@@ -336,7 +337,7 @@ const projectsData = {
     },
     'artesanias-web': {
         title: { 'es': 'Sitio web de Artesanías Conchita', 'en': 'Conchita Crafts Website' },
-        modalTitle: { 'es': 'Sitio web de Artesanías Conchita | 2024', 'en': 'Conchita Crafts Website | 2024' },
+        modalTitle: { 'es': 'Sitio web de Artesanías Conchita | 2025', 'en': 'Conchita Crafts Website | 2025' },
         description: {
             'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clients conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
             'en': 'Informative website that displays the company products. Allows customers to learn about the company history, view the product catalog and contact the company.'
@@ -361,7 +362,8 @@ const projectsData = {
             { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572b6', type: 'frontend' },
             { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e', type: 'frontend' }
         ],
-        role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
+        // CAMBIO REALIZADO: De "Desarrollador Backend" a "Gestor de Calidad"
+        role: { 'es': 'Gestor de Calidad', 'en': 'Quality Manager' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
         images: [
             'Prototipo de Artesanias Conchita.jpeg',
