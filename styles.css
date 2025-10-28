@@ -605,16 +605,89 @@ SOBRE MÍ (About Section)
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Colores específicos para cada lenguaje */
+.lenguaje-nombre[data-lenguaje="python"]:hover {
+  background: #3776AB;
+  border-color: #3776AB;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(55, 118, 171, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="javascript"]:hover {
+  background: #F7DF1E;
+  border-color: #F7DF1E;
+  color: #000000;
+  box-shadow: 0 5px 15px rgba(247, 223, 30, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="java"]:hover {
+  background: #007396;
+  border-color: #007396;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 115, 150, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="csharp"]:hover {
+  background: #239120;
+  border-color: #239120;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(35, 145, 32, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="php"]:hover {
+  background: #777BB4;
+  border-color: #777BB4;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(119, 123, 180, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="html"]:hover {
+  background: #E34F26;
+  border-color: #E34F26;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(227, 79, 38, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="css"]:hover {
+  background: #1572B6;
+  border-color: #1572B6;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(21, 114, 182, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="typescript"]:hover {
+  background: #3178C6;
+  border-color: #3178C6;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(49, 120, 198, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="go"]:hover {
+  background: #00ADD8;
+  border-color: #00ADD8;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 173, 216, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="rust"]:hover {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.lenguaje-nombre[data-lenguaje="swift"]:hover {
+  background: #FA7343;
+  border-color: #FA7343;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(250, 115, 67, 0.4);
 }
 
 .lenguaje-nombre:hover {
-  /* 🟢 VERDE: Fondo hover lenguajes */
-  background: #00cc66;
-  /* ⚪ BLANCO: Texto hover lenguajes */
-  color: #ffffff;
   transform: translateY(-3px);
-  /* 🟢 VERDE: Sombra hover lenguajes */
-  box-shadow: 0 5px 15px rgba(0, 204, 102, 0.4);
 }
 
 
