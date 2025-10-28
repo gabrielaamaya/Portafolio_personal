@@ -212,15 +212,14 @@
                 </div>
             </div>
 
-            <!-- Card 2 - Artesanías Conchita -->
+            <!-- Card 2 - Artesanías Conchita (CORREGIDA) -->
             <div class="card" data-project="artesanias-conchita">
                 <div class="imgBx">
                     <img src="Prototipo de Artesanias Conchita.jpeg" alt="Proyecto Artesanías Conchita">
                 </div>
                 <div class="content">
                     <h3 data-lang="proyecto2-titulo">Artesanías Conchita</h3>
-                    <p data-lang="proyecto2-desc">Prototipo de software empresarial que permite llevar el control completo de
-                        facturación e inventario de la empresa.</p>
+                    <p data-lang="proyecto2-desc">Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo.</p>
                     <div class="btn-container">
                         <a href="https://github.com/gabrielaamaya/Artesanias-Conchitas.git" class="btn-github" target="_blank">
                             <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
@@ -238,15 +237,14 @@
                 </div>
             </div>
 
-            <!-- Card 3 - Task Planner (REEMPLAZA A SITIO WEB ARTESANÍAS CONCHITA) -->
+            <!-- Card 3 - Task Planner (CORREGIDA) -->
             <div class="card" data-project="task-planner">
                 <div class="imgBx">
                     <img src="task planner.png" alt="Proyecto Task Planner">
                 </div>
                 <div class="content">
                     <h3 data-lang="proyecto3-titulo">Task Planner</h3>
-                    <p data-lang="proyecto3-desc">Aplicación móvil para organizar tareas, con almacenamiento local y
-                        filtros para una mejor gestión del tiempo.</p>
+                    <p data-lang="proyecto3-desc">Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa.</p>
                     <div class="btn-container">
                         <a href="https://github.com/gabrielaamaya/Prograll-Semi-2025.git" class="btn-github" target="_blank">
                             <i class="fab fa-github"></i> <span data-lang="ver-github">Ver en GitHub</span>
@@ -326,11 +324,24 @@
                         <p id="modalDescription" class="modal-description">Descripción del proyecto.</p>
                     </div>
                     
+                    <!-- Problema -->
                     <div class="modal-section">
-                        <h4 data-lang="features">Características</h4>
+                        <h4 data-lang="problem">Problema</h4>
+                        <p id="modalProblem"></p>
+                    </div>
+
+                    <!-- Solución (Características) -->
+                    <div class="modal-section">
+                        <h4 data-lang="solution">Solución</h4>
                         <ul id="modalFeatures" class="modal-features">
                             <!-- Las características se cargarán dinámicamente aquí -->
                         </ul>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div class="modal-section">
+                        <h4 data-lang="result">Resultado</h4>
+                        <p id="modalResult"></p>
                     </div>
                     
                     <div class="modal-section">

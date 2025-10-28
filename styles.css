@@ -1220,6 +1220,191 @@ SOBRE MÍ (About Section)
 }
 
 /* ================================
+   SECCIONES DEL MODAL (PROBLEMA, SOLUCIÓN, RESULTADO)
+   ================================ */
+
+.modal-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.7);
+  border-radius: 8px;
+  border-left: 3px solid #00ff88;
+}
+
+.modal-section h3 {
+  color: #00ff88;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.modal-section p {
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+/* Estilo específico para la lista de características */
+.modal-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.modal-section ul li {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+.modal-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================
+   CONTROLES DE GALERÍA
+   ================================ */
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-nav {
+  background: #00ff88;
+  color: #1a1a1a;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.gallery-nav:hover {
+  background: #00cc6a;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.gallery-indicators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #00ff88;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* ================================
+   TECNOLOGÍAS Y ROL
+   ================================ */
+
+.modal-tech {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.tech-category {
+  background: rgba(26, 26, 26, 0.7);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.tech-subtitle {
+  color: #00ff88;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  font-size: 0.85rem;
+}
+
+.tech-item i {
+  font-size: 1rem;
+}
+
+.modal-role {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.modal-role strong {
+  color: #00ff88;
+}
+
+/* ================================
+   BOTÓN GITHUB
+   ================================ */
+
+.modal-github {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #00ff88;
+  color: #1a1a1a;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.github-btn:hover {
+  background: #00cc6a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+/* ================================
    BOTONES DE NAVEGACIÓN EN VERDE - GALERÍA PRINCIPAL
    ================================ */
 

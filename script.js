@@ -42,10 +42,10 @@ const translations = {
     'proyectos-titulo': 'PROYECTOS',
     'proyecto1-titulo': 'Adopta a un amigo',
     'proyecto1-desc': 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas.',
-    'proyecto2-titulo': 'Task Planner',
-    'proyecto2-desc': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo.',
-    'proyecto3-titulo': 'Artesanías Conchita',
-    'proyecto3-desc': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa.',
+    'proyecto2-titulo': 'Artesanías Conchita',
+    'proyecto2-desc': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa.',
+    'proyecto3-titulo': 'Task Planner',
+    'proyecto3-desc': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo.',
     'proyecto4-titulo': 'Sitio web de Artesanías Conchita',
     'proyecto4-desc': 'Sitio web informativo que muestra los productos de la empresa',
     'ver-github': 'VER EN GITHUB',
@@ -67,7 +67,7 @@ const translations = {
     'marca-titulo': 'Marca Personal',
     'frase-marca': '"Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos."',
     
-    // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
+    // TRADUCCIONES PARA EL MODAL
     'description': 'Descripción',
     'features': 'Características',
     'technologies-used': 'Tecnologías Utilizadas',
@@ -79,7 +79,10 @@ const translations = {
     'role-quality': 'Gestor de Calidad',
     'tech-languages': 'Lenguajes de Programación',
     'tech-apps': 'Aplicaciones',
-    'image': 'Imagen'
+    'image': 'Imagen',
+    'problem': 'Problema',
+    'solution': 'Solución',
+    'result': 'Resultado'
   },
   'en': {
     'brand': 'MY PORTFOLIO',
@@ -120,10 +123,10 @@ const translations = {
     'proyectos-titulo': 'PROJECTS',
     'proyecto1-titulo': 'Adopt a friend',
     'proyecto1-desc': 'Web platform for an animal shelter, focused on promoting responsible pet adoption.',
-    'proyecto2-titulo': 'Task Planner',
-    'proyecto2-desc': 'Mobile application to organize tasks, with local storage and filters for better time management.',
-    'proyecto3-titulo': 'Conchita Crafts',
-    'proyecto3-desc': 'Business software prototype that allows complete control of company billing and inventory.',
+    'proyecto2-titulo': 'Conchita Crafts',
+    'proyecto2-desc': 'Business software prototype that allows complete control of company billing and inventory.',
+    'proyecto3-titulo': 'Task Planner',
+    'proyecto3-desc': 'Mobile application to organize tasks, with local storage and filters for better time management.',
     'proyecto4-titulo': 'Conchita Crafts Website',
     'proyecto4-desc': 'Informative website that displays the company products',
     'ver-github': 'VIEW ON GITHUB',
@@ -145,7 +148,7 @@ const translations = {
     'marca-titulo': 'Personal Brand',
     'frase-marca': '"With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further."',
     
-    // TRADUCCIONES NUEVAS PARA EL MODAL - COMPLETAS
+    // TRADUCCIONES PARA EL MODAL
     'description': 'Description',
     'features': 'Features',
     'technologies-used': 'Technologies Used',
@@ -157,9 +160,13 @@ const translations = {
     'role-quality': 'Quality Manager',
     'tech-languages': 'Programming Languages',
     'tech-apps': 'Applications',
-    'image': 'Image'
+    'image': 'Image',
+    'problem': 'Problem',
+    'solution': 'Solution',
+    'result': 'Result'
   }
 };
+
 
 let currentLang = 'es';
 
@@ -218,9 +225,8 @@ if (toggleBtn) {
     }
   });
 }
-
 // ================================
-// DATOS DE LOS PROYECTOS (TRADUCIDOS)
+// DATOS DE LOS PROYECTOS 
 // ================================
 
 const projectsData = {
@@ -230,6 +236,10 @@ const projectsData = {
         description: {
             'es': 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas. Permite a los usuarios ver los animales disponibles, filtrar por características y solicitar adopciones de manera sencilla.',
             'en': 'Web platform for an animal shelter, focused on promoting responsible pet adoption. Allows users to view available animals, filter by characteristics, and request adoptions easily.'
+        },
+        problem: {
+            'es': 'Los refugios de animales enfrentaban dificultades para gestionar las adopciones de manera eficiente, con procesos manuales que generaban demoras y falta de seguimiento en las solicitudes.',
+            'en': 'Animal shelters faced difficulties in managing adoptions efficiently, with manual processes that caused delays and lack of follow-up on applications.'
         },
         features: {
             'es': [
@@ -247,12 +257,16 @@ const projectsData = {
                 'Administration panel for the shelter'
             ]
         },
+        result: {
+            'es': 'El sistema permitió aumentar las adopciones, redujo el tiempo de procesamiento de solicitudes y mejoró significativamente la experiencia tanto para los adoptantes como para el personal del refugio.',
+            'en': 'The system increased adoptions, reduced application processing time, and significantly improved the experience for both adopters and shelter staff.'
+        },
         technologies: [
-                { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
-                { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
-                { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
-                { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
-
+            { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
+            { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
+            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
+            { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' },
+            { name: 'Visual Studio', icon: 'fab fa-microsoft', color: '#5c2d91', type: 'tool' }
         ],
         role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/progral-2024-semi.git',
@@ -269,6 +283,10 @@ const projectsData = {
             'es': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo. Permite crear, editar y eliminar tareas, establecer prioridades y fechas de vencimiento.',
             'en': 'Mobile application to organize tasks, with local storage and filters for better time management. Allows creating, editing and deleting tasks, setting priorities and due dates.'
         },
+        problem: {
+            'es': 'Muchas personas tienen dificultades para organizar sus tareas diarias, olvidan compromisos importantes y no tienen una forma visual de ver su progreso en la gestión del tiempo.',
+            'en': 'Many people struggle to organize their daily tasks, forget important commitments, and lack a visual way to see their progress in time management.'
+        },
         features: {
             'es': [
                 'Creación y gestión de tareas con fecha y hora límite',
@@ -284,6 +302,10 @@ const projectsData = {
                 'Progress charts visualization',
                 'Organization by task groups'
             ]
+        },
+        result: {
+            'es': 'Los usuarios reportaron un aumento en su productividad, mejor organización de sus actividades y reducción del estrés al tener un control visual claro de sus tareas pendientes y realizadas.',
+            'en': 'Users reported an increase in their productivity, better organization of their activities, and reduced stress by having clear visual control of their pending and completed tasks.'
         },
         technologies: [
             { name: 'Java', icon: 'fab fa-java', color: '#ed8b00', type: 'language' },
@@ -307,25 +329,32 @@ const projectsData = {
             'es': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa. Facilita la gestión de productos, clientes, proveedores y ventas.',
             'en': 'Business software prototype that allows complete control of company billing and inventory. Facilitates product, customer, supplier and sales management.'
         },
+        problem: {
+            'es': 'La empresa manejaba todos sus procesos de forma manual, lo que generaba errores en el inventario, retrasos en la facturación y dificultades para obtener reportes financieros precisos.',
+            'en': 'The company managed all its processes manually, which generated inventory errors, billing delays, and difficulties in obtaining accurate financial reports.'
+        },
         features: {
             'es': [
                 'Gestión de inventario y productos',
                 'Control de ventas y facturación',
                 'Registro de clientes y proveedores',
-                
             ],
             'en': [
                 'Inventory and product management',
                 'Sales and billing control',
                 'Customer and supplier registration',
-                
             ]
         },
+        result: {
+            'es': 'Se redujeron los errores de inventario, se aceleró el proceso de facturación y la empresa pudo acceder a reportes financieros en tiempo real para una mejor toma de decisiones.',
+            'en': 'Inventory errors were reduced, the billing process was accelerated, and the company could access real-time financial reports for better decision making.'
+        },
         technologies: [
-                { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
-                { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
-                { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
-                { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' }
+            { name: 'C#', icon: 'fas fa-code', color: '#a179dc', type: 'language' },
+            { name: 'ASP.NET', icon: 'fas fa-globe', color: '#512bd4', type: 'app' },
+            { name: 'SQL Server', icon: 'fas fa-database', color: '#cc2927', type: 'app' },
+            { name: 'Entity Framework', icon: 'fas fa-layer-group', color: '#004880', type: 'app' },
+             { name: 'Visual Studio', icon: 'fab fa-microsoft', color: '#5c2d91', type: 'tool' }
         ],
         role: { 'es': 'Desarrollador Backend', 'en': 'Backend Developer' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchitas.git',
@@ -339,8 +368,12 @@ const projectsData = {
         title: { 'es': 'Sitio web de Artesanías Conchita', 'en': 'Conchita Crafts Website' },
         modalTitle: { 'es': 'Sitio web de Artesanías Conchita | 2025', 'en': 'Conchita Crafts Website | 2025' },
         description: {
-            'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clients conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
+            'es': 'Sitio web informativo que muestra los productos de la empresa. Permite a los clientes conocer la historia de la empresa, ver el catálogo de productos y contactar con la empresa.',
             'en': 'Informative website that displays the company products. Allows customers to learn about the company history, view the product catalog and contact the company.'
+        },
+        problem: {
+            'es': 'La empresa carecía de presencia digital, lo que limitaba su alcance a nuevos clientes y dificultaba la comunicación con clientes potenciales interesados en sus productos artesanales.',
+            'en': 'The company lacked digital presence, which limited its reach to new customers and made communication with potential customers interested in its craft products difficult.'
         },
         features: {
             'es': [
@@ -356,13 +389,17 @@ const projectsData = {
                 'Product catalog presentation'
             ]
         },
+        result: {
+            'es': 'El sitio web incrementó las consultas de clientes, permitió a la empresa expandirse a nuevos mercados y estableció una imagen profesional que aumentó la confianza de los clientes.',
+            'en': 'The website increased customer inquiries, allowed the company to expand to new markets, and established a professional image that increased customer trust.'
+        },
         technologies: [
             { name: 'Python', icon: 'fab fa-python', color: '#3776ab', type: 'language' },
-            { name: 'HTML', icon: 'fab fa-html5', color: '#e34f26', type: 'frontend' },
-            { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572b6', type: 'frontend' },
-            { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e', type: 'frontend' }
+            { name: 'HTML', icon: 'fab fa-html5', color: '#e34f26', type: 'language' },
+            { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572b6', type: 'language' },
+            { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e', type: 'language' },
+            { name: 'Visual Studio Code', icon: 'fas fa-cube', color: '#007acc', type: 'tool' }
         ],
-        // CAMBIO REALIZADO: De "Desarrollador Backend" a "Gestor de Calidad"
         role: { 'es': 'Gestor de Calidad', 'en': 'Quality Manager' },
         githubLink: 'https://github.com/gabrielaamaya/Artesanias-Conchita-sitio-web.git',
         images: [
@@ -370,8 +407,21 @@ const projectsData = {
             'sitio web conchita modo claro.jpeg',
             'sitio web conchita modo oscuro.jpeg'
         ]
-    }
+    } 
 };
+
+// ================================
+// VARIABLES GLOBALES PARA EL MODAL
+// ================================
+
+let modal = null;
+let modalTitle = null;
+let modalDescription = null;
+let modalFeatures = null;
+let modalRole = null;
+let modalGitHubLink = null;
+let modalGallery = null;
+let closeModalBtn = null;
 
 // ================================
 // FUNCIÓN PARA ACTUALIZAR PROYECTOS EN EL MODAL - CORREGIDA
@@ -383,19 +433,30 @@ function updateProjectModal(projectId) {
     if (!project || !modal) return;
     
     // Actualizar contenido del modal según el idioma actual
-    // Usar modalTitle (con año) en lugar de title (sin año)
     modalTitle.textContent = project.modalTitle ? project.modalTitle[currentLang] : project.title[currentLang];
     modalDescription.textContent = project.description[currentLang];
     modalRole.textContent = project.role[currentLang];
     modalGitHubLink.href = project.githubLink;
     
-    // Actualizar características según el idioma
+    // Actualizar PROBLEMA según el idioma
+    const modalProblem = document.getElementById('modalProblem');
+    if (modalProblem && project.problem) {
+        modalProblem.textContent = project.problem[currentLang];
+    }
+    
+    // Actualizar CARACTERÍSTICAS según el idioma
     modalFeatures.innerHTML = '';
     project.features[currentLang].forEach(feature => {
         const li = document.createElement('li');
         li.textContent = feature;
         modalFeatures.appendChild(li);
     });
+    
+    // Actualizar RESULTADO según el idioma
+    const modalResult = document.getElementById('modalResult');
+    if (modalResult && project.result) {
+        modalResult.textContent = project.result[currentLang];
+    }
     
     // Actualizar tecnologías - Separar lenguajes y aplicaciones
     const modalTechLanguages = document.getElementById('modalTechLanguages');
@@ -521,15 +582,6 @@ function goToImage(index) {
 // ================================
 // FUNCIONALIDAD DEL MODAL DE PROYECTOS
 // ================================
-
-let modal = null;
-let modalTitle = null;
-let modalDescription = null;
-let modalFeatures = null;
-let modalRole = null;
-let modalGitHubLink = null;
-let modalGallery = null;
-let closeModalBtn = null;
 
 // Función para obtener el proyecto activo
 function getActiveProject() {
@@ -742,10 +794,6 @@ function initImagenAmpliada() {
     }
 }
 
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', initImagenAmpliada);
-
-
 // ================================
 // INICIALIZACIÓN
 // ================================
@@ -815,6 +863,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar clics en imágenes de galería
     initGalleryImageClicks();
+
+    // Inicializar imagen ampliada del logo
+    initImagenAmpliada();
 
     // Cerrar modal con tecla Escape
     document.addEventListener('keydown', function(e) {
