@@ -15,29 +15,41 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  
  
-  <!-- Header / Nav -->
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="#inicio" data-lang="brand">MI PORTAFOLIO</a>
-    <nav class="menu">
-      <a href="#sobre-mi" data-lang="menu-sobre">Sobre mí</a>
-      <a href="#habilidades" data-lang="menu-habilidades">Habilidades</a>
-      <a href="#proyectos" data-lang="menu-proyectos">Proyectos</a>
-      <a href="#testimonios" data-lang="menu-testimonios">Testimonios</a>
-      <a href="#intereses" data-lang="menu-intereses">Intereses</a>
-      <a href="#contacto" data-lang="menu-contacto">Contacto</a>
-    </nav>
-    <!-- Contenedor de controles -->
-    <div class="nav-controls">
-      <!-- Botón para cambiar de modo -->
-      <button id="mode-toggle">🌙</button>
-      <!-- Botón traducción -->
-      <button id="lang-toggle">🌐</button>
-      <span id="lang-label">Español</span>
+  <!-- ================================
+  HEADER / NAVEGACIÓN
+  ================================== -->
+  <header class="topbar">
+    <div class="container nav">
+
+      <!-- 🔹 Logo + texto “MI PORTAFOLIO” (AGREGADO) -->
+      <a href="#inicio" class="logo-brand">
+        <img src="logotipo.png" alt="Logo Gabriela Amaya">
+        <span data-lang="brand">MI PORTAFOLIO</span>
+      </a>
+
+      <!-- 🔹 Menú de navegación -->
+      <nav class="menu">
+        <a href="#sobre-mi" data-lang="menu-sobre">Sobre mí</a>
+        <a href="#habilidades" data-lang="menu-habilidades">Habilidades</a>
+        <a href="#proyectos" data-lang="menu-proyectos">Proyectos</a>
+        <a href="#testimonios" data-lang="menu-testimonios">Testimonios</a>
+        <a href="#intereses" data-lang="menu-intereses">Intereses</a>
+        <a href="#contacto" data-lang="menu-contacto">Contacto</a>
+      </nav>
+
+      <!-- 🔹 Controles de modo oscuro / idioma -->
+      <div class="nav-controls">
+        <button id="mode-toggle">🌙</button>
+        <button id="lang-toggle">🌐</button>
+        <span id="lang-label">Español</span>
+      </div>
+
     </div>
-  </div>
-</header>
+  </header>
+
+
 
 <!-- Hero -->
 <section id="inicio" class="hero">

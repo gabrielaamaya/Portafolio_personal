@@ -1,45 +1,51 @@
-/* ================================ 
-REINICIO Y CONFIGURACIONES BASE
-================================ */
+/* ==========================================================
+   🌙 ESTILOS BASE Y CONFIGURACIÓN GENERAL
+   ========================================================== */
+
+/* 🔹 Reinicio general de márgenes, rellenos y box model */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 🔹 Comportamiento suave al hacer scroll */
 html {
   scroll-behavior: smooth;
 }
 
+/* 🔹 Estilo general del cuerpo (modo oscuro) */
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  /* 🎨 MODO OSCURO: Fondo oscuro */
-  background-color: #272727;
-  /* 🎨 MODO OSCURO: Texto blanco */
-  color: #f5f5f5;
+  background-color: #272727; /* Fondo oscuro */
+  color: #f5f5f5; /* Texto claro */
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* 🔹 Imágenes con esquinas redondeadas */
 img {
   max-width: 100%;
   border-radius: 12px;
 }
 
+/* 🔹 Enlaces sin subrayado */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* 🔹 Listas sin viñetas */
 ul {
   list-style: none;
 }
 
-/* ================================
-BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
-================================ */
+/* ==========================================================
+   🚀 BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================== */
+
+/* 🔹 Contenedor principal de la barra */
 .topbar {
-  /* 🎨 MODO OSCURO: Fondo navbar */
   background: #1f1f1f;
   position: sticky;
   top: 0;
@@ -49,6 +55,7 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   padding: 0.8rem 0;
 }
 
+/* 🔹 Contenido interno del nav */
 .topbar .nav {
   display: flex;
   justify-content: space-between;
@@ -56,19 +63,64 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   padding: 0;
 }
 
-/* Marca o logo - Más compacto */
+/* ==========================================================
+   🔰 LOGO Y TEXTO DE MARCA PERSONAL
+   ========================================================== */
+
+/* 🔹 Contenedor del logo y texto */
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* 🔹 Logo circular con borde verde */
+.logo-brand img {
+  height: 70px;  /* Forma largo de la imagen */
+  width: 70px;   /* Forma ancho de la imagen */
+  border-radius: 20%; /* Forma circular */
+  object-fit: cover; /* Mantiene proporción */
+  border: 2px solid #00cc66; /* 🟢 Borde verde */
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.4); /* ✨ Brillo verde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔹 Efecto hover sobre el logo */
+.logo-brand img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+}
+
+/* 🔹 Texto de la marca */
+.logo-brand span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00cc66;
+  text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
+  transition: 0.3s ease;
+}
+
+/* 🔹 Efecto hover del texto */
+.logo-brand:hover span {
+  color: #00ffaa;
+}
+
+/* ==========================================================
+   🧭 MENÚ DE NAVEGACIÓN PRINCIPAL
+   ========================================================== */
+
+/* 🔹 Texto principal de la marca en el menú */
 .topbar .brand {
   font-size: 1.6rem;
   font-weight: 700;
-  /* 🟢 VERDE: Color del logo/brand */
   color: #00cc66;
-  /* 🟢 VERDE: Sombra del logo */
   text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
   white-space: nowrap;
   padding: 0.3rem 0;
 }
 
-/* Menú principal de enlaces - Más compacto */
+/* 🔹 Contenedor del menú */
 .topbar .menu {
   display: flex;
   gap: 0.8rem;
@@ -77,8 +129,8 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   margin: 0 auto;
 }
 
+/* 🔹 Enlaces del menú */
 .topbar .menu a {
-  /* ⚪ BLANCO: Color texto enlaces */
   color: #f5f5f5;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -89,28 +141,25 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   white-space: nowrap;
 }
 
+/* 🔹 Hover del menú */
 .topbar .menu a:hover {
-  /* 🟢 VERDE: Hover enlaces */
   color: #00cc66;
-  /* 🟢 VERDE: Fondo hover enlaces */
   background-color: rgba(0, 204, 102, 0.1);
 }
 
+/* 🔹 Estado activo o presionado */
 .topbar .menu a:active {
-  /* 🟢 VERDE OSCURO: Active enlaces */
   color: #00a352;
-  /* 🟢 VERDE OSCURO: Fondo active enlaces */
   background-color: rgba(0, 163, 82, 0.2);
 }
 
+/* 🔹 Enlace activo */
 .topbar .menu a.active {
-  /* 🟢 VERDE: Enlace activo */
   color: #00cc66;
-  /* 🟢 VERDE: Fondo enlace activo */
   background-color: rgba(0, 204, 102, 0.1);
 }
 
-/* Línea decorativa debajo de enlaces */
+/* 🔹 Línea inferior animada al pasar el cursor */
 .topbar .menu a::after {
   content: '';
   position: absolute;
@@ -118,7 +167,6 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   left: 50%;
   width: 0;
   height: 2px;
-  /* 🟢 VERDE: Línea decorativa */
   background: #00cc66;
   transition: all 0.3s ease;
   transform: translateX(-50%);
@@ -128,7 +176,11 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   width: 70%;
 }
 
-/* Contenedor de controles (modo e idioma) - Compacto */
+/* ==========================================================
+   ⚙️ CONTROLES DE NAVEGACIÓN (MODO E IDIOMA)
+   ========================================================== */
+
+/* 🔹 Contenedor general de los botones */
 .topbar .nav-controls {
   display: flex;
   align-items: center;
@@ -136,13 +188,12 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
   white-space: nowrap;
 }
 
-/* Botón de modo claro/oscuro - Compacto */
+/* ---------- 🌓 BOTÓN MODO CLARO/OSCURO ---------- */
 #mode-toggle {
   background: transparent;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  /* ⚪ BLANCO: Color icono modo */
   color: #f5f5f5;
   transition: all 0.3s ease;
   padding: 0.4rem;
@@ -156,19 +207,16 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
 
 #mode-toggle:hover {
   transform: rotate(30deg);
-  /* 🟢 VERDE: Hover icono modo */
   color: #00cc66;
-  /* 🟢 VERDE: Fondo hover icono modo */
   background-color: rgba(0, 204, 102, 0.1);
 }
 
-/* Botón de idioma - Compacto */
+/* ---------- 🌐 BOTÓN DE IDIOMA ---------- */
 #lang-toggle {
   background: transparent;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  /* ⚪ BLANCO: Color icono idioma */
   color: #f5f5f5;
   transition: all 0.3s ease;
   padding: 0.4rem;
@@ -182,43 +230,43 @@ BARRA DE NAVEGACIÓN (NAVBAR) - COMPACTO
 
 #lang-toggle:hover {
   transform: scale(1.1);
-  /* 🟢 VERDE: Hover icono idioma */
   color: #00cc66;
-  /* 🟢 VERDE: Fondo hover icono idioma */
   background-color: rgba(0, 204, 102, 0.1);
 }
 
-/* Etiqueta de idioma - Compacta */
+/* ---------- 🏷️ ETIQUETA DE IDIOMA ACTUAL ---------- */
 #lang-label {
   font-weight: 600;
-  /* ⚪ BLANCO: Texto etiqueta idioma */
   color: #f5f5f5;
   font-size: 0.85rem;
   padding: 0.2rem 0.6rem;
-  /* 🎨 GRIS: Fondo etiqueta idioma */
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* ================================
-CONTENEDORES GENERALES
-================================ */
+/* ==========================================================
+   📦 CONTENEDORES Y SECCIONES GENERALES
+   ========================================================== */
+
+/* 🔹 Contenedor principal (centrado y con ancho máximo) */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
+/* 🔹 Estilo general de cada sección */
 .section {
   padding: 4rem 0;
   text-align: center;
 }
 
+/* 🔹 Sección alterna con fondo diferente */
 .section.alt {
-  /* 🎨 MODO OSCURO: Fondo sección alterna */
   background-color: #1f1f1f;
 }
+
 
 /* ================================
 SECCIÓN HERO (Presentación inicial)
