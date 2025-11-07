@@ -2560,9 +2560,6 @@ body.light-mode .logo-container:hover {
   color: #ffffff;
 }
 
-.redes-sociales a[title="Instagram"] {
-  color: #e1306c; /* rosa rojizo de Instagram */
-}
 
 .redes-sociales a[title="LinkedIn"] {
   color: #0077b5; /* azul LinkedIn */
@@ -2597,6 +2594,208 @@ body.light-mode .logo-container:hover {
 .tcard:hover::before {
   opacity: 1;
 }
+
+
+/* ============================================= */
+/* LÍNEA DIVISORA ENTRE SECCIONES                */
+/* ============================================= */
+.section-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #00ff66; /* Verde neón */
+  border: none;
+  margin: 3rem 0; /* Espaciado entre secciones */
+  opacity: 0.4;
+  box-shadow: 0 0 10px #00ff66; /* Efecto de brillo */
+}
+
+
+
+
+
+/* ========================================================= */
+/* ==================== SECCIÓN: PUBLICACIONES ============== */
+/* ========================================================= */
+
+/* --------------------------------------------------------- */
+/* 🟩 CONTENEDOR GENERAL DE LA SECCIÓN                      */
+/* --------------------------------------------------------- */
+#publicaciones {
+  background-color: #272727; /* Fondo oscuro */
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+
+/* --------------------------------------------------------- */
+/* 🟢 TÍTULO PRINCIPAL Y LÍNEA DECORATIVA                   */
+/* --------------------------------------------------------- */
+#publicaciones h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #00ff99; /* Verde neón */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+#publicaciones .intro {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+#publicaciones h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #00ff99;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* --------------------------------------------------------- */
+/* 🟨 GRID DE TARJETAS DE PUBLICACIONES                      */
+/* --------------------------------------------------------- */
+#publicaciones .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* --------------------------------------------------------- */
+/* 🟧 TARJETA DE PUBLICACIÓN (ESTILO OSCURO CON BORDE NEÓN)  */
+/* --------------------------------------------------------- */
+#publicaciones .card {
+  background: #2a2a2a;
+  border: 1px solid rgba(0, 255, 153, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+#publicaciones .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
+}
+
+/* --------------------------------------------------------- */
+/* 🟦 IMAGEN DE LA PUBLICACIÓN                               */
+/* --------------------------------------------------------- */
+#publicaciones .card .imgBx {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 255, 153, 0.2);
+}
+
+#publicaciones .card .imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+#publicaciones .card:hover .imgBx img {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------- */
+/* 🟩 CONTENIDO DE LA TARJETA                                */
+/* --------------------------------------------------------- */
+#publicaciones .card .content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+#publicaciones .card h3 {
+  font-size: 1.3rem;
+  color: #00ff99;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+#publicaciones .card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------- */
+/* 🟨 PIE DE TARJETA (FECHA Y BOTÓN)                        */
+/* --------------------------------------------------------- */
+#publicaciones .post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 255, 153, 0.2);
+  padding-top: 10px;
+}
+
+#publicaciones .post-footer .date {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* --------------------------------------------------------- */
+/* 🟪 BOTÓN “VER EN LINKEDIN”                               */
+/* --------------------------------------------------------- */
+#publicaciones .btn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #00ff99;
+  color: #1a1a1a;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#publicaciones .btn-more:hover {
+  background-color: #00e68a;
+  transform: translateY(-2px);
+}
+
+#publicaciones .btn-more i {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------- */
+/* 🟫 MEDIA QUERIES (RESPONSIVO)                            */
+/* --------------------------------------------------------- */
+@media (max-width: 768px) {
+  #publicaciones {
+    padding: 60px 20px;
+  }
+
+  #publicaciones .card {
+    max-width: 100%;
+  }
+
+  #publicaciones h2 {
+    font-size: 1.8rem;
+  }
+}
+
 
 
 /* ================================
