@@ -888,8 +888,8 @@ function scrollToTop() {
 }
 
 
+//Carrusel infinito sin espacio vacío -->
 
-// Carrusel infinito sin espacio vacío -->
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".slider-track");
@@ -966,3 +966,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+//Evita interferencias del carrusel y abre los enlaces correctamente -->
+
+document.querySelectorAll('.btn-more').forEach(link => {
+  link.addEventListener('click', e => {
+    e.stopPropagation(); // evita interferencias del carrusel
+    window.open(link.href, '_blank'); // abre el enlace en nueva pestaña
+  });
+});
