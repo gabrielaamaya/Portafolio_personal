@@ -2660,7 +2660,6 @@ body.light-mode .logo-container:hover {
 
 
 
-
 /* ========================================================= */
 /* ==================== SECCIÓN: PUBLICACIONES ============== */
 /* ========================================================= */
@@ -2705,19 +2704,57 @@ body.light-mode .logo-container:hover {
   border-radius: 5px;
 }
 
-/* --------------------------------------------------------- */
-/* 🟨 GRID DE TARJETAS DE PUBLICACIONES                      */
-/* --------------------------------------------------------- */
-#publicaciones .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+/* ========================================================= */
+/* 🔵 CARRUSEL DE PUBLICACIONES                             */
+/* ========================================================= */
+.publicaciones-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 40px auto;
 }
 
-/* --------------------------------------------------------- */
-/* 🟧 TARJETA DE PUBLICACIÓN (ESTILO OSCURO CON BORDE NEÓN)  */
-/* --------------------------------------------------------- */
+.slider-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Botones verde neón del carrusel */
+.publi-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #00ff99;
+  border: none;
+  color: #000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #00ff99;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.publi-btn:hover {
+  background-color: #00ffaa;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.publi-btn.prev { left: 2%; }
+.publi-btn.next { right: 2%; }
+
+/* ========================================================= */
+/* 🟧 TARJETAS DE PUBLICACIONES                             */
+/* ========================================================= */
 #publicaciones .card {
   background: #2a2a2a;
   border: 1px solid rgba(0, 255, 153, 0.4);
@@ -2729,6 +2766,7 @@ body.light-mode .logo-container:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0; /* 🟢 evita que las tarjetas cambien de tamaño en el carrusel */
 }
 
 #publicaciones .card:hover {
@@ -2736,9 +2774,7 @@ body.light-mode .logo-container:hover {
   box-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
 }
 
-/* --------------------------------------------------------- */
-/* 🟦 IMAGEN DE LA PUBLICACIÓN                               */
-/* --------------------------------------------------------- */
+/* Imagen */
 #publicaciones .card .imgBx {
   width: 100%;
   height: 200px;
@@ -2757,9 +2793,7 @@ body.light-mode .logo-container:hover {
   transform: scale(1.08);
 }
 
-/* --------------------------------------------------------- */
-/* 🟩 CONTENIDO DE LA TARJETA                                */
-/* --------------------------------------------------------- */
+/* Contenido */
 #publicaciones .card .content {
   padding: 1.5rem;
   display: flex;
@@ -2784,9 +2818,7 @@ body.light-mode .logo-container:hover {
   margin-bottom: 1rem;
 }
 
-/* --------------------------------------------------------- */
-/* 🟨 PIE DE TARJETA (FECHA Y BOTÓN)                        */
-/* --------------------------------------------------------- */
+/* Pie de tarjeta */
 #publicaciones .post-footer {
   display: flex;
   justify-content: space-between;
@@ -2801,9 +2833,7 @@ body.light-mode .logo-container:hover {
   color: #aaa;
 }
 
-/* --------------------------------------------------------- */
-/* 🟪 BOTÓN “VER EN LINKEDIN”                               */
-/* --------------------------------------------------------- */
+/* Botón “Ver en LinkedIn” */
 #publicaciones .btn-more {
   display: inline-flex;
   align-items: center;
@@ -2827,22 +2857,28 @@ body.light-mode .logo-container:hover {
   font-size: 1rem;
 }
 
-/* --------------------------------------------------------- */
-/* 🟫 MEDIA QUERIES (RESPONSIVO)                            */
-/* --------------------------------------------------------- */
+/* ========================================================= */
+/* 🟫 MEDIA QUERIES                                         */
+/* ========================================================= */
 @media (max-width: 768px) {
   #publicaciones {
     padding: 60px 20px;
   }
 
-  #publicaciones .card {
-    max-width: 100%;
-  }
-
   #publicaciones h2 {
     font-size: 1.8rem;
   }
+
+  .publi-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+
+  .publi-btn.prev { left: 4%; }
+  .publi-btn.next { right: 4%; }
 }
+
 
 
 

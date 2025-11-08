@@ -886,3 +886,83 @@ document.addEventListener('DOMContentLoaded', function() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+
+
+// Carrusel infinito sin espacio vacío -->
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".slider-track");
+  const cards = document.querySelectorAll(".slider-track .card");
+  const prevBtn = document.querySelector(".publi-btn.prev");
+  const nextBtn = document.querySelector(".publi-btn.next");
+
+  let index = 0;
+  const total = cards.length;
+  const gap = 32; // coincide con el gap del CSS
+  let cardWidth = cards[0].offsetWidth + gap;
+  let isTransitioning = false;
+
+  // Clonar primera y última tarjeta
+  const firstClone = cards[0].cloneNode(true);
+  const lastClone = cards[total - 1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, cards[0]);
+
+  // Ajustar ancho del track
+  track.style.width = `${(total + 2) * cardWidth}px`;
+
+  // Posición inicial (mostrando la primera tarjeta real)
+  let position = -cardWidth;
+  track.style.transform = `translateX(${position}px)`;
+
+  // Función para moverse
+  function moveToSlide(direction) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    if (direction === "next") {
+      index++;
+      position -= cardWidth;
+    } else {
+      index--;
+      position += cardWidth;
+    }
+
+    track.style.transition = "transform 0.6s ease-in-out";
+    track.style.transform = `translateX(${position}px)`;
+
+    track.addEventListener("transitionend", () => {
+      // Si pasa del último (vuelve sin dejar espacio)
+      if (index === total) {
+        track.style.transition = "none";
+        index = 0;
+        position = -cardWidth;
+        track.style.transform = `translateX(${position}px)`;
+      }
+
+      // Si pasa antes del primero
+      if (index === -1) {
+        track.style.transition = "none";
+        index = total - 1;
+        position = -cardWidth * total;
+        track.style.transform = `translateX(${position}px)`;
+      }
+
+      isTransitioning = false;
+    }, { once: true });
+  }
+
+  nextBtn.addEventListener("click", () => moveToSlide("next"));
+  prevBtn.addEventListener("click", () => moveToSlide("prev"));
+
+  // Ajustar automáticamente al cambiar tamaño de pantalla
+  window.addEventListener("resize", () => {
+    cardWidth = cards[0].offsetWidth + gap;
+    position = -(index + 1) * cardWidth;
+    track.style.transition = "none";
+    track.style.transform = `translateX(${position}px)`;
+    track.style.width = `${(total + 2) * cardWidth}px`;
+  });
+});
+
