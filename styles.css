@@ -2821,22 +2821,18 @@ body.light-mode .logo-container:hover {
 /* Pie de tarjeta */
 #publicaciones .post-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 🔹 Centra el botón horizontalmente */
   align-items: center;
   margin-top: auto;
   border-top: 1px solid rgba(0, 255, 153, 0.2);
   padding-top: 10px;
 }
 
-#publicaciones .post-footer .date {
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
 /* Botón “Ver en LinkedIn” */
 #publicaciones .btn-more {
   display: inline-flex;
   align-items: center;
+  justify-content: center; /* 🔹 Centra ícono y texto dentro del botón */
   gap: 6px;
   background-color: #00ff99;
   color: #1a1a1a;
