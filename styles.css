@@ -2659,7 +2659,6 @@ body.light-mode .logo-container:hover {
 
 
 
-
 /* ========================================================= */
 /* ==================== SECCIÓN: PUBLICACIONES ============== */
 /* ========================================================= */
@@ -2774,26 +2773,36 @@ body.light-mode .logo-container:hover {
   box-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
 }
 
-/* Imagen */
+/* ========================================================= */
+/* 🟣 MEJORA VISUAL DE IMÁGENES                             */
+/* ========================================================= */
 #publicaciones .card .imgBx {
   width: 100%;
-  height: 200px;
+  height: 260px; /* 🔹 Más altura para mostrar mejor las imágenes */
   overflow: hidden;
+  background-color: #1a1a1a; /* 🔹 Fondo neutro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid rgba(0, 255, 153, 0.2);
+  cursor: pointer; /* 🔹 Indica que se puede hacer clic */
 }
 
 #publicaciones .card .imgBx img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  object-fit: contain; /* 🔹 Muestra toda la imagen sin recortar */
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 #publicaciones .card:hover .imgBx img {
-  transform: scale(1.08);
+  transform: scale(1.02); /* 🔹 Efecto suave sin cortar */
+  filter: brightness(1.05);
 }
 
-/* Contenido */
+/* ========================================================= */
+/* 🟠 CONTENIDO DE TARJETA                                 */
+/* ========================================================= */
 #publicaciones .card .content {
   padding: 1.5rem;
   display: flex;
@@ -2851,6 +2860,59 @@ body.light-mode .logo-container:hover {
 
 #publicaciones .btn-more i {
   font-size: 1rem;
+}
+
+/* ========================================================= */
+/* 🟣 EFECTO DE ZOOM AL HACER CLIC EN IMAGEN                */
+/* ========================================================= */
+.image-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.image-popup.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.image-popup img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 10px;
+  box-shadow: 0 0 25px #00ff99;
+  animation: zoomIn 0.4s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 2.5rem;
+  color: #00ff99;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #00ffaa;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* ========================================================= */
