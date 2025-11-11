@@ -977,24 +977,58 @@ document.querySelectorAll('.btn-more').forEach(link => {
 });
 
 
- // ====== 🟢 AMPLIAR IMAGEN AL CLIC ======
-  document.querySelectorAll('#publicaciones .card .imgBx img').forEach(img => {
+  document.addEventListener("DOMContentLoaded", () => {
+  // ====== 🟢 ZOOM CON NAVEGACIÓN ======
+  const images = document.querySelectorAll('#publicaciones .card .imgBx img');
+  const popup = document.getElementById('imagePopup');
+  const popupImg = document.getElementById('popupImg');
+  const closeBtn = document.getElementById('closePopup');
+  const nextBtn = document.getElementById('nextImg');
+  const prevBtn = document.getElementById('prevImg');
+
+  // ✅ Definición segura (ya no da error)
+  let currentIndex = 0;
+
+  // 🖼️ Abrir imagen
+  images.forEach((img, index) => {
     img.addEventListener('click', () => {
-      const popup = document.getElementById('imagePopup');
-      const popupImg = document.getElementById('popupImg');
-      popupImg.src = img.src;
+      currentIndex = index;
+      showImage();
       popup.classList.add('active');
     });
   });
 
-  // ====== 🔴 CERRAR LA VENTANA ======
-  document.getElementById('closePopup').addEventListener('click', () => {
-    document.getElementById('imagePopup').classList.remove('active');
+  function showImage() {
+    popupImg.src = images[currentIndex].src;
+  }
+
+  // ❌ Cerrar ventana
+  closeBtn.addEventListener('click', () => popup.classList.remove('active'));
+
+  // 🖱️ Cerrar si se hace clic fuera de la imagen
+  popup.addEventListener('click', e => {
+    if (e.target === popup) popup.classList.remove('active');
   });
 
-  // Cerrar si se hace clic fuera de la imagen
-  document.getElementById('imagePopup').addEventListener('click', (e) => {
-    if (e.target.id === 'imagePopup') {
-      document.getElementById('imagePopup').classList.remove('active');
-    }
+  // ⏩ Navegar entre imágenes
+  nextBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
   });
+
+  // ⏪ Navegar atrás
+  prevBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  });
+
+  // ⌨️ Control por teclado
+  document.addEventListener('keydown', e => {
+    if (!popup.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'ArrowLeft') prevBtn.click();
+    if (e.key === 'Escape') closeBtn.click();
+  });
+});
