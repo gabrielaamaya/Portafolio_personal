@@ -910,3 +910,13 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.width = `${(total + 2) * cardWidth}px`;
   });
 });
+
+
+ document.querySelectorAll('.btn-more').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const link = btn.getAttribute('href');
+      if (link && link.startsWith('https://')) {
+        window.open(link, '_blank');
+      }
+    });
+  });
