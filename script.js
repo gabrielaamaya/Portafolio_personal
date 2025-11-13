@@ -1,7 +1,6 @@
 // ================================
 // TRADUCTOR (ESPAÑOL/INGLÉS) - COMPLETO Y CORREGIDO
 // ================================
-
 const translations = {
   'es': {
     'brand': 'MI PORTAFOLIO',
@@ -166,27 +165,21 @@ const translations = {
     'result': 'Result'
   }
 };
-
-
 let currentLang = 'es';
-
 function changeLanguage(lang) {
   currentLang = lang;
   const elements = document.querySelectorAll('[data-lang]');
-
   elements.forEach(element => {
     const key = element.getAttribute('data-lang');
     if (translations[lang] && translations[lang][key]) {
       element.textContent = translations[lang][key];
     }
   });
-
   // Actualizar etiqueta de idioma
   const langLabel = document.getElementById('lang-label');
   if (langLabel) {
     langLabel.textContent = lang === 'es' ? 'Español' : 'English';
   }
-
   // Si hay un modal abierto, actualizar su contenido
   if (modal && modal.style.display === 'block') {
     const activeProject = getActiveProject();
@@ -195,18 +188,14 @@ function changeLanguage(lang) {
     }
   }
 }
-
 // ================================
 // MODO OSCURO/CLARO
 // ================================
-
 const toggleBtn = document.getElementById("mode-toggle");
 const body = document.body;
-
 if (toggleBtn) {
   // Verificar preferencia guardada (sin localStorage)
   const isDarkMode = true; // Por defecto modo oscuro
-
   if (!isDarkMode) {
     body.classList.add("light-mode");
     toggleBtn.textContent = "☀️";
@@ -214,10 +203,8 @@ if (toggleBtn) {
     body.classList.remove("light-mode");
     toggleBtn.textContent = "🌙";
   }
-
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("light-mode");
-
     if (body.classList.contains("light-mode")) {
       toggleBtn.textContent = "☀️";
     } else {
@@ -228,7 +215,6 @@ if (toggleBtn) {
 // ================================
 // DATOS DE LOS PROYECTOS 
 // ================================
-
 const projectsData = {
     'adopta-amigo': {
         title: { 'es': 'Adopta a un amigo', 'en': 'Adopt a friend' },
@@ -409,11 +395,9 @@ const projectsData = {
         ]
     } 
 };
-
 // ================================
 // VARIABLES GLOBALES PARA EL MODAL
 // ================================
-
 let modal = null;
 let modalTitle = null;
 let modalDescription = null;
@@ -422,11 +406,9 @@ let modalRole = null;
 let modalGitHubLink = null;
 let modalGallery = null;
 let closeModalBtn = null;
-
 // ================================
 // FUNCIÓN PARA ACTUALIZAR PROYECTOS EN EL MODAL - CORREGIDA
 // ================================
-
 function updateProjectModal(projectId) {
     const project = projectsData[projectId];
     
@@ -530,20 +512,16 @@ function updateProjectModal(projectId) {
         currentIndex = 0;
     }
 }
-
 // ================================
 // GALERÍA 3D - VARIABLES GLOBALES
 // ================================
-
 let currentIndex = 0;
 let totalImages = 0;
 let galleryImages = [];
 let galleryIndicators = [];
-
 // ================================
 // FUNCIONES DE GALERÍA 3D
 // ================================
-
 function updateGallery() {
   galleryImages.forEach((img, index) => {
     img.classList.remove('active', 'prev', 'next', 'hidden');
@@ -563,32 +541,26 @@ function updateGallery() {
     ind.classList.toggle('active', index === currentIndex);
   });
 }
-
 function nextImage() {
   currentIndex = (currentIndex + 1) % totalImages;
   updateGallery();
 }
-
 function prevImage() {
   currentIndex = (currentIndex - 1 + totalImages) % totalImages;
   updateGallery();
 }
-
 function goToImage(index) {
   currentIndex = index;
   updateGallery();
 }
-
 // ================================
 // FUNCIONALIDAD DEL MODAL DE PROYECTOS
 // ================================
-
 // Función para obtener el proyecto activo
 function getActiveProject() {
     const activeCard = document.querySelector('.card.active');
     return activeCard ? activeCard.getAttribute('data-project') : null;
 }
-
 // Función para abrir el modal
 function openProjectModal(projectId) {
     // Marcar el proyecto como activo
@@ -606,7 +578,6 @@ function openProjectModal(projectId) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
-
 // Función para cerrar el modal
 function closeProjectModal() {
     if (modal) {
@@ -620,17 +591,14 @@ function closeProjectModal() {
         }
     }
 }
-
 // ================================
 // MODAL PARA VISUALIZACIÓN DE IMÁGENES EN GRANDE
 // ================================
-
 let imageModal = null;
 let modalImage = null;
 let modalCaption = null;
 let currentImageIndex = 0;
 let currentProjectImages = [];
-
 // Inicializar modal de imágenes
 function initImageModal() {
     // Crear elementos del modal si no existen
@@ -653,7 +621,6 @@ function initImageModal() {
         `;
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
-
     imageModal = document.getElementById('imageModal');
     modalImage = document.getElementById('modalImage');
     modalCaption = document.getElementById('modalCaption');
@@ -669,7 +636,6 @@ function initImageModal() {
         }
     });
 }
-
 // Abrir modal de imagen
 function openImageModal(imageSrc, caption, projectImages, startIndex = 0) {
     if (!imageModal) initImageModal();
@@ -683,7 +649,6 @@ function openImageModal(imageSrc, caption, projectImages, startIndex = 0) {
     imageModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
-
 // Cerrar modal de imagen
 function closeImageModal() {
     if (imageModal) {
@@ -693,7 +658,6 @@ function closeImageModal() {
         currentImageIndex = 0;
     }
 }
-
 // Mostrar imagen anterior
 function showPrevImage() {
     if (currentProjectImages.length === 0) return;
@@ -706,7 +670,6 @@ function showPrevImage() {
     modalCaption.textContent = `${projectData.title[currentLang]} - ${translations[currentLang]['image']} ${currentImageIndex + 1}`;
     updateImageCounter();
 }
-
 // Mostrar siguiente imagen
 function showNextImage() {
     if (currentProjectImages.length === 0) return;
@@ -719,7 +682,6 @@ function showNextImage() {
     modalCaption.textContent = `${projectData.title[currentLang]} - ${translations[currentLang]['image']} ${currentImageIndex + 1}`;
     updateImageCounter();
 }
-
 // Actualizar contador de imágenes
 function updateImageCounter() {
     const imageCounter = document.getElementById('imageCounter');
@@ -727,7 +689,6 @@ function updateImageCounter() {
         imageCounter.textContent = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
     }
 }
-
 // Agregar event listeners a las imágenes de la galería
 function initGalleryImageClicks() {
     document.addEventListener('click', function(e) {
@@ -751,14 +712,12 @@ function initGalleryImageClicks() {
         }
     });
 }
-
 // Función para ampliar imagen al hacer clic del logotipo 
 function initImagenAmpliada() {
     const logoImg = document.querySelector('.logo-img');
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     document.body.appendChild(overlay);
-
     if (logoImg) {
         logoImg.addEventListener('click', function() {
             // Crear copia de la imagen para vista ampliada
@@ -793,11 +752,9 @@ function initImagenAmpliada() {
         });
     }
 }
-
 // ================================
 // INICIALIZACIÓN
 // ================================
-
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar elementos del DOM
     modal = document.getElementById('projectModal');
@@ -808,12 +765,10 @@ document.addEventListener('DOMContentLoaded', function() {
     modalGitHubLink = document.getElementById('modalGitHubLink');
     modalGallery = document.getElementById('modalGallery');
     closeModalBtn = document.querySelector('.close-modal');
-
     // Event listener para cerrar modal
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', closeProjectModal);
     }
-
     if (modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
@@ -821,7 +776,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     // Event listeners para botones "Ver más"
     const verMasButtons = document.querySelectorAll('.btn-more');
     verMasButtons.forEach(button => {
@@ -836,7 +790,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
     // Botón de cambio de idioma
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
@@ -845,28 +798,22 @@ document.addEventListener('DOMContentLoaded', function() {
             changeLanguage(newLang);
         });
     }
-
     // Event listeners para controles de galería
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-
     if (prevBtn) {
         prevBtn.addEventListener('click', prevImage);
     }
-
     if (nextBtn) {
         nextBtn.addEventListener('click', nextImage);
     }
-
     // Inicializar modal de imágenes
     initImageModal();
     
     // Inicializar clics en imágenes de galería
     initGalleryImageClicks();
-
     // Inicializar imagen ampliada del logo
     initImagenAmpliada();
-
     // Cerrar modal con tecla Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
@@ -877,19 +824,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-
     // Inicializar traducciones
     changeLanguage('es');
 });
-
 // Función para scroll suave
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 
-//Carrusel infinito sin espacio vacío -->
 
+// Carrusel infinito sin espacio vacío -->
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".slider-track");
@@ -963,72 +908,5 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.transition = "none";
     track.style.transform = `translateX(${position}px)`;
     track.style.width = `${(total + 2) * cardWidth}px`;
-  });
-});
-
-
-//Evita interferencias del carrusel y abre los enlaces correctamente -->
-
-document.querySelectorAll('.btn-more').forEach(link => {
-  link.addEventListener('click', e => {
-    e.stopPropagation(); // evita interferencias del carrusel
-    window.open(link.href, '_blank'); // abre el enlace en nueva pestaña
-  });
-});
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-  // ====== 🟢 ZOOM CON NAVEGACIÓN ======
-  const images = document.querySelectorAll('#publicaciones .card .imgBx img');
-  const popup = document.getElementById('imagePopup');
-  const popupImg = document.getElementById('popupImg');
-  const closeBtn = document.getElementById('closePopup');
-  const nextBtn = document.getElementById('nextImg');
-  const prevBtn = document.getElementById('prevImg');
-
-  // ✅ Definición segura (ya no da error)
-  let currentIndex = 0;
-
-  // 🖼️ Abrir imagen
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      currentIndex = index;
-      showImage();
-      popup.classList.add('active');
-    });
-  });
-
-  function showImage() {
-    popupImg.src = images[currentIndex].src;
-  }
-
-  // ❌ Cerrar ventana
-  closeBtn.addEventListener('click', () => popup.classList.remove('active'));
-
-  // 🖱️ Cerrar si se hace clic fuera de la imagen
-  popup.addEventListener('click', e => {
-    if (e.target === popup) popup.classList.remove('active');
-  });
-
-  // ⏩ Navegar entre imágenes
-  nextBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-  });
-
-  // ⏪ Navegar atrás
-  prevBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage();
-  });
-
-  // ⌨️ Control por teclado
-  document.addEventListener('keydown', e => {
-    if (!popup.classList.contains('active')) return;
-    if (e.key === 'ArrowRight') nextBtn.click();
-    if (e.key === 'ArrowLeft') prevBtn.click();
-    if (e.key === 'Escape') closeBtn.click();
   });
 });
