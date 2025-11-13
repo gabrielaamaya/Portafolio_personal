@@ -52,6 +52,11 @@ const translations = {
     'testimonios-titulo': 'Testimonios',
     'testimonio1': '"Trabaja con responsabilidad y mantiene una actitud positiva."',
     'testimonio2': '"Muy responsable y cumplida, siempre entrega sus tareas a tiempo."',
+    // NUEVAS TRADUCCIONES AGREGADAS
+    'testimonio-nombre1': 'Jennifer Boîtes',
+    'testimonio-cargo1': 'Estudiante de Técnico',
+    'testimonio-nombre2': 'Josue Alejandro Chicas', 
+    'testimonio-cargo2': 'Estudiante de Técnico',
     'intereses-titulo': 'Intereses',
     'interes1-titulo': 'Desarrollo Móvil',
     'interes1-desc': 'Me interesa crear aplicaciones móviles eficientes con Android Studio y explorar nuevas tecnologías móviles.',
@@ -65,6 +70,7 @@ const translations = {
     'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
     'marca-titulo': 'Marca Personal',
     'frase-marca': '"Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos."',
+    'marca-autor': '- Gabriela Amaya',
     
     // TRADUCCIONES PARA EL MODAL
     'description': 'Descripción',
@@ -81,7 +87,22 @@ const translations = {
     'image': 'Imagen',
     'problem': 'Problema',
     'solution': 'Solución',
-    'result': 'Resultado'
+    'result': 'Resultado',
+    
+    // TRADUCCIONES PARA PUBLICACIONES
+    'publicaciones-titulo': 'Publicaciones',
+    'publicaciones-intro': 'Aquí comparto mis artículos, reflexiones y aprendizajes publicados en LinkedIn.',
+    'publicacion1-titulo': 'D.A.R.E',
+    'publicacion1-desc': 'Certificado del programa D.A.R.E. otorgado por la Policía Nacional Civil de El Salvador por completar la formación sobre prevención del uso de drogas, tabaco y alcohol.',
+    'publicacion2-titulo': '¡Yo... Sí Puedo!',
+    'publicacion2-desc': 'Diploma otorgado por una institución educativa nacional en reconocimiento a la labor voluntaria como facilitador en un programa de alfabetización, destacando el apoyo brindado en la enseñanza de lectura y escritura y el compromiso con la educación de adultos.',
+    'publicacion3-titulo': 'Speak English',
+    'publicacion3-desc': 'Diploma que certifica la participación en el proyecto "Speak English", enfocado en promover el aprendizaje y la práctica del idioma inglés a través de actividades formativas y educativas.',
+    'publicacion4-titulo': 'Taller de Manejo de Ansiedad',
+    'publicacion4-desc': 'Reconocimiento otorgado por la participación y finalización satisfactoria del Taller de Manejo de Ansiedad, enfocado en el desarrollo de estrategias y técnicas para la gestión emocional y el bienestar psicológico.',
+    'publicacion5-titulo': 'CCNA: Introducción a las redes',
+    'publicacion5-desc': 'Certificado que acredita la finalización del curso CCNA: Introducción a las redes, orientado al aprendizaje de los fundamentos de redes informáticas, configuración de dispositivos y principios básicos de conectividad dentro del programa Cisco Networking Academy.',
+    'leer-mas': 'Ver en LinkedIn'
   },
   'en': {
     'brand': 'MY PORTFOLIO',
@@ -133,6 +154,11 @@ const translations = {
     'testimonios-titulo': 'Testimonials',
     'testimonio1': '"Works with responsibility and maintains a positive attitude."',
     'testimonio2': '"Very responsible and diligent, always delivers her tasks on time."',
+    // NUEVAS TRADUCCIONES AGREGADAS
+    'testimonio-nombre1': 'Jennifer Boîtes',
+    'testimonio-cargo1': 'Engineering Technician Student',
+    'testimonio-nombre2': 'Josue Alejandro Chicas',
+    'testimonio-cargo2': 'Engineering Technician Student',
     'intereses-titulo': 'Interests',
     'interes1-titulo': 'Mobile Development',
     'interes1-desc': 'I am interested in creating efficient mobile applications with Android Studio and exploring new mobile technologies.',
@@ -146,6 +172,7 @@ const translations = {
     'footer': '© 2025 Gabriela Amaya - All rights reserved',
     'marca-titulo': 'Personal Brand',
     'frase-marca': '"With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further."',
+    'marca-autor': '- Gabriela Amaya',
     
     // TRADUCCIONES PARA EL MODAL
     'description': 'Description',
@@ -162,9 +189,27 @@ const translations = {
     'image': 'Image',
     'problem': 'Problem',
     'solution': 'Solution',
-    'result': 'Result'
+    'result': 'Result',
+    
+    // TRADUCCIONES PARA PUBLICACIONES
+    'publicaciones-titulo': 'Publications',
+    'publicaciones-intro': 'Here I share my articles, reflections and learnings published on LinkedIn.',
+    'publicacion1-titulo': 'D.A.R.E',
+    'publicacion1-desc': 'Certificate from the D.A.R.E. program awarded by the National Civil Police of El Salvador for completing training on prevention of drug, tobacco and alcohol use.',
+    'publicacion2-titulo': 'I... Yes I Can!',
+    'publicacion2-desc': 'Diploma awarded by a national educational institution in recognition of volunteer work as a facilitator in a literacy program, highlighting the support provided in teaching reading and writing and commitment to adult education.',
+    'publicacion3-titulo': 'Speak English',
+    'publicacion3-desc': 'Diploma certifying participation in the "Speak English" project, focused on promoting the learning and practice of the English language through training and educational activities.',
+    'publicacion4-titulo': 'Anxiety Management Workshop',
+    'publicacion4-desc': 'Recognition awarded for participation and satisfactory completion of the Anxiety Management Workshop, focused on developing strategies and techniques for emotional management and psychological well-being.',
+    'publicacion5-titulo': 'CCNA: Introduction to Networks',
+    'publicacion5-desc': 'Certificate accrediting completion of the CCNA: Introduction to Networks course, oriented to learning the fundamentals of computer networks, device configuration and basic connectivity principles within the Cisco Networking Academy program.',
+    'leer-mas': 'View on LinkedIn'
   }
 };
+
+
+
 let currentLang = 'es';
 function changeLanguage(lang) {
   currentLang = lang;
@@ -911,7 +956,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+// Abrir enlaces de linkeden en publicaciones
  document.querySelectorAll('.btn-more').forEach(btn => {
     btn.addEventListener('click', e => {
       const link = btn.getAttribute('href');
