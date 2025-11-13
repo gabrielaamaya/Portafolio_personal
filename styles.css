@@ -2657,6 +2657,109 @@ body.light-mode .logo-container:hover {
   box-shadow: 0 0 10px #00ff66; /* Efecto de brillo */
 }
 
+
+
+
+/* ================================
+INTERESES - Tarjetas estilo PROYECTOS
+================================ */
+#intereses {
+  /* 🎨 MODO OSCURO: Fondo sección */
+  background: #272727;
+  padding: 4rem 0;
+}
+
+#intereses h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  /* 🟢 VERDE: Título sección */
+  color: #00cc66;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+#intereses h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  /* 🟢 VERDE: Línea decorativa título */
+  background: #00cc66;
+  border-radius: 2px;
+}
+
+#intereses .grid.cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: stretch;
+}
+
+#intereses .card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  /* 🎨 GRIS: Fondo tarjeta interés */
+  background: #333333;
+  /* 🟢 VERDE: Borde tarjeta interés */
+  border: 1px solid #00cc66;
+  /* 🟢 VERDE: Sombra tarjeta interés */
+  box-shadow: 0 0 12px rgba(0, 204, 102, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#intereses .card:hover {
+  transform: translateY(-8px);
+  /* 🟢 VERDE: Sombra hover tarjeta interés */
+  box-shadow: 0 8px 20px rgba(0, 204, 102, 0.5);
+}
+
+#intereses .card .imgBx {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 🎨 GRIS: Fondo imagen interés */
+  background: #3a3a3a;
+}
+
+#intereses .card .imgBx img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#intereses .card .content {
+  padding: 1rem;
+  text-align: center;
+}
+
+#intereses .card .content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  /* 🟢 VERDE CLARO: Título tarjeta interés */
+  color: #4dffa6;
+}
+
+#intereses .card .content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  /* 🎨 GRIS CLARO: Texto tarjeta interés */
+  color: #ccc;
+}
+
+
 /* ========================================================= */
 /* ==================== SECCIÓN: PUBLICACIONES ============== */
 /* ========================================================= */
@@ -3070,104 +3173,12 @@ body.light-mode .logo-container:hover {
 
 
 
-/* ================================
-INTERESES - Tarjetas estilo PROYECTOS
-================================ */
-#intereses {
-  /* 🎨 MODO OSCURO: Fondo sección */
-  background: #272727;
-  padding: 4rem 0;
-}
 
-#intereses h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  /* 🟢 VERDE: Título sección */
-  color: #00cc66;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-}
 
-#intereses h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  /* 🟢 VERDE: Línea decorativa título */
-  background: #00cc66;
-  border-radius: 2px;
-}
 
-#intereses .grid.cards {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  align-items: stretch;
-}
 
-#intereses .card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  /* 🎨 GRIS: Fondo tarjeta interés */
-  background: #333333;
-  /* 🟢 VERDE: Borde tarjeta interés */
-  border: 1px solid #00cc66;
-  /* 🟢 VERDE: Sombra tarjeta interés */
-  box-shadow: 0 0 12px rgba(0, 204, 102, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
 
-#intereses .card:hover {
-  transform: translateY(-8px);
-  /* 🟢 VERDE: Sombra hover tarjeta interés */
-  box-shadow: 0 8px 20px rgba(0, 204, 102, 0.5);
-}
 
-#intereses .card .imgBx {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* 🎨 GRIS: Fondo imagen interés */
-  background: #3a3a3a;
-}
-
-#intereses .card .imgBx img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-
-#intereses .card .content {
-  padding: 1rem;
-  text-align: center;
-}
-
-#intereses .card .content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  /* 🟢 VERDE CLARO: Título tarjeta interés */
-  color: #4dffa6;
-}
-
-#intereses .card .content p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  /* 🎨 GRIS CLARO: Texto tarjeta interés */
-  color: #ccc;
-}
 
 /* ================================
 CONTACTO - ESTILO ACTUALIZADO

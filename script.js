@@ -965,3 +965,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+
+
+
+   // ====== 🟢 AMPLIAR IMAGEN AL CLIC ======    de publicaciones
+  document.querySelectorAll('#publicaciones .card .imgBx img').forEach(img => {
+    img.addEventListener('click', () => {
+      const popup = document.getElementById('imagePopup');
+      const popupImg = document.getElementById('popupImg');
+      popupImg.src = img.src;
+      popup.classList.add('active');
+    });
+  });
+
+  // ====== 🔴 CERRAR LA VENTANA ======
+  document.getElementById('closePopup').addEventListener('click', () => {
+    document.getElementById('imagePopup').classList.remove('active');
+  });
+
+  // Cerrar si se hace clic fuera de la imagen
+  document.getElementById('imagePopup').addEventListener('click', (e) => {
+    if (e.target.id === 'imagePopup') {
+      document.getElementById('imagePopup').classList.remove('active');
+    }
+  });
