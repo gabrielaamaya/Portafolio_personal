@@ -5,7 +5,7 @@
 /* 🔹 Reinicio general de márgenes, rellenos y box model */
 * {
   margin: 0;
-  padding: 0;
+  padding: 0%;
   box-sizing: border-box;
 }
 
@@ -39,6 +39,10 @@ a {
 ul {
   list-style: none;
 }
+
+
+
+
 
 /* ==========================================================
    🚀 BARRA DE NAVEGACIÓN (NAVBAR)
@@ -79,7 +83,7 @@ ul {
 .logo-brand img {
   height: 70px;  /* Forma largo de la imagen */
   width: 70px;   /* Forma ancho de la imagen */
-  border-radius: 20%; /* Forma circular */
+  border-radius: 50%; /* Forma circular */
   object-fit: cover; /* Mantiene proporción */
   border: 2px solid #00cc66; /* 🟢 Borde verde */
   box-shadow: 0 0 10px rgba(0, 204, 102, 0.4); /* ✨ Brillo verde */
@@ -2815,7 +2819,7 @@ INTERESES - Tarjetas estilo PROYECTOS
 }
 
 .slider-wrapper {
-  width: 90%;
+  width: 70%;     /* Mostrar solo espacio para 2 tarjeta */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -3833,4 +3837,6 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more) {
 body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   background: #003399 !important;
   border-color: #003399 !important;
-}
+} 
+
+
