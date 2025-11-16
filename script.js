@@ -1,212 +1,213 @@
 // ================================
-// TRADUCTOR (ESPAÑOL/INGLÉS) - COMPLETO Y CORREGIDO
+// TRADUCTOR (ESPAÑOL/INGLÉS) - MEJORADO
 // ================================
 const translations = {
-  'es': {
-    'brand': 'MI PORTAFOLIO',
-    'menu-sobre': 'Sobre mí',
-    'menu-habilidades': 'Habilidades',
-    'menu-proyectos': 'Proyectos',
-    'menu-testimonios': 'Testimonios',
-    'menu-intereses': 'Intereses',
-    'menu-contacto': 'Contacto',
-    'hero-hola': '¡Hola! Soy Gabriela Lissette Amaya Garay',
-    'hero-interes-titulo': 'Áreas de interés:',
-    'hero-interes': '"Desarrollo Backend y Desarrollo de Apps Móviles"',
-    'sobre-titulo': 'Sobre mí',
-    'sobre-texto': 'Soy una persona responsable, puntual, con muchas ganas de progresar, aprendo rápido, capaz de trabajar en equipo. Mi objetivo en la empresa es demostrar mis conocimientos ayudando al funcionamiento de la misma y a su vez adquirir nuevas experiencias para seguir formándome tanto personal como laboral.',
-    'btn-descargar': 'Descargar CV',
-    'habilidades-titulo': 'Habilidades',
-    'habilidades-blandas': 'Habilidades Blandas',
-    'habilidades-duras': 'Habilidades Duras',
-    'lenguajes-titulo': 'Lenguajes de Programación',
-    'hab-trabajo': 'Trabajo en equipo',
-    'hab-trabajo-desc': 'Capacidad para colaborar de manera efectiva con diferentes personas, aportando ideas y escuchando a los demás.',
-    'hab-tiempo': 'Gestión del tiempo',
-    'hab-tiempo-desc': 'Organización y priorización de tareas para cumplir plazos de forma eficiente y sin perder calidad.',
-    'hab-aprendizaje': 'Aprendizaje continuo',
-    'hab-aprendizaje-desc': 'Interés constante por adquirir nuevas habilidades y actualizar conocimientos en el área profesional.',
-    'hab-responsabilidad': 'Responsabilidad',
-    'hab-responsabilidad-desc': 'Compromiso con los objetivos y cumplimiento de las tareas asignadas con seriedad y disciplina.',
-    'hab-creatividad': 'Creatividad',
-    'hab-creatividad-desc': 'Capacidad para generar ideas innovadoras y proponer soluciones originales a los problemas.',
-    'hab-git': 'Manejo de Git',
-    'hab-git-desc': 'Uso de comandos principales para control de versiones, trabajo en ramas y colaboración en proyectos.',
-    'hab-android': 'Uso de Android Studio',
-    'hab-android-desc': 'Experiencia en la creación de aplicaciones móviles con Java y XML, incluyendo diseño de interfaces.',
-    'hab-planillas': 'Elaboración de planillas de pago',
-    'hab-planillas-desc': 'Realización de planillas de pago con cálculo de comisiones, IVA, ISSS, AFP y renta.',
-    'hab-contabilidad': 'Registro y contabilización de transacciones financieras',
-    'hab-contabilidad-desc': 'Capacidad para registrar y clasificar operaciones en comprobantes contables (ingresos, egresos, compras y ventas).',
-    'proyectos-titulo': 'PROYECTOS',
-    'proyecto1-titulo': 'Adopta a un amigo',
-    'proyecto1-desc': 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas.',
-    'proyecto2-titulo': 'Artesanías Conchita',
-    'proyecto2-desc': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa.',
-    'proyecto3-titulo': 'Task Planner',
-    'proyecto3-desc': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo.',
-    'proyecto4-titulo': 'Sitio web de Artesanías Conchita',
-    'proyecto4-desc': 'Sitio web informativo que muestra los productos de la empresa',
-    'ver-github': 'VER EN GITHUB',
-    'ver-mas': 'Ver más',
-    'testimonios-titulo': 'Testimonios',
-    'testimonio1': '"Trabaja con responsabilidad y mantiene una actitud positiva."',
-    'testimonio2': '"Muy responsable y cumplida, siempre entrega sus tareas a tiempo."',
-    // NUEVAS TRADUCCIONES AGREGADAS
-    'testimonio-nombre1': 'Jennifer Boîtes',
-    'testimonio-cargo1': 'Estudiante de Técnico',
-    'testimonio-nombre2': 'Josue Alejandro Chicas', 
-    'testimonio-cargo2': 'Estudiante de Técnico',
-    'intereses-titulo': 'Intereses',
-    'interes1-titulo': 'Desarrollo Móvil',
-    'interes1-desc': 'Me interesa crear aplicaciones móviles eficientes con Android Studio y explorar nuevas tecnologías móviles.',
-    'interes2-titulo': 'Manga',
-    'interes2-desc': 'Disfruto leer novelas ficticias.',
-    'interes3-titulo': 'Música',
-    'interes3-desc': 'Me apasiona escuchar y descubrir géneros musicales diversos, lo que me inspira en la creatividad.',
-    'interes4-titulo': 'Fútbol',
-    'interes4-desc': 'El deporte que más disfruto practicar y seguir, fomenta el trabajo en equipo y la disciplina.',
-    'contacto-titulo': 'Contacto',
-    'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
-    'marca-titulo': 'Marca Personal',
-    'frase-marca': '"Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos."',
-    'marca-autor': '- Gabriela Amaya',
-    
-    // TRADUCCIONES PARA EL MODAL
-    'description': 'Descripción',
-    'features': 'Características',
-    'technologies-used': 'Tecnologías Utilizadas',
-    'programming-languages': 'Lenguajes de Programación',
-    'applications': 'Aplicaciones',
-    'role-performed': 'Rol Desempeñado',
-    'close': 'Cerrar',
-    'role-backend': 'Desarrollador Backend',
-    'role-quality': 'Gestor de Calidad',
-    'tech-languages': 'Lenguajes de Programación',
-    'tech-apps': 'Aplicaciones',
-    'image': 'Imagen',
-    'problem': 'Problema',
-    'solution': 'Solución',
-    'result': 'Resultado',
-    
-    // TRADUCCIONES PARA PUBLICACIONES
-    'publicaciones-titulo': 'Publicaciones',
-    'publicaciones-intro': 'Aquí comparto mis artículos, reflexiones y aprendizajes publicados en LinkedIn.',
-    'publicacion1-titulo': 'D.A.R.E',
-    'publicacion1-desc': 'Certificado del programa D.A.R.E. otorgado por la Policía Nacional Civil de El Salvador por completar la formación sobre prevención del uso de drogas, tabaco y alcohol.',
-    'publicacion2-titulo': '¡Yo... Sí Puedo!',
-    'publicacion2-desc': 'Diploma otorgado por una institución educativa nacional en reconocimiento a la labor voluntaria como facilitador en un programa de alfabetización, destacando el apoyo brindado en la enseñanza de lectura y escritura y el compromiso con la educación de adultos.',
-    'publicacion3-titulo': 'Speak English',
-    'publicacion3-desc': 'Diploma que certifica la participación en el proyecto "Speak English", enfocado en promover el aprendizaje y la práctica del idioma inglés a través de actividades formativas y educativas.',
-    'publicacion4-titulo': 'Taller de Manejo de Ansiedad',
-    'publicacion4-desc': 'Reconocimiento otorgado por la participación y finalización satisfactoria del Taller de Manejo de Ansiedad, enfocado en el desarrollo de estrategias y técnicas para la gestión emocional y el bienestar psicológico.',
-    'publicacion5-titulo': 'CCNA: Introducción a las redes',
-    'publicacion5-desc': 'Certificado que acredita la finalización del curso CCNA: Introducción a las redes, orientado al aprendizaje de los fundamentos de redes informáticas, configuración de dispositivos y principios básicos de conectividad dentro del programa Cisco Networking Academy.',
-    'leer-mas': 'Ver en LinkedIn'
-  },
-  'en': {
-    'brand': 'MY PORTFOLIO',
-    'menu-sobre': 'About me',
-    'menu-habilidades': 'Skills',
-    'menu-proyectos': 'Projects',
-    'menu-testimonios': 'Testimonials',
-    'menu-intereses': 'Interests',
-    'menu-contacto': 'Contact',
-    'hero-hola': 'Hello! I am Gabriela Lissette Amaya Garay',
-    'hero-interes-titulo': 'Areas of interest:',
-    'hero-interes': '"Backend Development and Mobile App Development"',
-    'sobre-titulo': 'About me',
-    'sobre-texto': 'I am a responsible, punctual person with a strong desire to progress, I learn quickly, and I am capable of working in a team. My goal in the company is to demonstrate my knowledge by helping its operation. At the same time, I want to acquire new experiences to continue developing both personally and professionally.',
-    'btn-descargar': 'Download CV',
-    'habilidades-titulo': 'Skills',
-    'habilidades-blandas': 'Soft Skills',
-    'habilidades-duras': 'Hard Skills',
-    'lenguajes-titulo': 'Programming Languages',
-    'hab-trabajo': 'Teamwork',
-    'hab-trabajo-desc': 'Ability to collaborate effectively with different people, contributing ideas and listening to others.',
-    'hab-tiempo': 'Time management',
-    'hab-tiempo-desc': 'Organization and prioritization of tasks to meet deadlines efficiently without losing quality.',
-    'hab-aprendizaje': 'Continuous learning',
-    'hab-aprendizaje-desc': 'Constant interest in acquiring new skills and updating knowledge in the professional field.',
-    'hab-responsabilidad': 'Responsibility',
-    'hab-responsabilidad-desc': 'Commitment to objectives and fulfillment of assigned tasks with seriousness and discipline.',
-    'hab-creatividad': 'Creativity',
-    'hab-creatividad-desc': 'Ability to generate innovative ideas and propose original solutions to problems.',
-    'hab-git': 'Git Management',
-    'hab-git-desc': 'Use of main commands for version control, branch work and project collaboration.',
-    'hab-android': 'Android Studio Usage',
-    'hab-android-desc': 'Experience in creating mobile applications with Java and XML, including interface design.',
-    'hab-planillas': 'Payroll preparation',
-    'hab-planillas-desc': 'Preparation of payrolls with calculation of commissions, VAT, ISSS, AFP and income tax.',
-    'hab-contabilidad': 'Recording and accounting of financial transactions',
-    'hab-contabilidad-desc': 'Ability to record and classify operations in accounting vouchers (income, expenses, purchases and sales).',
-    'proyectos-titulo': 'PROJECTS',
-    'proyecto1-titulo': 'Adopt a friend',
-    'proyecto1-desc': 'Web platform for an animal shelter, focused on promoting responsible pet adoption.',
-    'proyecto2-titulo': 'Conchita Crafts',
-    'proyecto2-desc': 'Business software prototype that allows complete control of company billing and inventory.',
-    'proyecto3-titulo': 'Task Planner',
-    'proyecto3-desc': 'Mobile application to organize tasks, with local storage and filters for better time management.',
-    'proyecto4-titulo': 'Conchita Crafts Website',
-    'proyecto4-desc': 'Informative website that displays the company products',
-    'ver-github': 'VIEW ON GITHUB',
-    'ver-mas': 'View more',
-    'testimonios-titulo': 'Testimonials',
-    'testimonio1': '"Works with responsibility and maintains a positive attitude."',
-    'testimonio2': '"Very responsible and diligent, always delivers her tasks on time."',
-    // NUEVAS TRADUCCIONES AGREGADAS
-    'testimonio-nombre1': 'Jennifer Boîtes',
-    'testimonio-cargo1': 'Engineering Technician Student',
-    'testimonio-nombre2': 'Josue Alejandro Chicas',
-    'testimonio-cargo2': 'Engineering Technician Student',
-    'intereses-titulo': 'Interests',
-    'interes1-titulo': 'Mobile Development',
-    'interes1-desc': 'I am interested in creating efficient mobile applications with Android Studio and exploring new mobile technologies.',
-    'interes2-titulo': 'Manga',
-    'interes2-desc': 'I enjoy reading fictional novels.',
-    'interes3-titulo': 'Music',
-    'interes3-desc': 'I am passionate about listening to and discovering diverse music genres, which inspires my creativity.',
-    'interes4-titulo': 'Soccer',
-    'interes4-desc': 'The sport I most enjoy practicing and following, promotes teamwork and discipline.',
-    'contacto-titulo': 'Contact',
-    'footer': '© 2025 Gabriela Amaya - All rights reserved',
-    'marca-titulo': 'Personal Brand',
-    'frase-marca': '"With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further."',
-    'marca-autor': '- Gabriela Amaya',
-    
-    // TRADUCCIONES PARA EL MODAL
-    'description': 'Description',
-    'features': 'Features',
-    'technologies-used': 'Technologies Used',
-    'programming-languages': 'Programming Languages',
-    'applications': 'Applications',
-    'role-performed': 'Role Performed',
-    'close': 'Close',
-    'role-backend': 'Backend Developer',
-    'role-quality': 'Quality Manager',
-    'tech-languages': 'Programming Languages',
-    'tech-apps': 'Applications',
-    'image': 'Image',
-    'problem': 'Problem',
-    'solution': 'Solution',
-    'result': 'Result',
-    
-    // TRADUCCIONES PARA PUBLICACIONES
-    'publicaciones-titulo': 'Publications',
-    'publicaciones-intro': 'Here I share my articles, reflections and learnings published on LinkedIn.',
-    'publicacion1-titulo': 'D.A.R.E',
-    'publicacion1-desc': 'Certificate from the D.A.R.E. program awarded by the National Civil Police of El Salvador for completing training on prevention of drug, tobacco and alcohol use.',
-    'publicacion2-titulo': 'I... Yes I Can!',
-    'publicacion2-desc': 'Diploma awarded by a national educational institution in recognition of volunteer work as a facilitator in a literacy program, highlighting the support provided in teaching reading and writing and commitment to adult education.',
-    'publicacion3-titulo': 'Speak English',
-    'publicacion3-desc': 'Diploma certifying participation in the "Speak English" project, focused on promoting the learning and practice of the English language through training and educational activities.',
-    'publicacion4-titulo': 'Anxiety Management Workshop',
-    'publicacion4-desc': 'Recognition awarded for participation and satisfactory completion of the Anxiety Management Workshop, focused on developing strategies and techniques for emotional management and psychological well-being.',
-    'publicacion5-titulo': 'CCNA: Introduction to Networks',
-    'publicacion5-desc': 'Certificate accrediting completion of the CCNA: Introduction to Networks course, oriented to learning the fundamentals of computer networks, device configuration and basic connectivity principles within the Cisco Networking Academy program.',
-    'leer-mas': 'View on LinkedIn'
-  }
+    'es': {
+        'intereses-titulo': 'Intereses',
+        'interes1-titulo': 'Programación',
+        'interes1-desc': 'La programación me gusta porque disfruto aprender cómo funcionan las cosas y crear mis propias ideas con código. Cada avance que hago me motiva a seguir practicando y mejorando.',
+        'interes2-titulo': 'Manga',
+        'interes2-desc': 'Me interesa mucho leer manga porque disfruto las historias, los personajes y los diferentes estilos de dibujo. Es una de mis actividades favoritas para relajarme y pasar un buen rato.',
+        'interes3-titulo': 'Música',
+        'interes3-desc': 'Leer manga es algo que disfruto mucho porque me encantan las historias, los personajes y los estilos de dibujo. Es una de mis actividades favoritas para relajarme y pasar un buen rato.',
+        'interes4-titulo': 'Fútbol',
+        'interes4-desc': 'El fútbol es el deporte que más disfruto practicar y seguir, porque me divierte jugarlo, me ayuda a trabajar en equipo y a ser más disciplinada. Además, me encanta apoyar a mis equipos favoritos y vivir la emoción de cada partido.',
+        // Otras traducciones existentes...
+        'brand': 'MI PORTAFOLIO',
+        'menu-sobre': 'Sobre mí',
+        'menu-habilidades': 'Habilidades',
+        'menu-proyectos': 'Proyectos',
+        'menu-testimonios': 'Testimonios',
+        'menu-intereses': 'Intereses',
+        'menu-contacto': 'Contacto',
+        'hero-hola': '¡Hola! Soy Gabriela Lissette Amaya Garay',
+        'hero-interes-titulo': 'Áreas de interés:',
+        'hero-interes': '"Desarrollo Backend y Desarrollo de Apps Móviles"',
+        'sobre-titulo': 'Sobre mí',
+        'sobre-texto': 'Soy una persona responsable, puntual, con muchas ganas de progresar, aprendo rápido, capaz de trabajar en equipo. Mi objetivo en la empresa es demostrar mis conocimientos ayudando al funcionamiento de la misma y a su vez adquirir nuevas experiencias para seguir formándome tanto personal como laboral.',
+        'btn-descargar': 'Descargar CV',
+        'habilidades-titulo': 'Habilidades',
+        'habilidades-blandas': 'Habilidades Blandas',
+        'habilidades-duras': 'Habilidades Duras',
+        'lenguajes-titulo': 'Lenguajes de Programación',
+        'hab-trabajo': 'Trabajo en equipo',
+        'hab-trabajo-desc': 'Capacidad para colaborar de manera efectiva con diferentes personas, aportando ideas y escuchando a los demás.',
+        'hab-tiempo': 'Gestión del tiempo',
+        'hab-tiempo-desc': 'Organización y priorización de tareas para cumplir plazos de forma eficiente y sin perder calidad.',
+        'hab-aprendizaje': 'Aprendizaje continuo',
+        'hab-aprendizaje-desc': 'Interés constante por adquirir nuevas habilidades y actualizar conocimientos en el área profesional.',
+        'hab-responsabilidad': 'Responsabilidad',
+        'hab-responsabilidad-desc': 'Compromiso con los objetivos y cumplimiento de las tareas asignadas con seriedad y disciplina.',
+        'hab-creatividad': 'Creatividad',
+        'hab-creatividad-desc': 'Capacidad para generar ideas innovadoras y proponer soluciones originales a los problemas.',
+        'hab-git': 'Manejo de Git',
+        'hab-git-desc': 'Uso de comandos principales para control de versiones, trabajo en ramas y colaboración en proyectos.',
+        'hab-android': 'Uso de Android Studio',
+        'hab-android-desc': 'Experiencia en la creación de aplicaciones móviles con Java y XML, incluyendo diseño de interfaces.',
+        'hab-planillas': 'Elaboración de planillas de pago',
+        'hab-planillas-desc': 'Realización de planillas de pago con cálculo de comisiones, IVA, ISSS, AFP y renta.',
+        'hab-contabilidad': 'Registro y contabilización de transacciones financieras',
+        'hab-contabilidad-desc': 'Capacidad para registrar y clasificar operaciones en comprobantes contables (ingresos, egresos, compras y ventas).',
+        'proyectos-titulo': 'PROYECTOS',
+        'proyecto1-titulo': 'Adopta a un amigo',
+        'proyecto1-desc': 'Plataforma web para un refugio de animales, enfocada en promover la adopción responsable de mascotas.',
+        'proyecto2-titulo': 'Artesanías Conchita',
+        'proyecto2-desc': 'Prototipo de software empresarial que permite llevar el control completo de facturación e inventario de la empresa.',
+        'proyecto3-titulo': 'Task Planner',
+        'proyecto3-desc': 'Aplicación móvil para organizar tareas, con almacenamiento local y filtros para una mejor gestión del tiempo.',
+        'proyecto4-titulo': 'Sitio web de Artesanías Conchita',
+        'proyecto4-desc': 'Sitio web informativo que muestra los productos de la empresa',
+        'ver-github': 'VER EN GITHUB',
+        'ver-mas': 'Ver más',
+        'testimonios-titulo': 'Testimonios',
+        'testimonio1': '"Trabaja con responsabilidad y mantiene una actitud positiva."',
+        'testimonio2': '"Muy responsable y cumplida, siempre entrega sus tareas a tiempo."',
+        'testimonio-nombre1': 'Jennifer Boîtes',
+        'testimonio-cargo1': 'Estudiante de Técnico',
+        'testimonio-nombre2': 'Josue Alejandro Chicas', 
+        'testimonio-cargo2': 'Estudiante de Técnico',
+        'contacto-titulo': 'Contacto',
+        'footer': '© 2025 Gabriela Amaya - Todos los derechos reservados',
+        'marca-titulo': 'Marca Personal',
+        'frase-marca': '"Con lealtad en el camino, constancia en el esfuerzo y pasión en cada aprendizaje, porque aprender juntos siempre nos lleva más lejos."',
+        'marca-autor': '- Gabriela Amaya',
+        
+        // TRADUCCIONES PARA EL MODAL
+        'description': 'Descripción',
+        'features': 'Características',
+        'technologies-used': 'Tecnologías Utilizadas',
+        'programming-languages': 'Lenguajes de Programación',
+        'applications': 'Aplicaciones',
+        'role-performed': 'Rol Desempeñado',
+        'close': 'Cerrar',
+        'role-backend': 'Desarrollador Backend',
+        'role-quality': 'Gestor de Calidad',
+        'tech-languages': 'Lenguajes de Programación',
+        'tech-apps': 'Aplicaciones',
+        'image': 'Imagen',
+        'problem': 'Problema',
+        'solution': 'Solución',
+        'result': 'Resultado',
+        
+        // TRADUCCIONES PARA PUBLICACIONES
+        'publicaciones-titulo': 'Publicaciones',
+        'publicaciones-intro': 'Aquí comparto mis artículos, reflexiones y aprendizajes publicados en LinkedIn.',
+        'publicacion1-titulo': 'D.A.R.E',
+        'publicacion1-desc': 'Certificado del programa D.A.R.E. otorgado por la Policía Nacional Civil de El Salvador por completar la formación sobre prevención del uso de drogas, tabaco y alcohol.',
+        'publicacion2-titulo': '¡Yo... Sí Puedo!',
+        'publicacion2-desc': 'Diploma otorgado por una institución educativa nacional en reconocimiento a la labor voluntaria como facilitador en un programa de alfabetización, destacando el apoyo brindado en la enseñanza de lectura y escritura y el compromiso con la educación de adultos.',
+        'publicacion3-titulo': 'Speak English',
+        'publicacion3-desc': 'Diploma que certifica la participación en el proyecto "Speak English", enfocado en promover el aprendizaje y la práctica del idioma inglés a través de actividades formativas y educativas.',
+        'publicacion4-titulo': 'Taller de Manejo de Ansiedad',
+        'publicacion4-desc': 'Reconocimiento otorgado por la participación y finalización satisfactoria del Taller de Manejo de Ansiedad, enfocado en el desarrollo de estrategias y técnicas para la gestión emocional y el bienestar psicológico.',
+        'publicacion5-titulo': 'CCNA: Introducción a las redes',
+        'publicacion5-desc': 'Certificado que acredita la finalización del curso CCNA: Introducción a las redes, orientado al aprendizaje de los fundamentos de redes informáticas, configuración de dispositivos y principios básicos de conectividad dentro del programa Cisco Networking Academy.',
+        'leer-mas': 'Ver en LinkedIn'
+    },
+    'en': {
+        'intereses-titulo': 'Interests',
+        'interes1-titulo': 'Programming',
+        'interes1-desc': 'I enjoy programming because I like learning how things work and creating my own ideas with code. Every little improvement motivates me to keep practicing and getting better.',
+        'interes2-titulo': 'Manga',
+        'interes2-desc': 'Im really interested in reading manga because I enjoy the stories, the characters, and the different art styles. Its one of my favorite things to do to relax and have a good time.',
+        'interes3-titulo': 'Music',
+        'interes3-desc': 'Reading manga is something I really enjoy because I love the stories, the characters, and the art styles. It’s one of my favorite activities to relax and have a good time.',
+        'interes4-titulo': 'Soccer',
+        'interes4-desc': 'Soccer is the sport I enjoy practicing and following the most because I have fun playing it, it helps me with teamwork, and I love supporting my favorite teams.',
+        // Otras traducciones existentes...
+        'brand': 'MY PORTFOLIO',
+        'menu-sobre': 'About me',
+        'menu-habilidades': 'Skills',
+        'menu-proyectos': 'Projects',
+        'menu-testimonios': 'Testimonials',
+        'menu-intereses': 'Interests',
+        'menu-contacto': 'Contact',
+        'hero-hola': 'Hello! I am Gabriela Lissette Amaya Garay',
+        'hero-interes-titulo': 'Areas of interest:',
+        'hero-interes': '"Backend Development and Mobile App Development"',
+        'sobre-titulo': 'About me',
+        'sobre-texto': 'I am a responsible, punctual person with a strong desire to progress, I learn quickly, and I am capable of working in a team. My goal in the company is to demonstrate my knowledge by helping its operation. At the same time, I want to acquire new experiences to continue developing both personally and professionally.',
+        'btn-descargar': 'Download CV',
+        'habilidades-titulo': 'Skills',
+        'habilidades-blandas': 'Soft Skills',
+        'habilidades-duras': 'Hard Skills',
+        'lenguajes-titulo': 'Programming Languages',
+        'hab-trabajo': 'Teamwork',
+        'hab-trabajo-desc': 'Ability to collaborate effectively with different people, contributing ideas and listening to others.',
+        'hab-tiempo': 'Time management',
+        'hab-tiempo-desc': 'Organization and prioritization of tasks to meet deadlines efficiently without losing quality.',
+        'hab-aprendizaje': 'Continuous learning',
+        'hab-aprendizaje-desc': 'Constant interest in acquiring new skills and updating knowledge in the professional field.',
+        'hab-responsabilidad': 'Responsibility',
+        'hab-responsabilidad-desc': 'Commitment to objectives and fulfillment of assigned tasks with seriousness and discipline.',
+        'hab-creatividad': 'Creativity',
+        'hab-creatividad-desc': 'Ability to generate innovative ideas and propose original solutions to problems.',
+        'hab-git': 'Git Management',
+        'hab-git-desc': 'Use of main commands for version control, branch work and project collaboration.',
+        'hab-android': 'Android Studio Usage',
+        'hab-android-desc': 'Experience in creating mobile applications with Java and XML, including interface design.',
+        'hab-planillas': 'Payroll preparation',
+        'hab-planillas-desc': 'Preparation of payrolls with calculation of commissions, VAT, ISSS, AFP and income tax.',
+        'hab-contabilidad': 'Recording and accounting of financial transactions',
+        'hab-contabilidad-desc': 'Ability to record and classify operations in accounting vouchers (income, expenses, purchases and sales).',
+        'proyectos-titulo': 'PROJECTS',
+        'proyecto1-titulo': 'Adopt a friend',
+        'proyecto1-desc': 'Web platform for an animal shelter, focused on promoting responsible pet adoption.',
+        'proyecto2-titulo': 'Conchita Crafts',
+        'proyecto2-desc': 'Business software prototype that allows complete control of company billing and inventory.',
+        'proyecto3-titulo': 'Task Planner',
+        'proyecto3-desc': 'Mobile application to organize tasks, with local storage and filters for better time management.',
+        'proyecto4-titulo': 'Conchita Crafts Website',
+        'proyecto4-desc': 'Informative website that displays the company products',
+        'ver-github': 'VIEW ON GITHUB',
+        'ver-mas': 'View more',
+        'testimonios-titulo': 'Testimonials',
+        'testimonio1': '"Works with responsibility and maintains a positive attitude."',
+        'testimonio2': '"Very responsible and diligent, always delivers her tasks on time."',
+        'testimonio-nombre1': 'Jennifer Boîtes',
+        'testimonio-cargo1': 'Engineering Technician Student',
+        'testimonio-nombre2': 'Josue Alejandro Chicas',
+        'testimonio-cargo2': 'Engineering Technician Student',
+        'contacto-titulo': 'Contact',
+        'footer': '© 2025 Gabriela Amaya - All rights reserved',
+        'marca-titulo': 'Personal Brand',
+        'frase-marca': '"With loyalty along the way, perseverance in effort, and passion in every learning process, because learning together always takes us further."',
+        'marca-autor': '- Gabriela Amaya',
+        
+        // TRADUCCIONES PARA EL MODAL
+        'description': 'Description',
+        'features': 'Features',
+        'technologies-used': 'Technologies Used',
+        'programming-languages': 'Programming Languages',
+        'applications': 'Applications',
+        'role-performed': 'Role Performed',
+        'close': 'Close',
+        'role-backend': 'Backend Developer',
+        'role-quality': 'Quality Manager',
+        'tech-languages': 'Programming Languages',
+        'tech-apps': 'Applications',
+        'image': 'Image',
+        'problem': 'Problem',
+        'solution': 'Solution',
+        'result': 'Result',
+        
+        // TRADUCCIONES PARA PUBLICACIONES
+        'publicaciones-titulo': 'Publications',
+        'publicaciones-intro': 'Here I share my articles, reflections and learnings published on LinkedIn.',
+        'publicacion1-titulo': 'D.A.R.E',
+        'publicacion1-desc': 'Certificate from the D.A.R.E. program awarded by the National Civil Police of El Salvador for completing training on prevention of drug, tobacco and alcohol use.',
+        'publicacion2-titulo': 'I... Yes I Can!',
+        'publicacion2-desc': 'Diploma awarded by a national educational institution in recognition of volunteer work as a facilitator in a literacy program, highlighting the support provided in teaching reading and writing and commitment to adult education.',
+        'publicacion3-titulo': 'Speak English',
+        'publicacion3-desc': 'Diploma certifying participation in the "Speak English" project, focused on promoting the learning and practice of the English language through training and educational activities.',
+        'publicacion4-titulo': 'Anxiety Management Workshop',
+        'publicacion4-desc': 'Recognition awarded for participation and satisfactory completion of the Anxiety Management Workshop, focused on developing strategies and techniques for emotional management and psychological well-being.',
+        'publicacion5-titulo': 'CCNA: Introduction to Networks',
+        'publicacion5-desc': 'Certificate accrediting completion of the CCNA: Introduction to Networks course, oriented to learning the fundamentals of computer networks, device configuration and basic connectivity principles within the Cisco Networking Academy program.',
+        'leer-mas': 'View on LinkedIn'
+    }
 };
+
 
 
 
@@ -990,3 +991,115 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('imagePopup').classList.remove('active');
     }
   });
+
+
+  
+
+
+
+
+
+
+  // ====== 🟢 NAVEGACIÓN ENTRE IMÁGENES EN EL POPUP ======
+document.addEventListener('DOMContentLoaded', function() {
+  const popup = document.getElementById('imagePopup');
+  const popupImg = document.getElementById('popupImg');
+  const closePopup = document.getElementById('closePopup');
+  const prevBtn = document.getElementById('prevImg');
+  const nextBtn = document.getElementById('nextImg');
+  
+  // Obtener todas las imágenes de las publicaciones
+  const allImages = Array.from(document.querySelectorAll('#publicaciones .card .imgBx img'));
+  let currentImageIndex = 0;
+
+  // Función para abrir el popup con una imagen específica
+  function openPopup(imgElement) {
+    currentImageIndex = allImages.indexOf(imgElement);
+    popupImg.src = imgElement.src;
+    popup.classList.add('active');
+    updateNavigationButtons();
+  }
+
+  // Función para navegar a la imagen anterior
+  function showPrevImage() {
+    if (allImages.length === 0) return;
+    
+    currentImageIndex--;
+    if (currentImageIndex < 0) {
+      currentImageIndex = allImages.length - 1; // Volver al final
+    }
+    
+    popupImg.src = allImages[currentImageIndex].src;
+    updateNavigationButtons();
+  }
+
+  // Función para navegar a la siguiente imagen
+  function showNextImage() {
+    if (allImages.length === 0) return;
+    
+    currentImageIndex++;
+    if (currentImageIndex >= allImages.length) {
+      currentImageIndex = 0; // Volver al inicio
+    }
+    
+    popupImg.src = allImages[currentImageIndex].src;
+    updateNavigationButtons();
+  }
+
+  // Función para actualizar el estado de los botones de navegación
+  function updateNavigationButtons() {
+    // Puedes agregar lógica aquí si quieres ocultar botones en los extremos
+    // Por ejemplo, deshabilitar botones cuando solo hay una imagen
+    if (allImages.length <= 1) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'block';
+      nextBtn.style.display = 'block';
+    }
+  }
+
+  // Event listeners para las imágenes
+  allImages.forEach((img, index) => {
+    img.addEventListener('click', () => openPopup(img));
+  });
+
+  // Event listeners para los botones de navegación
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evitar que el clic cierre el popup
+    showPrevImage();
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evitar que el clic cierre el popup
+    showNextImage();
+  });
+
+  // Cerrar popup
+  closePopup.addEventListener('click', () => {
+    popup.classList.remove('active');
+  });
+
+  // Cerrar si se hace clic fuera de la imagen
+  popup.addEventListener('click', (e) => {
+    if (e.target.id === 'imagePopup') {
+      popup.classList.remove('active');
+    }
+  });
+
+  // Navegación con teclado
+  document.addEventListener('keydown', (e) => {
+    if (popup.classList.contains('active')) {
+      if (e.key === 'ArrowLeft') {
+        showPrevImage();
+      } else if (e.key === 'ArrowRight') {
+        showNextImage();
+      } else if (e.key === 'Escape') {
+        popup.classList.remove('active');
+      }
+    }
+  });
+
+  // Inicializar estado de los botones
+  updateNavigationButtons();
+});
