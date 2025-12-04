@@ -1103,3 +1103,206 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializar estado de los botones
   updateNavigationButtons();
 });
+
+
+
+
+
+/*dplomas carrusel*/
+
+/* Carrusel de diplomas: responsive, autoplay, swipe */
+(function () {
+  const carousel = document.querySelector('.diplomas-carousel');
+  if (!carousel) return;
+
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  const prevBtn = carousel.querySelector('.carousel-btn.prev');
+  const nextBtn = carousel.querySelector('.carousel-btn.next');
+  const dotsContainer = carousel.querySelector('.carousel-dots');
+
+  let currentIndex = 0;
+  let slidesPerView = calculateSlidesPerView();
+  let autoplayInterval = 4000;
+  let autoplayTimer = null;
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  // Build dots
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const pages = Math.max(1, Math.ceil(slides.length / slidesPerView));
+    for (let i = 0; i < pages; i++) {
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label', `Ir a página ${i + 1}`);
+      btn.addEventListener('click', () => { goToIndex(i * slidesPerView); });
+      dotsContainer.appendChild(btn);
+    }
+  }
+
+  function updateDots() {
+    const buttons = Array.from(dotsContainer.children);
+    const page = Math.floor(currentIndex / slidesPerView);
+    buttons.forEach((b, i) => b.classList.toggle('active', i === page));
+  }
+
+  function calculateSlidesPerView() {
+    const w = window.innerWidth;
+    if (w >= 1000) return 3;
+    if (w >= 700) return 2;
+    return 1;
+  }
+
+  function setTrackPosition() {
+    const slide = slides[0];
+    if (!slide) return;
+    const slideWidth = slide.getBoundingClientRect().width;
+    const offset = currentIndex * slideWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function goToIndex(index) {
+    const maxIndex = Math.max(0, slides.length - slidesPerView);
+    currentIndex = Math.min(maxIndex, Math.max(0, index));
+    setTrackPosition();
+    updateDots();
+    resetAutoplay();
+  }
+
+  prevBtn.addEventListener('click', () => goToIndex(currentIndex - slidesPerView));
+  nextBtn.addEventListener('click', () => goToIndex(currentIndex + slidesPerView));
+
+  /* AUTOPLAY */
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      const maxIndex = Math.max(0, slides.length - slidesPerView);
+      if (currentIndex >= maxIndex) {
+        goToIndex(0);
+      } else {
+        goToIndex(currentIndex + slidesPerView);
+      }
+    }, autoplayInterval);
+  }
+  function stopAutoplay() { if (autoplayTimer) clearInterval(autoplayTimer); autoplayTimer = null; }
+  function resetAutoplay() { stopAutoplay(); startAutoplay(); }
+
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.addEventListener('focusin', stopAutoplay);
+  carousel.addEventListener('focusout', startAutoplay);
+
+  /* TOUCH DRAG */
+  slides.forEach((slide) => {
+    slide.addEventListener('touchstart', touchStart());
+    slide.addEventListener('touchend', touchEnd);
+    slide.addEventListener('touchmove', touchMove);
+    slide.addEventListener('mousedown', touchStart());
+    slide.addEventListener('mouseup', touchEnd);
+    slide.addEventListener('mouseleave', touchEnd);
+    slide.addEventListener('mousemove', touchMove);
+
+    const img = slide.querySelector('img');
+    if (img) img.addEventListener('dragstart', (e) => e.preventDefault());
+  });
+
+  function touchStart() {
+    return function (event) {
+      isDragging = true;
+      startX = getX(event);
+      prevTranslate = currentTranslate;
+    };
+  }
+
+  function touchMove(event) {
+    if (!isDragging) return;
+  }
+
+  function touchEnd(event) {
+    if (!isDragging) return;
+    isDragging = false;
+    const dx = getX(event) - startX;
+    const threshold = 50;
+    if (dx > threshold) {
+      goToIndex(currentIndex - slidesPerView);
+    } else if (dx < -threshold) {
+      goToIndex(currentIndex + slidesPerView);
+    }
+  }
+
+  function getX(event) {
+    return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+  }
+
+  carousel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') goToIndex(currentIndex - slidesPerView);
+    if (e.key === 'ArrowRight') goToIndex(currentIndex + slidesPerView);
+  });
+
+  window.addEventListener('resize', () => {
+    slidesPerView = calculateSlidesPerView();
+    buildDots();
+    setTrackPosition();
+    updateDots();
+  });
+
+  // ===============================
+  //    MODAL CON FLECHAS INTERNAS
+  // ===============================
+  const imgModal = document.getElementById("img-modal");
+  const imgModalContent = document.getElementById("img-modal-content");
+  const imgModalClose = document.querySelector(".img-modal-close");
+  const modalPrev = document.querySelector(".img-modal-prev");
+  const modalNext = document.querySelector(".img-modal-next");
+
+  let modalIndex = 0;
+
+  // Abrir modal al hacer clic
+  slides.forEach((slide, i) => {
+    const img = slide.querySelector("img");
+    if (!img) return;
+
+    img.addEventListener("click", () => {
+      modalIndex = i;
+      showModalImage();
+      imgModal.style.display = "flex";
+    });
+  });
+
+  function showModalImage() {
+    imgModalContent.src = slides[modalIndex].querySelector("img").src;
+  }
+
+  // Flecha siguiente (loop infinito)
+  modalNext.addEventListener("click", () => {
+    modalIndex = (modalIndex + 1) % slides.length;
+    showModalImage();
+  });
+
+  // Flecha anterior (loop infinito)
+  modalPrev.addEventListener("click", () => {
+    modalIndex = (modalIndex - 1 + slides.length) % slides.length;
+    showModalImage();
+  });
+
+  imgModalClose.addEventListener("click", () => {
+    imgModal.style.display = "none";
+  });
+
+  imgModal.addEventListener("click", (e) => {
+    if (e.target === imgModal) imgModal.style.display = "none";
+  });
+
+  // Init
+  function init() {
+    slidesPerView = calculateSlidesPerView();
+    buildDots();
+    updateDots();
+    setTrackPosition();
+    startAutoplay();
+  }
+
+  init();
+})();
