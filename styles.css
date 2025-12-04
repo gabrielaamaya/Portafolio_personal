@@ -2822,7 +2822,7 @@ body.light-mode .logo-container:hover {
    RESPONSIVE
 =============================== */
 @media (min-width: 700px) {
-  .carousel-slide { flex: 0 0 50%; } /* 2 por vista */
+  .carousel-slide { flex: 0 0 50%; } /* 3 por vista */
 }
 
 @media (min-width: 1000px) {
@@ -4147,3 +4147,320 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
 
 
 
+
+
+
+
+/* ==========================================================
+   📱 RESPONSIVE DESIGN - MOBILE FIRST
+   ========================================================== */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 992px) {
+  /* Ajustar contenedores */
+  .container {
+    width: 95%;
+  }
+  
+  /* Hero section */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  /* About section */
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  /* Proyectos grid */
+  .grid.cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Intereses grid */
+  #intereses .grid.cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Marca personal */
+  .marca-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .frase-container {
+    text-align: center;
+  }
+  
+  /* Navbar menu */
+  .topbar .menu {
+    gap: 0.5rem;
+  }
+  
+  .topbar .menu a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Ajustes generales */
+  .section {
+    padding: 3rem 0;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  /* NAVBAR - IMPORTANTE para móviles */
+  .topbar .nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .topbar .menu {
+    display: none; /* Ocultar menú por defecto en móviles */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1f1f1f;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+  }
+  
+  .topbar .menu.active {
+    display: flex;
+  }
+  
+  .topbar .menu a {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Botón hamburguesa para móviles */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* Logo más pequeño en móviles */
+  .logo-brand img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .logo-brand span {
+    font-size: 1.1rem;
+  }
+  
+  /* Hero section */
+  .hero {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  
+  .hero-photo img,
+  .about-img img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* Grids de proyectos e intereses */
+  .grid.cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  #intereses .grid.cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Habilidades grid */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Lenguajes de programación */
+  .lenguaje-linea {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .lenguaje-nombre {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  /* Testimonios grid */
+  .testimonios-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tcard {
+    width: 90%;
+    max-width: 320px;
+  }
+  
+  /* Carrusel de diplomas */
+  .carousel-slide {
+    flex: 0 0 100%;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  /* Contacto */
+  .contact-container {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  /* Modal responsive */
+  .modal-content {
+    width: 95%;
+    margin: 1% auto;
+  }
+  
+  .modal-layout {
+    flex-direction: column;
+  }
+  
+  .modal-tech {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-gallery {
+    height: 300px;
+  }
+  
+  .modal-gallery img {
+    max-width: 90%;
+    max-height: 280px;
+  }
+  
+  /* Publicaciones */
+  .slider-wrapper {
+    width: 90%;
+  }
+  
+  .publi-btn.prev {
+    left: 5px;
+  }
+  
+  .publi-btn.next {
+    right: 5px;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  /* Ajustes adicionales */
+  .container {
+    width: 98%;
+    padding: 0 10px;
+  }
+  
+  /* Nav controls más compactos */
+  .topbar .nav-controls {
+    gap: 0.5rem;
+  }
+  
+  #mode-toggle,
+  #lang-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  
+  /* Botones más pequeños */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Hero */
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  /* Textos generales */
+  p {
+    font-size: 0.95rem;
+  }
+  
+  /* Social icons */
+  .socials a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  /* Modal ajustes */
+  .modal-header {
+    padding: 0.8rem 1rem;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .close-modal {
+    top: 0.5rem;
+    right: 0.8rem;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Para landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .modal-content {
+    max-height: 90vh;
+  }
+}
