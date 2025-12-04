@@ -4148,8 +4148,6 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
 
 
 
-
-
 /* ==========================================================
    📱 RESPONSIVE DESIGN - MOBILE FIRST
 ========================================================== */
@@ -4286,14 +4284,6 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     height: 200px;
   }
   
-  /* Grids proyectos e intereses */
-  .grid.cards,
-  #intereses .grid.cards {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
   /* Habilidades */
   .skills-grid {
     grid-template-columns: 1fr;
@@ -4323,19 +4313,6 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     max-width: 320px;
   }
   
-  /* Carrusel de diplomas */
-  .carousel-slide {
-    flex: 0 0 100%;
-  }
-  
-  .carousel-btn.prev {
-    left: 10px;
-  }
-  
-  .carousel-btn.next {
-    right: 10px;
-  }
-  
   /* Contacto */
   .contact-container {
     width: 90%;
@@ -4363,6 +4340,115 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   .modal-gallery img {
     max-width: 90%;
     max-height: 280px;
+  }
+
+  /* ---------------------------------------- */
+  /*  CARRUSEL DE DIPLOMAS (PUBLICACIONES)    */
+  /* ---------------------------------------- */
+  
+  .diplomas-carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    object-fit: contain;
+    max-height: 400px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  /* ---------------------------------------- */
+  /*  TARJETAS DE PROYECTOS                   */
+  /* ---------------------------------------- */
+  
+  .grid.cards,
+  #intereses .grid.cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  
+  .pcard {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .pcard-img {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .pcard-body {
+    padding: 1rem;
+  }
+  
+  .pcard-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pcard-body p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  
+  .pcard-tech {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .pcard-footer {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+  
+  .btn.primary,
+  .btn.secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 
   /* ---------------------------------------- */
@@ -4414,7 +4500,7 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   }
 }
 
-/* Pantallas muy pequeñas */
+/* Pantallas muy pequeñas (móviles pequeños) */
 @media (max-width: 480px) {
   .container {
     width: 98%;
@@ -4471,9 +4557,38 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     height: 30px;
     font-size: 1.2rem;
   }
+  
+  /* Diplomas carrusel */
+  .carousel-slide img {
+    max-height: 300px;
+  }
+  
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  /* Proyectos cards */
+  .pcard-img {
+    height: 160px;
+  }
+  
+  .pcard-body h3 {
+    font-size: 1.1rem;
+  }
+  
+  .pcard-body p {
+    font-size: 0.9rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
 }
 
-/* Landscape en móviles */
+/* Ajuste para landscape en móviles */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
     min-height: 100vh;
@@ -4485,5 +4600,42 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   
   .modal-content {
     max-height: 90vh;
+  }
+  
+  .diplomas-carousel {
+    max-height: 70vh;
+  }
+  
+  .carousel-slide img {
+    max-height: 250px;
+  }
+  
+  .grid.cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  
+  .pcard {
+    height: 100%;
+  }
+}
+
+/* Ajustes específicos para evitar cortes en imágenes de diplomas */
+@media (max-width: 768px) {
+  .diploma-image {
+    max-height: 70vh !important;
+    object-fit: contain !important;
+  }
+  
+  .certificado-container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  .certificado-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    object-fit: contain !important;
   }
 }
