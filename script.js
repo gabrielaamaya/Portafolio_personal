@@ -1433,6 +1433,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
 /* ============================
       📌 CARRUSEL DE DIPLOMAS
    ============================ */
@@ -1452,10 +1454,10 @@ document.addEventListener('DOMContentLoaded', function() {
   let autoplayTimer = null;
   let isDragging = false;
   let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
 
-  /* Construye puntos */
+  /* ============================
+        Dots de navegación
+     ============================ */
   function buildDots() {
     dotsContainer.innerHTML = '';
     const pages = Math.max(1, Math.ceil(slides.length / slidesPerView));
@@ -1497,17 +1499,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ============================
-      Flechas con loop infinito
+        Flechas con LOOP REAL
      ============================ */
   prevBtn.addEventListener('click', () => {
     const maxIndex = Math.max(0, slides.length - slidesPerView);
-
-    if (currentIndex <= 0) {
-      currentIndex = maxIndex;
-    } else {
-      currentIndex -= slidesPerView;
-    }
-
+    currentIndex = currentIndex <= 0
+      ? maxIndex
+      : currentIndex - slidesPerView;
     setTrackPosition();
     updateDots();
     resetAutoplay();
@@ -1515,20 +1513,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   nextBtn.addEventListener('click', () => {
     const maxIndex = Math.max(0, slides.length - slidesPerView);
-
-    if (currentIndex >= maxIndex) {
-      currentIndex = 0;
-    } else {
-      currentIndex += slidesPerView;
-    }
-
+    currentIndex = currentIndex >= maxIndex
+      ? 0
+      : currentIndex + slidesPerView;
     setTrackPosition();
     updateDots();
     resetAutoplay();
   });
 
   /* ============================
-            AUTOPLAY
+               AUTOPLAY
      ============================ */
   function startAutoplay() {
     stopAutoplay();
@@ -1552,45 +1546,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
   carousel.addEventListener('mouseenter', stopAutoplay);
   carousel.addEventListener('mouseleave', startAutoplay);
-  carousel.addEventListener('focusin', stopAutoplay);
-  carousel.addEventListener('focusout', startAutoplay);
 
   /* ============================
-         GESTOS TOUCH
+             GESTOS TOUCH
      ============================ */
   slides.forEach((slide) => {
-    slide.addEventListener('touchstart', touchStart());
-    slide.addEventListener('touchend', touchEnd);
-    slide.addEventListener('touchmove', touchMove);
-
-    slide.addEventListener('mousedown', touchStart());
-    slide.addEventListener('mouseup', touchEnd);
-    slide.addEventListener('mouseleave', touchEnd);
-    slide.addEventListener('mousemove', touchMove);
+    slide.addEventListener('touchstart', handleStart);
+    slide.addEventListener('touchend', handleEnd);
+    slide.addEventListener('mousedown', handleStart);
+    slide.addEventListener('mouseup', handleEnd);
 
     const img = slide.querySelector('img');
     if (img) img.addEventListener('dragstart', (e) => e.preventDefault());
   });
 
-  function touchStart() {
-    return function (event) {
-      isDragging = true;
-      startX = getX(event);
-      prevTranslate = currentTranslate;
-    };
+  function handleStart(event) {
+    isDragging = true;
+    startX = getX(event);
   }
 
-  function touchMove(event) {
-    if (!isDragging) return;
-  }
-
-  function touchEnd(event) {
+  function handleEnd(event) {
     if (!isDragging) return;
     isDragging = false;
 
     const dx = getX(event) - startX;
     const threshold = 50;
-
     const maxIndex = Math.max(0, slides.length - slidesPerView);
 
     if (dx > threshold) {
@@ -1610,11 +1590,6 @@ document.addEventListener('DOMContentLoaded', function() {
       : event.touches[0].clientX;
   }
 
-  carousel.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') prevBtn.click();
-    if (e.key === 'ArrowRight') nextBtn.click();
-  });
-
   window.addEventListener('resize', () => {
     slidesPerView = calculateSlidesPerView();
     buildDots();
@@ -1623,7 +1598,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /* ============================
-         MODAL INTERNO
+               MODAL
      ============================ */
   const imgModal = document.getElementById("img-modal");
   const imgModalContent = document.getElementById("img-modal-content");
@@ -1648,6 +1623,7 @@ document.addEventListener('DOMContentLoaded', function() {
     imgModalContent.src = slides[modalIndex].querySelector("img").src;
   }
 
+  /* 🔥 LOOP INFINITO PERFECTO DEL MODAL */
   modalNext.addEventListener("click", () => {
     modalIndex = (modalIndex + 1) % slides.length;
     showModalImage();
@@ -1667,7 +1643,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /* ============================
-             INIT
+                INIT
      ============================ */
   function init() {
     slidesPerView = calculateSlidesPerView();

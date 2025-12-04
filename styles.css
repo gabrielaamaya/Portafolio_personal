@@ -4150,10 +4150,9 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
 
 
 
-
 /* ==========================================================
    📱 RESPONSIVE DESIGN - MOBILE FIRST
-   ========================================================== */
+========================================================== */
 
 /* Pantallas medianas (tablets) */
 @media (max-width: 992px) {
@@ -4254,7 +4253,7 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  /* Botón hamburguesa para móviles */
+  /* Botón hamburguesa */
   .menu-toggle {
     display: block;
     background: none;
@@ -4265,7 +4264,7 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     padding: 0.5rem;
   }
   
-  /* Logo más pequeño en móviles */
+  /* Logo más pequeño */
   .logo-brand img {
     height: 50px;
     width: 50px;
@@ -4275,7 +4274,7 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     font-size: 1.1rem;
   }
   
-  /* Hero section */
+  /* Hero */
   .hero {
     min-height: auto;
     padding: 2rem 0;
@@ -4287,27 +4286,22 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     height: 200px;
   }
   
-  /* Grids de proyectos e intereses */
-  .grid.cards {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
+  /* Grids proyectos e intereses */
+  .grid.cards,
   #intereses .grid.cards {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
   }
   
-  /* Habilidades grid */
+  /* Habilidades */
   .skills-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
   }
   
-  /* Lenguajes de programación */
+  /* Lenguajes */
   .lenguaje-linea {
     gap: 1rem;
     flex-wrap: wrap;
@@ -4318,7 +4312,7 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     padding: 0.6rem 1rem;
   }
   
-  /* Testimonios grid */
+  /* Testimonios */
   .testimonios-grid {
     flex-direction: column;
     align-items: center;
@@ -4370,30 +4364,63 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     max-width: 90%;
     max-height: 280px;
   }
-  
-  /* Publicaciones */
+
+  /* ---------------------------------------- */
+  /*  FIX PUBLICACIONES EN MÓVIL              */
+  /* ---------------------------------------- */
+
   .slider-wrapper {
-    width: 90%;
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto;
   }
-  
-  .publi-btn.prev {
-    left: 5px;
+
+  .publi-slide {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem;
+    box-sizing: border-box;
   }
-  
+
+  .publi-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .publi-slide h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .publi-slide p {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .publi-btn.prev,
   .publi-btn.next {
-    right: 5px;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .publi-btn.prev {
+    left: 5px !important;
+  }
+
+  .publi-btn.next {
+    right: 5px !important;
   }
 }
 
 /* Pantallas muy pequeñas */
 @media (max-width: 480px) {
-  /* Ajustes adicionales */
   .container {
     width: 98%;
     padding: 0 10px;
   }
   
-  /* Nav controls más compactos */
   .topbar .nav-controls {
     gap: 0.5rem;
   }
@@ -4405,7 +4432,6 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     font-size: 1rem;
   }
   
-  /* Botones más pequeños */
   .btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -4420,19 +4446,16 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     font-size: 1rem;
   }
   
-  /* Textos generales */
   p {
     font-size: 0.95rem;
   }
   
-  /* Social icons */
   .socials a {
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
   }
   
-  /* Modal ajustes */
   .modal-header {
     padding: 0.8rem 1rem;
   }
@@ -4450,7 +4473,7 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   }
 }
 
-/* Para landscape en móviles */
+/* Landscape en móviles */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
     min-height: 100vh;
