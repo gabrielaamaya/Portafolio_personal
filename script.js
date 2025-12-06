@@ -106,15 +106,15 @@ const translations = {
         // -------------------------------
         'testimonios-titulo': 'Testimonios',
 
-        'testimonio1': '"Trabaja con responsabilidad y mantiene una actitud positiva."',
-        'testimonio2': '"Muy responsable y cumplida, siempre entrega sus tareas a tiempo."',
+        'testimonio1': '"Es una estudiante dedicada y responsable, con actitud positiva, creatividad y compromiso que reflejan su potencial para alcanzar sus metas."',
+        'testimonio2': '"Es una persona responsable, estudiosa y una excelente compañera.Siempre demuestra un carácter colaborador, gran capacidad de trabajo y una muy buena disposición para trabajar en equipo.Podría integrarse sin problema en cualquier tipo de empresa y desempeñar con éxito cualquier actividad relacionada con sus estudios."',
 
 
-        'testimonio-nombre1': 'Jennifer Baires',
-        'testimonio-cargo1': 'Estudiante de Técnico',
+        'testimonio-nombre1': 'José Ovidio Ramos',
+        'testimonio-cargo1': 'Vicedecano de la Facultad de Ciencia y Tecnologia de la Universidad Gerardo Barrios',
 
-        'testimonio-nombre2': 'Josue Alejandro Chicas',
-        'testimonio-cargo2': 'Estudiante de Técnico',
+        'testimonio-nombre2': 'Marvin Osmaro Parada Benitez',
+        'testimonio-cargo2': 'Ingeniero',
 
         'testimonio3-nombre': 'María Fernanda López',
         'testimonio3-cargo': 'Compañera de Proyecto',
@@ -298,15 +298,15 @@ const translations = {
         // TESTIMONIALS
         'testimonios-titulo': 'Testimonials',
 
-        'testimonio1': '"Works with responsibility and maintains a positive attitude."',
-        'testimonio2': '"Very responsible and diligent, always delivers her tasks on time."',
+        'testimonio1': '"She is a dedicated and responsible student, with a positive attitude, creativity, and commitment that reflect her potential to achieve her goals."',
+        'testimonio2': '"She is a responsible, studious person and an excellent classmate. She always demonstrates a collaborative character, great work capacity, and a very good disposition to work in a team. She could easily integrate into any type of company and successfully perform any activity related to her studies."',
 
 
-        'testimonio-nombre1': 'Jennifer Baires',
-        'testimonio-cargo1': 'Engineering Technician Student',
+        'testimonio-nombre1': 'José Ovidio Ramos',
+        'testimonio-cargo1': 'Vice Dean of the Faculty of Science and Technology at Universidad Gerardo Barrios',
 
-        'testimonio-nombre2': 'Josue Alejandro Chicas',
-        'testimonio-cargo2': 'Engineering Technician Student',
+        'testimonio-nombre2': 'Marvin Osmaro Parada Benitez',
+        'testimonio-cargo2': 'Engineer',
 
         'testimonio3-nombre': 'María Fernanda López',
         'testimonio3-cargo': 'Project Partner',
@@ -1286,4 +1286,34 @@ document.querySelectorAll(".ver-img-btn").forEach(btn => {
     popupImg.src = imgSrc;
     popup.classList.add("active");
   });
+});
+
+
+
+//parte de testimonios
+// Cerrar popup de imagen
+const slides = document.querySelectorAll('.t-slide');
+const btnPrev = document.querySelector('.t-arrow.left');
+const btnNext = document.querySelector('.t-arrow.right');
+
+let index = 0;
+
+// Mostrar slide
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove('active'));
+  slides[i].classList.add('active');
+}
+
+showSlide(0); // ← ACTIVA EL PRIMER TESTIMONIO
+
+// Flecha izquierda
+btnPrev.addEventListener('click', () => {
+  index = (index === 0) ? slides.length - 1 : index - 1;
+  showSlide(index);
+});
+
+// Flecha derecha
+btnNext.addEventListener('click', () => {
+  index = (index === slides.length - 1) ? 0 : index + 1;
+  showSlide(index);
 });
