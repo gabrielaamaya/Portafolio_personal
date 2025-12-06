@@ -3198,6 +3198,43 @@ INTERESES - Tarjetas estilo PROYECTOS
   transform: scale(0.97);
 }
 
+#publicaciones .card .btn:active {
+  transform: scale(0.98);
+}
+
+/* ========================================================= */
+/* 🟢 NUEVO BOTÓN "VER MÁS"                                 */
+/* ========================================================= */
+#publicaciones .card .btn-vermas {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  background-color: transparent;
+  color: #00ff99;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid #00ff99;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #00ff99;
+  z-index: 1;
+}
+
+#publicaciones .card .btn-vermas:hover {
+  background-color: #00ff66;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ff66, 0 0 35px #00ff66;
+}
+
+#publicaciones .card .btn-vermas:active {
+  transform: scale(0.97);
+}
 
 
 
