@@ -35,6 +35,8 @@ const translations = {
 
         'menu-proyectos': 'Proyectos',
 
+        'menu-marca personal': 'Marca Personal',
+
         'menu-testimonios': 'Testimonios',
 
         'menu-intereses': 'Intereses',
@@ -191,11 +193,11 @@ const translations = {
 
         
 
-        // TRADUCCIONES PARA PUBLICACIONES
+        // TRADUCCIONES PARA  DIPLOMAS
 
-        'publicaciones-titulo': 'Publicaciones',
+        'publicaciones-titulo': 'Diplomas',
 
-        'publicaciones-intro': 'Aquí comparto mis artículos, reflexiones y aprendizajes publicados en LinkedIn.',
+        'publicaciones-intro': 'Aquí comparto mis diplomas y certificados.',
 
         'publicacion1-titulo': 'D.A.R.E',
 
@@ -217,34 +219,13 @@ const translations = {
 
         'publicacion5-desc': 'Certificado que acredita la finalización del curso CCNA: Introducción a las redes, orientado al aprendizaje de los fundamentos de redes informáticas, configuración de dispositivos y principios básicos de conectividad dentro del programa Cisco Networking Academy.',
 
+        'publicacion6-titulo': 'Creación de Casos de Prueba, UX/UI, Desarrollo Web e Introducción a la Seguridad',
+
+        'publicacion6-desc': '      Diploma otorgado por la Universidad Gerardo Barrios por completarlos talleres de Creación de Casos de Prueba, UX/UI, Desarrollo Web e Introducción a la Seguridad.Durante este proceso aprendí a planificar y revisar el funcionamiento de proyectos, diseñar interfaces más claras y amigables, y crear páginas web con mejores prácticas y organización. Este aprendizaje fortaleció mis habilidades para desarrollar soluciones digitales más completas y bien estructuradas..',
+
         'leer-mas': 'Ver en LinkedIn',
 
         
-
-        // NUEVAS TRADUCCIONES AGREGADAS
-
-        'diplomas-titulo': 'Mis Diplomas',
-
-        'diploma1-titulo': 'Certificado contras las drogras',
-
-        'diploma1-desc': 'Otorgado por completar el curso de educación contra la resistencia contra el uso y abuso de las drogas.',
-
-        'diploma2-titulo': 'Diploma ¡Yo... Sí Puedo!',
-
-        'diploma2-desc': 'Reconocimiento por voluntariado¡Yo... Sí Puedo! "Enseñar a leer y escribir" .',
-
-        'diploma3-titulo': 'Diploma project Speak English',
-
-        'diploma3-desc': 'Reconocmiento por participación en el proyecto Speak English.',
-
-        'diploma4-titulo': 'Taller de ansiedad',
-
-        'diploma4-desc': 'Reconocimiento de seis secciones de talleres contra la ansiedad.',
-
-        'diploma5-titulo': 'Certificado CCNA',
-
-        'diploma5-desc': 'Otorgado por completar el curso de CCNA:Introduccion a las redes.',
-
         
 
         'form-titulo': 'Contáctanos',
@@ -304,6 +285,8 @@ const translations = {
         'menu-proyectos': 'Projects',
 
         'menu-testimonios': 'Testimonials',
+
+        'menu-marca': 'personal brand',
 
         'menu-intereses': 'Interests',
 
@@ -459,11 +442,11 @@ const translations = {
 
         
 
-        // TRADUCCIONES PARA PUBLICACIONES
+        // TRADUCCIONES PARA DIPLOMAS
 
-        'publicaciones-titulo': 'Publications',
+        'publicaciones-titulo': 'Diplomas',
 
-        'publicaciones-intro': 'Here I share my articles, reflections and learnings published on LinkedIn.',
+        'publicaciones-intro': 'Here I share my diplomas and certificates.',
 
         'publicacion1-titulo': 'D.A.R.E',
 
@@ -485,33 +468,15 @@ const translations = {
 
         'publicacion5-desc': 'Certificate accrediting completion of the CCNA: Introduction to Networks course, oriented to learning the fundamentals of computer networks, device configuration and basic connectivity principles within the Cisco Networking Academy program.',
 
+        'publicacion6-titulo': 'Test Case Creation, UX/UI, Web Development and Introduction to Security',
+
+        'publicacion6-desc': 'Diploma awarded by the Universidad Gerardo Barrios for completing the workshops on Test Case Creation, UX/UI, Web Development and Introduction to Security. During this process, I learned to plan and review project functionality, design clearer and more user-friendly interfaces, and create web pages with better practices and organization. This learning strengthened my skills to develop more complete and well-structured digital solutions..',
+
         'leer-mas': 'View on LinkedIn',
 
         
 
         // NUEVAS TRADUCCIONES AGREGADAS EN INGLÉS
-
-        'diplomas-titulo': 'My Diplomas',
-
-        'diploma1-titulo': 'Certificate Against Drugs',
-
-        'diploma1-desc': 'Awarded for completing the education course against drug use and abuse resistance.',
-
-        'diploma2-titulo': 'I... Yes I Can! Diploma',
-
-        'diploma2-desc': 'Recognition for volunteering in the "I... Yes I Can!" program "Teaching reading and writing".',
-
-        'diploma3-titulo': 'Speak English Project Diploma',
-
-        'diploma3-desc': 'Recognition for participation in the Speak English project.',
-
-        'diploma4-titulo': 'Anxiety Workshop',
-
-        'diploma4-desc': 'Recognition of six sessions of workshops against anxiety.',
-
-        'diploma5-titulo': 'CCNA Certificate',
-
-        'diploma5-desc': 'Awarded for completing the CCNA: Introduction to Networks course.',
 
         
 
@@ -1435,223 +1400,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-/* ============================
-      📌 CARRUSEL DE DIPLOMAS
-   ============================ */
-(function () {
-  const carousel = document.querySelector('.diplomas-carousel');
-  if (!carousel) return;
-
-  const track = carousel.querySelector('.carousel-track');
-  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-  const prevBtn = carousel.querySelector('.carousel-btn.prev');
-  const nextBtn = carousel.querySelector('.carousel-btn.next');
-  const dotsContainer = carousel.querySelector('.carousel-dots');
-
-  let currentIndex = 0;
-  let slidesPerView = calculateSlidesPerView();
-  let autoplayInterval = 4000;
-  let autoplayTimer = null;
-  let isDragging = false;
-  let startX = 0;
-
-  /* ============================
-        Dots de navegación
-     ============================ */
-  function buildDots() {
-    dotsContainer.innerHTML = '';
-    const pages = Math.max(1, Math.ceil(slides.length / slidesPerView));
-    for (let i = 0; i < pages; i++) {
-      const btn = document.createElement('button');
-      btn.setAttribute('aria-label', `Ir a página ${i + 1}`);
-      btn.addEventListener('click', () => { goToIndex(i * slidesPerView); });
-      dotsContainer.appendChild(btn);
-    }
-  }
-
-  function updateDots() {
-    const buttons = Array.from(dotsContainer.children);
-    const page = Math.floor(currentIndex / slidesPerView);
-    buttons.forEach((b, i) => b.classList.toggle('active', i === page));
-  }
-
-  function calculateSlidesPerView() {
-    const w = window.innerWidth;
-    if (w >= 1000) return 3;
-    if (w >= 700) return 2;
-    return 1;
-  }
-
-  function setTrackPosition() {
-    const slide = slides[0];
-    if (!slide) return;
-    const slideWidth = slide.getBoundingClientRect().width;
-    const offset = currentIndex * slideWidth;
-    track.style.transform = `translateX(-${offset}px)`;
-  }
-
-  function goToIndex(index) {
-    const maxIndex = Math.max(0, slides.length - slidesPerView);
-    currentIndex = Math.min(maxIndex, Math.max(0, index));
-    setTrackPosition();
-    updateDots();
-    resetAutoplay();
-  }
-
-  /* ============================
-        Flechas con LOOP REAL
-     ============================ */
-  prevBtn.addEventListener('click', () => {
-    const maxIndex = Math.max(0, slides.length - slidesPerView);
-    currentIndex = currentIndex <= 0
-      ? maxIndex
-      : currentIndex - slidesPerView;
-    setTrackPosition();
-    updateDots();
-    resetAutoplay();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    const maxIndex = Math.max(0, slides.length - slidesPerView);
-    currentIndex = currentIndex >= maxIndex
-      ? 0
-      : currentIndex + slidesPerView;
-    setTrackPosition();
-    updateDots();
-    resetAutoplay();
-  });
-
-  /* ============================
-               AUTOPLAY
-     ============================ */
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayTimer = setInterval(() => {
-      const maxIndex = Math.max(0, slides.length - slidesPerView);
-      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + slidesPerView;
-      setTrackPosition();
-      updateDots();
-    }, autoplayInterval);
-  }
-
-  function stopAutoplay() {
-    if (autoplayTimer) clearInterval(autoplayTimer);
-    autoplayTimer = null;
-  }
-
-  function resetAutoplay() {
-    stopAutoplay();
-    startAutoplay();
-  }
-
-  carousel.addEventListener('mouseenter', stopAutoplay);
-  carousel.addEventListener('mouseleave', startAutoplay);
-
-  /* ============================
-             GESTOS TOUCH
-     ============================ */
-  slides.forEach((slide) => {
-    slide.addEventListener('touchstart', handleStart);
-    slide.addEventListener('touchend', handleEnd);
-    slide.addEventListener('mousedown', handleStart);
-    slide.addEventListener('mouseup', handleEnd);
-
-    const img = slide.querySelector('img');
-    if (img) img.addEventListener('dragstart', (e) => e.preventDefault());
-  });
-
-  function handleStart(event) {
-    isDragging = true;
-    startX = getX(event);
-  }
-
-  function handleEnd(event) {
-    if (!isDragging) return;
-    isDragging = false;
-
-    const dx = getX(event) - startX;
-    const threshold = 50;
-    const maxIndex = Math.max(0, slides.length - slidesPerView);
-
-    if (dx > threshold) {
-      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - slidesPerView;
-    } else if (dx < -threshold) {
-      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + slidesPerView;
-    }
-
-    setTrackPosition();
-    updateDots();
-    resetAutoplay();
-  }
-
-  function getX(event) {
-    return event.type.includes('mouse')
-      ? event.clientX
-      : event.touches[0].clientX;
-  }
-
-  window.addEventListener('resize', () => {
-    slidesPerView = calculateSlidesPerView();
-    buildDots();
-    setTrackPosition();
-    updateDots();
-  });
-
-  /* ============================
-               MODAL
-     ============================ */
-  const imgModal = document.getElementById("img-modal");
-  const imgModalContent = document.getElementById("img-modal-content");
-  const imgModalClose = document.querySelector(".img-modal-close");
-  const modalPrev = document.querySelector(".img-modal-prev");
-  const modalNext = document.querySelector(".img-modal-next");
-
-  let modalIndex = 0;
-
-  slides.forEach((slide, i) => {
-    const img = slide.querySelector("img");
-    if (!img) return;
-
-    img.addEventListener("click", () => {
-      modalIndex = i;
-      showModalImage();
-      imgModal.style.display = "flex";
-    });
-  });
-
-  function showModalImage() {
-    imgModalContent.src = slides[modalIndex].querySelector("img").src;
-  }
-
-  /* 🔥 LOOP INFINITO PERFECTO DEL MODAL */
-  modalNext.addEventListener("click", () => {
-    modalIndex = (modalIndex + 1) % slides.length;
-    showModalImage();
-  });
-
-  modalPrev.addEventListener("click", () => {
-    modalIndex = (modalIndex - 1 + slides.length) % slides.length;
-    showModalImage();
-  });
-
-  imgModalClose.addEventListener("click", () => {
-    imgModal.style.display = "none";
-  });
-
-  imgModal.addEventListener("click", (e) => {
-    if (e.target === imgModal) imgModal.style.display = "none";
-  });
-
-  /* ============================
-                INIT
-     ============================ */
-  function init() {
-    slidesPerView = calculateSlidesPerView();
-    buildDots();
-    updateDots();
-    setTrackPosition();
-    startAutoplay();
-  }
-
-  init();
-})();

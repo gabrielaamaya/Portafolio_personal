@@ -40,241 +40,284 @@ ul {
   list-style: none;
 }
 
-
-
-
-
 /* ==========================================================
-   🚀 BARRA DE NAVEGACIÓN (NAVBAR)
+   🔷 M1 PORTFOLIO - TÍTULO PRINCIPAL
    ========================================================== */
 
-/* 🔹 Contenedor principal de la barra */
+.portfolio-header {
+  text-align: center;
+  padding: 6rem 0 4rem 0;
+  background: linear-gradient(135deg, #272727 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 204, 102, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.portfolio-header h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+  color: #00cc66;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px rgba(0, 204, 102, 0.7),
+               0 0 60px rgba(0, 204, 102, 0.5),
+               0 0 90px rgba(0, 204, 102, 0.3);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 30px rgba(0, 204, 102, 0.7),
+                 0 0 60px rgba(0, 204, 102, 0.5),
+                 0 0 90px rgba(0, 204, 102, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(0, 204, 102, 0.8),
+                 0 0 80px rgba(0, 204, 102, 0.6),
+                 0 0 120px rgba(0, 204, 102, 0.4);
+  }
+}
+
+.portfolio-header h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+  color: #f5f5f5;
+  letter-spacing: 8px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.portfolio-header .divider {
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00cc66, transparent);
+  margin: 2rem auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 2px;
+}
+
+.portfolio-header .divider::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 8px;
+  background: rgba(0, 204, 102, 0.2);
+  border-radius: 4px;
+  filter: blur(4px);
+}
+
+.portfolio-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-menu .menu-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 204, 102, 0.3);
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #f5f5f5;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-menu .menu-item:hover {
+  background: rgba(0, 204, 102, 0.15);
+  border-color: #00cc66;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 204, 102, 0.3);
+  color: #00cc66;
+}
+
+/* ==========================================================
+   🚀 BARRA DE NAVEGACIÓN COMPLETA - EXACTA A LA IMAGEN
+   ========================================================== */
+
 .topbar {
   background: #1f1f1f;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* 🔹 Contenido interno del nav */
 .topbar .nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 0;
+  width: 100%;
+  gap: 1rem;
 }
 
-/* ==========================================================
-   🔰 LOGO Y TEXTO DE MARCA PERSONAL
-   ========================================================== */
+/* ------------------ LOGO + TEXTO ------------------ */
 
-/* 🔹 Contenedor del logo y texto */
 .logo-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
+  gap: 12px;
 }
 
-/* 🔹 Logo circular con borde verde */
 .logo-brand img {
-  height: 70px;  /* Forma largo de la imagen */
-  width: 70px;   /* Forma ancho de la imagen */
-  border-radius: 50%; /* Forma circular */
-  object-fit: cover; /* Mantiene proporción */
-  border: 2px solid #00cc66; /* 🟢 Borde verde */
-  box-shadow: 0 0 10px rgba(0, 204, 102, 0.4); /* ✨ Brillo verde */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00cc66;
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.4);
+  transition: 0.3s ease;
 }
 
-/* 🔹 Efecto hover sobre el logo */
 .logo-brand img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
 }
 
-/* 🔹 Texto de la marca */
+/* TEXTO MI PORTAFOLIO */
 .logo-brand span {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.0rem;  /* AQUI CAMBIAS EL TAMAÑO donde dice mi portafolio */
+  font-weight: 800;
   color: #00cc66;
   text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
-  transition: 0.3s ease;
+  letter-spacing: 1px;
 }
 
-/* 🔹 Efecto hover del texto */
-.logo-brand:hover span {
-  color: #00ffaa;
-}
+/* ------------------ MENÚ CENTRAL ------------------ */
 
-/* ==========================================================
-   🧭 MENÚ DE NAVEGACIÓN PRINCIPAL
-   ========================================================== */
-
-/* 🔹 Texto principal de la marca en el menú */
-.topbar .brand {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #00cc66;
-  text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
-  white-space: nowrap;
-  padding: 0.3rem 0;
-}
-
-/* 🔹 Contenedor del menú */
 .topbar .menu {
   display: flex;
-  gap: 0.8rem;
+  justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  margin: 0 auto;
+  gap: 1.3rem;
 }
 
-/* 🔹 Enlaces del menú */
 .topbar .menu a {
   color: #f5f5f5;
   font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0.8rem;
+  font-size: 0.80rem;  /* AQUI CAMBIAS EL TAMAÑO del texto del menu */
+  padding: 0.4rem 0.6rem;
   border-radius: 6px;
+  transition: 0.3s ease;
   position: relative;
-  font-size: 0.9rem;
-  white-space: nowrap;
 }
 
-/* 🔹 Hover del menú */
 .topbar .menu a:hover {
   color: #00cc66;
-  background-color: rgba(0, 204, 102, 0.1);
+  background: rgba(0, 204, 102, 0.1);
 }
 
-/* 🔹 Estado activo o presionado */
-.topbar .menu a:active {
-  color: #00a352;
-  background-color: rgba(0, 163, 82, 0.2);
-}
-
-/* 🔹 Enlace activo */
 .topbar .menu a.active {
   color: #00cc66;
-  background-color: rgba(0, 204, 102, 0.1);
+  background: rgba(0, 204, 102, 0.12);
 }
 
-/* 🔹 Línea inferior animada al pasar el cursor */
 .topbar .menu a::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 50%;
   width: 0;
   height: 2px;
   background: #00cc66;
-  transition: all 0.3s ease;
   transform: translateX(-50%);
+  transition: width 0.3s;
 }
 
 .topbar .menu a:hover::after {
   width: 70%;
 }
 
-/* ==========================================================
-   ⚙️ CONTROLES DE NAVEGACIÓN (MODO E IDIOMA)
-   ========================================================== */
+/* ------------------ CONTROLES DERECHA ------------------ */
 
-/* 🔹 Contenedor general de los botones */
 .topbar .nav-controls {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  white-space: nowrap;
+  gap: 0.9rem;
 }
 
-/* ---------- 🌓 BOTÓN MODO CLARO/OSCURO ---------- */
-#mode-toggle {
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #f5f5f5;
-  transition: all 0.3s ease;
-  padding: 0.4rem;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#mode-toggle:hover {
-  transform: rotate(30deg);
-  color: #00cc66;
-  background-color: rgba(0, 204, 102, 0.1);
-}
-
-/* ---------- 🌐 BOTÓN DE IDIOMA ---------- */
+#mode-toggle,
 #lang-toggle {
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #f5f5f5;
-  transition: all 0.3s ease;
-  padding: 0.4rem;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.2rem;
+  border: none;
+  background: transparent;
+  color: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+#mode-toggle:hover,
 #lang-toggle:hover {
-  transform: scale(1.1);
   color: #00cc66;
-  background-color: rgba(0, 204, 102, 0.1);
+  background: rgba(0, 204, 102, 0.1);
 }
 
-/* ---------- 🏷️ ETIQUETA DE IDIOMA ACTUAL ---------- */
 #lang-label {
   font-weight: 600;
-  color: #f5f5f5;
   font-size: 0.85rem;
-  padding: 0.2rem 0.6rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.25rem 0.8rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f5f5f5;
 }
 
 /* ==========================================================
    📦 CONTENEDORES Y SECCIONES GENERALES
    ========================================================== */
 
-/* 🔹 Contenedor principal (centrado y con ancho máximo) */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
-/* 🔹 Estilo general de cada sección */
 .section {
   padding: 4rem 0;
   text-align: center;
 }
 
-/* 🔹 Sección alterna con fondo diferente */
 .section.alt {
   background-color: #1f1f1f;
 }
 
-
 /* ================================
-SECCIÓN HERO (Presentación inicial)
+SECCIÓN HERO
 ================================ */
+
 .hero {
   display: flex;
   align-items: center;
@@ -293,7 +336,6 @@ SECCIÓN HERO (Presentación inicial)
 }
 
 .hero-text span {
-  /* 🟢 VERDE: Texto destacado/nombre */
   color: #00cc66;
 }
 
@@ -302,7 +344,6 @@ SECCIÓN HERO (Presentación inicial)
   font-size: 1.1rem;
 }
 
-/* CORRECCIÓN PARA LA SECCIÓN HERO */
 .lead {
   margin-top: 1rem;
   font-size: 1.1rem;
@@ -311,16 +352,9 @@ SECCIÓN HERO (Presentación inicial)
 .lead h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  /* ⚪ BLANCO: Color del subtítulo en modo oscuro */
   color: #f5f5f5;
 }
 
-.lead span {
-  font-style: italic;
-  font-weight: 500;
-}
-
-/* FOTO CIRCULAR CON EFECTO BRILLANTE */
 .hero-photo img,
 .about-img img {
   width: 250px;
@@ -329,48 +363,44 @@ SECCIÓN HERO (Presentación inicial)
   border-radius: 50%;
   display: block;
   margin: auto;
-  /* 🟢 VERDE: Borde foto */
   border: 3px solid #00cc66;
-  /* 🟢 VERDE: Efecto glow foto */
   box-shadow: 0 0 20px rgba(0, 204, 102, 0.7), 
               0 0 40px rgba(0, 204, 102, 0.5);
 }
 
 /* ================================
-BOTONES VERDES (MODO OSCURO)
+BOTONES VERDES
 ================================ */
+
 .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   border-radius: 30px;
-  /* 🟢 VERDE: Fondo botón principal */
   background: #00cc66;
-  /* ⚪ BLANCO: Texto botón principal */
   color: #fff;
   font-weight: 600;
   transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-  /* 🟢 VERDE OSCURO: Hover botón principal */
   background: #00a352;
   transform: translateY(-2px);
 }
 
 .btn.ghost {
   background: transparent;
-  /* 🟢 VERDE: Borde botón ghost */
   border: 2px solid #00cc66;
-  /* 🟢 VERDE: Texto botón ghost */
   color: #00cc66;
 }
 
 .btn.ghost:hover {
-  /* 🟢 VERDE: Fondo hover botón ghost */
   background: #00cc66;
-  /* ⚪ BLANCO: Texto hover botón ghost */
   color: #fff;
 }
+
+
+
+
 
 /* ================================
 SOBRE MÍ (About Section)
@@ -2648,216 +2678,10 @@ body.light-mode .logo-container:hover {
 }
 
 
-/* ============================================= */
-/* LÍNEA DIVISORA ENTRE SECCIONES                */
-/* ============================================= */
-.section-separator {
-  width: 100%;
-  height: 1px;
-  background-color: #00ff66; /* Verde neón */
-  border: none;
-  margin: 3rem 0; /* Espaciado entre secciones */
-  opacity: 0.4;
-  box-shadow: 0 0 10px #00ff66; /* Efecto de brillo */
-}
 
 
 
 
-
-/* ============================
-   ESTILO SECCIÓN DE DIPLOMAS
-=============================== */
-
-#diplomas {
-  padding: 60px 20px;
-  background: #272727; /* Tu fondo oscuro */
-}
-
-/* Título */
-.titulo-diplomas {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #00ff99; /* Verde neón */
-  margin-bottom: 40px;
-}
-
-/* ============================
-   CARRUSEL
-=============================== */
-
-.diplomas-carousel {
-  position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.carousel-viewport {
-  overflow: hidden;
-  width: 100%;
-  border-radius: 20px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 400ms ease;
-  will-change: transform;
-}
-
-/* Cada slide */
-.carousel-slide {
-  padding: 18px;
-  box-sizing: border-box;
-  flex: 0 0 100%; /* 1 por vista; JS ajusta responsivo */
-}
-
-/* ============================
-   TARJETAS (TU ESTILO)
-=============================== */
-.diploma-card {
-  background: #272727; /* Igual a tus tarjetas de gustos */
-  padding: 20px;
-  border-radius: 20px;
-  border: 2px solid #00ff99; /* Borde verde neón */
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
-  text-align: center;
-  transition: 0.3s;
-}
-
-/* Hover */
-.diploma-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0, 255, 153, 0.6);
-}
-
-/* Imagen */
-.diploma-img {
-  width: 100%;
-  max-height: 200px;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #111;
-}
-
-.diploma-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  margin-bottom: 15px;
-}
-
-/* Título dentro de tarjeta */
-.diploma-card h3 {
-  color: #00ff99;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-/* Texto */
-.diploma-card p {
-  color: #d6d6d6;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* ============================
-   Botones del carrusel
-=============================== */
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(0, 255, 153, 0.2);
-  border: 2px solid #00ff99;
-  color: #00ff99;
-  font-size: 26px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: 0.3s;
-}
-
-.carousel-btn:hover {
-  background: #00ff99;
-  color: #272727;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-btn.prev { left: -20px; }
-.carousel-btn.next { right: -20px; }
-
-/* ============================
-   Indicadores (puntos)
-=============================== */
-
-.carousel-dots {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.carousel-dots button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(0, 255, 153, 0.3);
-  border: 2px solid #00ff99;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.carousel-dots button.active {
-  background: #00ff99;
-  transform: scale(1.2);
-}
-
-/* ============================
-   RESPONSIVE
-=============================== */
-@media (min-width: 700px) {
-  .carousel-slide { flex: 0 0 50%; } /* 3 por vista */
-}
-
-@media (min-width: 1000px) {
-  .carousel-slide { flex: 0 0 33.33%; } /* 3 por vista */
-}
-
-/* ===== Modal Imagen Grande ===== */
-.img-modal {
-  display: none;
-  position: fixed;
-  z-index: 5000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.img-modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-
-.img-modal-close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-  user-select: none;
-}
 
 
 
@@ -2965,7 +2789,7 @@ INTERESES - Tarjetas estilo PROYECTOS
 
 
 /* ========================================================= */
-/* ==================== SECCIÓN: PUBLICACIONES ============== */
+/* ==================== SECCIÓN: diplomas lo demas se dejo como publicaciones  ============== */
 /* ========================================================= */
 
 /* --------------------------------------------------------- */
@@ -3145,7 +2969,7 @@ INTERESES - Tarjetas estilo PROYECTOS
 }
 
 /* ========================================================= */
-/* 🟢 BOTÓN “VER EN LINKEDIN” CON EFECTO NEÓN              */
+/* 🟢 BOTÓN "VER EN LINKEDIN" CON EFECTO NEÓN              */
 /* ========================================================= */
 #publicaciones .btn-more {
   display: inline-flex;
@@ -4144,9 +3968,67 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   border-color: #003399 !important;
 } 
 
+/* ================================
+   🌓 MODO CLARO PARA EL HEADER DE M1 PORTFOLIO
+   ================================ */
 
+body.light-mode .portfolio-header {
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 100%);
+}
 
+body.light-mode .portfolio-header::before {
+  background: radial-gradient(circle at 30% 50%, rgba(0, 85, 204, 0.1) 0%, transparent 70%);
+}
 
+body.light-mode .portfolio-header h1 {
+  /* 🔵 AZUL: Título en modo claro */
+  color: #0055cc;
+  text-shadow: 0 0 30px rgba(0, 85, 204, 0.7),
+               0 0 60px rgba(0, 85, 204, 0.5),
+               0 0 90px rgba(0, 85, 204, 0.3);
+  animation: titleGlowLight 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlowLight {
+  0% {
+    text-shadow: 0 0 30px rgba(0, 85, 204, 0.7),
+                 0 0 60px rgba(0, 85, 204, 0.5),
+                 0 0 90px rgba(0, 85, 204, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(0, 85, 204, 0.8),
+                 0 0 80px rgba(0, 85, 204, 0.6),
+                 0 0 120px rgba(0, 85, 204, 0.4);
+  }
+}
+
+body.light-mode .portfolio-header h2 {
+  /* ⚫ NEGRO: Subtítulo en modo claro */
+  color: #333333;
+}
+
+body.light-mode .portfolio-header .divider {
+  background: linear-gradient(90deg, transparent, #0055cc, transparent);
+}
+
+body.light-mode .portfolio-header .divider::after {
+  background: rgba(0, 85, 204, 0.2);
+}
+
+body.light-mode .portfolio-menu .menu-item {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 85, 204, 0.3);
+  /* ⚫ NEGRO: Texto en modo claro */
+  color: #333333;
+}
+
+body.light-mode .portfolio-menu .menu-item:hover {
+  background: rgba(0, 85, 204, 0.15);
+  border-color: #0055cc;
+  box-shadow: 0 5px 15px rgba(0, 85, 204, 0.3);
+  /* 🔵 AZUL: Texto en hover modo claro */
+  color: #0055cc;
+}
 
 /* ==========================================================
    📱 RESPONSIVE DESIGN - MOBILE FIRST
@@ -4196,6 +4078,20 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     text-align: center;
   }
   
+  /* M1 Portfolio Header */
+  .portfolio-header h1 {
+    font-size: 3rem;
+  }
+  
+  .portfolio-header h2 {
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
+  
+  .portfolio-menu {
+    gap: 0.8rem;
+  }
+  
   /* Navbar menu */
   .topbar .menu {
     gap: 0.5rem;
@@ -4220,6 +4116,32 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   
   h2 {
     font-size: 1.6rem;
+  }
+  
+  /* M1 Portfolio Header */
+  .portfolio-header {
+    padding: 4rem 0 3rem 0;
+  }
+  
+  .portfolio-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .portfolio-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+  }
+  
+  .portfolio-menu {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  
+  .portfolio-menu .menu-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
   
   /* NAVBAR - IMPORTANTE para móviles */
@@ -4507,6 +4429,26 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
     padding: 0 10px;
   }
   
+  .portfolio-header h1 {
+    font-size: 2rem;
+  }
+  
+  .portfolio-header h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .portfolio-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .portfolio-menu .menu-item {
+    width: 80%;
+    text-align: center;
+  }
+  
   .topbar .nav-controls {
     gap: 0.5rem;
   }
@@ -4617,25 +4559,5 @@ body.light-mode .btn:not(.ghost):not(.btn-github):not(.btn-more):hover {
   
   .pcard {
     height: 100%;
-  }
-}
-
-/* Ajustes específicos para evitar cortes en imágenes de diplomas */
-@media (max-width: 768px) {
-  .diploma-image {
-    max-height: 70vh !important;
-    object-fit: contain !important;
-  }
-  
-  .certificado-container {
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-  
-  .certificado-img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 500px !important;
-    object-fit: contain !important;
   }
 }
