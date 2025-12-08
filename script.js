@@ -1350,20 +1350,43 @@ prevBtn.addEventListener("click", () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// Abrir videos en nueva pestaña
   document.querySelectorAll(".ver-video-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const url = btn.getAttribute("data-video");
       window.open(url, "_blank");  // abre el video en otra pestaña
     });
   });
+
+
+
+
+//SCRIPT DE BÚSQUEDA FUNCIONAL ====== -->
+
+const searchInput = document.getElementById("search-input");
+
+// Recuperar búsqueda previa al cargar la página
+window.addEventListener("DOMContentLoaded", () => {
+    const savedFilter = localStorage.getItem("searchFilter") || "";
+    searchInput.value = savedFilter;
+    filterSections(savedFilter);
+});
+
+// Función para filtrar secciones
+function filterSections(filter) {
+    filter = filter.toLowerCase();
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(sec => {
+        const title = sec.querySelector("h2") ? sec.querySelector("h2").innerText.toLowerCase() : "";
+        const content = sec.innerText.toLowerCase();
+        sec.style.display = (title.includes(filter) || content.includes(filter)) ? "block" : "none";
+    });
+}
+
+// Guardar búsqueda y filtrar en tiempo real
+searchInput.addEventListener("keyup", function () {
+    const filter = this.value;
+    localStorage.setItem("searchFilter", filter); // Guardar en localStorage
+    filterSections(filter);
+});

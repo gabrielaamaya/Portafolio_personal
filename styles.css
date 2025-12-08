@@ -5,7 +5,7 @@
 /* 🔹 Reinicio general de márgenes, rellenos y box model */
 * {
   margin: 0;
-  padding: 0%;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -38,6 +38,241 @@ a {
 /* 🔹 Listas sin viñetas */
 ul {
   list-style: none;
+}
+
+/* ==========================================================
+   🔷 CONTENEDORES Y SECCIONES GENERALES
+   ========================================================== */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section.alt {
+  background-color: #1f1f1f;
+}
+
+/* ==========================================================
+   🚀 BARRA DE NAVEGACIÓN COMPLETA - CORREGIDA
+   ========================================================== */
+
+.topbar {
+  background: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  width: 100%;
+  /* Eliminar cualquier espacio izquierdo */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.topbar .nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  /* Eliminar cualquier espacio izquierdo */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* 🔹 FIX ESPECÍFICO PARA EL LOGO - SIN ESPACIO IZQUIERDO */
+.topbar .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px; /* Solo padding lateral */
+}
+
+/* ------------------ LOGO + TEXTO ------------------ */
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Eliminar cualquier espacio izquierdo */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.logo-brand img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00cc66;
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.4);
+  transition: 0.3s ease;
+}
+
+.logo-brand img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+}
+
+/* TEXTO "MI PORTAFOLIO" */
+.logo-brand span {
+  font-size: 0.80rem;
+  font-weight: 800;
+  color: #00cc66;
+  text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
+  letter-spacing: 1px;
+}
+
+/* ------------------ MENÚ CENTRAL ------------------ */
+
+.topbar .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.topbar .menu a {
+  color: #f5f5f5;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.topbar .menu a:hover {
+  color: #00cc66;
+  background: rgba(0, 204, 102, 0.15);
+}
+
+.topbar .menu a.active {
+  color: #00cc66;
+  background: rgba(0, 204, 102, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 204, 102, 0.2);
+}
+
+.topbar .menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #00cc66;
+  transform: translateX(-50%);
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+
+.topbar .menu a:hover::after {
+  width: 80%;
+}
+
+/* ==========================================================
+   🔷 CONTROLES DERECHA (MODIFICADOS - MÁS JUNTOS)
+   ========================================================== */
+
+.topbar .nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Reducido para que estén más juntos */
+}
+
+/* 📦 BUSCADOR DE PROYECTOS */
+.search-container {
+  position: relative;
+  margin-left: 0; /* Eliminado margen izquierdo */
+}
+
+#search-input {
+  padding: 8px 35px 8px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f5f5;
+  width: 180px;
+  transition: 0.3s;
+}
+
+#search-input:focus {
+  border-color: #00cc66;
+  box-shadow: 0 0 0 2px rgba(0, 204, 102, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* 🎛️ GRUPO DE CONTROLES (MODO + IDIOMA) */
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espacio mínimo entre botones */
+  background: rgba(255, 255, 255, 0.08); /* Mismo fondo que buscador */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px; /* Igual que el buscador */
+  padding: 0.2rem 0.5rem;
+}
+
+/* Botones individuales */
+#mode-toggle,
+#lang-toggle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#mode-toggle:hover,
+#lang-toggle:hover {
+  color: #00cc66;
+  background: rgba(0, 204, 102, 0.15);
+}
+
+/* Selector de idioma */
+#lang-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  color: #f5f5f5;
+  min-width: 50px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#lang-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #00cc66;
 }
 
 /* ==========================================================
@@ -125,6 +360,10 @@ ul {
   filter: blur(4px);
 }
 
+/* ==========================================================
+   📋 MENÚ DE PORTAFOLIO
+   ========================================================== */
+
 .portfolio-menu {
   display: flex;
   justify-content: center;
@@ -157,162 +396,194 @@ ul {
 }
 
 /* ==========================================================
-   🚀 BARRA DE NAVEGACIÓN COMPLETA - EXACTA A LA IMAGEN
+   🧭 MENÚ PRINCIPAL / NAVBAR
    ========================================================== */
 
-.topbar {
-  background: #1f1f1f;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.topbar .nav {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
+.navbar {
   width: 100%;
-  gap: 1rem;
+  background: #1b1b1b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0;
 }
 
-/* ------------------ LOGO + TEXTO ------------------ */
-
-.logo-brand {
+.navbar ul {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
-.logo-brand img {
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #00cc66;
-  box-shadow: 0 0 10px rgba(0, 204, 102, 0.4);
-  transition: 0.3s ease;
-}
-
-.logo-brand img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
-}
-
-/* TEXTO MI PORTAFOLIO */
-.logo-brand span {
-  font-size: 1.0rem;  /* AQUI CAMBIAS EL TAMAÑO donde dice mi portafolio */
-  font-weight: 800;
-  color: #00cc66;
-  text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
-  letter-spacing: 1px;
-}
-
-/* ------------------ MENÚ CENTRAL ------------------ */
-
-.topbar .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.3rem;
-}
-
-.topbar .menu a {
-  color: #f5f5f5;
-  font-weight: 500;
-  font-size: 0.80rem;  /* AQUI CAMBIAS EL TAMAÑO del texto del menu */
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  transition: 0.3s ease;
-  position: relative;
-}
-
-.topbar .menu a:hover {
-  color: #00cc66;
-  background: rgba(0, 204, 102, 0.1);
-}
-
-.topbar .menu a.active {
-  color: #00cc66;
-  background: rgba(0, 204, 102, 0.12);
-}
-
-.topbar .menu a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #00cc66;
-  transform: translateX(-50%);
-  transition: width 0.3s;
-}
-
-.topbar .menu a:hover::after {
-  width: 70%;
-}
-
-/* ------------------ CONTROLES DERECHA ------------------ */
-
-.topbar .nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-#mode-toggle,
-#lang-toggle {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  border: none;
-  background: transparent;
-  color: #f5f5f5;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#mode-toggle:hover,
-#lang-toggle:hover {
-  color: #00cc66;
-  background: rgba(0, 204, 102, 0.1);
-}
-
-#lang-label {
-  font-weight: 600;
-  font-size: 0.85rem;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 0.25rem 0.8rem;
-  border-radius: 12px;
-  color: #f5f5f5;
-}
-
-/* ==========================================================
-   📦 CONTENEDORES Y SECCIONES GENERALES
-   ========================================================== */
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section {
-  padding: 4rem 0;
+.navbar ul li {
+  flex: 1;
   text-align: center;
 }
 
-.section.alt {
-  background-color: #1f1f1f;
+.navbar ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: 0.3s ease;
+  white-space: nowrap;
 }
+
+.navbar ul li a:hover {
+  color: #00ff88;
+  text-shadow: 0 0 6px rgba(0,255,120,0.7);
+}
+
+/* Línea decorativa */
+.navbar-bottom-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* ==========================================================
+   🔹 CORRECCIÓN FINAL PARA ESPACIO DEL LOGO
+   ========================================================== */
+
+/* Eliminar cualquier espacio residual */
+body > .topbar,
+body > .topbar > *,
+body > .topbar > * > * {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Contenedor específico para el logo alineado a la izquierda */
+.logo-brand {
+  margin-right: auto;
+  justify-content: flex-start;
+}
+
+/* ==========================================================
+   📱 RESPONSIVE – TABLETS (768px o menos)
+   ========================================================== */
+
+@media (max-width: 768px) {
+  /* Reorganiza nav principal */
+  .topbar .nav {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+  
+  /* Oculta menú grande en móvil */
+  .topbar .menu {
+    display: none;
+  }
+  
+  /* Ajustes para controles en tablet */
+  .control-group {
+    padding: 0.15rem 0.4rem;
+  }
+  
+  #mode-toggle,
+  #lang-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  #lang-label {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    min-width: 45px;
+  }
+  
+  /* Buscador más pequeño */
+  .search-container {
+    margin-left: 0;
+  }
+  
+  #search-input {
+    width: 140px;
+    font-size: 0.8rem;
+    padding: 7px 30px 7px 10px;
+  }
+  
+  /* Ajusta tamaño del título grande */
+  .portfolio-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Subtítulo ajustado */
+  .portfolio-header h2 {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  }
+  
+  /* Menú de categorías más compacto */
+  .portfolio-menu {
+    gap: 0.5rem;
+  }
+  
+  /* Ítems más pequeños */
+  .portfolio-menu .menu-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Corrección específica para móvil */
+  .topbar .container {
+    padding: 0 15px;
+  }
+}
+
+/* ==========================================================
+   📱 RESPONSIVE – MÓVIL PEQUEÑO (480px o menos)
+   ========================================================== */
+
+@media (max-width: 480px) {
+  /* Oculta texto "MI PORTAFOLIO" para ahorrar espacio */
+  .logo-brand span {
+    display: none;
+  }
+  
+  /* Controles más compactos */
+  .topbar .nav-controls {
+    gap: 0.6rem;
+  }
+  
+  .control-group {
+    gap: 0.3rem;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  #mode-toggle,
+  #lang-toggle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  
+  #lang-label {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    min-width: 40px;
+  }
+  
+  /* Buscador más pequeño */
+  #search-input {
+    width: 120px;
+    font-size: 0.75rem;
+    padding: 6px 28px 6px 10px;
+  }
+  
+  /* Corrección específica para móvil pequeño */
+  .topbar .container {
+    padding: 0 10px;
+  }
+}
+
 
 /* ================================
 SECCIÓN HERO
@@ -321,18 +592,39 @@ SECCIÓN HERO
 .hero {
   display: flex;
   align-items: center;
-  min-height: 90vh;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding-top: 200px; /* ← AHORA ESTÁ MÁS ABAJO */
 }
 
+/* GRID CENTRADO */
 .hero-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; /* 1 sola columna para centrar */
+  justify-items: center;
   align-items: center;
+  text-align: center;
+  width: 100%;
 }
+
+/* En pantallas grandes vuelve a dos columnas */
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ================================
+TEXTO
+================================ */
 
 .hero-text h1 {
   font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .hero-text span {
@@ -355,6 +647,10 @@ SECCIÓN HERO
   color: #f5f5f5;
 }
 
+/* ================================
+FOTO REDONDA
+================================ */
+
 .hero-photo img,
 .about-img img {
   width: 250px;
@@ -364,8 +660,9 @@ SECCIÓN HERO
   display: block;
   margin: auto;
   border: 3px solid #00cc66;
-  box-shadow: 0 0 20px rgba(0, 204, 102, 0.7), 
-              0 0 40px rgba(0, 204, 102, 0.5);
+  box-shadow: 
+    0 0 20px rgba(0, 204, 102, 0.7),
+    0 0 40px rgba(0, 204, 102, 0.5);
 }
 
 /* ================================
@@ -397,6 +694,14 @@ BOTONES VERDES
   background: #00cc66;
   color: #fff;
 }
+
+
+
+
+
+
+
+
 
 
 
