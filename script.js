@@ -10,14 +10,14 @@ const translations = {
         'interes1-titulo': 'Programación',
         'interes1-desc': 'La programación me gusta porque disfruto aprender cómo funcionan las cosas y crear mis propias ideas con código. Cada avance que hago me motiva a seguir practicando y mejorando.',
 
-        'interes2-titulo': 'Manga',
-        'interes2-desc': 'Me interesa mucho leer manga porque disfruto las historias, los personajes y los diferentes estilos de dibujo. Es una de mis actividades favoritas para relajarme y pasar un buen rato.',
+        'interes2-titulo': 'android',
+        'interes2-desc': 'Estudiar desarrollo Android es una de mis pasiones, ya que disfruto aprender sobre aplicaciones móviles, interfaces modernas y cómo crear experiencias que realmente ayuden a los usuarios.',
 
-        'interes3-titulo': 'Música',
-        'interes3-desc': 'Leer manga es algo que disfruto mucho porque me encantan las historias, los personajes y los estilos de dibujo. Es una de mis actividades favoritas para relajarme y pasar un buen rato.',
+        'interes3-titulo': 'Robotica',
+        'interes3-desc': 'Me interesa la robótica porque combina tecnología y programación para crear sistemas capaces de resolver problemas y facilitar tareas en el mundo real.',
 
-        'interes4-titulo': 'Fútbol',
-        'interes4-desc': 'El fútbol es el deporte que más disfruto practicar y seguir, porque me divierte jugarlo, me ayuda a trabajar en equipo y a ser más disciplinada. Además, me encanta apoyar a mis equipos favoritos y vivir la emoción de cada partido.',
+        'interes4-titulo': 'Frontend & Backend ',
+        'interes4-desc': 'Me interesa el desarrollo Frontend y Backend porque disfruto crear interfaces visuales atractivas y, al mismo tiempo, construir la lógica y funciones que hacen que todo funcione detrás de escena',
 
 
         // -------------------------------
@@ -212,14 +212,14 @@ const translations = {
         'interes1-titulo': 'Programming',
         'interes1-desc': 'I enjoy programming because I like learning how things work and creating my own ideas with code. Every little improvement motivates me to keep practicing and getting better.',
 
-        'interes2-titulo': 'Manga',
-        'interes2-desc': 'Im really interested in reading manga because I enjoy the stories, the characters, and the different art styles. Its one of my favorite things to do to relax and have a good time.',
+        'interes2-titulo': 'android',
+        'interes2-desc': 'Studying Android development is one of my passions, as I enjoy learning about mobile applications, modern interfaces, and how to create experiences that truly help users.',
 
-        'interes3-titulo': 'Music',
-        'interes3-desc': 'Reading manga is something I really enjoy because I love the stories, the characters, and the art styles. It\'s one of my favorite activities to relax and have a good time.',
+        'interes3-titulo': 'Robotics',
+        'interes3-desc': ' I am interested in robotics because it combines technology and programming to create systems capable of solving problems and facilitating tasks in the real world.',
 
-        'interes4-titulo': 'Soccer',
-        'interes4-desc': 'Soccer is the sport I enjoy practicing and following the most because I have fun playing it, it helps me with teamwork, and I love supporting my favorite teams.',
+        'interes4-titulo': 'Frontend & Backend ',
+        'interes4-desc': ' I am interested in Frontend and Backend development because I enjoy creating attractive visual interfaces while also building the logic and functions that make everything work behind the scenes.',
 
 
         // MENU
@@ -1317,3 +1317,53 @@ btnNext.addEventListener('click', () => {
   index = (index === slides.length - 1) ? 0 : index + 1;
   showSlide(index);
 });
+
+
+// ============================
+// Carrusel de intereses
+// ============================
+
+const wrapper = document.querySelector(".intereses-wrapper");
+const cards = document.querySelectorAll(".interes-card");
+const prevBtn = document.querySelector(".intereses-btn.prev");
+const nextBtn = document.querySelector(".intereses-btn.next");
+
+let interesIndex = 0;
+
+// Actualiza la posición del slider
+function updateSlider() {
+  wrapper.style.transform = `translateX(-${interesIndex * 100}%)`;
+}
+
+// Botón siguiente
+nextBtn.addEventListener("click", () => {
+  interesIndex = (interesIndex + 1) % cards.length;
+  updateSlider();
+});
+
+// Botón anterior
+prevBtn.addEventListener("click", () => {
+  interesIndex = (interesIndex - 1 + cards.length) % cards.length;
+  updateSlider();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  document.querySelectorAll(".ver-video-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const url = btn.getAttribute("data-video");
+      window.open(url, "_blank");  // abre el video en otra pestaña
+    });
+  });
