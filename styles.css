@@ -107,8 +107,8 @@ ul {
 }
 
 .logo-brand img {
-  height: 55px;
-  width: 55px;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #00cc66;
@@ -123,7 +123,7 @@ ul {
 
 /* TEXTO "MI PORTAFOLIO" */
 .logo-brand span {
-  font-size: 0.80rem;
+  font-size: 1.50rem;
   font-weight: 800;
   color: #00cc66;
   text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
@@ -3728,6 +3728,17 @@ body.light-mode .logo-container:hover {
 #publicaciones .card .btn-vermas:active {
   transform: scale(0.97);
 }
+
+/* Estilo para la fecha de los diplomas */
+.fecha-publicacion {
+  color: #00ff99 !important;  /* Fuerza el color verde brillante */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  display: block;
+}
+
+
 
 
 

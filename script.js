@@ -108,22 +108,25 @@ const translations = {
 
         'testimonio1': '"Es una estudiante dedicada y responsable, con actitud positiva, creatividad y compromiso que reflejan su potencial para alcanzar sus metas."',
         'testimonio2': '"Es una persona responsable, estudiosa y una excelente compañera.Siempre demuestra un carácter colaborador, gran capacidad de trabajo y una muy buena disposición para trabajar en equipo.Podría integrarse sin problema en cualquier tipo de empresa y desempeñar con éxito cualquier actividad relacionada con sus estudios."',
+        'testimonio3': '"Ella fue una alumna respetuosa, atenta y muy bien portada en todo momento. Fue muy responsable con las asignaciones y las abordadaba con gran disciplina personal. Fue una joven que demostró puntualidad y una excelente disposición hacia el aprendizaje del idioma Ingles."',
+        'testimonio4': "Estudiante egresada de Técnico en Ingeniería en Sistemas de la Facultad de Ciencia y Tecnología de la Universidad Gerardo Barrios Centro Regional de Usulután, experiencia en las áreas de Ingeniería de Software I, II y Software Libre; con una  participación ejemplar en la adquisición de habilidades técnicas relacionadas a su carrera y para la vida; aplica valores como la puntualidad, empatía y disponibilidad para aprender de los demás. Perfeccionando cualidades que evocan iniciativa y una actitud positiva. Entusiasta en el uso de las nuevas tecnologías y del aprendizaje contínuo",
+        'testimonio5': "Como estudiante, ha demostrado respeto hacia docentes y compañeros, así como dedicación en sus actividades académicas. Posee buenas habilidades, trabaja bien en equipo y mantiene una actitud responsable dentro de la Facultad de Ciencia y Tecnología. Además, es una persona carismática, con sólidas habilidades sociales y pensamiento estratégico, lo que la hace apta para cualquier tarea. Su actitud y deseo de superación permiten asegurar que destacará en todo lo que emprenda.",
 
 
         'testimonio-nombre1': 'José Ovidio Ramos',
         'testimonio-cargo1': 'Vicedecano de la Facultad de Ciencia y Tecnologia de la Universidad Gerardo Barrios',
 
-        'testimonio-nombre2': 'Marvin Osmaro Parada Benitez',
-        'testimonio-cargo2': 'Ingeniero',
+        'testimonio-nombre2': 'Ing. Marvin Osmaro Parada Benitez',
+        'testimonio-cargo2': 'Docente Universidad Gerardo Barrios Facultad de Ciencias y Tecnología',
 
-        'testimonio3-nombre': 'María Fernanda López',
-        'testimonio3-cargo': 'Compañera de Proyecto',
+        'testimonio3-nombre': 'Alexia Marcela Martinez Castro',
+        'testimonio3-cargo': 'Linceciada en idioma ingles',
 
-        'testimonio4-nombre': 'Carlos Andrés Martínez',
-        'testimonio4-cargo': 'Compañero de Clase',
+        'testimonio4-nombre': 'Carla Milagro Lopez Vasquez',
+        'testimonio4-cargo': 'Máster en Ingeniería Web Licenciada en Computación Docente en la Facultad de Ciencia y Tecnología de la Universidad Gerardo Barrios',
 
-        'testimonio5-nombre': 'Rebeca Hernández',
-        'testimonio5-cargo': 'Supervisora de Práctica',
+        'testimonio5-nombre': 'Herbert René Cordero Henriquez',
+        'testimonio5-cargo': 'Licenciado de profesión y docente de la Universidad Gerardo Barrios',
 
 
         // -------------------------------
@@ -300,22 +303,24 @@ const translations = {
 
         'testimonio1': '"She is a dedicated and responsible student, with a positive attitude, creativity, and commitment that reflect her potential to achieve her goals."',
         'testimonio2': '"She is a responsible, studious person and an excellent classmate. She always demonstrates a collaborative character, great work capacity, and a very good disposition to work in a team. She could easily integrate into any type of company and successfully perform any activity related to her studies."',
-
+        'testimonio3': '"She was a respectful, attentive, and well-behaved student at all times. She was very responsible with assignments and approached them with great personal discipline. She demonstrated punctuality and an excellent disposition towards learning the English language."',
+        'testimonio4': "Graduate student of Technical Engineering in Systems from the Faculty of Science and Technology of the Universidad Gerardo Barrios Usulután Regional Center, with experience in the areas of Software Engineering I, II, and Free Software; with exemplary participation in acquiring technical skills related to her career and for life; applies values such as punctuality, empathy, and availability to learn from others. Perfecting qualities that evoke initiative and a positive attitude. Enthusiastic about using new technologies and continuous learning.",
+        'testimonio5': "As a student, she has shown respect towards teachers and classmates, as well as dedication to her academic activities. She possesses good skills, works well in a team, and maintains a responsible attitude within the Faculty of Science and Technology. Additionally, she is a charismatic person, with solid social skills and strategic thinking, making her suitable for any task. Her attitude and desire for self-improvement ensure that she will excel in everything she undertakes.",
 
         'testimonio-nombre1': 'José Ovidio Ramos',
         'testimonio-cargo1': 'Vice Dean of the Faculty of Science and Technology at Universidad Gerardo Barrios',
 
-        'testimonio-nombre2': 'Marvin Osmaro Parada Benitez',
-        'testimonio-cargo2': 'Engineer',
+        'testimonio-nombre2': 'Ing. Marvin Osmaro Parada Benitez',
+        'testimonio-cargo2': 'Professor at Universidad Gerardo Barrios Faculty of Science and Technology',
 
-        'testimonio3-nombre': 'María Fernanda López',
-        'testimonio3-cargo': 'Project Partner',
+        'testimonio3-nombre': 'Alexia Marcela Martinez Castro',
+        'testimonio3-cargo': 'Bachelors degree in English',
 
-        'testimonio4-nombre': 'Carlos Andrés Martínez',
-        'testimonio4-cargo': 'Classmate',
+        'testimonio4-nombre': 'Carla Milagro Lopez Vasquez',
+        'testimonio4-cargo': 'Masters degree in Web Engineering, Bachelors degree in Computer Science, Professor at the Faculty of Science and Technology of Gerardo Barrios University',
 
-        'testimonio5-nombre': 'Rebeca Hernández',
-        'testimonio5-cargo': 'Practice Supervisor',
+        'testimonio5-nombre': 'Herbert René Cordero Henriquez',
+        'testimonio5-cargo': 'Graduate and professor at Universidad Gerardo Barrios',
 
 
         // PERSONAL BRAND
