@@ -1432,34 +1432,202 @@ modalImagen.addEventListener("click", (e) => {
 
 
 
-//SCRIPT DE BÚSQUEDA FUNCIONAL ====== -->
+
+
+
+// ========================================
+// BÚSQUEDA MEJORADA - SOLO TEXTO VISIBLE
+// ========================================
 
 const searchInput = document.getElementById("search-input");
+const sections = document.querySelectorAll("section[id]");
 
-// Recuperar búsqueda previa al cargar la página
-window.addEventListener("DOMContentLoaded", () => {
-    const savedFilter = localStorage.getItem("searchFilter") || "";
-    searchInput.value = savedFilter;
-    filterSections(savedFilter);
+// Función principal de búsqueda
+searchInput.addEventListener("input", () => {
+    const term = searchInput.value.toLowerCase().trim();
+    
+    // Limpiar resaltados anteriores
+    clearHighlights();
+    
+    // Si la búsqueda está vacía, mostrar todo
+    if (term === "") {
+        sections.forEach(sec => {
+            sec.style.display = "block";
+        });
+        return;
+    }
+    
+    let firstMatch = null;
+    let hasAnyMatch = false;
+    
+    // Recorrer todas las secciones
+    sections.forEach(section => {
+        // Obtener solo el texto visible (excluir código)
+        const visibleText = getVisibleText(section);
+        const lowerVisibleText = visibleText.toLowerCase();
+        
+        // Verificar si contiene el término de búsqueda
+        if (lowerVisibleText.includes(term)) {
+            section.style.display = "block";
+            
+            // Resaltar el texto encontrado
+            highlightText(section, term);
+            
+            // Guardar la primera coincidencia para hacer scroll
+            if (!firstMatch) {
+                firstMatch = section;
+            }
+            
+            hasAnyMatch = true;
+        } else {
+            section.style.display = "none";
+        }
+    });
+    
+    // Hacer scroll a la primera coincidencia
+    if (firstMatch) {
+        setTimeout(() => {
+            firstMatch.scrollIntoView({ 
+                behavior: "smooth", 
+                block: "center" 
+            });
+        }, 100);
+    }
 });
 
-// Función para filtrar secciones
-function filterSections(filter) {
-    filter = filter.toLowerCase();
-    const sections = document.querySelectorAll("section");
+// ========================================
+// OBTENER TEXTO VISIBLE (excluye código)
+// ========================================
+function getVisibleText(element) {
+    // Clonar el elemento para no afectar el DOM original
+    const clone = element.cloneNode(true);
+    
+    // Eliminar elementos que contienen código (no buscar aquí)
+    const codeElements = clone.querySelectorAll('code, pre, script, style');
+    codeElements.forEach(el => el.remove());
+    
+    // Devolver solo el texto
+    return clone.textContent || clone.innerText || '';
+}
 
-    sections.forEach(sec => {
-        const title = sec.querySelector("h2") ? sec.querySelector("h2").innerText.toLowerCase() : "";
-        const content = sec.innerText.toLowerCase();
-        sec.style.display = (title.includes(filter) || content.includes(filter)) ? "block" : "none";
+// ========================================
+// RESALTAR TEXTO ENCONTRADO
+// ========================================
+function highlightText(element, term) {
+    // Crear un TreeWalker para recorrer nodos de texto
+    const walker = document.createTreeWalker(
+        element,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode: function(node) {
+                // Ignorar nodos dentro de elementos de código
+                const parent = node.parentElement;
+                if (parent && (
+                    parent.tagName === 'CODE' || 
+                    parent.tagName === 'PRE' || 
+                    parent.tagName === 'SCRIPT' || 
+                    parent.tagName === 'STYLE' ||
+                    parent.classList.contains('no-highlight')
+                )) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        }
+    );
+    
+    const nodes = [];
+    let node;
+    
+    // Recopilar todos los nodos de texto válidos
+    while (node = walker.nextNode()) {
+        nodes.push(node);
+    }
+    
+    // Procesar cada nodo de texto
+    nodes.forEach(textNode => {
+        const originalText = textNode.textContent;
+        const lowerText = originalText.toLowerCase();
+        const index = lowerText.indexOf(term);
+        
+        // Si encuentra el término en este nodo
+        if (index !== -1) {
+            // Crear un span con el texto resaltado
+            const span = document.createElement('span');
+            
+            // Partes del texto: antes, coincidencia, después
+            const before = originalText.substring(0, index);
+            const match = originalText.substring(index, index + term.length);
+            const after = originalText.substring(index + term.length);
+            
+            // Insertar el resaltado
+            span.innerHTML = `${before}<mark class="highlight">${match}</mark>${after}`;
+            
+            // Reemplazar el nodo de texto original
+            textNode.parentNode.replaceChild(span, textNode);
+        }
     });
 }
 
-// Guardar búsqueda y filtrar en tiempo real
-searchInput.addEventListener("keyup", function () {
-    const filter = this.value;
-    localStorage.setItem("searchFilter", filter); // Guardar en localStorage
-    filterSections(filter);
+// ========================================
+// LIMPIAR TODOS LOS RESALTADOS
+// ========================================
+function clearHighlights() {
+    document.querySelectorAll("mark.highlight").forEach(mark => {
+        // Reemplazar el mark con solo su texto
+        const parent = mark.parentNode;
+        if (parent && parent.parentNode) {
+            const text = document.createTextNode(mark.textContent);
+            parent.replaceChild(text, mark);
+            
+            // Si el padre es un span creado por nosotros, normalizarlo
+            if (parent.tagName === 'SPAN' && parent.classList.length === 0) {
+                parent.replaceWith(...parent.childNodes);
+            }
+        }
+    });
+}
+
+// ========================================
+// BÚSQUEDA CON TECLA ENTER (opcional)
+// ========================================
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const term = searchInput.value.toLowerCase().trim();
+        if (term === "") return;
+        
+        const allHighlights = document.querySelectorAll('mark.highlight');
+        if (allHighlights.length > 0) {
+            // Encontrar el siguiente highlight después del actual
+            const currentIndex = Array.from(allHighlights).findIndex(
+                hl => hl.getBoundingClientRect().top >= 0
+            );
+            
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= allHighlights.length) {
+                nextIndex = 0; // Volver al inicio
+            }
+            
+            // Hacer scroll al siguiente resultado
+            allHighlights[nextIndex].scrollIntoView({ 
+                behavior: "smooth", 
+                block: "center" 
+            });
+        }
+    }
 });
 
+// ========================================
+// LIMPIAR BÚSQUEDA CON BOTÓN (opcional)
+// ========================================
+// Agrega este HTML en tu archivo:
+// <button id="clear-search" type="button">×</button>
 
+const clearButton = document.getElementById('clear-search');
+if (clearButton) {
+    clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+        searchInput.focus();
+    });
+}
