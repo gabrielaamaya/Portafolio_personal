@@ -63,6 +63,8 @@ HEADER / NAVEGACIÓN
 
 
 
+
+
 <!-- Hero -->
 <section id="inicio" class="hero">
   <div class="container hero-grid">
@@ -438,21 +440,15 @@ HEADER / NAVEGACIÓN
     </div>
   </div>
 </section>
-
-
 <!-- Testimonios -->
 <section id="testimonios" class="section alt">
   <div class="container">
     <h2 data-lang="testimonios-titulo">Testimonios</h2>
-
     <div class="testimonios-carousel">
-
       <!-- Flecha Izquierda -->
       <button class="t-arrow left">&#10094;</button>
-
       <!-- Track -->
       <div class="t-track">
-
         <!-- Testimonio 1 -->
         <div class="t-slide">
           <div class="t-left">
@@ -468,7 +464,6 @@ HEADER / NAVEGACIÓN
             </p>
           </div>
         </div>
-
         <!-- Testimonio 2 -->
         <div class="t-slide">
           <div class="t-left">
@@ -526,12 +521,27 @@ HEADER / NAVEGACIÓN
             </p>
           </div>
         </div>
+         
+
+        <!-- Testimonio 6 -->
+        <div class="t-slide">
+          <div class="t-left">
+            <!-- IMAGEN ELIMINADA -->
+          </div>
+          <div class="t-right">
+            <h3 data-lang="testimonio6-nombre"> Timotea Guadalupe Menjivar </h3>
+            <span class="cargo" data-lang="testimonio5-cargo">Docente tiempo completo, Universidad Gerardo Barrios, CRU </span>
+            <p data-lang="testimonio5">
+              "Posee aptitudes notables en el análisis y resolución de problemas, pensamiento lógico, manejo eficiente de herramientas tecnológicas y trabajo colaborativo. Su disposición para investigar, experimentar y asumir nuevos desafíos la posiciona como una estudiante con alto potencial profesional dentro del campo de las tecnologías de la información."
+            </p>
+          </div>
+        </div>
+
+
 
       </div>
-
       <!-- Flecha Derecha -->
       <button class="t-arrow right">&#10095;</button>
-
     </div>
   </div>
 </section>
@@ -543,6 +553,8 @@ HEADER / NAVEGACIÓN
   <button class="t-modal-prev">&#10094;</button>
   <button class="t-modal-next">&#10095;</button>
 </div>
+
+
 
 
  
@@ -572,11 +584,9 @@ HEADER / NAVEGACIÓN
             <h3 data-lang="interes1-titulo">Programación</h3>
             <p data-lang="interes1-desc">
               La programación me gusta porque disfruto aprender cómo funcionan las cosas y crear mis propias ideas con código.
-            </p>
-
-            <button class="ver-video-btn"
-              data-video="https://youtu.be/7vbi-OCFZEY?si=5rUP6boH4v-ZaF2k">
-              Ver video
+            </p>            <!-- Nuevo botón -->
+            <button class="ver-imagen-btn" data-img="programar.jpeg" data-lang="ver-imagen">
+              Ver imagen
             </button>
           </div>
         </div>
@@ -592,9 +602,9 @@ HEADER / NAVEGACIÓN
               Estudiar desarrollo Android es una de mis pasiones, ya que disfruto aprender sobre aplicaciones móviles e interfaces modernas.
             </p>
 
-            <button class="ver-video-btn"
-              data-video="https://youtu.be/BsO0zewi5ao?si=AvdFGgGqy9eGdM8h">
-              Ver video
+            <!-- Nuevo botón -->
+            <button class="ver-imagen-btn" data-img="android.png"  data-lang="ver-imagen">
+              Ver imagen
             </button>
           </div>
         </div>
@@ -610,31 +620,33 @@ HEADER / NAVEGACIÓN
               Me interesa la robótica porque combina tecnología y programación para crear sistemas que resuelvan problemas reales.
             </p>
 
-            <button class="ver-video-btn"
-              data-video="https://youtu.be/QmeFsYXHiv8?si=OCP0Xt2COKSlP1KL">
-              Ver video
+            <!-- Nuevo botón -->
+            <button class="ver-imagen-btn" data-img="robotica.jpg"  data-lang="ver-imagen">
+              Ver imagen
             </button>
           </div>
         </div>
 
-<!-- Card 4 -->
-<div class="interes-card">
-  <div class="interes-img">
-    <img src="fron y back.png" alt="Frontend y Backend">
-  </div>
-  <div class="interes-content">
-    <h3 data-lang="interes4-titulo">Frontend & Backend</h3>
-    <p data-lang="interes4-desc">
-      Me interesa el desarrollo Frontend y Backend porque disfruto crear interfaces visuales atractivas y, al mismo tiempo, construir la lógica y funciones que hacen que todo funcione detrás de escena.
-    </p>
+        <!-- Card 4 -->
+        <div class="interes-card">
+          <div class="interes-img">
+            <img src="fron y back.png" alt="Frontend y Backend">
+          </div>
+          <div class="interes-content">
+            <h3 data-lang="interes4-titulo">Frontend & Backend</h3>
+            <p data-lang="interes4-desc">
+              Me interesa el desarrollo Frontend y Backend porque disfruto crear interfaces visuales atractivas y, al mismo tiempo, construir la lógica y funciones que hacen que todo funcione detrás de escena.
+            </p>
 
-    <button class="ver-video-btn"
-      data-video="https://youtu.be/3w5dK-79KTA?si=utSt45xb0sCI_SHJ">
-      Ver video
-    </button>
-  </div>
-</div>
+            <!-- Nuevo botón -->
+            <button class="ver-imagen-btn" data-img="fron y back.png "  data-lang="ver-imagen">
+              Ver imagen
+            </button>
+          </div>
+        </div>
+
       </div>
+
       <!-- Botones -->
       <button class="intereses-btn prev">&#10094;</button>
       <button class="intereses-btn next">&#10095;</button>
@@ -642,6 +654,15 @@ HEADER / NAVEGACIÓN
     </div>
   </div>
 </section>
+
+
+<!-- MODAL PARA VER IMÁGENES -->
+<div id="modalImagen" class="modal-img">
+  <span id="cerrarModalImg" class="cerrar-modal-img">&times;</span>
+  <img id="imgModalContenido" class="modal-img-contenido">
+</div>
+
+
 
 
 
@@ -811,50 +832,72 @@ HEADER / NAVEGACIÓN
   <hr class="section-separator">
 
 
-  <!-- Formulario de Contacto -->
+ <!-- Formulario de Contacto con FormSubmit -->
 <div class="contact-container">
     <h2 data-lang="form-titulo">Contáctanos</h2>
 
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm"
+          action="https://formsubmit.co/amayagabriela073@gmail.com"
+          method="POST">
 
+        <!-- Nombre -->
         <div class="input-group">
             <label for="name" data-lang="form-nombre">Nombre Completo</label>
             <div class="input-icon">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="name" data-lang="form-nombre-placeholder" placeholder="Ingresa tu nombre" required>
+                <input type="text" id="name" name="name"
+                       data-lang="form-nombre-placeholder"
+                       placeholder="Ingresa tu nombre" required>
             </div>
         </div>
 
+        <!-- Correo -->
         <div class="input-group">
             <label for="email" data-lang="form-email">Correo Electrónico</label>
             <div class="input-icon">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" id="email" data-lang="form-email-placeholder" placeholder="ejemplo@correo.com" required>
+                <input type="email" id="email" name="email"
+                       data-lang="form-email-placeholder"
+                       placeholder="ejemplo@correo.com" required>
             </div>
         </div>
 
+        <!-- Teléfono -->
         <div class="input-group">
             <label for="phone" data-lang="form-telefono">Teléfono</label>
             <div class="input-icon">
                 <i class="fa-solid fa-phone"></i>
-                <input type="tel" id="phone" data-lang="form-telefono-placeholder" placeholder="0000-0000" required>
+                <input type="tel" id="phone" name="phone"
+                       data-lang="form-telefono-placeholder"
+                       placeholder="0000-0000" required>
             </div>
         </div>
 
+        <!-- Mensaje -->
         <div class="input-group">
             <label for="message" data-lang="form-mensaje">Mensaje</label>
             <div class="input-icon textarea-icon">
                 <i class="fa-regular fa-comment"></i>
-                <textarea id="message" rows="4" data-lang="form-mensaje-placeholder" placeholder="Escribe tu mensaje..." required></textarea>
+                <textarea id="message" name="message"
+                          rows="4"
+                          data-lang="form-mensaje-placeholder"
+                          placeholder="Escribe tu mensaje..." required></textarea>
             </div>
         </div>
 
+        <!-- Configuración oculta -->
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://gabrielaamaya.netlify.app/?">
+
+        <!-- Botón -->
         <button type="submit" class="btn-submit">
-            <i class="fa-solid fa-paper-plane"></i> <span data-lang="form-enviar">Enviar Mensaje</span>
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-lang="form-enviar">Enviar Mensaje</span>
         </button>
 
-          <!-- Contenedor para mensajes flash -->
-  <div id="flash-messages" class="flash-messages"></div>
+        <!-- Mensajes Flash -->
+        <div id="flash-messages" class="flash-messages"></div>
 
     </form>
 </div>
@@ -876,6 +919,11 @@ HEADER / NAVEGACIÓN
         <a class="github" href="https://github.com/gabrielaamaya" target="_blank">
           <i class="fa-brands fa-github"></i>
         </a>
+        <a class="email" 
+   href="https://mail.google.com/mail/?view=cm&fs=1&to=amayagabriela073@gmail.com" 
+   target="_blank">
+  <i class="fa-solid fa-envelope"></i>
+</a>
       </div>
     </div>
   </section>

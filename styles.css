@@ -585,6 +585,20 @@ body > .topbar > * > * {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================================
 SECCIÓN HERO
 ================================ */
@@ -3271,10 +3285,124 @@ body.light-mode .logo-container:hover {
   transform: scale(1.05);
 }
 
+/* =======================================
+   BOTÓN VER IMAGEN – MISMO ESTILO PREMIUM
+======================================= */
+.ver-imagen-btn {
+  background: #2bff88;               /* Verde neón igual al tema */
+  color: #000;                       /* Texto oscuro */
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  margin-top: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px #2bff88a8;    /* Brillo verde */
+}
 
+/* Hover */
+.ver-imagen-btn:hover {
+  background: #25d66f;               /* Verde más oscuro */
+  box-shadow: 0 0 18px #2bff88;
+  transform: scale(1.05);
+}
 
+/* ================================
+   MODAL DE IMAGEN (ESTILO PREMIUM)
+================================ */
+.modal-img {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
 
+.modal-img-contenido {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #00ff85;
+  animation: aparecer 0.3s ease;
+}
 
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.cerrar-modal-img {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 45px;
+  color: #2bff88;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cerrar-modal-img:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* ================================
+   📱 MODO MÓVIL – MODAL DE IMAGEN
+================================ */
+@media (max-width: 480px) {
+
+  /* Fondo más suave para evitar saturación */
+  .modal-img {
+    padding: 20px;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Imagen más pequeña para que no se salga */
+  .modal-img-contenido {
+    max-width: 95%;
+    max-height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 18px #00ff85;
+  }
+
+  /* Botón X más pequeño y cerca del borde */
+  .cerrar-modal-img {
+    font-size: 32px;
+    top: 12px;
+    right: 20px;
+  }
+}
+
+/* ================================
+   📱 MODO TABLET – MODAL DE IMAGEN
+================================ */
+@media (max-width: 768px) {
+
+  .modal-img-contenido {
+    max-width: 92%;
+    max-height: 78%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00ff85;
+  }
+
+  .cerrar-modal-img {
+    font-size: 38px;
+    top: 16px;
+    right: 25px;
+  }
+}
 
 
 
@@ -3934,6 +4062,19 @@ CONTACTO - ESTILO ACTUALIZADO
   background: #111;
   box-shadow: 0 6px 12px rgba(51, 51, 51, 0.4);
 }
+
+/* ====== Gmail ====== */
+.socials a.email {
+  /* 🔴 ROJO GMAIL */
+  background: #D44638;
+}
+
+.socials a.email:hover {
+  /* 🔴 ROJO OSCURO */
+  background: #B23121;
+  box-shadow: 0 6px 12px rgba(212, 70, 56, 0.4);
+}
+
 
 /* ================================
 FOOTER

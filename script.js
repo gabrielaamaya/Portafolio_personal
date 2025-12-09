@@ -9,8 +9,13 @@ const translations = {
 
         'interes1-titulo': 'Programación',
         'interes1-desc': 'La programación me gusta porque disfruto aprender cómo funcionan las cosas y crear mis propias ideas con código. Cada avance que hago me motiva a seguir practicando y mejorando.',
+   
+        'interes1-imagen': 'VER IMAGEN',
 
-        'interes2-titulo': 'android',
+       
+
+
+       'interes2-titulo': 'android',
         'interes2-desc': 'Estudiar desarrollo Android es una de mis pasiones, ya que disfruto aprender sobre aplicaciones móviles, interfaces modernas y cómo crear experiencias que realmente ayuden a los usuarios.',
 
         'interes3-titulo': 'Robotica',
@@ -111,7 +116,7 @@ const translations = {
         'testimonio3': '"Ella fue una alumna respetuosa, atenta y muy bien portada en todo momento. Fue muy responsable con las asignaciones y las abordadaba con gran disciplina personal. Fue una joven que demostró puntualidad y una excelente disposición hacia el aprendizaje del idioma Ingles."',
         'testimonio4': "Estudiante egresada de Técnico en Ingeniería en Sistemas de la Facultad de Ciencia y Tecnología de la Universidad Gerardo Barrios Centro Regional de Usulután, experiencia en las áreas de Ingeniería de Software I, II y Software Libre; con una  participación ejemplar en la adquisición de habilidades técnicas relacionadas a su carrera y para la vida; aplica valores como la puntualidad, empatía y disponibilidad para aprender de los demás. Perfeccionando cualidades que evocan iniciativa y una actitud positiva. Entusiasta en el uso de las nuevas tecnologías y del aprendizaje contínuo",
         'testimonio5': "Como estudiante, ha demostrado respeto hacia docentes y compañeros, así como dedicación en sus actividades académicas. Posee buenas habilidades, trabaja bien en equipo y mantiene una actitud responsable dentro de la Facultad de Ciencia y Tecnología. Además, es una persona carismática, con sólidas habilidades sociales y pensamiento estratégico, lo que la hace apta para cualquier tarea. Su actitud y deseo de superación permiten asegurar que destacará en todo lo que emprenda.",
-
+        'testimonio6': "Posee aptitudes notables en el análisis y resolución de problemas, pensamiento lógico, manejo eficiente de herramientas tecnológicas y trabajo colaborativo. Su disposición para investigar, experimentar y asumir nuevos desafíos la posiciona como una estudiante con alto potencial profesional dentro del campo de las tecnologías de la información.",
 
         'testimonio-nombre1': 'José Ovidio Ramos',
         'testimonio-cargo1': 'Vicedecano de la Facultad de Ciencia y Tecnologia de la Universidad Gerardo Barrios',
@@ -127,6 +132,12 @@ const translations = {
 
         'testimonio5-nombre': 'Herbert René Cordero Henriquez',
         'testimonio5-cargo': 'Licenciado de profesión y docente de la Universidad Gerardo Barrios',
+
+         'testimonio6-nombre': 'Timotea Guadalupe Menjivar',
+        'testimonio6-cargo': 'Docente tiempo completo, Universidad Gerardo Barrios, CRU',
+
+
+
 
 
         // -------------------------------
@@ -183,6 +194,13 @@ const translations = {
         'publicacion6-titulo': 'Creación de Casos de Prueba, UX/UI, Desarrollo Web e Introducción a la Seguridad',
         'publicacion6-desc': 'Diploma otorgado por la Universidad Gerardo Barrios por completar los talleres de Creación de Casos de Prueba, UX/UI, Desarrollo Web e Introducción a la Seguridad.',
 
+        'publicacion1-fecha': 'Fecha: 22/07/2014',
+        'publicacion2-fecha': 'Fecha: 04/07/2019',
+        'publicacion3-fecha': 'Fecha: 27/08/2022',
+        'publicacion4-fecha': 'Fecha: 03/11/2022',
+        'publicacion5-fecha': 'Fecha: 16/06/2025',
+        'publicacion6-fecha': 'Fecha: 04/12/2025',
+
 
         // ✔ AGREGADO NUEVO
         'ver-imagen': 'Ver imagen',
@@ -214,7 +232,9 @@ const translations = {
 
         'interes1-titulo': 'Programming',
         'interes1-desc': 'I enjoy programming because I like learning how things work and creating my own ideas with code. Every little improvement motivates me to keep practicing and getting better.',
-
+         
+        'interes1-imagen': 'VIEW IMAGE',
+        
         'interes2-titulo': 'android',
         'interes2-desc': 'Studying Android development is one of my passions, as I enjoy learning about mobile applications, modern interfaces, and how to create experiences that truly help users.',
 
@@ -306,6 +326,7 @@ const translations = {
         'testimonio3': '"She was a respectful, attentive, and well-behaved student at all times. She was very responsible with assignments and approached them with great personal discipline. She demonstrated punctuality and an excellent disposition towards learning the English language."',
         'testimonio4': "Graduate student of Technical Engineering in Systems from the Faculty of Science and Technology of the Universidad Gerardo Barrios Usulután Regional Center, with experience in the areas of Software Engineering I, II, and Free Software; with exemplary participation in acquiring technical skills related to her career and for life; applies values such as punctuality, empathy, and availability to learn from others. Perfecting qualities that evoke initiative and a positive attitude. Enthusiastic about using new technologies and continuous learning.",
         'testimonio5': "As a student, she has shown respect towards teachers and classmates, as well as dedication to her academic activities. She possesses good skills, works well in a team, and maintains a responsible attitude within the Faculty of Science and Technology. Additionally, she is a charismatic person, with solid social skills and strategic thinking, making her suitable for any task. Her attitude and desire for self-improvement ensure that she will excel in everything she undertakes.",
+        'testimonio6': "She possesses notable aptitudes in problem analysis and resolution, logical thinking, efficient handling of technological tools, and collaborative work. Her willingness to research, experiment, and take on new challenges positions her as a student with high professional potential within the field of information technologies.",
 
         'testimonio-nombre1': 'José Ovidio Ramos',
         'testimonio-cargo1': 'Vice Dean of the Faculty of Science and Technology at Universidad Gerardo Barrios',
@@ -321,6 +342,9 @@ const translations = {
 
         'testimonio5-nombre': 'Herbert René Cordero Henriquez',
         'testimonio5-cargo': 'Graduate and professor at Universidad Gerardo Barrios',
+
+        'testimonio6-nombre': 'Timotea Guadalupe Menjivar',
+        'testimonio6-cargo': 'Full-time professor, Universidad Gerardo Barrios, CRU',
 
 
         // PERSONAL BRAND
@@ -368,6 +392,14 @@ const translations = {
 
         'publicacion6-titulo': 'Test Case Creation, UX/UI, Web Development and Introduction to Security',
         'publicacion6-desc': 'Diploma awarded by the Universidad Gerardo Barrios for completing the workshops on Test Case Creation, UX/UI, Web Development and Introduction to Security.',
+
+        'publicacion1-fecha': 'Date: 07/22/2014',
+        'publicacion2-fecha': 'Date: 07/04/2019',
+        'publicacion3-fecha': 'Date: 08/27/2022',
+        'publicacion4-fecha': 'Date: 11/03/2022',
+        'publicacion5-fecha': 'Date: 06/16/2025',
+        'publicacion6-fecha': 'Date: 12/04/2025',
+       
 
         // ✔ AGREGADO NUEVO
         'ver-imagen': 'See image',
@@ -1365,6 +1397,40 @@ prevBtn.addEventListener("click", () => {
 
 
 
+// ===============================
+//  MODAL PARA VER IMAGEN
+// ===============================
+
+// Botones "Ver imagen"
+const btnsImagen = document.querySelectorAll(".ver-imagen-btn");
+
+// Modal
+const modalImagen = document.getElementById("modalImagen");
+const imgModal = document.getElementById("imgModalContenido");
+const cerrarModalImg = document.getElementById("cerrarModalImg");
+
+// Abrir modal con la imagen seleccionada
+btnsImagen.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const ruta = btn.getAttribute("data-img");
+    imgModal.src = ruta;
+    modalImagen.style.display = "flex";
+  });
+});
+
+// Cerrar modal al presionar la X
+cerrarModalImg.addEventListener("click", () => {
+  modalImagen.style.display = "none";
+});
+
+// Cerrar al hacer clic fuera de la imagen
+modalImagen.addEventListener("click", (e) => {
+  if (e.target === modalImagen) {
+    modalImagen.style.display = "none";
+  }
+});
+
+
 
 //SCRIPT DE BÚSQUEDA FUNCIONAL ====== -->
 
@@ -1395,3 +1461,5 @@ searchInput.addEventListener("keyup", function () {
     localStorage.setItem("searchFilter", filter); // Guardar en localStorage
     filterSections(filter);
 });
+
+
